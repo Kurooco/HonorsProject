@@ -1,11 +1,15 @@
 extends Area2D
+class_name Food
+
+const GRAVITY = 500
+
+var velocity : Vector2
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	velocity.y += delta*GRAVITY
+	position += velocity*delta
+
+func jump_on():
+	velocity.y = 700
+	set_deferred("monitorable", false)

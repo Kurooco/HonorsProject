@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=5 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_8afob"]
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
@@ -15,3 +17,11 @@ texture = ExtResource("1_8afob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("RectangleShape2D_gmlin")
+debug_color = Color(0.979518, 0, 0.387373, 0.42)
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

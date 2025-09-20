@@ -1,18 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctkfbpows8frn"]
+[gd_scene load_steps=6 format=3 uid="uid://ctkfbpows8frn"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/assist/food_spawner.tscn" id="3_nsrm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
-size = Vector2(499, 20)
+size = Vector2(112.5, 15)
+
+[sub_resource type="Curve2D" id="Curve2D_nsrm0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -655.08, 273.437, 0, 0, 0, 0, 482.92, 276.437)
+}
+point_count = 2
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(375.147, -239.941)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(268, -177)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2, 103)
+position = Vector2(104.294, -17.291)
 shape = SubResource("RectangleShape2D_ksju7")
+
+[node name="Food" parent="." instance=ExtResource("2_6iamk")]
+position = Vector2(83.0799, 62.5631)
+
+[node name="FoodSpawner" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(83.0799, 62.5631)
+curve = SubResource("Curve2D_nsrm0")
+spawn_time = 1.0
+y_range = Vector2(-800, -500)
