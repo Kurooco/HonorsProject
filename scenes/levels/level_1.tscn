@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bue5n6qihlk4c" path="res://scenes/levels/level_1.gd" id="1_x42e6"]
-[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/assist/food_spawner.tscn" id="3_nsrm0"]
+[ext_resource type="Texture2D" uid="uid://f6ekqhi8ot83" path="res://art/parallax.png" id="5_6761a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(199.25, 307.5)
 
 [sub_resource type="Curve2D" id="Curve2D_nsrm0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -655.08, 273.437, 0, 0, 0, 0, 500, 273.437)
+"points": PackedVector2Array(0, 0, 0, 0, -600, 273.437, 0, 0, 0, 0, 600, 273.437)
 }
 point_count = 2
 
@@ -29,11 +29,18 @@ position = Vector2(268, -177)
 position = Vector2(-762.625, 394.25)
 shape = SubResource("RectangleShape2D_ksju7")
 
-[node name="Food" parent="." instance=ExtResource("2_6iamk")]
-position = Vector2(83.0799, 62.5631)
-
 [node name="FoodSpawner" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(83.0799, 62.5631)
+position = Vector2(544.08, 62.5631)
 curve = SubResource("Curve2D_nsrm0")
-spawn_time = 1.0
+spawn_time = 100
 y_range = Vector2(-800, -500)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -50
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-11, -199)
+texture = ExtResource("5_6761a")
+centered = false

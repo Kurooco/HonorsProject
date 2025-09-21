@@ -1,12 +1,13 @@
 extends Path2D
 
-@export var spawn_time = 0.1
+@export var spawn_time = 1
 @export var y_range = Vector2(-300, -100)
 @export var x_range = Vector2(-30, 30)
 
 
 func _ready():
-	$Timer.wait_time = spawn_time
+	$Timer.wait_time = spawn_time / curve.get_baked_length()
+	
 
 
 func _on_timer_timeout():
