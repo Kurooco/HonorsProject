@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=6 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_8afob"]
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="3_gmlin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 
@@ -23,5 +24,7 @@ shape = SubResource("RectangleShape2D_dovo2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("RectangleShape2D_gmlin")
 debug_color = Color(0.979518, 0, 0.387373, 0.42)
+
+[node name="PointAwarder" parent="." instance=ExtResource("3_gmlin")]
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

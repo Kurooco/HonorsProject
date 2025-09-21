@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="HonorsProject"
-run/main_scene="uid://ctkfbpows8frn"
+run/main_scene="uid://jip4wup8hkl7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://art/icon.svg"
+
+[autoload]
+
+Autoload="*res://globals/Autoload.gd"
 
 [input]
 

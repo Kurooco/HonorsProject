@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7wsoqjunvbbs"]
+
+[ext_resource type="Script" uid="uid://dc885fymf82ai" path="res://scenes/ui/point_awarder.gd" id="1_qyk43"]
+
+[node name="PointAwarder" type="Node2D"]
+script = ExtResource("1_qyk43")

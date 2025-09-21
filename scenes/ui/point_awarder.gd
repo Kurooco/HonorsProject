@@ -1,0 +1,11 @@
+extends Node2D
+
+
+func award_points(amount: int) -> void:
+	Autoload.points += amount
+	var new_label : Label = load("res://scenes/ui/point_label.tscn").instantiate()
+	new_label.text = str(amount)
+	new_label.global_position = global_position
+	get_tree().current_scene.add_child(new_label)
+	
+	
