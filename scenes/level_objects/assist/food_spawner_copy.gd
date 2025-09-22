@@ -14,11 +14,19 @@ func _ready():
 	$Timer.wait_time = spawn_time
 
 func _on_timer_timeout():
-	if(start_x >= end_x):
+	start_point = curve.get_baked_points()[0].x+position.x
+	end_point = curve.get_baked_points()[-1].x+position.x
+	distance = end_point-start_point
+	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
+	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
+	var adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
+	print(adjusted_distance_ratio)
+	if(adjusted_distance_ratio <= 0):
 		return;
+	$Timer.wait_time = spawn_time / adjusted_distance_ratio
 	
-	#$Point1.global_position.x = start_x
-	#$Point2.global_position.x = end_x
+	$Point1.global_position.x = start_x
+	$Point2.global_position.x = end_x
 	
 	$PathFollow2D.progress_ratio = randf_range((start_x-start_point)/distance, ((end_x-start_point))/distance)
 	var new_food = load("res://scenes/level_objects/assist/food.tscn").instantiate()
@@ -27,11 +35,4 @@ func _on_timer_timeout():
 	new_food.velocity.x = randf_range(x_range.x, x_range.y)
 	get_tree().current_scene.add_child(new_food)
 	
-	start_point = curve.get_baked_points()[0].x+position.x
-	end_point = curve.get_baked_points()[-1].x+position.x
-	distance = end_point-start_point
-	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
-	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
-	var adjusted_distance_ratio = (end_x-start_x)/distance
-	print(adjusted_distance_ratio)
-	$Timer.wait_time = spawn_time * adjusted_distance_ratio
+	

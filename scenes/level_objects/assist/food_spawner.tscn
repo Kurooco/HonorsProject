@@ -1,19 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://c64x5ruyxsgfq"]
 
-[ext_resource type="Script" uid="uid://dj86rg8moqsrs" path="res://scenes/level_objects/assist/food_spawner.gd" id="1_w5tf6"]
+[ext_resource type="Script" uid="uid://bpc6j0uxt8tmd" path="res://scenes/level_objects/assist/food_spawner_copy.gd" id="1_44e3j"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_44e3j"]
 
 [node name="FoodSpawner" type="Path2D"]
-script = ExtResource("1_w5tf6")
+script = ExtResource("1_44e3j")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-639.08, 284.437)
 rotation = 0.00361009
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
+visible = false
 texture = ExtResource("2_44e3j")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [node name="Point1" type="Sprite2D" parent="."]
