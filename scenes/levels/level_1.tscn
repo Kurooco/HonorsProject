@@ -32,7 +32,9 @@ shape = SubResource("RectangleShape2D_ksju7")
 [node name="FoodSpawner" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(544.08, 62.5631)
 curve = SubResource("Curve2D_nsrm0")
+spawn_time = 0.4
 y_range = Vector2(-800, -500)
+x_range = Vector2(-300, 300)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -50

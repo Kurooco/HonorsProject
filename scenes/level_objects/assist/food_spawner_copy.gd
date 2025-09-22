@@ -9,18 +9,21 @@ var end_x = 0
 var distance = 0
 var start_point = 0
 var end_point = 0
+var adjusted_distance_ratio = 0
 
 func _ready():
 	$Timer.wait_time = spawn_time
 
-func _on_timer_timeout():
+func _process(delta):
 	start_point = curve.get_baked_points()[0].x+position.x
 	end_point = curve.get_baked_points()[-1].x+position.x
 	distance = end_point-start_point
 	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
 	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
-	var adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
+	adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
 	print(adjusted_distance_ratio)
+
+func _on_timer_timeout():
 	if(adjusted_distance_ratio <= 0):
 		return;
 	$Timer.wait_time = spawn_time / adjusted_distance_ratio
