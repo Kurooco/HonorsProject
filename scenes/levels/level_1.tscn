@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctkfbpows8frn"]
+[gd_scene load_steps=8 format=3 uid="uid://ctkfbpows8frn"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bue5n6qihlk4c" path="res://scenes/levels/level_1.gd" id="1_x42e6"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/assist/food_spawner.tscn" id="3_nsrm0"]
 [ext_resource type="Texture2D" uid="uid://f6ekqhi8ot83" path="res://art/parallax.png" id="5_6761a"]
 
@@ -27,6 +28,45 @@ position = Vector2(268, -177)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-762.625, 394.25)
+shape = SubResource("RectangleShape2D_ksju7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-762.5, 399)
+scale = Vector2(1.69531, 2.625)
+texture = ExtResource("3_6761a")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(1251, 185)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+scale = Vector2(1.69531, 2.625)
+texture = ExtResource("3_6761a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_ksju7")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(1729, 285)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+scale = Vector2(1.69531, 2.625)
+texture = ExtResource("3_6761a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("RectangleShape2D_ksju7")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(2051, 166)
+scale = Vector2(1, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+scale = Vector2(1.69531, 2.625)
+texture = ExtResource("3_6761a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
 shape = SubResource("RectangleShape2D_ksju7")
 
 [node name="FoodSpawner" parent="." instance=ExtResource("3_nsrm0")]

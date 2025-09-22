@@ -3,6 +3,7 @@ extends Path2D
 @export var spawn_time = 1.0
 @export var y_range = Vector2(-300, -100)
 @export var x_range = Vector2(-30, 30)
+@export var spawn_item = preload("res://scenes/level_objects/assist/food.tscn")
 
 var start_x = 0
 var end_x = 0
@@ -21,7 +22,6 @@ func _process(delta):
 	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
 	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
 	adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
-	print(adjusted_distance_ratio)
 
 func _on_timer_timeout():
 	if(adjusted_distance_ratio <= 0):
@@ -32,7 +32,7 @@ func _on_timer_timeout():
 	$Point2.global_position.x = end_x
 	
 	$PathFollow2D.progress_ratio = randf_range((start_x-start_point)/distance, ((end_x-start_point))/distance)
-	var new_food = load("res://scenes/level_objects/assist/food.tscn").instantiate()
+	var new_food = spawn_item.instantiate()
 	new_food.global_position = $PathFollow2D.global_position
 	new_food.velocity.y = randf_range(y_range.x, y_range.y)
 	new_food.velocity.x = randf_range(x_range.x, x_range.y)
