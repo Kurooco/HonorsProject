@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxaoik11opnua"]
+
+[ext_resource type="Script" uid="uid://co00rg3mce1k" path="res://arc_mover.gd" id="1_wdvdb"]
+
+[node name="ArcMover" type="Node2D"]
+script = ExtResource("1_wdvdb")

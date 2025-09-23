@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://oh37nacj7g3i"]
+[gd_scene load_steps=6 format=3 uid="uid://oh37nacj7g3i"]
 
 [ext_resource type="PackedScene" uid="uid://cr4ob4hn7hybp" path="res://scenes/player/collectable.tscn" id="1_lol5v"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="2_ce3kf"]
 [ext_resource type="Script" uid="uid://dwn852x1mhgua" path="res://scenes/level_objects/assist/acorn.gd" id="2_ihngi"]
+[ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="4_ihngi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihngi"]
 
@@ -14,3 +15,6 @@ texture = ExtResource("2_ce3kf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_ihngi")
+
+[node name="ArcMover" parent="." index="2" node_paths=PackedStringArray("move_object") instance=ExtResource("4_ihngi")]
+move_object = NodePath("..")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctkfbpows8frn"]
+[gd_scene load_steps=9 format=3 uid="uid://ctkfbpows8frn"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bue5n6qihlk4c" path="res://scenes/levels/level_1.gd" id="1_x42e6"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/assist/food_spawner.tscn" id="3_nsrm0"]
 [ext_resource type="Texture2D" uid="uid://f6ekqhi8ot83" path="res://art/parallax.png" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="5_sk5k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(199.25, 307.5)
@@ -77,6 +78,15 @@ curve = SubResource("Curve2D_nsrm0")
 spawn_time = 0.4
 y_range = Vector2(-800, -500)
 x_range = Vector2(-300, 300)
+
+[node name="AcornSpawner" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(544.08, 62.5631)
+curve = SubResource("Curve2D_nsrm0")
+spawn_time = 0.4
+y_range = Vector2(-800, -500)
+x_range = Vector2(-300, 300)
+spawn_item = ExtResource("5_sk5k4")
+disabled = true
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -50

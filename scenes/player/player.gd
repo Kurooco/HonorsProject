@@ -8,11 +8,12 @@ const BOUNCE_VELOCITY = -400
 
 var jump_velocity = MAX_JUMP_VELOCITY
 var consecutive_bounces = 0
+var acorns = 0
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * (acorns/3 + 1)
 	var relative_position = position - get_viewport().get_camera_2d().position
 	if(relative_position.y < -get_viewport_rect().size.y/2):
 		velocity += get_gravity() * delta * 2
@@ -41,4 +42,7 @@ func _on_detection_area_area_entered(area):
 		jump_velocity = MAX_JUMP_VELOCITY
 		area.jump_on()
 		consecutive_bounces += 1
-		$PointAwarder.award_points(10*consecutive_bounces)
+		$PointAwarder.award_points(10*min(consecutive_bounces, 10))
+	elif(area is Acorn && Input.is_action_pressed("shoot")):
+		area.collect()
+		acorns += 1
