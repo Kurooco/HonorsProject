@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=9 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_8afob"]
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="3_gmlin"]
+[ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_lvxji"]
+[ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_p47bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
@@ -26,5 +30,16 @@ shape = SubResource("RectangleShape2D_gmlin")
 debug_color = Color(0.979518, 0, 0.387373, 0.42)
 
 [node name="PointAwarder" parent="." instance=ExtResource("3_gmlin")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_lvxji")]
+max_health = 3
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_p47bc")]
+health_component = NodePath("../HealthComponent")
+friendly = true
+invincible_time = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_p47bc")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

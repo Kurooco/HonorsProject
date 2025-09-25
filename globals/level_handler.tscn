@@ -1,8 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=4 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://ctkfbpows8frn" path="res://scenes/levels/level_1.tscn" id="2_71i82"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71i82"]
+bg_color = Color(1, 0.18939, 0.298565, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
 opening_scene = ExtResource("2_71i82")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 37.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_71i82")
+show_percentage = false

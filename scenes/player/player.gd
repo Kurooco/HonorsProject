@@ -9,6 +9,11 @@ const BOUNCE_VELOCITY = -400
 var jump_velocity = MAX_JUMP_VELOCITY
 var consecutive_bounces = 0
 var acorns = 0
+@onready var health_component = $HealthComponent
+
+func _ready():
+	Autoload.player = self
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,6 +37,11 @@ func _physics_process(delta):
 	if direction:
 		velocity.x += direction * SPEED
 	velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
+	
+	if($HurtBox.currently_invincible):
+		modulate = Color(1, 1, 1, .5)
+	else:
+		modulate = Color.WHITE
 	
 	move_and_slide()
 

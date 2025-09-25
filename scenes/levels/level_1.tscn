@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctkfbpows8frn"]
+[gd_scene load_steps=10 format=3 uid="uid://ctkfbpows8frn"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bue5n6qihlk4c" path="res://scenes/levels/level_1.gd" id="1_x42e6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/assist/food_spawner.tscn" id="3_nsrm0"]
 [ext_resource type="Texture2D" uid="uid://f6ekqhi8ot83" path="res://art/parallax.png" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="5_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://bf0rwbbj1b2hd" path="res://scenes/level_objects/hazards/razor.tscn" id="7_oc4kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(199.25, 307.5)
@@ -96,3 +97,15 @@ repeat_size = Vector2(1152, 0)
 position = Vector2(-11, -199)
 texture = ExtResource("5_6761a")
 centered = false
+
+[node name="Razor" parent="." instance=ExtResource("7_oc4kc")]
+position = Vector2(303, -100)
+
+[node name="Razor2" parent="." instance=ExtResource("7_oc4kc")]
+position = Vector2(615, 124)
+
+[node name="Razor3" parent="." instance=ExtResource("7_oc4kc")]
+position = Vector2(1464, 24)
+
+[node name="Razor4" parent="." instance=ExtResource("7_oc4kc")]
+position = Vector2(1754, -179)

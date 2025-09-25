@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://for7arqs1e07"]
+
+[ext_resource type="Script" uid="uid://bxm6henacum8c" path="res://scenes/components/weapon_area.gd" id="1_e1lfg"]
+
+[node name="WeaponArea" type="Area2D"]
+script = ExtResource("1_e1lfg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
