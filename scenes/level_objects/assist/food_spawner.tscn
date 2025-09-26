@@ -14,14 +14,10 @@ rotation = 0.00361009
 visible = false
 texture = ExtResource("2_44e3j")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="Point1" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_44e3j")
 
 [node name="Point2" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_44e3j")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
