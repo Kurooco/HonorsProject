@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c64x5ruyxsgfq"]
 
-[ext_resource type="Script" uid="uid://bpc6j0uxt8tmd" path="res://scenes/level_objects/assist/food_spawner_copy.gd" id="1_44e3j"]
+[ext_resource type="Script" uid="uid://bpc6j0uxt8tmd" path="res://scenes/level_objects/auxiliary/random_spawner_copy.gd" id="1_44e3j"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_44e3j"]
 
 [node name="FoodSpawner" type="Path2D"]

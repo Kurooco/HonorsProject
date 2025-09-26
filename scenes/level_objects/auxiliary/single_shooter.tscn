@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4gmd4bgevkmw"]
 
-[ext_resource type="Script" uid="uid://dt0uchgv666pu" path="res://scenes/level_objects/hazards/single_shooter.gd" id="1_xkrpk"]
+[ext_resource type="Script" uid="uid://dt0uchgv666pu" path="res://scenes/level_objects/auxiliary/single_shooter.gd" id="1_xkrpk"]
 
 [sub_resource type="Gradient" id="Gradient_xkrpk"]
 colors = PackedColorArray(1, 0, 1, 1, 1, 0, 1, 0)
