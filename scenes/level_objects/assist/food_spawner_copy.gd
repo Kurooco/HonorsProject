@@ -23,11 +23,11 @@ func _process(delta):
 	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
 	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
 	adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
+	$Timer.wait_time = spawn_time / adjusted_distance_ratio
 
 func _on_timer_timeout():
 	if(adjusted_distance_ratio <= 0 || disabled):
 		return;
-	$Timer.wait_time = spawn_time / adjusted_distance_ratio
 	
 	$Point1.global_position.x = start_x
 	$Point2.global_position.x = end_x

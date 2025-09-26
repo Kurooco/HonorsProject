@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctkfbpows8frn"]
+[gd_scene load_steps=13 format=3 uid="uid://ctkfbpows8frn"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bue5n6qihlk4c" path="res://scenes/levels/level_1.gd" id="1_x42e6"]
@@ -19,11 +19,17 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_dga24"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -600, 273.437, 0, 0, 0, 0, 600, 273.437)
+}
+point_count = 2
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_x42e6")
 
 [node name="Player" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(-297, 4)
+position = Vector2(-360.773, -177.606)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -78,6 +84,13 @@ shape = SubResource("RectangleShape2D_ksju7")
 [node name="FoodSpawner" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(544.08, 62.5631)
 curve = SubResource("Curve2D_nsrm0")
+spawn_time = 0.2
+y_range = Vector2(-800, -500)
+x_range = Vector2(-300, 300)
+
+[node name="FoodSpawner2" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(2925, 63)
+curve = SubResource("Curve2D_dga24")
 spawn_time = 0.2
 y_range = Vector2(-800, -500)
 x_range = Vector2(-300, 300)
