@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4gmd4bgevkmw"]
+[gd_scene load_steps=3 format=3 uid="uid://b4gmd4bgevkmw"]
 
 [ext_resource type="Script" uid="uid://dt0uchgv666pu" path="res://scenes/level_objects/hazards/single_shooter.gd" id="1_xkrpk"]
+
+[sub_resource type="Gradient" id="Gradient_xkrpk"]
+colors = PackedColorArray(1, 0, 1, 1, 1, 0, 1, 0)
 
 [node name="SingleShooter" type="Node2D"]
 script = ExtResource("1_xkrpk")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = -1
+width = 2.0
+gradient = SubResource("Gradient_xkrpk")
+texture_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
