@@ -1,6 +1,6 @@
 extends Path2D
 
-@export var spawn_time = 1.0
+@export var spawn_time = 0.4
 @export var y_range = Vector2(-300, -100)
 @export var x_range = Vector2(-30, 30)
 @export var spawn_item = preload("res://scenes/level_objects/assist/food.tscn")

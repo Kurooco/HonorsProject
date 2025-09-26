@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if(is_on_floor()):
-		jump_velocity = MAX_JUMP_VELOCITY
+		jump_velocity = MAX_JUMP_VELOCITY 
 		consecutive_bounces = 0
 	if(Input.is_action_just_pressed("jump") && jump_velocity <= 0):
 		velocity.y = jump_velocity
@@ -48,7 +48,8 @@ func _physics_process(delta):
 
 func _on_detection_area_area_entered(area):
 	if(area is Food):
-		velocity.y = MAX_JUMP_VELOCITY
+		if(!Input.is_action_pressed("dive")):
+			velocity.y = MAX_JUMP_VELOCITY
 		jump_velocity = MAX_JUMP_VELOCITY
 		area.jump_on()
 		consecutive_bounces += 1

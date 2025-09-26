@@ -5,6 +5,7 @@ var current_level = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 
 func _process(delta):
@@ -15,4 +16,5 @@ func set_level(path: String):
 		remove_child(current_level)
 		current_level.queue_free()
 	var new_level = load(path).instantiate()
+	current_level = new_level
 	add_child(new_level)
