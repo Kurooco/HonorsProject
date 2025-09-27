@@ -16,4 +16,9 @@ friendly = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
 shape = SubResource("RectangleShape2D_u4ncm")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, -2)
+scale = Vector2(2.15, 2)
+
 [connection signal="attacked" from="WeaponArea" to="." method="_on_weapon_area_attacked"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
