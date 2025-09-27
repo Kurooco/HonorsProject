@@ -20,7 +20,7 @@ func _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * (acorns/3 + 1)
+		velocity += get_gravity() * delta #* (acorns/6 + 1)
 	var relative_position = position - get_viewport().get_camera_2d().position
 	if(relative_position.y < -get_viewport_rect().size.y/2):
 		velocity += get_gravity() * delta * 2
@@ -46,7 +46,7 @@ func _physics_process(delta):
 	else:
 		modulate = Color.WHITE
 		
-	if(Input.is_action_just_pressed("shoot")): #&& acorns > 0):
+	if(Input.is_action_just_pressed("shoot") && acorns > 0):
 		shoot_acorn(last_direction)
 	
 	move_and_slide()
@@ -60,7 +60,7 @@ func _on_detection_area_area_entered(area):
 		area.jump_on()
 		consecutive_bounces += 1
 		$PointAwarder.award_points(10*min(consecutive_bounces, 10))
-	elif(area is Acorn && Input.is_action_pressed("shoot") && acorns < max_acorns):
+	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
 
