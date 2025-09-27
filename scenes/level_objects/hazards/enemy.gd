@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 25.0
+const SPEED = 45.0
+const ATTACK_SPEED = 25
 const MAX_JUMP_VELOCITY = -500.0
 const JUMP_VELOCITY_DECLINE = 100
 const BOUNCE_VELOCITY = -400
@@ -10,9 +11,11 @@ var jump_velocity = MAX_JUMP_VELOCITY
 var consecutive_bounces = 0
 var acorns = 0
 var can_jump = true
+var current_speed = SPEED
+var on_screen = false
 
 func _ready():
-	set_process(false)
+	set_physics_process(false)
 
 func _physics_process(delta):
 	var target = null
@@ -24,8 +27,10 @@ func _physics_process(delta):
 				min_dist = global_position.distance_to(i.global_position)
 				closest_food = i
 		target = closest_food
+		current_speed = SPEED
 	else:
 		target = Autoload.player
+		current_speed = ATTACK_SPEED
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -47,9 +52,13 @@ func _physics_process(delta):
 		# Move left and right
 		var direction = abs(target.position.x - position.x)/(target.position.x - position.x)
 		if direction:
-			velocity.x += direction * SPEED
-		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.05, delta))
-	
+			velocity.x += direction * current_speed
+		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
+		
+		#Avoid other enemies
+		for enemy in get_tree().get_nodes_in_group("enemy"):
+			if(enemy.on_screen && enemy != self):
+				velocity += (position - enemy.position)/(position.distance_squared_to(enemy.position)*5)
 	
 	move_and_slide()
 
@@ -66,4 +75,5 @@ func _on_jump_timer_timeout():
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	set_process(true)
+	set_physics_process(true)
+	on_screen = true

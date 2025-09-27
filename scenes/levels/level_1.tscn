@@ -92,6 +92,7 @@ x_range = Vector2(-300, 300)
 [node name="FoodSpawner2" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(2925, 63)
 curve = SubResource("Curve2D_dga24")
+spawn_time = 0.2
 y_range = Vector2(-800, -500)
 x_range = Vector2(-300, 300)
 
@@ -137,4 +138,19 @@ scene = ExtResource("9_dga24")
 velocity = Vector2(-500, -300)
 
 [node name="Enemy" parent="." instance=ExtResource("10_qxy0u")]
-position = Vector2(1244, -154)
+position = Vector2(1090, -183)
+
+[node name="Enemy2" parent="." instance=ExtResource("10_qxy0u")]
+position = Vector2(774, -134)
+
+[node name="Enemy3" parent="." instance=ExtResource("10_qxy0u")]
+position = Vector2(2887, -178)
+
+[node name="Enemy4" parent="." instance=ExtResource("10_qxy0u")]
+position = Vector2(3020, 68)
+
+[node name="Enemy5" parent="." instance=ExtResource("10_qxy0u")]
+position = Vector2(2544.33, 67.933)
+
+[node name="Enemy6" parent="." instance=ExtResource("10_qxy0u")]
+position = Vector2(3216.35, -78.2208)
