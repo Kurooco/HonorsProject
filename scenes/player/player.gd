@@ -7,7 +7,9 @@ const JUMP_VELOCITY_DECLINE = 80
 const BOUNCE_VELOCITY = -400
 
 var jump_velocity = MAX_JUMP_VELOCITY
+var last_direction = 1
 var consecutive_bounces = 0
+var max_acorns = 3
 var acorns = 0
 @onready var health_component = $HealthComponent
 
@@ -35,6 +37,7 @@ func _physics_process(delta):
 	# Move left and right
 	var direction = Input.get_axis("left", "right")
 	if direction:
+		last_direction = direction
 		velocity.x += direction * SPEED
 	velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
 	
@@ -42,6 +45,9 @@ func _physics_process(delta):
 		modulate = Color(1, 1, 1, .5)
 	else:
 		modulate = Color.WHITE
+		
+	if(Input.is_action_just_pressed("shoot")): #&& acorns > 0):
+		shoot_acorn(last_direction)
 	
 	move_and_slide()
 
@@ -54,6 +60,13 @@ func _on_detection_area_area_entered(area):
 		area.jump_on()
 		consecutive_bounces += 1
 		$PointAwarder.award_points(10*min(consecutive_bounces, 10))
-	elif(area is Acorn && Input.is_action_pressed("shoot")):
+	elif(area is Acorn && Input.is_action_pressed("shoot") && acorns < max_acorns):
 		area.collect()
 		acorns += 1
+
+func shoot_acorn(dir):
+	var new_acorn = load("res://scenes/player/acorn_projectile.tscn").instantiate()
+	new_acorn.direction = dir
+	new_acorn.global_position = global_position
+	Autoload.level_handler.current_level.add_child(new_acorn)
+	acorns -= 1

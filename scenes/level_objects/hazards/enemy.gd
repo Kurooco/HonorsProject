@@ -58,7 +58,7 @@ func _physics_process(delta):
 		#Avoid other enemies
 		for enemy in get_tree().get_nodes_in_group("enemy"):
 			if(enemy.on_screen && enemy != self):
-				velocity += (position - enemy.position)/(position.distance_squared_to(enemy.position)*5)
+				velocity += (position - enemy.position)/(position.distance_squared_to(enemy.position)*.001)
 	
 	move_and_slide()
 

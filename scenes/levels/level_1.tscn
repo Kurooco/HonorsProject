@@ -140,17 +140,20 @@ velocity = Vector2(-500, -300)
 [node name="Enemy" parent="." instance=ExtResource("10_qxy0u")]
 position = Vector2(1090, -183)
 
-[node name="Enemy2" parent="." instance=ExtResource("10_qxy0u")]
-position = Vector2(774, -134)
-
-[node name="Enemy3" parent="." instance=ExtResource("10_qxy0u")]
-position = Vector2(2887, -178)
-
-[node name="Enemy4" parent="." instance=ExtResource("10_qxy0u")]
-position = Vector2(3020, 68)
-
 [node name="Enemy5" parent="." instance=ExtResource("10_qxy0u")]
 position = Vector2(2544.33, 67.933)
 
 [node name="Enemy6" parent="." instance=ExtResource("10_qxy0u")]
 position = Vector2(3216.35, -78.2208)
+
+[node name="SingleShooter3" parent="." instance=ExtResource("8_s8va5")]
+position = Vector2(2384.7, 393.369)
+scene = ExtResource("5_sk5k4")
+velocity = Vector2(-40, -700)
+delay = 0.2
+
+[node name="SingleShooter4" parent="." instance=ExtResource("8_s8va5")]
+position = Vector2(13.5396, 377.779)
+scene = ExtResource("5_sk5k4")
+velocity = Vector2(-40, -700)
+delay = 0.5

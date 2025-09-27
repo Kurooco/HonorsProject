@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://car5sxy6gpfc"]
+[gd_scene load_steps=11 format=3 uid="uid://car5sxy6gpfc"]
 
 [ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/apple.png" id="1_ga6pt"]
 [ext_resource type="Script" uid="uid://deal2cwf0qygb" path="res://scenes/level_objects/hazards/enemy.gd" id="1_kuaqs"]
+[ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_2xud0"]
+[ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_bbkmn"]
+[ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_5ky15"]
+[ext_resource type="PackedScene" uid="uid://mis4ukjv3ob3" path="res://scenes/components/death_handler.tscn" id="6_5sfx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuaqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xud0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d4ng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laihp"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 0
@@ -27,6 +35,24 @@ shape = SubResource("RectangleShape2D_2xud0")
 wait_time = 0.3
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="WeaponArea" parent="." instance=ExtResource("3_2xud0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
+shape = SubResource("RectangleShape2D_8d4ng")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_bbkmn")]
+max_health = 1
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_5ky15")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_laihp")
+
+[node name="DeathHandler" parent="." node_paths=PackedStringArray("scene_root", "health_component") instance=ExtResource("6_5sfx2")]
+scene_root = NodePath("..")
+health_component = NodePath("../HealthComponent")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

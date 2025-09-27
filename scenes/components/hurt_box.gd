@@ -13,12 +13,14 @@ func _ready():
 	$InvinciblityTimer.wait_time = invincible_time
 	
 
-func damage(amount:int):
+func damage(amount:int) -> bool:
 	if(!currently_invincible):
 		hurt.emit()
 		health_component.hurt(amount)
 		currently_invincible = true
 		$InvinciblityTimer.start()
+		return true
+	return false
 	
 
 func _on_invinciblity_timer_timeout():

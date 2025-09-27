@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=6 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://ctkfbpows8frn" path="res://scenes/levels/level_1.tscn" id="2_71i82"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="4_d5bor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71i82"]
 bg_color = Color(1, 0.18939, 0.298565, 1)
@@ -37,3 +38,14 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Points: 0"
 horizontal_alignment = 2
+
+[node name="AcornProgress" type="TextureProgressBar" parent="HUD"]
+offset_left = 157.0
+offset_top = 7.0
+offset_right = 306.0
+offset_bottom = 57.0
+value = 50.0
+texture_under = ExtResource("4_d5bor")
+texture_progress = ExtResource("4_d5bor")
+tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
+tint_progress = Color(0.724643, 0.724643, 0.724643, 1)

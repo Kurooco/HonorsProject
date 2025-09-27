@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3e2gvt3gew0g"]
+
+[ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="1_0aaw5"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="1_7won4"]
+[ext_resource type="Script" uid="uid://d0j6yhtl3hu52" path="res://scenes/player/acorn_projectile.gd" id="2_0vk6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ncm"]
+
+[node name="AcornProjectile" type="Sprite2D"]
+texture = ExtResource("1_7won4")
+script = ExtResource("2_0vk6t")
+
+[node name="WeaponArea" parent="." instance=ExtResource("1_0aaw5")]
+friendly = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
+shape = SubResource("RectangleShape2D_u4ncm")
+
+[connection signal="attacked" from="WeaponArea" to="." method="_on_weapon_area_attacked"]
