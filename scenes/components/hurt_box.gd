@@ -11,15 +11,17 @@ signal became_vulnerable
 signal hurt
 
 func _ready():
-	$InvinciblityTimer.wait_time = invincible_time
+	if(invincible_time > 0):
+		$InvinciblityTimer.wait_time = invincible_time
 	
 
 func damage(amount:int, impact:Vector2) -> bool:
 	if(!currently_invincible):
 		hurt.emit()
 		health_component.hurt(amount)
-		currently_invincible = true
-		$InvinciblityTimer.start()
+		if(invincible_time > 0):
+			currently_invincible = true
+			$InvinciblityTimer.start()
 		if(is_instance_valid(impact_reciever) && impact_reciever.has_method("apply_impact")):
 			impact_reciever.apply_impact(impact)
 		return true

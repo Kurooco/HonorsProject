@@ -2,6 +2,7 @@ extends Area2D
 class_name Collectable
 
 @export var particles : CPUParticles2D
+@export var autocollect : bool
 
 signal collected
 

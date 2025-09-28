@@ -49,3 +49,12 @@ texture_under = ExtResource("4_d5bor")
 texture_progress = ExtResource("4_d5bor")
 tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
 tint_progress = Color(0.724643, 0.724643, 0.724643, 1)
+
+[node name="FadeCanvas" type="CanvasLayer" parent="."]
+
+[node name="Fade" type="ColorRect" parent="FadeCanvas"]
+offset_left = -85.0
+offset_top = -56.0
+offset_right = 1268.0
+offset_bottom = 751.0
+color = Color(0, 0, 0, 0)

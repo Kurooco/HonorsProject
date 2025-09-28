@@ -9,7 +9,7 @@ const BOUNCE_VELOCITY = -400
 var jump_velocity = MAX_JUMP_VELOCITY
 var last_direction = 1
 var consecutive_bounces = 0
-var max_acorns = 3
+var max_acorns = 5
 var acorns = 0
 var impact = Vector2.ZERO
 @onready var health_component = $HealthComponent
@@ -25,7 +25,10 @@ func _physics_process(delta):
 	var relative_position = position - get_viewport().get_camera_2d().position
 	if(relative_position.y < -get_viewport_rect().size.y/2):
 		velocity += get_gravity() * delta * 2
-		
+	if(position.y > get_viewport().get_camera_2d().position.y + get_viewport_rect().size.y/2.0):
+		$HealthComponent.kill()
+		set_physics_process(false)
+	
 	# Apply impact from enemies
 	if(impact != Vector2.ZERO):
 		velocity += impact
@@ -69,7 +72,7 @@ func _on_detection_area_area_entered(area):
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
-	elif(area is Collectable):
+	elif(area is Collectable && area.autocollect):
 		area.collect()
 
 func shoot_acorn(dir):
@@ -81,3 +84,8 @@ func shoot_acorn(dir):
 
 func apply_impact(i: Vector2):
 	impact += i
+
+
+func _on_health_component_killed():
+	hide()
+	Autoload.level_handler.restart_level()

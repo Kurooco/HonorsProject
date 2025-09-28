@@ -53,6 +53,7 @@ max_health = 2
 
 [node name="HurtBox" parent="." node_paths=PackedStringArray("health_component", "impact_reciever") instance=ExtResource("5_5ky15")]
 health_component = NodePath("../HealthComponent")
+invincible_time = 0.0
 impact_reciever = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

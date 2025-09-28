@@ -45,3 +45,4 @@ impact_reciever = NodePath("..")
 shape = SubResource("RectangleShape2D_p47bc")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="killed" from="HealthComponent" to="." method="_on_health_component_killed"]
