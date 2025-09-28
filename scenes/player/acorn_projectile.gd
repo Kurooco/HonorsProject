@@ -8,6 +8,7 @@ var speed = 600
 func _process(delta):
 	position.x += speed*delta*direction
 	rotation += 5*delta
+	$WeaponArea.impact = Vector2(direction*speed*2, 0)
 
 
 func _on_weapon_area_attacked():

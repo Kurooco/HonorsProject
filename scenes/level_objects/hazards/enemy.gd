@@ -13,6 +13,7 @@ var acorns = 0
 var can_jump = true
 var current_speed = SPEED
 var on_screen = false
+var impact = Vector2.ZERO
 
 func _ready():
 	set_physics_process(false)
@@ -33,6 +34,11 @@ func _physics_process(delta):
 		target = Autoload.player
 		current_speed = ATTACK_SPEED
 		
+	# Apply impact from enemies
+	if(impact != Vector2.ZERO):
+		velocity += impact
+		impact = Vector2.ZERO
+		
 	# Update impact
 	$WeaponArea.impact = Vector2(velocity.x * 20, 0)
 	
@@ -47,7 +53,7 @@ func _physics_process(delta):
 		# Handle jump.
 		if(is_on_floor()):
 			jump_velocity = MAX_JUMP_VELOCITY 
-		if(target.position.y < position.y && jump_velocity <= 0 && can_jump):
+		if(target.position.y < position.y-50 && jump_velocity <= 0 && can_jump):
 			velocity.y = jump_velocity
 			jump_velocity += JUMP_VELOCITY_DECLINE
 			can_jump = false
@@ -81,3 +87,6 @@ func _on_jump_timer_timeout():
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	set_physics_process(true)
 	on_screen = true
+
+func apply_impact(i: Vector2):
+	impact += i

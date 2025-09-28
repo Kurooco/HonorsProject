@@ -11,7 +11,6 @@ func _ready():
 
 func die():
 	if(point_worth > 0):
-		print("award")
 		await $PointAwarder.award_points(point_worth)
 	scene_root.queue_free()
 	
