@@ -63,6 +63,8 @@ func _on_detection_area_area_entered(area):
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
+	elif(area is Collectable):
+		area.collect()
 
 func shoot_acorn(dir):
 	var new_acorn = load("res://scenes/player/acorn_projectile.tscn").instantiate()

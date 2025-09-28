@@ -9,5 +9,7 @@ func collect():
 	if(is_instance_valid(particles)):
 		remove_child(particles)
 		particles.global_position = global_position
-		get_tree().current_scene.add_child(particles)
+		particles.one_shot = true
+		particles.emitting = true
+		Autoload.level_handler.add_child(particles)
 	collected.emit()

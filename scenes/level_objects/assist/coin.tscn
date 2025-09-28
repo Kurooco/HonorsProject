@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://dy0npjdr7t23n"]
+
+[ext_resource type="PackedScene" uid="uid://cr4ob4hn7hybp" path="res://scenes/player/collectable.tscn" id="1_yop0g"]
+[ext_resource type="Script" uid="uid://cbp5xyifv2mkf" path="res://scenes/level_objects/assist/coin.gd" id="2_cf24c"]
+[ext_resource type="Texture2D" uid="uid://b5mjg84vx8vn4" path="res://art/coin.png" id="2_dxdg0"]
+[ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="4_aqels"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/white_sparkle.png" id="5_aqels"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu0rm"]
+atlas = ExtResource("2_dxdg0")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j23c4"]
+atlas = ExtResource("2_dxdg0")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42d43"]
+atlas = ExtResource("2_dxdg0")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_833tn"]
+atlas = ExtResource("2_dxdg0")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbybq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu0rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j23c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42d43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_833tn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvfm5"]
+
+[sub_resource type="Gradient" id="Gradient_bsup6"]
+offsets = PackedFloat32Array(0, 0.34, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Coin" node_paths=PackedStringArray("particles") instance=ExtResource("1_yop0g")]
+script = ExtResource("2_cf24c")
+particles = NodePath("CPUParticles2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-2, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wbybq")
+autoplay = "default"
+frame_progress = 0.201794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_kvfm5")
+
+[node name="PointAwarder" parent="." index="2" instance=ExtResource("4_aqels")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3"]
+emitting = false
+amount = 4
+texture = ExtResource("5_aqels")
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.9
+direction = Vector2(0, -5)
+spread = 43.18
+initial_velocity_max = 303.03
+angular_velocity_min = -232.73
+angular_velocity_max = 174.55
+scale_amount_min = 0.8
+color_ramp = SubResource("Gradient_bsup6")
+
+[connection signal="collected" from="." to="." method="_on_collected"]
