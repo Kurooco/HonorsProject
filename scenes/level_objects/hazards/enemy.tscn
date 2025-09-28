@@ -39,6 +39,7 @@ wait_time = 0.3
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="WeaponArea" parent="." instance=ExtResource("3_2xud0")]
+impact = Vector2(-3000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
 shape = SubResource("RectangleShape2D_8d4ng")

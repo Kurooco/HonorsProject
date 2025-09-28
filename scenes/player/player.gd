@@ -11,6 +11,7 @@ var last_direction = 1
 var consecutive_bounces = 0
 var max_acorns = 3
 var acorns = 0
+var impact = Vector2.ZERO
 @onready var health_component = $HealthComponent
 
 func _ready():
@@ -24,6 +25,11 @@ func _physics_process(delta):
 	var relative_position = position - get_viewport().get_camera_2d().position
 	if(relative_position.y < -get_viewport_rect().size.y/2):
 		velocity += get_gravity() * delta * 2
+		
+	# Apply impact from enemies
+	if(impact != Vector2.ZERO):
+		velocity += impact
+		impact = Vector2.ZERO
 
 	# Handle jump.
 	if(is_on_floor()):
@@ -72,3 +78,6 @@ func shoot_acorn(dir):
 	new_acorn.global_position = global_position
 	Autoload.level_handler.current_level.add_child(new_acorn)
 	acorns -= 1
+
+func apply_impact(i: Vector2):
+	impact += i

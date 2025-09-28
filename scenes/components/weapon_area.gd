@@ -2,6 +2,7 @@ extends Area2D
 
 @export var damage : int = 1
 @export var friendly = false
+@export var impact : Vector2
 
 signal attacked
 
@@ -15,7 +16,7 @@ func attack_area(area):
 			area.became_vulnerable.disconnect(attack_area)
 			return
 		if(friendly != area.friendly):
-			var landed = area.damage(damage)
+			var landed = area.damage(damage, impact)
 			if(landed):
 				attacked.emit()
 			if(!area.became_vulnerable.is_connected(attack_area)):

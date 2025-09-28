@@ -35,10 +35,11 @@ debug_color = Color(0.979518, 0, 0.387373, 0.42)
 [node name="HealthComponent" parent="." instance=ExtResource("4_lvxji")]
 max_health = 3
 
-[node name="HurtBox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_p47bc")]
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health_component", "impact_reciever") instance=ExtResource("5_p47bc")]
 health_component = NodePath("../HealthComponent")
 friendly = true
 invincible_time = 1.0
+impact_reciever = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_p47bc")

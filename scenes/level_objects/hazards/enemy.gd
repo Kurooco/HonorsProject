@@ -18,6 +18,7 @@ func _ready():
 	set_physics_process(false)
 
 func _physics_process(delta):
+	# Find target
 	var target = null
 	if(jump_velocity > MAX_JUMP_VELOCITY/2):
 		var min_dist = INF
@@ -31,6 +32,9 @@ func _physics_process(delta):
 	else:
 		target = Autoload.player
 		current_speed = ATTACK_SPEED
+		
+	# Update impact
+	$WeaponArea.impact = Vector2(velocity.x * 20, 0)
 	
 	# Add the gravity.
 	if not is_on_floor():
