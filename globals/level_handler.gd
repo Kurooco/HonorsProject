@@ -4,6 +4,7 @@ extends Node
 @onready var fade = $FadeCanvas/Fade
 var current_level : Node = null
 var fade_tween : Tween = null
+var check_point = Vector2.ZERO
 
 signal fade_ended
 
@@ -26,8 +27,21 @@ func restart_level():
 	fade_out()
 	await fade_ended
 	await get_tree().create_timer(1).timeout
-	set_level(current_level.scene_file_path)
+	if(is_instance_valid(current_level)):
+		remove_child(current_level)
+		current_level.queue_free()
+	var new_level = load(current_level.scene_file_path).instantiate()
+	current_level = new_level
+	
+	var player = get_node_in_group(current_level, "player")
+	var camera = get_node_in_group(current_level, "level_camera")
+	player.position = check_point
+	camera.position.x = check_point.x
+	for i in get_nodes_in_group(current_level, "checkpoint"):
+		if(i.position == check_point):
+			i.claim()
 	Autoload.run_points = Autoload.level_points
+	add_child(new_level)
 	fade_in()
 
 func fade_out(color=Color.BLACK):
@@ -44,3 +58,22 @@ func fade_in():
 	fade_tween = create_tween()
 	fade_tween.tween_property(fade, "color", transparent_color, 1)
 	fade_tween.tween_callback(fade_ended.emit)
+
+func get_node_in_group(node, group) -> Node:
+	var children : Array = node.get_children().duplicate()
+	for child in children:
+		if(child.is_in_group(group)):
+			return child
+		var group_child = get_node_in_group(child, group)
+		if(group_child != null):
+			return group_child
+	return null
+
+func get_nodes_in_group(node, group) -> Array[Node]:
+	var children : Array = node.get_children().duplicate()
+	var group_children : Array[Node] = []
+	for child in children:
+		if(child.is_in_group(group)):
+			group_children.append(child)
+		group_children.append_array(get_nodes_in_group(child, group))
+	return group_children

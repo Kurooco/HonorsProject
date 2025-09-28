@@ -12,6 +12,7 @@ var consecutive_bounces = 0
 var max_acorns = 5
 var acorns = 0
 var impact = Vector2.ZERO
+var waiting_for_start = true
 @onready var health_component = $HealthComponent
 
 func _ready():
@@ -19,6 +20,12 @@ func _ready():
 
 
 func _physics_process(delta):
+	if(Input.is_action_just_pressed("jump")):
+		waiting_for_start = false
+		get_tree().get_nodes_in_group("level_camera")[0].start()
+	if(waiting_for_start):
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta #* (acorns/6 + 1)
@@ -53,6 +60,15 @@ func _physics_process(delta):
 		velocity.x += direction * SPEED
 	velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
 	
+	# Handle Interactions
+	if(Input.is_action_just_pressed("interact")):
+		activate_interactive_areas()
+	var areas_inside = false
+	for area in $DetectionArea.get_overlapping_areas():
+		if(area is InteractionArea && area.show_prompt && !area.activated_since_entering):
+			areas_inside = true
+	#$InteractionPrompt.visible = areas_inside
+	
 	if($HurtBox.currently_invincible):
 		modulate = Color(1, 1, 1, .5)
 	else:
@@ -65,6 +81,8 @@ func _physics_process(delta):
 
 
 func _on_detection_area_area_entered(area):
+	if(waiting_for_start):
+		return
 	if(area is Food):
 		if(!Input.is_action_pressed("dive")):
 			velocity.y = MAX_JUMP_VELOCITY
@@ -75,8 +93,15 @@ func _on_detection_area_area_entered(area):
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
+	elif(area is InteractionArea):
+		area.enter()
 	elif(area is Collectable && area.autocollect):
 		area.collect()
+
+
+func _on_detection_area_area_exited(area):
+	if(area is InteractionArea):
+		area.exit()
 
 
 func shoot_acorn(dir):
@@ -94,3 +119,9 @@ func apply_impact(i: Vector2):
 func _on_health_component_killed():
 	hide()
 	Autoload.level_handler.restart_level()
+
+
+func activate_interactive_areas():
+	for area in $InteractionArea.get_overlapping_areas():
+		if(area is InteractionArea):
+			area.activate()
