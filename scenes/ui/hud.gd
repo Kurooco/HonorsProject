@@ -9,7 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Autoload.run_points)
 	$ProgressBar.value = (Autoload.player.health_component.health/float(Autoload.player.health_component.max_health))*100
 	displayed_points = lerp(displayed_points, float(Autoload.run_points), 1 - pow(.05, delta))
 	$Points.text = "Points: "+str(int(round(displayed_points)))

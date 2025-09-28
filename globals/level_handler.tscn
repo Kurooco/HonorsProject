@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
-[ext_resource type="PackedScene" uid="uid://ctkfbpows8frn" path="res://scenes/levels/test_level.tscn" id="2_71i82"]
+[ext_resource type="PackedScene" uid="uid://nkcwknm2y4tw" path="res://scenes/levels/level_1.tscn" id="2_d5bor"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="4_d5bor"]
 
@@ -14,7 +14,7 @@ border_width_bottom = 5
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("2_71i82")
+opening_scene = ExtResource("2_d5bor")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")

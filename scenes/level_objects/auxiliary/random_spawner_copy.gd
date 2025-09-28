@@ -1,8 +1,8 @@
 extends Path2D
 
 @export var spawn_time = .5
-@export var y_range = Vector2(-300, -100)
-@export var x_range = Vector2(-30, 30)
+@export var y_range = Vector2(-800, -500)
+@export var x_range = Vector2(-300, 300)
 @export var spawn_item = preload("res://scenes/level_objects/assist/food.tscn")
 @export var disabled = false
 
@@ -38,8 +38,9 @@ func _process(delta):
 	var new_food = spawn_item.instantiate()
 	var arc_mover = get_arc_mover(new_food)
 	new_food.global_position = $PathFollow2D.global_position
+	var relative_position_ratio = ($PathFollow2D.position.x - get_viewport().get_camera_2d().position.x)/get_viewport_rect().size.x
 	arc_mover.velocity.y = randf_range(y_range.x, y_range.y)
-	arc_mover.velocity.x = randf_range(x_range.x, x_range.y)
+	arc_mover.velocity.x = randf_range(0 if relative_position_ratio < -.3 else x_range.x, 0 if relative_position_ratio > .3 else x_range.y)
 	get_tree().current_scene.add_child(new_food)
 	
 	

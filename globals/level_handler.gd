@@ -29,7 +29,6 @@ func restart_level():
 	set_level(current_level.scene_file_path)
 	Autoload.run_points = Autoload.level_points
 	fade_in()
-	await fade_ended
 
 func fade_out(color=Color.BLACK):
 	if(is_instance_valid(fade_tween)):

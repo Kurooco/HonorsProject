@@ -25,7 +25,10 @@ func _physics_process(delta):
 	var relative_position = position - get_viewport().get_camera_2d().position
 	if(relative_position.y < -get_viewport_rect().size.y/2):
 		velocity += get_gravity() * delta * 2
-	if(position.y > get_viewport().get_camera_2d().position.y + get_viewport_rect().size.y/2.0):
+	
+	# Out of bounds death
+	if(position.y > get_viewport().get_camera_2d().position.y + get_viewport_rect().size.y/2.0
+		|| position.x < get_viewport().get_camera_2d().position.x - get_viewport_rect().size.x):
 		$HealthComponent.kill()
 		set_physics_process(false)
 	
