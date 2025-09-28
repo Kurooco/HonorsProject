@@ -75,12 +75,14 @@ func _on_detection_area_area_entered(area):
 	elif(area is Collectable && area.autocollect):
 		area.collect()
 
+
 func shoot_acorn(dir):
 	var new_acorn = load("res://scenes/player/acorn_projectile.tscn").instantiate()
 	new_acorn.direction = dir
 	new_acorn.global_position = global_position
 	Autoload.level_handler.current_level.add_child(new_acorn)
 	acorns -= 1
+
 
 func apply_impact(i: Vector2):
 	impact += i

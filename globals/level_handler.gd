@@ -27,6 +27,7 @@ func restart_level():
 	await fade_ended
 	await get_tree().create_timer(1).timeout
 	set_level(current_level.scene_file_path)
+	Autoload.run_points = Autoload.level_points
 	fade_in()
 	await fade_ended
 
