@@ -122,6 +122,6 @@ func _on_health_component_killed():
 
 
 func activate_interactive_areas():
-	for area in $InteractionArea.get_overlapping_areas():
+	for area in $DetectionArea.get_overlapping_areas():
 		if(area is InteractionArea):
 			area.activate()

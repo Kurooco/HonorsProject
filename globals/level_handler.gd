@@ -20,10 +20,13 @@ func set_level(path: String):
 		current_level.queue_free()
 	var new_level = load(path).instantiate()
 	current_level = new_level
+	var player = get_node_in_group(current_level, "player")
+	check_point = player.position
 	add_child(new_level)
 
 
 func restart_level():
+	print("restart")
 	fade_out()
 	await fade_ended
 	await get_tree().create_timer(1).timeout
@@ -42,6 +45,7 @@ func restart_level():
 			i.claim()
 	Autoload.run_points = Autoload.level_points
 	add_child(new_level)
+	
 	fade_in()
 
 func fade_out(color=Color.BLACK):

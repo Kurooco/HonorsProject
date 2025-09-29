@@ -16,8 +16,9 @@ func hurt(amount: int):
 	health = max(0, health-amount)
 
 func kill():
-	health = 0
-	killed.emit()
+	if(health > 0):
+		health = 0
+		killed.emit()
 
 func revive(amount: int):
 	health = min(max_health, health+amount)
