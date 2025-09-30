@@ -12,7 +12,8 @@ var consecutive_bounces = 0
 var max_acorns = 5
 var acorns = 0
 var impact = Vector2.ZERO
-var waiting_for_start = true
+@export var waiting_for_start = true
+@export var in_rest_level = false
 @onready var health_component = $HealthComponent
 
 func _ready():
@@ -20,7 +21,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if(Input.is_action_just_pressed("jump")):
+	if(Input.is_action_just_pressed("jump") && waiting_for_start):
 		waiting_for_start = false
 		get_tree().get_nodes_in_group("level_camera")[0].start()
 	if(waiting_for_start):
@@ -34,7 +35,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta * 2
 	
 	# Out of bounds death
-	if(position.y > get_viewport().get_camera_2d().position.y + get_viewport_rect().size.y/2.0
+	if(!in_rest_level && global_position.y > get_viewport().get_camera_2d().global_position.y + get_viewport_rect().size.y/2.0
 		|| position.x < get_viewport().get_camera_2d().position.x - get_viewport_rect().size.x):
 		$HealthComponent.kill()
 		set_physics_process(false)
