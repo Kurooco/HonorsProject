@@ -68,7 +68,7 @@ func _physics_process(delta):
 	for area in $DetectionArea.get_overlapping_areas():
 		if(area is InteractionArea && area.show_prompt && !area.activated_since_entering):
 			areas_inside = true
-	#$InteractionPrompt.visible = areas_inside
+	$Prompt.visible = areas_inside
 	
 	if($HurtBox.currently_invincible):
 		modulate = Color(1, 1, 1, .5)
