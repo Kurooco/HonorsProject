@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cknpb7qewaitc"]
+[gd_scene load_steps=4 format=3 uid="uid://cknpb7qewaitc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_n71rw"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_7ktey"]
+[ext_resource type="Script" uid="uid://pb0u4cra7uok" path="res://scenes/levels/rest_camera.gd" id="3_7ktey"]
 
 [node name="Rest1" type="Node2D"]
 script = ExtResource("1_n71rw")
@@ -12,12 +13,35 @@ metadata/_edit_group_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(272, 488)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-704, 728)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(128, 928)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
 
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
 position = Vector2(24, -37)
 waiting_for_start = false
+in_rest_level = true
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(24, -37)
 process_callback = 0
 position_smoothing_enabled = true
+script = ExtResource("3_7ktey")
+player = NodePath("../Player")
