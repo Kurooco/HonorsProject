@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cknpb7qewaitc"]
+[gd_scene load_steps=7 format=3 uid="uid://cknpb7qewaitc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_n71rw"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_7ktey"]
 [ext_resource type="Script" uid="uid://pb0u4cra7uok" path="res://scenes/levels/rest_camera.gd" id="3_7ktey"]
+[ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="4_7ewig"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="5_ttr3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxap"]
 
 [node name="Rest1" type="Node2D"]
 script = ExtResource("1_n71rw")
@@ -45,3 +49,15 @@ process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("3_7ktey")
 player = NodePath("../Player")
+
+[node name="DialogueArea" parent="." instance=ExtResource("4_7ewig")]
+position = Vector2(66.8079, 217.734)
+timeline = "test"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueArea"]
+position = Vector2(-2.03393, 2.03393)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("5_ttr3h")
