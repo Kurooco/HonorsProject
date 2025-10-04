@@ -25,7 +25,7 @@ func _process(delta):
 		if(is_instance_valid(x_move_tween)):
 			x_move_tween.kill()
 		x_move_tween = create_tween()
-		x_move_tween.tween_property(self, "position", current_position, .2).set_trans(Tween.TRANS_CIRC)
+		x_move_tween.tween_property(self, "position", current_position, .1).set_trans(Tween.TRANS_CIRC)
 	
 	if(abs(player.position.y - current_position.y) > screen_height/2):
 		current_position.y = round(player.position.y/screen_height) * screen_height
@@ -35,4 +35,4 @@ func _process(delta):
 		if(is_instance_valid(x_move_tween)):
 			x_move_tween.kill()
 		x_move_tween = create_tween()
-		x_move_tween.tween_property(self, "position", current_position, .2).set_trans(Tween.TRANS_CIRC)
+		x_move_tween.tween_property(self, "position", current_position, .1).set_trans(Tween.TRANS_CIRC)
