@@ -50,6 +50,7 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Coin" node_paths=PackedStringArray("particles") instance=ExtResource("1_yop0g")]
 script = ExtResource("2_cf24c")
+value = 1
 particles = NodePath("CPUParticles2D")
 autocollect = true
 

@@ -1,0 +1,11 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://bxu6sypduh0x"]
+
+[ext_resource type="PackedScene" uid="uid://dy0npjdr7t23n" path="res://scenes/level_objects/assist/coin.tscn" id="1_w1trn"]
+[ext_resource type="PackedScene" uid="uid://c44if7m5d06h6" path="res://scenes/level_objects/assist/big_coin.tscn" id="2_kga13"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nsrm0"]
+scenes/1/scene = ExtResource("1_w1trn")
+scenes/2/scene = ExtResource("2_kga13")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_nsrm0")

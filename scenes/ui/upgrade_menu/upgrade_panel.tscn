@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjckwaep170m5"]
+
+[ext_resource type="Script" uid="uid://bblpxvxyf475c" path="res://scenes/ui/upgrade_menu/upgrade_panel.gd" id="1_vp4hv"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_obj17"]
+
+[node name="UpgradePanel" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 140)
+offset_right = 147.0
+offset_bottom = 60.0
+script = ExtResource("1_vp4hv")
+title = "Lives"
+icon = ExtResource("2_obj17")
+description = "Lets you live longer"
+upgrade_var_name = "hi"
+cost_progrssion = Array[int]([10, 20, 30, 40])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jump LV1"
+horizontal_alignment = 1
+
+[node name="Progress" type="TextureProgressBar" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+fill_mode = 3
+texture_under = ExtResource("2_obj17")
+texture_progress = ExtResource("2_obj17")
+tint_under = Color(0.513233, 0.513233, 0.513233, 1)
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_obj17")
+expand_mode = 4
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Allows you to have more wing flaps while in midair."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Upgrade" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.5
+text = "50 SP"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
