@@ -2,6 +2,8 @@ extends Node
 
 @export var opening_scene : PackedScene
 @onready var fade = $FadeCanvas/Fade
+@onready var upgrade_menu = $UpgradeMenu
+
 var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
@@ -12,6 +14,7 @@ signal fade_ended
 func _ready():
 	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
+	Dialogic.signal_event.connect(handle_dialogic_signals)
 
 
 func set_level(path: String):
@@ -81,3 +84,8 @@ func get_nodes_in_group(node, group) -> Array[Node]:
 			group_children.append(child)
 		group_children.append_array(get_nodes_in_group(child, group))
 	return group_children
+
+func handle_dialogic_signals(name):
+	match name:
+		"upgrade_menu":
+			upgrade_menu.visible = !upgrade_menu.visible

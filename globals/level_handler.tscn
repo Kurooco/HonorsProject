@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=7 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="2_d5bor"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="4_d5bor"]
+[ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71i82"]
 bg_color = Color(1, 0.18939, 0.298565, 1)
@@ -58,3 +59,6 @@ offset_top = -56.0
 offset_right = 1268.0
 offset_bottom = 751.0
 color = Color(0, 0, 0, 0)
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("5_bisso")]
+visible = false

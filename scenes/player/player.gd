@@ -3,21 +3,31 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 const MAX_JUMP_VELOCITY = -500.0
-const JUMP_VELOCITY_DECLINE = 80
 const BOUNCE_VELOCITY = -400
 
 var jump_velocity = MAX_JUMP_VELOCITY
 var last_direction = 1
 var consecutive_bounces = 0
-var max_acorns = 5
 var acorns = 0
 var impact = Vector2.ZERO
+var disabled = false
+
+# base stats
+const BASE_MAX_ACORNS = 3
+const BASE_JUMP_VELOCITY_DECLINE = 80
+const BASE_MAX_LIVES = 3
+
+# current stats
+var max_acorns
+var jump_velocity_decline
+
 @export var waiting_for_start = true
 @export var in_rest_level = false
 @onready var health_component = $HealthComponent
 
 func _ready():
 	Autoload.player = self
+	update_stats()
 
 
 func _physics_process(delta):
@@ -49,17 +59,18 @@ func _physics_process(delta):
 	if(is_on_floor()):
 		jump_velocity = MAX_JUMP_VELOCITY 
 		consecutive_bounces = 0
-	if(Input.is_action_just_pressed("jump") && jump_velocity <= 0):
+	if(Input.is_action_just_pressed("jump") && jump_velocity <= 0 && !disabled && Dialogic.current_timeline == null):
 		velocity.y = jump_velocity
-		jump_velocity += JUMP_VELOCITY_DECLINE
+		jump_velocity += jump_velocity_decline
 		consecutive_bounces = 0
 
 	# Move left and right
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		last_direction = direction
-		velocity.x += direction * SPEED
-	velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
+	if(!disabled && Dialogic.current_timeline == null):
+		var direction = Input.get_axis("left", "right")
+		if direction:
+			last_direction = direction
+			velocity.x += direction * SPEED
+		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
 	
 	# Handle Interactions
 	if(Input.is_action_just_pressed("interact")):
@@ -78,11 +89,12 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("shoot") && acorns > 0):
 		shoot_acorn(last_direction)
 	
-	move_and_slide()
+	if(!disabled && Dialogic.current_timeline == null):
+		move_and_slide()
 
 
 func _on_detection_area_area_entered(area):
-	if(waiting_for_start):
+	if(waiting_for_start || disabled):
 		return
 	if(area is Food):
 		if(!Input.is_action_pressed("dive")):
@@ -126,3 +138,9 @@ func activate_interactive_areas():
 	for area in $DetectionArea.get_overlapping_areas():
 		if(area is InteractionArea):
 			area.activate()
+
+func update_stats():
+	health_component.max_health = BASE_MAX_LIVES + PlayerStats.lives
+	health_component.health = health_component.max_health
+	jump_velocity_decline = BASE_JUMP_VELOCITY_DECLINE + PlayerStats.jumps*-10
+	max_acorns = PlayerStats.acorns + BASE_MAX_ACORNS

@@ -7,6 +7,7 @@
 custom_minimum_size = Vector2(0, 140)
 offset_right = 147.0
 offset_bottom = 60.0
+size_flags_horizontal = 3
 script = ExtResource("1_vp4hv")
 title = "Lives"
 icon = ExtResource("2_obj17")
@@ -34,18 +35,12 @@ horizontal_alignment = 1
 [node name="Progress" type="TextureProgressBar" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 fill_mode = 3
 texture_under = ExtResource("2_obj17")
 texture_progress = ExtResource("2_obj17")
 tint_under = Color(0.513233, 0.513233, 0.513233, 1)
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_obj17")
-expand_mode = 4
 
 [node name="Description" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
