@@ -46,7 +46,7 @@ func restart_level():
 	for i in get_nodes_in_group(current_level, "checkpoint"):
 		if(i.position == check_point):
 			i.claim()
-	Autoload.run_points = Autoload.level_points
+	PlayerStats.run_points = PlayerStats.level_points
 	add_child(new_level)
 	
 	fade_in()

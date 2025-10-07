@@ -18,6 +18,13 @@ func _ready():
 	%Description.text = description
 	update_display()
 
+func _process(delta):
+	if(upgrades < upgrade_amount):
+		%Upgrade.text = str(cost_progrssion[upgrades]) + " SP"
+		%Upgrade.disabled = PlayerStats.total_points < cost_progrssion[upgrades]
+	else:
+		%Upgrade.text = "MAX"
+		%Upgrade.disabled = true
 
 func update_display():
 	%Title.text = title + " - LV" + str(upgrades+1)
@@ -25,13 +32,9 @@ func update_display():
 		progress_tween.kill()
 	progress_tween = create_tween()
 	progress_tween.tween_property(%Progress, "value", (float(upgrades)/upgrade_amount)*100, .5).set_trans(Tween.TRANS_QUART)
-	if(upgrades < upgrade_amount):
-		%Upgrade.text = str(cost_progrssion[upgrades]) + " SP"
-	else:
-		%Upgrade.text = "MAX"
-		%Upgrade.disabled = true
 
 func _on_upgrade_pressed():
+	PlayerStats.add_points_permanent(-cost_progrssion[upgrades])
 	upgrades += 1
 	PlayerStats.set(upgrade_var_name, PlayerStats.get(upgrade_var_name)+1)
 	PlayerStats.update_player_stats()

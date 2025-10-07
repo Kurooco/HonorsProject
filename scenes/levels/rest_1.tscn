@@ -87,7 +87,6 @@ polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
 position = Vector2(-752, -520)
 waiting_for_start = false
-in_rest_level = true
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 process_callback = 0

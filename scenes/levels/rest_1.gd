@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Autoload.in_rest_level = true
 	for child in get_children():
 		if child is StaticBody2D:
 			var col = child.get_children()[0]

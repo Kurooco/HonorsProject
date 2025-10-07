@@ -1,10 +1,8 @@
 extends Node
 
-var total_points = 0
-var level_points = 0
-var run_points = 0
 var player = null
 var level_handler = null
+var in_rest_level = false
 
 func set_player_disabled(e: bool):
 	player.disabled = e
