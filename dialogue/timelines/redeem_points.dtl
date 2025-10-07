@@ -1,0 +1,3 @@
+Hi there! What can I do for you?
+[signal arg="upgrade_menu"]
+do Autoload.set_player_disabled(true)
