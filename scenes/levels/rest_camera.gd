@@ -21,10 +21,10 @@ func _ready():
 func _process(delta):
 	var x_screen = round(player.position.x/screen_width) 
 	var y_screen = round(player.position.y/screen_height)
-	if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen > x_bounds.x && x_screen < x_bounds.y):
+	if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen >= x_bounds.x && x_screen <= x_bounds.y):
 		current_position.x = x_screen * screen_width
 		update_position()
-	if(abs(player.position.y - current_position.y) > screen_height/2 && y_screen > y_bounds.x && y_screen < y_bounds.y):
+	if(abs(player.position.y - current_position.y) > screen_height/2 && y_screen >= y_bounds.x && y_screen <= y_bounds.y):
 		current_position.y = y_screen * screen_height
 		update_position()
 

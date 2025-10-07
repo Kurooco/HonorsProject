@@ -93,8 +93,8 @@ process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("3_7ktey")
 player = NodePath("../Player")
-x_bounds = Vector2(-2, 2)
-y_bounds = Vector2(-2, 2)
+x_bounds = Vector2(-1, 1)
+y_bounds = Vector2(-1, 1)
 
 [node name="DialogueArea" parent="." instance=ExtResource("4_7ewig")]
 position = Vector2(-304.797, 443.97)
