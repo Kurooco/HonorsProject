@@ -8,6 +8,7 @@ var origin_point : Vector2
 var move_tween : Tween
 var screen_width : float
 var screen_height : float
+var out_of_bounds = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +28,12 @@ func _process(delta):
 	if(abs(player.position.y - current_position.y) > screen_height/2 && y_screen >= y_bounds.x && y_screen <= y_bounds.y):
 		current_position.y = y_screen * screen_height
 		update_position()
-
+	
+	#Out of bounds
+	if(y_screen > y_bounds.y && !out_of_bounds):
+		Autoload.level_handler.restart_level()
+		out_of_bounds = true
+		
 func update_position():
 	if(is_instance_valid(move_tween)):
 		move_tween.kill()
