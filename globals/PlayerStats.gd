@@ -15,7 +15,8 @@ func update_player_stats():
 func sync_points():
 	level_points = run_points
 	total_points = run_points
-	
+
+
 func add_points_permanent(amount: int):
 	run_points += amount
 	level_points = run_points

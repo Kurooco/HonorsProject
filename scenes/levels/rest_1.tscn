@@ -85,7 +85,7 @@ metadata/_edit_group_ = true
 polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.8965, 844.921, -21.8965)
 
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
-position = Vector2(-752, -520)
+position = Vector2(56, -120)
 waiting_for_start = false
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -93,6 +93,8 @@ process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("3_7ktey")
 player = NodePath("../Player")
+x_bounds = Vector2(-2, 2)
+y_bounds = Vector2(-2, 2)
 
 [node name="DialogueArea" parent="." instance=ExtResource("4_7ewig")]
 position = Vector2(-304.797, 443.97)
@@ -221,3 +223,54 @@ texture = ExtResource("6_wqxap")
 [node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D3"]
 tile_map_data = PackedByteArray("AAAIAPX/AAAAAAAAAgAHAPX/AAAAAAAAAgAGAPX/AAAAAAAAAgAFAPX/AAAAAAAAAgACAPX/AAAAAAAAAgADAPX/AAAAAAAAAgAEAPX/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_5cji3")
+
+[connection signal="collected" from="TileMapLayer/Coin" to="TileMapLayer/Coin" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45571" to="TileMapLayer/@Area2D@45571" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45572" to="TileMapLayer/@Area2D@45572" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45573" to="TileMapLayer/@Area2D@45573" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45574" to="TileMapLayer/@Area2D@45574" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45575" to="TileMapLayer/@Area2D@45575" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45576" to="TileMapLayer/@Area2D@45576" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45577" to="TileMapLayer/@Area2D@45577" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45578" to="TileMapLayer/@Area2D@45578" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45579" to="TileMapLayer/@Area2D@45579" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45580" to="TileMapLayer/@Area2D@45580" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45581" to="TileMapLayer/@Area2D@45581" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45582" to="TileMapLayer/@Area2D@45582" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45583" to="TileMapLayer/@Area2D@45583" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45584" to="TileMapLayer/@Area2D@45584" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45585" to="TileMapLayer/@Area2D@45585" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45586" to="TileMapLayer/@Area2D@45586" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45587" to="TileMapLayer/@Area2D@45587" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45588" to="TileMapLayer/@Area2D@45588" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45589" to="TileMapLayer/@Area2D@45589" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45590" to="TileMapLayer/@Area2D@45590" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45591" to="TileMapLayer/@Area2D@45591" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45592" to="TileMapLayer/@Area2D@45592" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45593" to="TileMapLayer/@Area2D@45593" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45594" to="TileMapLayer/@Area2D@45594" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45595" to="TileMapLayer/@Area2D@45595" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45596" to="TileMapLayer/@Area2D@45596" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45597" to="TileMapLayer/@Area2D@45597" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45598" to="TileMapLayer/@Area2D@45598" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45599" to="TileMapLayer/@Area2D@45599" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45600" to="TileMapLayer/@Area2D@45600" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45601" to="TileMapLayer/@Area2D@45601" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45602" to="TileMapLayer/@Area2D@45602" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45603" to="TileMapLayer/@Area2D@45603" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45604" to="TileMapLayer/@Area2D@45604" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45605" to="TileMapLayer/@Area2D@45605" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45606" to="TileMapLayer/@Area2D@45606" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45607" to="TileMapLayer/@Area2D@45607" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45608" to="TileMapLayer/@Area2D@45608" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45609" to="TileMapLayer/@Area2D@45609" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45610" to="TileMapLayer/@Area2D@45610" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45611" to="TileMapLayer/@Area2D@45611" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45612" to="TileMapLayer/@Area2D@45612" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45613" to="TileMapLayer/@Area2D@45613" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45614" to="TileMapLayer/@Area2D@45614" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45615" to="TileMapLayer/@Area2D@45615" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45616" to="TileMapLayer/@Area2D@45616" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45617" to="TileMapLayer/@Area2D@45617" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45618" to="TileMapLayer/@Area2D@45618" method="_on_collected"]
+[connection signal="collected" from="TileMapLayer/@Area2D@45619" to="TileMapLayer/@Area2D@45619" method="_on_collected"]
