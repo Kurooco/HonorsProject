@@ -1,11 +1,17 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://bxu6sypduh0x"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bxu6sypduh0x"]
 
-[ext_resource type="PackedScene" uid="uid://dy0npjdr7t23n" path="res://scenes/level_objects/assist/coin.tscn" id="1_w1trn"]
-[ext_resource type="PackedScene" uid="uid://c44if7m5d06h6" path="res://scenes/level_objects/assist/big_coin.tscn" id="2_kga13"]
+[ext_resource type="Texture2D" uid="uid://bnk4duoj7b0hm" path="res://art/coin_map.png" id="3_qsxyy"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nsrm0"]
-scenes/1/scene = ExtResource("1_w1trn")
-scenes/2/scene = ExtResource("2_kga13")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tj7g"]
+texture = ExtResource("3_qsxyy")
+1:0/size_in_atlas = Vector2i(2, 2)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(-8, -8)
+1:0/0/custom_data_0 = "res://scenes/level_objects/assist/big_coin.tscn"
+0:1/0 = 0
+0:1/0/custom_data_0 = "res://scenes/level_objects/assist/coin.tscn"
 
 [resource]
-sources/0 = SubResource("TileSetScenesCollectionSource_nsrm0")
+custom_data_layer_0/name = "scene_path"
+custom_data_layer_0/type = 4
+sources/1 = SubResource("TileSetAtlasSource_5tj7g")
