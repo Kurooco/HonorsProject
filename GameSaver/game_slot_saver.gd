@@ -89,8 +89,9 @@ const SAVE_ADDON_PATH = "res://GameSaver/save_addon.gd"
 ## Autoload singletons to be saved. Enter their name as they appear in the scene tree.
 @export var autoloads_to_save : Array[String]
 @export var screenshot_viewport : Node
+@export var save_screenshot : bool
 
-var slot_names = ["Slot 1", "Slot 2", "Slot 3"]
+var slot_names = ["Slot 1"]
 var meta_keys = ["scene_file_path", "$index", "$parent_index", "$autoload", "owner"]
 var child_delimiter = "$"
 var reference_key_name = "saved_node_references"
@@ -219,8 +220,9 @@ func save_game(slot: int, metadata: SaveMetadata = null):
 	if(slot > slot_names.size()):
 		push_error("Trying to save to invalid slot!")
 		return
-		
-	save_image()
+	
+	if(save_screenshot):
+		save_image()
 	save_autoloads(slot_names[slot])
 	
 	# Save metadata

@@ -127,6 +127,7 @@ func load_level():
 		if(item["scene_file_path"] != ""):
 			new_scene = load(item["scene_file_path"]).instantiate()
 		else:
+			print(item["class_of_object"])
 			new_scene = ClassDB.instantiate(item["class_of_object"])
 			new_scene.set("script", item["script"])
 		

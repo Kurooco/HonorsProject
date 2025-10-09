@@ -3,6 +3,7 @@ extends Node
 @export var opening_scene : PackedScene
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
+@onready var game_saver = $GameSaver
 
 var current_level : Node = null
 var fade_tween : Tween = null
@@ -23,6 +24,8 @@ func set_level(path: String):
 		current_level.queue_free()
 	var new_level = load(path).instantiate()
 	current_level = new_level
+	game_saver.world_scene = new_level
+	game_saver.save_level()
 	var player = get_node_in_group(current_level, "player")
 	check_point = player.position
 	add_child(new_level)
@@ -30,6 +33,7 @@ func set_level(path: String):
 
 func restart_level():
 	print("restart")
+	game_saver.save_level()
 	fade_out()
 	await fade_ended
 	await get_tree().create_timer(1).timeout
@@ -38,6 +42,8 @@ func restart_level():
 		current_level.queue_free()
 	var new_level = load(current_level.scene_file_path).instantiate()
 	current_level = new_level
+	game_saver.world_scene = new_level
+	game_saver.load_level()
 	
 	var player = get_node_in_group(current_level, "player")
 	var camera = get_node_in_group(current_level, "level_camera")
