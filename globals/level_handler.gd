@@ -33,7 +33,8 @@ func set_level(path: String):
 
 func restart_level():
 	print("restart")
-	game_saver.save_level()
+	if(Autoload.in_rest_level):
+		game_saver.save_level()
 	fade_out()
 	await fade_ended
 	await get_tree().create_timer(1).timeout
@@ -95,3 +96,7 @@ func handle_dialogic_signals(name):
 	match name:
 		"upgrade_menu":
 			upgrade_menu.visible = !upgrade_menu.visible
+
+func claim_checkpoint(p: Vector2):
+	check_point = p
+	game_saver.save_level()

@@ -6,6 +6,6 @@ func _on_activated():
 	
 func claim():
 	if(Autoload.level_handler.check_point != position):
-		Autoload.level_handler.check_point = position
-		Autoload.level_points = Autoload.run_points
+		Autoload.level_handler.claim_checkpoint(position)
+		PlayerStats.level_points = PlayerStats.run_points
 	$AnimatedSprite2D.frame = 1

@@ -148,6 +148,7 @@ func save_level():
 		DirAccess.make_dir_recursive_absolute(TEMPORARY_SAVE_DATA_PATH)
 	ResourceSaver.save(saved_game, TEMPORARY_SAVE_DATA_PATH+"/"+get_file_name(world_scene)+".tres")
 
+
 func load_level():
 	var saved_game = load(TEMPORARY_SAVE_DATA_PATH+"/"+get_file_name(world_scene)+".tres")
 	if(!is_instance_valid(saved_game)):

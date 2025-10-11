@@ -7,6 +7,8 @@ var loaded = false
 func _ready():
 	if(loaded):
 		return
+	if(!is_instance_valid(world_node)):
+		world_node = Autoload.level_handler.current_level
 	var tile_size = tile_set.tile_size;
 	for place in get_used_cells():
 		var path = get_cell_tile_data(place).get_custom_data("scene_path")
@@ -21,6 +23,7 @@ func _ready():
 
 func on_load():
 	loaded = true
+	clear()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
