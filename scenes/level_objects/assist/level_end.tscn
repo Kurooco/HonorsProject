@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3ppacagvb75p"]
+
+[ext_resource type="Script" uid="uid://dvgch5pbd3pcn" path="res://scenes/level_objects/assist/level_end.gd" id="1_4t7uh"]
+[ext_resource type="Texture2D" uid="uid://b2xpbchj41t2f" path="res://art/leaves.png" id="2_4t7uh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylhck"]
+size = Vector2(55, 63)
+
+[node name="LevelEnd" type="Area2D"]
+script = ExtResource("1_4t7uh")
+automatic = true
+show_prompt = false
+one_shot = true
+metadata/_custom_type_script = "uid://cobq73dmok7hr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_ylhck")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4t7uh")
+
+[connection signal="activated" from="." to="." method="_on_activated"]

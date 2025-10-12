@@ -15,6 +15,8 @@ func _ready():
 		var origin = get_cell_tile_data(place).texture_origin
 		if(path != ""):
 			var new_coin = load(path).instantiate()
+			if(is_in_group("saveable")): 
+				new_coin.add_to_group("saveable")
 			new_coin.position = place*tile_size.x + tile_size/2 - origin
 			#new_coin.tilemap = self
 			#new_coin.coordinates = place

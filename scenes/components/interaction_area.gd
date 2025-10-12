@@ -6,6 +6,7 @@ class_name InteractionArea
 ## If true, will show a prompt above the player's head asking them to press
 ## the interaction button
 @export var show_prompt = true
+@export var one_shot = false
 var is_inside = false
 var activated_since_entering = false
 
@@ -16,14 +17,16 @@ signal exited
 func enter():
 	is_inside = true
 	entered.emit()
-	if(automatic):
+	if(automatic && (!activated_since_entering || !one_shot)):
 		activate()
 
 func exit():
-	activated_since_entering = false
+	if(!activated_since_entering || !one_shot):
+		activated_since_entering = false
 	is_inside = false
 	exited.emit()
 
 func activate():
-	activated_since_entering = true
-	activated.emit()
+	if(!activated_since_entering || !one_shot):
+		activated_since_entering = true
+		activated.emit()

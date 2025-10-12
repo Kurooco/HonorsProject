@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=9 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://nkcwknm2y4tw" path="res://scenes/levels/level_1.tscn" id="2_vghx1"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
+[ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="4_d5bor"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
 [ext_resource type="Script" uid="uid://b785gwm0fjclo" path="res://GameSaver/game_slot_saver.gd" id="6_vghx1"]
@@ -17,6 +18,7 @@ border_width_bottom = 5
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
 opening_scene = ExtResource("2_vghx1")
+roaming_levels = Array[PackedScene]([ExtResource("3_np1er")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")
@@ -53,12 +55,14 @@ tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
 tint_progress = Color(0.724643, 0.724643, 0.724643, 1)
 
 [node name="FadeCanvas" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Fade" type="ColorRect" parent="FadeCanvas"]
 offset_left = -85.0
 offset_top = -56.0
 offset_right = 1268.0
 offset_bottom = 751.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("5_bisso")]
@@ -66,3 +70,17 @@ visible = false
 
 [node name="GameSaver" type="Node" parent="."]
 script = ExtResource("6_vghx1")
+
+[node name="LevelWinScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="LevelWinScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_right = 333.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "You won!"

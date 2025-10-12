@@ -3,6 +3,7 @@ class_name HealthComponent
 
 @export var max_health = 100
 var health
+var invincible = false
 
 signal killed
 
@@ -11,12 +12,13 @@ func _ready():
 	health = max_health
 
 func hurt(amount: int):
-	if(health-amount <= 0 && health > 0):
-		killed.emit()
-	health = max(0, health-amount)
+	if(!invincible):
+		if(health-amount <= 0 && health > 0):
+			killed.emit()
+		health = max(0, health-amount)
 
 func kill():
-	if(health > 0):
+	if(health > 0 && !invincible):
 		health = 0
 		killed.emit()
 

@@ -107,4 +107,14 @@ func handle_dialogic_signals(name):
 
 func claim_checkpoint(p: Vector2):
 	check_point = p
-	#game_saver.save_level()
+	
+func end_level(next_level: String):
+	Autoload.player.make_invincible()
+	$LevelWinScreen.show()
+	await get_tree().create_timer(2).timeout
+	fade_out()
+	await fade_ended
+	$LevelWinScreen.hide()
+	set_level(next_level)
+	fade_in()
+	
