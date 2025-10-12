@@ -29,7 +29,7 @@ point_count = 2
 
 [node name="AutoscrollCamera" parent="." index="1"]
 z_index = 1
-limit_left = -576
+limit_left = 0
 
 [node name="Platform" type="StaticBody2D" parent="." index="3"]
 metadata/_edit_group_ = true

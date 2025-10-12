@@ -12,7 +12,6 @@ var progress_tween : Tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	upgrade_amount = cost_progrssion.size()
-	upgrades = PlayerStats.get(upgrade_var_name)
 	%Progress.texture_under = icon
 	%Progress.texture_progress = icon
 	%Description.text = description
@@ -27,6 +26,7 @@ func _process(delta):
 		%Upgrade.disabled = true
 
 func update_display():
+	upgrades = PlayerStats.get(upgrade_var_name)
 	%Title.text = title + " - LV" + str(upgrades+1)
 	if(is_instance_valid(progress_tween)):
 		progress_tween.kill()

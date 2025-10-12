@@ -1,4 +1,5 @@
 extends Node
+class_name GameSaver
 
 """
 TODO (-) = Not done, (+) = Done
@@ -218,7 +219,7 @@ func load_autoloads(dialogic_slot = ""):
 	Dialogic.Save.load(dialogic_slot)
 
 func save_game(slot: int, metadata: SaveMetadata = null):
-	if(slot > slot_names.size()):
+	if(slot > slot_names.size()-1):
 		push_error("Trying to save to invalid slot!")
 		return
 	
@@ -245,7 +246,7 @@ func save_game(slot: int, metadata: SaveMetadata = null):
 
 func load_game(slot: int):
 	clear_temp()
-	if(slot > slot_names.size()):
+	if(slot > slot_names.size()-1):
 		push_error("Trying to load from invalid slot!")
 		return
 	for file in DirAccess.get_files_at("user://save/"+slot_names[slot]):

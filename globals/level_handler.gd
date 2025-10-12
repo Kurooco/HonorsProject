@@ -4,6 +4,7 @@ extends Node
 @export var roaming_levels : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
+@onready var save_menu = $SaveMenu
 @onready var game_saver = $GameSaver
 
 var current_level : Node = null
@@ -15,6 +16,8 @@ signal fade_ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	game_saver.clear_temp()
+	game_saver.load_game(0)
 	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
@@ -118,3 +121,6 @@ func end_level(next_level: String):
 	set_level(next_level)
 	fade_in()
 	
+func show_save_menu():
+	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()
+	add_child(menu)
