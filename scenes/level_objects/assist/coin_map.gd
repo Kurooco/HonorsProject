@@ -18,7 +18,7 @@ func _ready():
 			new_coin.position = place*tile_size.x + tile_size/2 - origin
 			#new_coin.tilemap = self
 			#new_coin.coordinates = place
-			world_node.add_child.call_deferred(new_coin)
+			world_node.add_child.call_deferred(new_coin);
 	clear()
 
 func on_load():

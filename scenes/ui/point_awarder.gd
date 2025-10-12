@@ -2,7 +2,7 @@ extends Node2D
 
 
 func award_points(amount: int) -> void:
-	if(Autoload.in_rest_level):
+	if(Autoload.level_handler.in_rest_level):
 		PlayerStats.add_points_permanent(amount)
 	else:
 		PlayerStats.run_points += amount 

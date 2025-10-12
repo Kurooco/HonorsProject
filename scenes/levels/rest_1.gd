@@ -3,7 +3,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Autoload.in_rest_level = true
 	for child in get_children():
 		if child is StaticBody2D:
 			var col = child.get_children()[0]
@@ -15,7 +14,6 @@ func _ready():
 			shape.texture = t
 			child.add_child(shape)
 	#$StaticBody2D/Polygon2D.polygon = $StaticBody2D/CollisionPolygon2D.polygon
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

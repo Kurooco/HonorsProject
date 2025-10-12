@@ -1,6 +1,7 @@
 extends Node
 
 @export var opening_scene : PackedScene
+@export var roaming_levels : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
 @onready var game_saver = $GameSaver
@@ -8,6 +9,7 @@ extends Node
 var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
+var in_rest_level = false
 
 signal fade_ended
 
@@ -22,10 +24,16 @@ func set_level(path: String):
 	if(is_instance_valid(current_level)):
 		remove_child(current_level)
 		current_level.queue_free()
-	var new_level = load(path).instantiate()
+	var packed_level = load(path)
+	var new_level = packed_level.instantiate()
 	current_level = new_level
 	game_saver.world_scene = new_level
-	game_saver.save_level()
+	if(packed_level in roaming_levels):
+		game_saver.load_level()
+		in_rest_level = true
+	else:
+		game_saver.save_level()
+		in_rest_level = false
 	var player = get_node_in_group(current_level, "player")
 	check_point = player.position
 	add_child(new_level)
@@ -33,7 +41,7 @@ func set_level(path: String):
 
 func restart_level():
 	print("restart")
-	if(Autoload.in_rest_level):
+	if(Autoload.level_handler.in_rest_level):
 		game_saver.save_level()
 	fade_out()
 	await fade_ended
@@ -99,4 +107,4 @@ func handle_dialogic_signals(name):
 
 func claim_checkpoint(p: Vector2):
 	check_point = p
-	game_saver.save_level()
+	#game_saver.save_level()
