@@ -38,7 +38,8 @@ func set_level(path: String):
 		game_saver.save_level()
 		in_rest_level = false
 	var player = get_node_in_group(current_level, "player")
-	check_point = player.position
+	if(is_instance_valid(player)):
+		check_point = player.position
 	add_child(new_level)
 
 
@@ -111,15 +112,18 @@ func handle_dialogic_signals(name):
 func claim_checkpoint(p: Vector2):
 	check_point = p
 	
-func end_level(next_level: String):
-	Autoload.player.make_invincible()
-	$LevelWinScreen.show()
-	await get_tree().create_timer(2).timeout
+func switch_level(level: String):
 	fade_out()
 	await fade_ended
 	$LevelWinScreen.hide()
-	set_level(next_level)
+	set_level(level)
 	fade_in()
+
+func end_level(level:String):
+	Autoload.player.make_invincible()
+	$LevelWinScreen.show()
+	await get_tree().create_timer(2).timeout
+	switch_level(level)
 	
 func show_save_menu():
 	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()

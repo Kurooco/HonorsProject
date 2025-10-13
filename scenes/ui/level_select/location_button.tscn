@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dht0i8ylltdsg"]
+
+[ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/pen_circle.png" id="1_4j6xr"]
+[ext_resource type="Texture2D" uid="uid://bbvnu8h4p35ij" path="res://art/flag.png" id="2_661ac"]
+[ext_resource type="Script" uid="uid://w84p1q2wwr1c" path="res://scenes/ui/level_select/location_button.gd" id="3_661ac"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth3g"]
+texture = ExtResource("1_4j6xr")
+
+[node name="LocationButton" type="Button"]
+size_flags_horizontal = 6
+theme_override_styles/focus = SubResource("StyleBoxTexture_gth3g")
+icon = ExtResource("2_661ac")
+flat = true
+script = ExtResource("3_661ac")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = 45.5
+offset_right = 62.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.118557, 0.0756355, 0.019432, 1)
+text = "Test"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

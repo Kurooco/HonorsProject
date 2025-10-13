@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbals2yc1b3ml"]
+
+[ext_resource type="Script" uid="uid://csrjma2ed53kq" path="res://scenes/ui/level_select/level_select_area.gd" id="1_a0bkw"]
+[ext_resource type="Texture2D" uid="uid://bbvnu8h4p35ij" path="res://art/flag.png" id="2_w1kji"]
+[ext_resource type="PackedScene" uid="uid://bx05pyktucy0t" path="res://scenes/ui/level_select/level_select.tscn" id="3_4ahhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xcfm"]
+size = Vector2(72, 75)
+
+[node name="LevelSelectArea" type="Area2D"]
+script = ExtResource("1_a0bkw")
+metadata/_custom_type_script = "uid://cobq73dmok7hr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -10.5)
+shape = SubResource("RectangleShape2D_6xcfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w1kji")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(100, 100, 100, 1)
+position = Vector2(-1, -8)
+texture = ExtResource("2_w1kji")
+
+[node name="LevelSelect" parent="." instance=ExtResource("3_4ahhe")]
+visible = false
+
+[connection signal="activated" from="." to="." method="_on_activated"]

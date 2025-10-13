@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx05pyktucy0t"]
+
+[ext_resource type="Script" uid="uid://c5moictho2rmj" path="res://scenes/ui/level_select/level_select.gd" id="1_dqbig"]
+[ext_resource type="PackedScene" uid="uid://dht0i8ylltdsg" path="res://scenes/ui/level_select/location_button.tscn" id="1_kvtm6"]
+
+[node name="LevelSelect" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_dqbig")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 1234.0
+offset_bottom = 711.0
+color = Color(0.888067, 0.860386, 0.778196, 1)
+
+[node name="LocationContainer" type="HBoxContainer" parent="."]
+offset_left = 43.0
+offset_top = 262.0
+offset_right = 1127.0
+offset_bottom = 370.0
+
+[node name="LocationButton" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+level = "res://scenes/levels/level_1.tscn"
+level_name = "Open Field"
+
+[node name="LocationButton2" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+level = "res://scenes/levels/rest_1.tscn"
+level_name = "The Gathering Tree"
+
+[node name="Cancel" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Cancel"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
