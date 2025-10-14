@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dht0i8ylltdsg" path="res://scenes/ui/level_select/location_button.tscn" id="1_kvtm6"]
 
 [node name="LevelSelect" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_dqbig")
 
 [node name="ColorRect" type="ColorRect" parent="."]

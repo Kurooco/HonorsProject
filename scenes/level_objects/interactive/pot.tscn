@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3teoaa3ptvm"]
+
+[ext_resource type="Script" uid="uid://i0065drrwxnm" path="res://scenes/level_objects/interactive/pot.gd" id="1_tntej"]
+[ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/apple.png" id="2_3dfrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0fee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tntej"]
+size = Vector2(46, 45)
+
+[node name="Pot" type="RigidBody2D"]
+collision_layer = 0
+script = ExtResource("1_tntej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s0fee")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3dfrq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 0.5)
+shape = SubResource("RectangleShape2D_tntej")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

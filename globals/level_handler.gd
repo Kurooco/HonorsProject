@@ -44,7 +44,6 @@ func set_level(path: String):
 
 
 func restart_level():
-	print("restart")
 	if(Autoload.level_handler.in_rest_level):
 		game_saver.save_level()
 	fade_out()
@@ -61,7 +60,7 @@ func restart_level():
 	var player = get_node_in_group(current_level, "player")
 	var camera = get_node_in_group(current_level, "level_camera")
 	player.position = check_point
-	camera.position.x = check_point.x
+	camera.position.x = max(check_point.x, camera.position.x)
 	for i in get_nodes_in_group(current_level, "checkpoint"):
 		if(i.position == check_point):
 			i.claim()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cknpb7qewaitc"]
+[gd_scene load_steps=23 format=4 uid="uid://cknpb7qewaitc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_n71rw"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_7ktey"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_fodfp"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="11_5cji3"]
 [ext_resource type="PackedScene" uid="uid://bbals2yc1b3ml" path="res://scenes/ui/level_select/level_select_area.tscn" id="12_qp0hj"]
+[ext_resource type="PackedScene" uid="uid://p3teoaa3ptvm" path="res://scenes/level_objects/interactive/pot.tscn" id="13_d605d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxap"]
 
@@ -87,7 +88,7 @@ metadata/_edit_group_ = true
 polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.8965, 844.921, -21.8965)
 
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
-position = Vector2(32, -88)
+position = Vector2(-696, -504)
 waiting_for_start = false
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"]]
@@ -230,3 +231,12 @@ position = Vector2(-1159, 179)
 
 [node name="LevelSelectArea" parent="." instance=ExtResource("12_qp0hj")]
 position = Vector2(-296, -464)
+
+[node name="Pot" parent="." instance=ExtResource("13_d605d")]
+position = Vector2(-835.157, -484.267)
+
+[node name="Pot2" parent="." instance=ExtResource("13_d605d")]
+position = Vector2(-1042.29, -490.575)
+
+[node name="Pot3" parent="." instance=ExtResource("13_d605d")]
+position = Vector2(-1227.46, -487.436)

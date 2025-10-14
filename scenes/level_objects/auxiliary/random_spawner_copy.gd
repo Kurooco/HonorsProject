@@ -8,10 +8,12 @@ extends Path2D
 
 var start_x = 0
 var end_x = 0
+var half_x = 0
 var distance = 0
 var start_point = 0
 var end_point = 0
 var adjusted_distance_ratio = 0
+var left_spawned = 0
 
 var current_time = 0
 
@@ -23,6 +25,7 @@ func _process(delta):
 	end_point = curve.get_baked_points()[-1].x+position.x
 	distance = end_point-start_point
 	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
+	half_x = min(end_point, get_viewport().get_camera_2d().position.x)
 	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
 	adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
 
