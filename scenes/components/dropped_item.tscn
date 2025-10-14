@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhkkoma5ewl8e"]
+
+[ext_resource type="Script" uid="uid://cedh7jq7mh2vo" path="res://scenes/components/dropped_item.gd" id="1_1k24h"]
+[ext_resource type="PackedScene" uid="uid://dy0npjdr7t23n" path="res://scenes/level_objects/assist/coin.tscn" id="2_bnv0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k24h"]
+size = Vector2(11.1042, 11.1042)
+
+[node name="DroppedCoin" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_1k24h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.552076, -0.447922)
+shape = SubResource("RectangleShape2D_1k24h")
+
+[node name="Coin" parent="." instance=ExtResource("2_bnv0t")]

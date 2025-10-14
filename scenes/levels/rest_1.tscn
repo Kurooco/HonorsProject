@@ -88,7 +88,7 @@ metadata/_edit_group_ = true
 polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.8965, 844.921, -21.8965)
 
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
-position = Vector2(-696, -504)
+position = Vector2(-728.451, -512.544)
 waiting_for_start = false
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"]]

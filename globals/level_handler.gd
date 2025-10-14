@@ -4,7 +4,6 @@ extends Node
 @export var roaming_levels : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
-@onready var save_menu = $SaveMenu
 @onready var game_saver = $GameSaver
 
 var current_level : Node = null
