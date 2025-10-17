@@ -1,5 +1,10 @@
 extends "res://scenes/components/interaction_area.gd"
 
+@export var set_as_claimed = false
+
+func _ready():
+	if(set_as_claimed):
+		claim()
 
 func _on_activated():
 	claim()

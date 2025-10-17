@@ -1,12 +1,21 @@
+@tool
 extends Node2D
 
 @export var scene : PackedScene
-@export var velocity : Vector2
+@export var velocity : Vector2: 
+	set(new_vel): 
+		velocity = new_vel
+		create_curve()
 @export var delay = 1.0
+@export var show_path = true
 
 func _ready():
 	$Timer.wait_time = delay
-	create_curve()
+	if(show_path):
+		create_curve()
+	else:
+		$Line2D.clear_points()
+	
 
 func get_arc_mover(node: Node):
 	for child in node.get_children(true):
@@ -23,6 +32,7 @@ func _on_timer_timeout():
 		Autoload.level_handler.current_level.add_child(new_scene)
 
 func create_curve():
+	$Line2D.clear_points()
 	var v = velocity
 	var gravity = 500
 	var pos = Vector2.ZERO

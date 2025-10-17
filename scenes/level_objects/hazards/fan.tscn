@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://xwguyds4iq0s"]
+
+[ext_resource type="Script" uid="uid://nxr0iq68tjss" path="res://scenes/level_objects/hazards/fan.gd" id="1_8agpp"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_a25aj"]
+[ext_resource type="Texture2D" uid="uid://cajoyt8f4ake1" path="res://art/wind.png" id="3_0oi4t"]
+[ext_resource type="Script" uid="uid://bl26dbylf0kiq" path="res://scenes/level_objects/hazards/fan_area.gd" id="4_acgya"]
+[ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="5_yx01c"]
+
+[sub_resource type="Gradient" id="Gradient_acgya"]
+offsets = PackedFloat32Array(0, 0.204878, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.497, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oi4t"]
+size = Vector2(100, 557)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epcwd"]
+size = Vector2(103, 20)
+
+[node name="Fan" type="Node2D"]
+script = ExtResource("1_8agpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(-0.71909, 0.09375)
+texture = ExtResource("1_a25aj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-3, -90)
+amount = 16
+texture = ExtResource("3_0oi4t")
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(50, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, -980)
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_acgya")
+
+[node name="FanArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_acgya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanArea"]
+position = Vector2(0, -287.5)
+shape = SubResource("RectangleShape2D_0oi4t")
+
+[node name="WeaponArea" parent="." instance=ExtResource("5_yx01c")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_epcwd")
