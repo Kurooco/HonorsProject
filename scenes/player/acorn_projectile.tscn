@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="1_7won4"]
 [ext_resource type="Script" uid="uid://d0j6yhtl3hu52" path="res://scenes/player/acorn_projectile.gd" id="2_0vk6t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ncm"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7won4"]
 
 [node name="AcornProjectile" type="Sprite2D"]
 texture = ExtResource("1_7won4")
@@ -14,7 +14,7 @@ script = ExtResource("2_0vk6t")
 friendly = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
-shape = SubResource("RectangleShape2D_u4ncm")
+shape = SubResource("CircleShape2D_7won4")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-0.5, -2)

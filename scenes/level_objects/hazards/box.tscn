@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://6bl2et5qhduw"]
+
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_j04pb"]
+[ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="2_7oj2n"]
+[ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="3_0tp4e"]
+[ext_resource type="PackedScene" uid="uid://mis4ukjv3ob3" path="res://scenes/components/death_handler.tscn" id="4_7oj2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnkl0"]
+size = Vector2(115, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua3b5"]
+size = Vector2(108, 108)
+
+[sub_resource type="Gradient" id="Gradient_7oj2n"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Box" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_mnkl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j04pb")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_7oj2n")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ua3b5")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_0tp4e")]
+max_health = 1
+
+[node name="DeathHandler" parent="." node_paths=PackedStringArray("scene_root", "health_component", "particles") instance=ExtResource("4_7oj2n")]
+scene_root = NodePath("..")
+health_component = NodePath("../HealthComponent")
+particles = NodePath("../CPUParticles2D")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(26.4378, 127)
+emitting = false
+texture = ExtResource("1_j04pb")
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+initial_velocity_min = 269.84
+initial_velocity_max = 420.63
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_7oj2n")
