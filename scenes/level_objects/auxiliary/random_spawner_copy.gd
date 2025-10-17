@@ -5,6 +5,7 @@ extends Path2D
 @export var x_range = Vector2(-300, 300)
 @export var spawn_item = preload("res://scenes/level_objects/assist/food.tscn")
 @export var disabled = false
+@export var right_bias_threshold = 5
 
 var start_x = 0
 var end_x = 0
@@ -36,6 +37,14 @@ func _process(delta):
 	current_time = 0
 	$Point1.global_position.x = start_x
 	$Point2.global_position.x = end_x
+	
+	if(start_x-half_x < 0):
+		left_spawned += 1
+		if(left_spawned > right_bias_threshold):
+			start_x = half_x
+			left_spawned = 0
+	else:
+		left_spawned = 0
 	
 	$PathFollow2D.progress_ratio = randf_range((start_x-start_point)/distance, ((end_x-start_point))/distance)
 	var new_food = spawn_item.instantiate()

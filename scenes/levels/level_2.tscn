@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bjjdqtfdmqet3"]
+[gd_scene load_steps=15 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_l37oo"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="6_8qukl"]
 [ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="7_3p04p"]
 [ext_resource type="PackedScene" uid="uid://dsgq6b0qtn3b0" path="res://scenes/level_objects/hazards/moving_razor.tscn" id="8_8qukl"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="10_qsp8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
 size = Vector2(459, 298)
 
 [sub_resource type="Curve2D" id="Curve2D_3p04p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -106, 332, 0, 0, 0, 0, 7000, 332)
+"points": PackedVector2Array(0, 0, 0, 0, -106, 332, 0, 0, 0, 0, 5000, 332)
 }
 point_count = 2
 
@@ -76,7 +77,17 @@ velocity = Vector2(-200, -500)
 position = Vector2(4629, -403)
 scene = ExtResource("8_8qukl")
 
-[node name="SingleShooter2" parent="." index="11" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter6" parent="." index="11" instance=ExtResource("6_8qukl")]
+position = Vector2(5092.05, 356.526)
+scene = ExtResource("10_qsp8v")
+velocity = Vector2(0, -300)
+
+[node name="SingleShooter7" parent="." index="12" instance=ExtResource("6_8qukl")]
+position = Vector2(5324.3, 356.526)
+scene = ExtResource("10_qsp8v")
+velocity = Vector2(0, -300)
+
+[node name="SingleShooter2" parent="." index="13" instance=ExtResource("6_8qukl")]
 position = Vector2(1394.53, 362.804)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-200, -700)
