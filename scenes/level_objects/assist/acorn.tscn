@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="4_ihngi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihngi"]
+size = Vector2(38, 40)
 
 [node name="Acorn" instance=ExtResource("1_lol5v")]
 script = ExtResource("2_ihngi")
@@ -14,6 +15,7 @@ script = ExtResource("2_ihngi")
 texture = ExtResource("2_ce3kf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_ihngi")
 
 [node name="ArcMover" parent="." index="2" node_paths=PackedStringArray("move_object") instance=ExtResource("4_ihngi")]

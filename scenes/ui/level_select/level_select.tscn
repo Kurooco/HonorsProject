@@ -29,6 +29,11 @@ layout_mode = 2
 level = "res://scenes/levels/rest_1.tscn"
 level_name = "The Gathering Tree"
 
+[node name="LocationButton3" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+level = "res://scenes/levels/level_2.tscn"
+level_name = "The Long Copse"
+
 [node name="Cancel" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0

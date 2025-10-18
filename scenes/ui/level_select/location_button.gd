@@ -1,7 +1,11 @@
+@tool
 extends Button
 
 @export var level : String
-@export var level_name : String
+@export var level_name : String :
+	set(ln):
+		level_name = ln
+		$Name.text = level_name
 
 signal selected
 

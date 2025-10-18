@@ -129,8 +129,8 @@ func apply_impact(i: Vector2):
 
 
 func _on_health_component_killed():
-	hide()
 	Autoload.level_handler.restart_level()
+	queue_free()
 
 
 func activate_interactive_areas():

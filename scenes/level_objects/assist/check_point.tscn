@@ -31,6 +31,7 @@ animations = [{
 
 [node name="CheckPoint" groups=["checkpoint"] instance=ExtResource("1_yhxqo")]
 script = ExtResource("2_gpq37")
+set_as_claimed = false
 automatic = true
 show_prompt = false
 
