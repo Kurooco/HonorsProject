@@ -253,3 +253,4 @@ position = Vector2(9790, -64)
 
 [node name="LevelEnd" parent="." index="45" instance=ExtResource("14_r88tb")]
 position = Vector2(16047.3, 30.2179)
+next_level = "res://scenes/levels/rest_1.tscn"

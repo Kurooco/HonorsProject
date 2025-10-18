@@ -1,15 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://oh37nacj7g3i"]
+[gd_scene load_steps=9 format=3 uid="uid://oh37nacj7g3i"]
 
 [ext_resource type="PackedScene" uid="uid://cr4ob4hn7hybp" path="res://scenes/player/collectable.tscn" id="1_lol5v"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="2_ce3kf"]
 [ext_resource type="Script" uid="uid://dwn852x1mhgua" path="res://scenes/level_objects/assist/acorn.gd" id="2_ihngi"]
 [ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="4_ihngi"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/white_sparkle.png" id="5_5sm0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihngi"]
 size = Vector2(38, 40)
 
-[node name="Acorn" instance=ExtResource("1_lol5v")]
+[sub_resource type="Curve" id="Curve_bdksi"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.398268, 100), 0.0, 0.0, 0, 0, Vector2(0.943723, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_6mf08"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Acorn" node_paths=PackedStringArray("particles") instance=ExtResource("1_lol5v")]
 script = ExtResource("2_ihngi")
+particles = NodePath("CPUParticles2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ce3kf")
@@ -20,3 +30,16 @@ shape = SubResource("RectangleShape2D_ihngi")
 
 [node name="ArcMover" parent="." index="2" node_paths=PackedStringArray("move_object") instance=ExtResource("4_ihngi")]
 move_object = NodePath("..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3"]
+emitting = false
+texture = ExtResource("5_5sm0t")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 401.28
+damping_curve = SubResource("Curve_bdksi")
+color_ramp = SubResource("Gradient_6mf08")
