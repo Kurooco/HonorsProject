@@ -38,4 +38,4 @@ func update_position():
 	if(is_instance_valid(move_tween)):
 		move_tween.kill()
 	move_tween = create_tween()
-	move_tween.tween_property(self, "position", current_position, .1).set_trans(Tween.TRANS_QUART)
+	move_tween.tween_property(self, "position", current_position, .5).set_trans(Tween.TRANS_QUART)

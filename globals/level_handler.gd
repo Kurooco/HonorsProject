@@ -34,7 +34,6 @@ func set_level(path: String):
 		game_saver.load_level()
 		in_rest_level = true
 	else:
-		game_saver.save_level()
 		in_rest_level = false
 	var player = get_node_in_group(current_level, "player")
 	if(is_instance_valid(player)):

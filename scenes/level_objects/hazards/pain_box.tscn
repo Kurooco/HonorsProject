@@ -10,8 +10,7 @@ size = Vector2(120, 121)
 [node name="Box" instance=ExtResource("1_x3448")]
 
 [node name="Sprite2D" parent="." index="1"]
-position = Vector2(-1.5, 0.5)
-scale = Vector2(1.07031, 1.07031)
+scale = Vector2(1.14844, 1.14844)
 texture = ExtResource("2_xl5kp")
 
 [node name="WeaponArea" parent="." index="6" instance=ExtResource("3_yfkde")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmywb7sdrlhyc"]
+
+[ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_x10i0"]
+[ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/small_bricks_but_cooler.png" id="2_5ppkx"]
+[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_kw3gv"]
+[ext_resource type="Script" uid="uid://pb0u4cra7uok" path="res://scenes/levels/rest_camera.gd" id="3_5ppkx"]
+
+[node name="rest2" type="Node2D"]
+script = ExtResource("1_x10i0")
+texture = ExtResource("2_5ppkx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1632, 88, 1632, 336, 648, 336, -624, 336, -624, 128, -624, -360, -472, -360, 1576, -360, 1576, -240, -472, -238.062, -472, 128, -102.23, 128.107)
+
+[node name="Player" parent="." instance=ExtResource("2_kw3gv")]
+position = Vector2(74, -21)
+waiting_for_start = false
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("3_5ppkx")
+player = NodePath("../Player")
+x_bounds = Vector2(0, 1)
