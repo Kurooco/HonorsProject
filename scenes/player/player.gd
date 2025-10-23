@@ -37,15 +37,17 @@ func _physics_process(delta):
 		return
 	
 	# Add the gravity.
+	var camera = get_viewport().get_camera_2d()
+	var zoom = get_viewport().get_camera_2d().zoom.x
 	if not is_on_floor():
 		velocity += get_gravity() * delta #* (acorns/6 + 1)
-	var relative_position = position - get_viewport().get_camera_2d().position
-	if(relative_position.y < -get_viewport_rect().size.y/2):
+	var relative_position = position - camera.position
+	if(relative_position.y < -(get_viewport().size.y/zoom/2)):
 		velocity += get_gravity() * delta * 2
 	
 	# Out of bounds death
-	if(!Autoload.level_handler.in_rest_level && (global_position.y > get_viewport().get_camera_2d().global_position.y + get_viewport_rect().size.y/2.0
-		|| position.x < get_viewport().get_camera_2d().position.x - get_viewport_rect().size.x)):
+	if(!Autoload.level_handler.in_rest_level && (global_position.y > camera.global_position.y + get_viewport_rect().size.y/zoom/2.0
+		|| position.x < camera.position.x - get_viewport_rect().size.x/zoom)):
 		$HealthComponent.kill()
 		set_physics_process(false)
 	

@@ -27,12 +27,17 @@ level_name = "Open Field"
 [node name="LocationButton2" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
 level = "res://scenes/levels/rest_1.tscn"
-level_name = "The Gathering Tree"
+level_name = "Gathering Tree"
 
 [node name="LocationButton3" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
 level = "res://scenes/levels/level_2.tscn"
 level_name = "The Long Copse"
+
+[node name="LocationButton4" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+level = "res://scenes/levels/level_2.tscn"
+level_name = "Restaurant"
 
 [node name="Cancel" type="Button" parent="."]
 offset_right = 8.0

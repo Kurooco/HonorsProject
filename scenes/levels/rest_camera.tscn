@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmd3786m62dow"]
+
+[ext_resource type="Script" uid="uid://pb0u4cra7uok" path="res://scenes/levels/rest_camera.gd" id="1_473rg"]
+
+[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_473rg")
+player = NodePath("")
+x_bounds = Vector2(0, 1)

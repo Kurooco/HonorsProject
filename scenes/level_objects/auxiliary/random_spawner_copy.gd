@@ -24,13 +24,14 @@ func _ready():
 	pass
 
 func _process(delta):
+	var camera : Camera2D = get_viewport().get_camera_2d()
 	start_point = curve.get_baked_points()[0].x+position.x
 	end_point = curve.get_baked_points()[-1].x+position.x
 	distance = end_point-start_point
-	start_x = max(start_point, get_viewport().get_camera_2d().position.x-get_viewport().size.x/2)
-	half_x = min(end_point, get_viewport().get_camera_2d().position.x)
-	end_x = min(end_point, get_viewport().get_camera_2d().position.x+get_viewport().size.x/2)
-	adjusted_distance_ratio = (end_x-start_x)/get_viewport().size.x
+	start_x = max(start_point, camera.position.x-(get_viewport().size.x/camera.zoom.x/2))
+	half_x = min(end_point, camera.position.x)
+	end_x = min(end_point, camera.position.x+(get_viewport().size.x/camera.zoom.x/2))
+	adjusted_distance_ratio = (end_x-start_x)/(get_viewport().size.x/camera.zoom.x)
 
 	current_time += delta
 	if(adjusted_distance_ratio <= 0 || disabled || current_time < spawn_time/adjusted_distance_ratio):
@@ -39,6 +40,7 @@ func _process(delta):
 	current_time = 0
 	$Point1.global_position.x = start_x
 	$Point2.global_position.x = end_x
+	$HalfPoint.global_position.x = half_x
 	
 	if(alternate):
 		if(on_right):

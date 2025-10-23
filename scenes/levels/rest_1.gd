@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for child in get_children():
+	for child in $LevelCollision.get_children():
 		if child is StaticBody2D:
 			var col = child.get_children()[0]
 			var shape = Polygon2D.new()

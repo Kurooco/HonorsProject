@@ -16,8 +16,15 @@ texture = ExtResource("2_44e3j")
 
 [node name="Point1" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(0, 0.550328, 0.286388, 1)
 texture = ExtResource("2_44e3j")
 
 [node name="Point2" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(0.851759, 0, 0.383272, 1)
+texture = ExtResource("2_44e3j")
+
+[node name="HalfPoint" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.667096, 0.433562, 0, 1)
 texture = ExtResource("2_44e3j")
