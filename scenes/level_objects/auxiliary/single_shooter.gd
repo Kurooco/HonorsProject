@@ -24,12 +24,17 @@ func get_arc_mover(node: Node):
 	return null
 
 func _on_timer_timeout():
-	if(abs(get_viewport().get_camera_2d().position.x - position.x) < get_viewport_rect().size.x):
-		var new_scene = scene.instantiate()
-		var arc_mover = get_arc_mover(new_scene)
-		new_scene.global_position = global_position
-		arc_mover.velocity = velocity
-		Autoload.level_handler.current_level.add_child(new_scene)
+	var camera = get_viewport().get_camera_2d()
+	var zoom = get_viewport().get_camera_2d().zoom.x
+	if(abs(camera.position.x - position.x) < get_viewport_rect().size.x/zoom):
+		shoot(velocity)
+
+func shoot(vel):
+	var new_scene = scene.instantiate()
+	var arc_mover = get_arc_mover(new_scene)
+	new_scene.global_position = global_position
+	arc_mover.velocity = vel
+	Autoload.level_handler.current_level.add_child(new_scene)
 
 func create_curve():
 	$Line2D.clear_points()

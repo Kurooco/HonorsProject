@@ -1,14 +1,12 @@
-[gd_scene load_steps=22 format=4 uid="uid://bjjdqtfdmqet3"]
+[gd_scene load_steps=18 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_l37oo"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="3_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/auxiliary/random_spawner.tscn" id="4_ibugp"]
-[ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="5_ibugp"]
-[ext_resource type="PackedScene" uid="uid://bf0rwbbj1b2hd" path="res://scenes/level_objects/hazards/razor.tscn" id="6_3p04p"]
 [ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="6_8qukl"]
+[ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="6_brxtv"]
 [ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="7_3p04p"]
-[ext_resource type="PackedScene" uid="uid://cbscy75a26ch8" path="res://scenes/level_objects/hazards/pain_box.tscn" id="7_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://dsgq6b0qtn3b0" path="res://scenes/level_objects/hazards/moving_razor.tscn" id="8_8qukl"]
 [ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="10_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="11_nt80m"]
@@ -41,15 +39,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 10022, 344, 0, 0, 0, 0, 15000, 344)
 }
 point_count = 2
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qsp8v"]
-scenes/1/scene = ExtResource("5_ibugp")
-scenes/2/scene = ExtResource("6_3p04p")
-scenes/3/scene = ExtResource("7_tv7cl")
-
-[sub_resource type="TileSet" id="TileSet_nt80m"]
-tile_size = Vector2i(120, 120)
-sources/0 = SubResource("TileSetScenesCollectionSource_qsp8v")
 
 [node name="LevelBase" instance=ExtResource("1_fiq81")]
 
@@ -101,10 +90,8 @@ y_range = Vector2(-1000, -500)
 x_range = Vector2(0, 0)
 spawn_item = ExtResource("7_3p04p")
 
-[node name="Boxes" type="TileMapLayer" parent="." index="10"]
+[node name="Boxes" parent="." index="10" instance=ExtResource("6_brxtv")]
 position = Vector2(1, -1)
-tile_map_data = PackedByteArray("AAATAP3/AAAAAAAAAQATAP7/AAAAAAAAAQATAP//AAAAAAAAAQATAAAAAAAAAAAAAQATAAEAAAAAAAAAAQATAAIAAAAAAAAAAQASAAAAAAAAAAAAAQASAAEAAAAAAAAAAQASAAIAAAAAAAAAAQAUAAAAAAAAAAAAAQAVAAAAAAAAAAAAAQAWAAAAAAAAAAAAAQAXAAAAAAAAAAAAAQAXAAEAAAAAAAAAAQAXAAIAAAAAAAAAAQAMAP3/AAAAAAAAAQAMAP7/AAAAAAAAAQAMAP//AAAAAAAAAQAMAAEAAAAAAAAAAQAMAAIAAAAAAAAAAQAMAAAAAAAAAAAAAQApAP//AAAAAAAAAQApAP7/AAAAAAAAAQAqAP//AAAAAAAAAQArAP//AAAAAAAAAQAsAP//AAAAAAAAAQAtAP//AAAAAAAAAQAtAP7/AAAAAAAAAQAtAP3/AAAAAAAAAQApAAIAAAAAAAAAAgAjAP3/AAAAAAAAAgAjAAIAAAAAAAAAAgAmAAAAAAAAAAAAAgAmAP//AAAAAAAAAgArAAAAAAAAAAAAAgAtAAIAAAAAAAAAAgAYAP3/AAAAAAAAAgAZAP3/AAAAAAAAAgAaAP3/AAAAAAAAAgAbAP3/AAAAAAAAAgAcAP3/AAAAAAAAAgAdAP3/AAAAAAAAAgAeAP3/AAAAAAAAAgAfAP3/AAAAAAAAAgApAP3/AAAAAAAAAQBHAPz/AAAAAAAAAQBHAP3/AAAAAAAAAQBHAP7/AAAAAAAAAQBHAP//AAAAAAAAAQBHAAAAAAAAAAAAAQBHAAEAAAAAAAAAAQBHAAIAAAAAAAAAAQBPAP3/AAAAAAAAAwBPAP7/AAAAAAAAAwBPAP//AAAAAAAAAwBPAAAAAAAAAAAAAwBPAAEAAAAAAAAAAwBPAAIAAAAAAAAAAwBVAAIAAAAAAAAAAwBXAAIAAAAAAAAAAwBWAAEAAAAAAAAAAwBYAAEAAAAAAAAAAwBZAAIAAAAAAAAAAwBXAAAAAAAAAAAAAwBVAAAAAAAAAAAAAwBZAAAAAAAAAAAAAwBVAAEAAAAAAAAAAQBWAAAAAAAAAAAAAQBWAAIAAAAAAAAAAQBXAAEAAAAAAAAAAQBYAAIAAAAAAAAAAQBZAAEAAAAAAAAAAQBYAAAAAAAAAAAAAQBdAP3/AAAAAAAAAQBdAP7/AAAAAAAAAwBeAP3/AAAAAAAAAwBeAP7/AAAAAAAAAQBfAP3/AAAAAAAAAQBfAP7/AAAAAAAAAwBgAP3/AAAAAAAAAwBgAP7/AAAAAAAAAQBhAP3/AAAAAAAAAQBhAP7/AAAAAAAAAwBoAAIAAAAAAAAAAQBoAAEAAAAAAAAAAwBoAAAAAAAAAAAAAwBoAP//AAAAAAAAAwBoAP7/AAAAAAAAAwBoAP3/AAAAAAAAAQBpAP3/AAAAAAAAAQBqAP3/AAAAAAAAAQBrAP3/AAAAAAAAAQBsAP3/AAAAAAAAAQBtAP3/AAAAAAAAAQBuAP3/AAAAAAAAAQBvAP3/AAAAAAAAAQBwAP3/AAAAAAAAAQBpAAIAAAAAAAAAAQBqAAIAAAAAAAAAAQBrAAIAAAAAAAAAAQBsAAIAAAAAAAAAAQBtAAIAAAAAAAAAAQBuAAIAAAAAAAAAAQBvAAIAAAAAAAAAAQBwAAIAAAAAAAAAAQBwAAEAAAAAAAAAAwBwAAAAAAAAAAAAAwBwAP7/AAAAAAAAAwBwAP//AAAAAAAAAwB3AAIAAAAAAAAAAwB3AAEAAAAAAAAAAQB3AAAAAAAAAAAAAQB3AP7/AAAAAAAAAQB3AP3/AAAAAAAAAwB3AP//AAAAAAAAAQB7AAEAAAAAAAAAAgB7AAAAAAAAAAAAAgB7AP//AAAAAAAAAgB7AP7/AAAAAAAAAgA=")
-tile_set = SubResource("TileSet_nt80m")
 
 [node name="SingleShooter" parent="." index="11" instance=ExtResource("6_8qukl")]
 position = Vector2(2103.57, 350.25)

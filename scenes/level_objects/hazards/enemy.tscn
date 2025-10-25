@@ -37,12 +37,12 @@ position = Vector2(3.25, 1.25)
 shape = SubResource("RectangleShape2D_2xud0")
 
 [node name="JumpTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.7
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="WeaponArea" parent="." instance=ExtResource("3_2xud0")]
-impact = Vector2(-3000, 0)
+impact = Vector2(-2000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
 position = Vector2(3.25, 1)

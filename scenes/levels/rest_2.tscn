@@ -16,6 +16,7 @@ texture = ExtResource("2_5ppkx")
 [node name="StaticBody2D" type="StaticBody2D" parent="LevelCollision"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
+position = Vector2(0, 10)
 polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -624, 336, -624, 128, -624, -360, -472, -360, 1928, -360, 2024, -360, 2024, 336, 2024, 720, 1720, 720, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
 
 [node name="Player" parent="." instance=ExtResource("2_kw3gv")]

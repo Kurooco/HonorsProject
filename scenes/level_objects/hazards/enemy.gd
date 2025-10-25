@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
 
-const SPEED = 25.0
-const ATTACK_SPEED = 15
-const MAX_JUMP_VELOCITY = -500.0
-const JUMP_VELOCITY_DECLINE = 100
-const BOUNCE_VELOCITY = -400
+@export var SPEED = 25.0
+@export var ATTACK_SPEED = 15
+@export var MAX_JUMP_VELOCITY = -500.0
+@export var JUMP_VELOCITY_DECLINE = 80
+@export var BOUNCE_VELOCITY = -400
+@export var PURSUIT_THRESHOLD_RATIO = .5
+@export var GRAVITY_DAMP = 2.0
 
 var jump_velocity = MAX_JUMP_VELOCITY
 var consecutive_bounces = 0
-var acorns = 0
 var can_jump = true
 var current_speed = SPEED
 var on_screen = false
@@ -21,7 +22,7 @@ func _ready():
 func _physics_process(delta):
 	# Find target
 	var target = null
-	if(jump_velocity > MAX_JUMP_VELOCITY/2):
+	if(jump_velocity > MAX_JUMP_VELOCITY*PURSUIT_THRESHOLD_RATIO):
 		var min_dist = INF
 		var closest_food = null
 		for i in get_tree().get_nodes_in_group("food"):
@@ -40,13 +41,15 @@ func _physics_process(delta):
 		impact = Vector2.ZERO
 		
 	# Update impact
-	$WeaponArea.impact = Vector2(velocity.x * 20, 0)
+	$WeaponArea.impact = Vector2(velocity.x * 10, 0)
 	
 	# Add the gravity.
+	var camera = get_viewport().get_camera_2d()
+	var zoom = get_viewport().get_camera_2d().zoom.x
 	if not is_on_floor():
-		velocity += get_gravity() * delta * (acorns/3 + 1)
-	var relative_position = position - get_viewport().get_camera_2d().position
-	if(relative_position.y < -get_viewport_rect().size.y/2):
+		velocity += get_gravity() * delta #* (acorns/6 + 1)
+	var relative_position = position - camera.position
+	if(relative_position.y < -(get_viewport().size.y/zoom/2)):
 		velocity += get_gravity() * delta * 2
 	
 	if(target != null):
@@ -87,6 +90,7 @@ func _on_jump_timer_timeout():
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	set_physics_process(true)
 	on_screen = true
+
 
 func apply_impact(i: Vector2):
 	impact += i
