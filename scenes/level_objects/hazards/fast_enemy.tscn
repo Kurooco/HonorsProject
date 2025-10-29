@@ -16,3 +16,6 @@ texture = ExtResource("2_aw6y0")
 
 [node name="HealthComponent" parent="." index="6"]
 max_health = 1
+
+[node name="CollisionShape2D" parent="HurtBox" index="1"]
+position = Vector2(3.25, -0.75)

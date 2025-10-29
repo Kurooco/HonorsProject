@@ -73,7 +73,7 @@ func fade_out(color=Color.BLACK):
 	fade_tween = create_tween()
 	fade_tween.tween_property(fade, "color", color, 1)
 	fade_tween.tween_callback(fade_ended.emit)
-	
+
 func fade_in():
 	var transparent_color = Color(fade.color.r, fade.color.g, fade.color.b, 0)
 	if(is_instance_valid(fade_tween)):
@@ -121,7 +121,7 @@ func end_level(level:String):
 	$LevelWinScreen.show()
 	await get_tree().create_timer(2).timeout
 	switch_level(level)
-	
+
 func show_save_menu():
 	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()
 	add_child(menu)
