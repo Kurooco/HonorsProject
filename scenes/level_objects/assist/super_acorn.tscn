@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://x2q5wh5wj5sl"]
+
+[ext_resource type="Script" uid="uid://buimku1u2bt4b" path="res://scenes/level_objects/assist/super_acorn.gd" id="1_o1ehm"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="2_ta86d"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/white_sparkle.png" id="3_ta86d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpwfn"]
+size = Vector2(26, 27)
+
+[sub_resource type="Gradient" id="Gradient_ta86d"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="SuperAcorn" type="Area2D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_o1ehm")
+particles = NodePath("CPUParticles2D")
+autocollect = true
+metadata/_custom_type_script = "uid://brpwrlq88ryfs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_tpwfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.2, 0.5, 1, 1)
+texture = ExtResource("2_ta86d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-2.99999, -7.62939e-06)
+scale = Vector2(5.8, 5.8)
+texture = ExtResource("3_ta86d")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+texture = ExtResource("3_ta86d")
+one_shot = true
+explosiveness = 0.77
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+scale_amount_min = 5.0
+scale_amount_max = 7.0
+color_ramp = SubResource("Gradient_ta86d")
+
+[connection signal="collected" from="." to="." method="_on_collected"]

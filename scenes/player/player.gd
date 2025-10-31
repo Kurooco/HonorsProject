@@ -4,11 +4,13 @@ extends CharacterBody2D
 const SPEED = 50.0
 const MAX_JUMP_VELOCITY = -500.0
 const BOUNCE_VELOCITY = -400
+const ACORN_ENERGY_DECREASE = 10
 
 var jump_velocity = MAX_JUMP_VELOCITY
 var last_direction = 1
 var consecutive_bounces = 0
 var acorns = 0
+var acorn_energy = 0
 var impact = Vector2.ZERO
 var disabled = false
 
@@ -89,6 +91,13 @@ func _physics_process(delta):
 		
 	if(Input.is_action_just_pressed("shoot") && acorns > 0):
 		shoot_acorn(last_direction)
+		
+	# Update acorn energy
+	if(acorn_energy > 0):
+		acorn_energy -= delta*ACORN_ENERGY_DECREASE
+		acorns = max_acorns
+	else:
+		acorn_energy = 0
 	
 	if(!disabled && Dialogic.current_timeline == null):
 		move_and_slide()

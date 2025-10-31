@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=12 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://chkul5njl0r85" path="res://scenes/levels/level_3.tscn" id="2_j3dl1"]
@@ -15,6 +15,18 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dl1"]
+bg_color = Color(0.6, 0.6, 0.6, 0.414)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.607027, 0.688016, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixpvp"]
+bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
@@ -54,6 +66,23 @@ texture_under = ExtResource("4_d5bor")
 texture_progress = ExtResource("4_d5bor")
 tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
 tint_progress = Color(0.724643, 0.724643, 0.724643, 1)
+
+[node name="AcornEnergy" type="ProgressBar" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -553.0
+offset_top = -68.0
+offset_right = 553.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_j3dl1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ixpvp")
+value = 50.0
+show_percentage = false
 
 [node name="FadeCanvas" type="CanvasLayer" parent="."]
 layer = 10

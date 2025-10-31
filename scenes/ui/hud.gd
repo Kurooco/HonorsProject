@@ -14,5 +14,12 @@ func _process(delta):
 		displayed_points = lerp(displayed_points, float(PlayerStats.run_points), 1 - pow(.05, delta))
 		$Points.text = "Points: "+str(int(round(displayed_points)))
 		$AcornProgress.value = (Autoload.player.acorns/float(Autoload.player.max_acorns))*100
+		if(Autoload.player.acorn_energy > 0):
+			$AcornEnergy.show()
+			$AcornEnergy.value = Autoload.player.acorn_energy
+		else:
+			$AcornEnergy.hide()
 	else:
 		$ProgressBar.value = 0
+	
+	

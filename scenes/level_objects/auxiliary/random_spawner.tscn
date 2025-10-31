@@ -12,6 +12,7 @@ rotation = 0.00361009
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
 visible = false
+z_index = 5
 texture = ExtResource("2_44e3j")
 
 [node name="Point1" type="Sprite2D" parent="."]

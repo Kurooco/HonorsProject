@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="10_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="11_nt80m"]
 [ext_resource type="PackedScene" uid="uid://birqojqel5wh6" path="res://scenes/level_objects/assist/check_point.tscn" id="12_brxtv"]
+[ext_resource type="PackedScene" uid="uid://x2q5wh5wj5sl" path="res://scenes/level_objects/assist/super_acorn.tscn" id="13_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_r88tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
@@ -31,12 +32,6 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_brxtv"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 13606, 332, 0, 0, 0, 0, 20000, 333)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_tv7cl"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10022, 344, 0, 0, 0, 0, 15000, 344)
 }
 point_count = 2
 
@@ -83,168 +78,170 @@ curve = SubResource("Curve2D_r88tb")
 [node name="FoodSpawner3" parent="." index="8" instance=ExtResource("4_ibugp")]
 curve = SubResource("Curve2D_brxtv")
 
-[node name="AcornSpawner" parent="." index="9" instance=ExtResource("4_ibugp")]
-curve = SubResource("Curve2D_tv7cl")
-spawn_time = 0.2
-y_range = Vector2(-1000, -500)
-x_range = Vector2(0, 0)
-spawn_item = ExtResource("7_3p04p")
-
-[node name="Boxes" parent="." index="10" instance=ExtResource("6_brxtv")]
+[node name="Boxes" parent="." index="9" instance=ExtResource("6_brxtv")]
 position = Vector2(1, -1)
 
-[node name="SingleShooter" parent="." index="11" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter" parent="." index="10" instance=ExtResource("6_8qukl")]
 position = Vector2(2103.57, 350.25)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-200, -700)
 delay = 0.2
 
-[node name="SingleShooter3" parent="." index="12" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter3" parent="." index="11" instance=ExtResource("6_8qukl")]
 position = Vector2(3051.99, 347.112)
 scene = ExtResource("8_8qukl")
 velocity = Vector2(200, -500)
 
-[node name="SingleShooter4" parent="." index="13" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter4" parent="." index="12" instance=ExtResource("6_8qukl")]
 position = Vector2(3470, 345)
 scene = ExtResource("8_8qukl")
 velocity = Vector2(200, -500)
 
-[node name="SingleShooter5" parent="." index="14" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter5" parent="." index="13" instance=ExtResource("6_8qukl")]
 position = Vector2(4629, -403)
 scene = ExtResource("8_8qukl")
 
-[node name="SingleShooter6" parent="." index="15" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter6" parent="." index="14" instance=ExtResource("6_8qukl")]
 position = Vector2(5092.05, 356.526)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(0, -300)
 delay = 2.0
 show_path = null
 
-[node name="SingleShooter7" parent="." index="16" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter7" parent="." index="15" instance=ExtResource("6_8qukl")]
 position = Vector2(5324.3, 356.526)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(0, -300)
 delay = 2.0
 show_path = null
 
-[node name="SingleShooter2" parent="." index="17" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter2" parent="." index="16" instance=ExtResource("6_8qukl")]
 position = Vector2(1373, 347)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-300, -800)
 delay = 0.2
 
-[node name="SingleShooter8" parent="." index="18" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter8" parent="." index="17" instance=ExtResource("6_8qukl")]
 position = Vector2(8317, 345)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-100, -800)
 
-[node name="SingleShooter9" parent="." index="19" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter9" parent="." index="18" instance=ExtResource("6_8qukl")]
 position = Vector2(8827, 351)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(100, -800)
 delay = 0.5
 
-[node name="SingleShooter10" parent="." index="20" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter10" parent="." index="19" instance=ExtResource("6_8qukl")]
 position = Vector2(14462, 353)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(200, -820)
 show_path = false
 
-[node name="SingleShooter11" parent="." index="21" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter11" parent="." index="20" instance=ExtResource("6_8qukl")]
 position = Vector2(4414, 357)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(50, -820)
 show_path = false
 
-[node name="Fan" parent="." index="22" instance=ExtResource("11_nt80m")]
+[node name="Fan" parent="." index="21" instance=ExtResource("11_nt80m")]
 position = Vector2(5950, 256)
 
-[node name="Fan2" parent="." index="23" instance=ExtResource("11_nt80m")]
+[node name="Fan2" parent="." index="22" instance=ExtResource("11_nt80m")]
 position = Vector2(6198, 171)
 
-[node name="Fan3" parent="." index="24" instance=ExtResource("11_nt80m")]
+[node name="Fan3" parent="." index="23" instance=ExtResource("11_nt80m")]
 position = Vector2(6449, 275)
 
-[node name="Fan8" parent="." index="25" instance=ExtResource("11_nt80m")]
+[node name="Fan8" parent="." index="24" instance=ExtResource("11_nt80m")]
 position = Vector2(6562, 219)
 
-[node name="Fan9" parent="." index="26" instance=ExtResource("11_nt80m")]
+[node name="Fan9" parent="." index="25" instance=ExtResource("11_nt80m")]
 position = Vector2(6678, 156)
 
-[node name="Fan4" parent="." index="27" instance=ExtResource("11_nt80m")]
+[node name="Fan4" parent="." index="26" instance=ExtResource("11_nt80m")]
 position = Vector2(6884, 55)
 rotation = -1.5708
 
-[node name="Fan5" parent="." index="28" instance=ExtResource("11_nt80m")]
+[node name="Fan5" parent="." index="27" instance=ExtResource("11_nt80m")]
 position = Vector2(8395, -192)
 rotation = -1.5708
 
-[node name="Fan6" parent="." index="29" instance=ExtResource("11_nt80m")]
+[node name="Fan6" parent="." index="28" instance=ExtResource("11_nt80m")]
 position = Vector2(8396, 130)
 rotation = -1.5708
 
-[node name="Fan7" parent="." index="30" instance=ExtResource("11_nt80m")]
+[node name="Fan7" parent="." index="29" instance=ExtResource("11_nt80m")]
 position = Vector2(7828, -42)
 rotation = 1.5708
 
-[node name="Fan10" parent="." index="31" instance=ExtResource("11_nt80m")]
+[node name="Fan10" parent="." index="30" instance=ExtResource("11_nt80m")]
 position = Vector2(9340, -203)
 rotation = -1.5708
 
-[node name="Fan11" parent="." index="32" instance=ExtResource("11_nt80m")]
+[node name="Fan11" parent="." index="31" instance=ExtResource("11_nt80m")]
 position = Vector2(9341, 119)
 rotation = -1.5708
 
-[node name="Fan12" parent="." index="33" instance=ExtResource("11_nt80m")]
+[node name="Fan12" parent="." index="32" instance=ExtResource("11_nt80m")]
 position = Vector2(8776, -49)
 rotation = 1.5708
 
-[node name="Fan13" parent="." index="34" instance=ExtResource("11_nt80m")]
+[node name="Fan13" parent="." index="33" instance=ExtResource("11_nt80m")]
 position = Vector2(12756, 188)
 rotation = -1.5708
 
-[node name="Fan14" parent="." index="35" instance=ExtResource("11_nt80m")]
+[node name="Fan14" parent="." index="34" instance=ExtResource("11_nt80m")]
 position = Vector2(12831, -50)
 rotation = -1.5708
 
-[node name="Fan15" parent="." index="36" instance=ExtResource("11_nt80m")]
+[node name="Fan15" parent="." index="35" instance=ExtResource("11_nt80m")]
 position = Vector2(13070, -169)
 rotation = -1.5708
 
-[node name="Fan16" parent="." index="37" instance=ExtResource("11_nt80m")]
+[node name="Fan16" parent="." index="36" instance=ExtResource("11_nt80m")]
 position = Vector2(13108, 66)
 rotation = -1.5708
 
-[node name="Fan17" parent="." index="38" instance=ExtResource("11_nt80m")]
+[node name="Fan17" parent="." index="37" instance=ExtResource("11_nt80m")]
 position = Vector2(13328, 182)
 rotation = -1.5708
 
-[node name="Fan18" parent="." index="39" instance=ExtResource("11_nt80m")]
+[node name="Fan18" parent="." index="38" instance=ExtResource("11_nt80m")]
 position = Vector2(13413, -63)
 rotation = -1.5708
 
-[node name="Fan19" parent="." index="40" instance=ExtResource("11_nt80m")]
+[node name="Fan19" parent="." index="39" instance=ExtResource("11_nt80m")]
 position = Vector2(14101, -179)
 rotation = 1.5708
 
-[node name="Fan20" parent="." index="41" instance=ExtResource("11_nt80m")]
+[node name="Fan20" parent="." index="40" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, -63)
 rotation = 1.5708
 
-[node name="Fan21" parent="." index="42" instance=ExtResource("11_nt80m")]
+[node name="Fan21" parent="." index="41" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, 60)
 rotation = 1.5708
 
-[node name="Fan22" parent="." index="43" instance=ExtResource("11_nt80m")]
+[node name="Fan22" parent="." index="42" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, 173)
 rotation = 1.5708
 
-[node name="CheckPoint" parent="." index="44" instance=ExtResource("12_brxtv")]
+[node name="CheckPoint" parent="." index="43" instance=ExtResource("12_brxtv")]
 position = Vector2(5729, 27)
 
-[node name="CheckPoint2" parent="." index="45" instance=ExtResource("12_brxtv")]
+[node name="CheckPoint2" parent="." index="44" instance=ExtResource("12_brxtv")]
 position = Vector2(9790, -64)
 
-[node name="LevelEnd" parent="." index="46" instance=ExtResource("14_r88tb")]
+[node name="LevelEnd" parent="." index="45" instance=ExtResource("14_r88tb")]
 position = Vector2(16047.3, 30.2179)
 next_level = "res://scenes/levels/rest_1.tscn"
+
+[node name="SuperAcorn" parent="." index="46" instance=ExtResource("13_tv7cl")]
+position = Vector2(10007, -126)
+
+[node name="SuperAcorn2" parent="." index="47" instance=ExtResource("13_tv7cl")]
+position = Vector2(12163.4, 5.38336)
+
+[node name="SuperAcorn3" parent="." index="48" instance=ExtResource("13_tv7cl")]
+position = Vector2(13931.5, -3.86249)

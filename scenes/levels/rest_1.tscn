@@ -55,47 +55,6 @@ size = Vector2(29, 27)
 script = ExtResource("1_n71rw")
 texture = ExtResource("2_hpyij")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -56, -256, -56, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(272, 488)
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-polygon = PackedVector2Array(-256, 128, -256, -256, 576, -256, 576, 128)
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-704, 728)
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
-polygon = PackedVector2Array(-744, -448, -744, -520, -416, -520, -128, -256, 576, -256, 576, 128, -128, -184, -416, -448)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(128, 928)
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
-polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 944, -128, 944, -32, 384, -32, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 944, -256, 944, -192, 512, -192, -128, -192)
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(-700.921, -594.103)
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
-polygon = PackedVector2Array(-755.079, 370.103, 236.921, 370.103, 236.921, 290.103, 596.921, 290.103, 596.921, 138.103, -755.079, 138.103)
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2(-700.921, -594.103)
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D6"]
-polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.8965, 844.921, -21.8965)
-
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
 position = Vector2(-790.884, -499.01)
 waiting_for_start = false
@@ -303,3 +262,46 @@ shape = SubResource("RectangleShape2D_f5b4g")
 player = NodePath("../Player")
 x_bounds = Vector2(-1, 1)
 y_bounds = Vector2(-1, 1)
+
+[node name="LevelCollision" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelCollision"]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -56, -256, -56, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LevelCollision"]
+position = Vector2(272, 488)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D2"]
+polygon = PackedVector2Array(-256, 128, -256, -256, 576, -256, 576, 128)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="LevelCollision"]
+position = Vector2(-704, 728)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D3"]
+polygon = PackedVector2Array(-744, -448, -744, -520, -416, -520, -128, -256, 576, -256, 576, 128, -128, -184, -416, -448)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="LevelCollision"]
+position = Vector2(128, 928)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D4"]
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 944, -128, 944, -32, 384, -32, 384, 128, -256, 128, -256, -256, 448, -256, 576, -256, 944, -256, 944, -192, 512, -192, -128, -192)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="LevelCollision"]
+position = Vector2(-700.921, -594.103)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D5"]
+polygon = PackedVector2Array(-755.079, 370.103, 236.921, 370.103, 236.921, 290.103, 596.921, 290.103, 596.921, 138.103, -755.079, 138.103)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="LevelCollision"]
+position = Vector2(-700.921, -594.103)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D6"]
+polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.8965, 844.921, -21.8965)

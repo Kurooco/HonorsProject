@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var direction = 0
-var speed = 600
+var speed = 800
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
