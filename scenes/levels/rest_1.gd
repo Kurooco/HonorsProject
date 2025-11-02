@@ -12,5 +12,6 @@ func _ready():
 			var t : Texture = texture
 			shape.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 			shape.texture = t
+			shape.global_position = col.global_position
 			child.add_child(shape)
 	#$StaticBody2D/Polygon2D.polygon = $StaticBody2D/CollisionPolygon2D.polygon

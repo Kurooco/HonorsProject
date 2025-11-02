@@ -27,6 +27,7 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"acorn_dealer": "res://dialogue/timelines/acorn_dealer.dtl",
 "redeem_points": "res://dialogue/timelines/redeem_points.dtl",
 "test": "res://dialogue/timelines/test.dtl"
 }
