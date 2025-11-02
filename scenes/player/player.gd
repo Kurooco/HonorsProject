@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 50.0
 const MAX_JUMP_VELOCITY = -500.0
 const BOUNCE_VELOCITY = -400
-const ACORN_ENERGY_DECREASE = 10
+const ACORN_ENERGY_DECREASE = 8
 
 var jump_velocity = MAX_JUMP_VELOCITY
 var last_direction = 1
