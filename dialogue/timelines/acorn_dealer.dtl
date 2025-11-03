@@ -1,2 +1,17 @@
-Hey there
-I have some good quality acorns here. I'd be willing to give you some if you can get me a beer.
+if {beer_given} == true:
+	You need another one? Fine, here you go. You've earned it.
+	[signal arg="acorn_for_beer"]
+else:
+	if {has_beer} == true:
+		I noticed you have a beer with you.
+		Wanna give it to me in exchange for an acorn?
+		- Sure
+			[signal arg="acorn_for_beer"]
+			set {beer_given} = true
+			That's what I'm talking about. Enjoy the acorn.
+			[wait time="0.2"]
+		- Get your own beer
+			Sheesh, okay whatever...
+	else:
+		Hey there
+		I have some good quality acorns here. I'd be willing to give you some if you can get me a beer.

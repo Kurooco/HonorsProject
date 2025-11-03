@@ -1,13 +1,15 @@
 if {table_broken} == true:
 	Thanks for breaking the table! Now there is no way this date could continue!
-	Is there anything I can do for you as a thank you?
-	- Buy me a beer, NOW.
-		Of course! You wait here.
-		[signal arg="fade"]
-		[wait time="3.0"]
-		Okay, here you go!
-	- No, you're fine.
-		Well, let me know if you think of something you need.
+	if {has_beer} == false:
+		Is there anything I can do for you as a thank you?
+		- Buy me a beer, NOW.
+			Of course! You wait here.
+			[signal arg="fade"]
+			[wait time="3.0"]
+			Okay, here you go!
+			set {has_beer} = true
+		- No, you're fine.
+			Well, let me know if you think of something you need.
 else:
 	Damn, this date is going nowhere. We obviously hate each other.
 	I would leave, but I don't want to be rude. We haven't even gotten our food yet.

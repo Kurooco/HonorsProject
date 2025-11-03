@@ -56,7 +56,7 @@ script = ExtResource("1_n71rw")
 texture = ExtResource("2_hpyij")
 
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
-position = Vector2(-790.884, -499.01)
+position = Vector2(40.7991, -119.26)
 waiting_for_start = false
 
 [node name="DialogueArea" parent="." instance=ExtResource("4_7ewig")]
@@ -258,7 +258,7 @@ texture = ExtResource("15_hpyij")
 position = Vector2(1.95996, -2.064)
 shape = SubResource("RectangleShape2D_f5b4g")
 
-[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_ckulk")]
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"] instance=ExtResource("15_ckulk")]
 player = NodePath("../Player")
 x_bounds = Vector2(-1, 1)
 y_bounds = Vector2(-1, 1)

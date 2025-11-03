@@ -34,21 +34,21 @@ texture = ExtResource("2_5ppkx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
 position = Vector2(0, 10)
-polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -624, 336, -624, 128, -624, -360, -472, -360, 1928, -360, 2024, -360, 2024, 336, 2024, 720, 1720, 720, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
+polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -624, 334, -624, 128, -624, -360, -472, -360, 1928, -360, 2024, -360, 2024, 336, 2024, 998, -464, 998, -624, 998, -624, 350, -608, 334, -464, 334, -464, 718, 1720, 718, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
 
 [node name="Player" parent="." instance=ExtResource("2_kw3gv")]
 z_index = 2
 position = Vector2(74, -21)
 waiting_for_start = false
 
-[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kw3gv")]
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"] instance=ExtResource("4_kw3gv")]
 player = NodePath("../Player")
 y_bounds = Vector2(0, 1)
 
 [node name="LevelSelectArea" parent="." instance=ExtResource("5_5ppkx")]
-position = Vector2(179.956, 642.955)
+position = Vector2(-336, 704)
 
-[node name="Box" parent="." instance=ExtResource("6_4hy2x")]
+[node name="Box" parent="." groups=["saveable"] instance=ExtResource("6_4hy2x")]
 position = Vector2(1659, 34)
 metadata/_edit_group_ = true
 
@@ -60,6 +60,11 @@ timeline = "acorn_dealer"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea"]
 position = Vector2(-442.5, 88.2824)
 shape = SubResource("RectangleShape2D_11yvy")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea"]
+position = Vector2(-437.811, 89.4451)
+scale = Vector2(0.387026, 0.632216)
+texture = ExtResource("8_yeoc4")
 
 [node name="DialogueArea2" parent="DialogueAreas" instance=ExtResource("7_tofga")]
 position = Vector2(1056.53, 35.5648)

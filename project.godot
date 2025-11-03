@@ -34,8 +34,14 @@ directories/dtl_directory={
 "test": "res://dialogue/timelines/test.dtl"
 }
 variables={
+"beer_given": false,
+"has_beer": false,
 "table_broken": false
 }
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

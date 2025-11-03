@@ -29,6 +29,7 @@ var jump_velocity_decline
 func _ready():
 	Autoload.player = self
 	update_stats()
+	Dialogic.signal_event.connect(handle_dialogic_signals)
 
 
 func _physics_process(delta):
@@ -89,7 +90,7 @@ func _physics_process(delta):
 	else:
 		modulate = Color.WHITE
 		
-	if(Input.is_action_just_pressed("shoot") && acorns > 0):
+	if(Input.is_action_just_pressed("shoot") && acorns > 0 && Dialogic.current_timeline == null):
 		shoot_acorn(last_direction)
 		
 	# Update acorn energy
@@ -159,3 +160,8 @@ func update_stats():
 
 func make_invincible():
 	health_component.invincible = true
+
+func handle_dialogic_signals(arg):
+	match arg:
+		"acorn_for_beer":
+			acorns = min(acorns+1, max_acorns)

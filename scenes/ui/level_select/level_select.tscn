@@ -36,7 +36,7 @@ level_name = "The Long Copse"
 
 [node name="LocationButton4" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
-level = "res://scenes/levels/level_2.tscn"
+level = "res://scenes/levels/rest_2.tscn"
 level_name = "Restaurant"
 
 [node name="LocationButton5" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
