@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bapo6eptyb2m2"]
+
+[ext_resource type="Script" uid="uid://cb42bffwdb2u4" path="res://scenes/level_objects/interactive/breakable_table.gd" id="1_ccgod"]
+[ext_resource type="Texture2D" uid="uid://bl4b6t74enrqs" path="res://art/table.png" id="2_wv385"]
+[ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="3_dg7rd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnxjs"]
+size = Vector2(96.0001, 20.496)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yijl"]
+size = Vector2(88, 20)
+
+[node name="Table1" type="StaticBody2D"]
+script = ExtResource("1_ccgod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1153.13, 53.6447)
+shape = SubResource("RectangleShape2D_rnxjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1152, 64)
+scale = Vector2(0.164, 0.164)
+texture = ExtResource("2_wv385")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_dg7rd")]
+show_prompt = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(1156, 41)
+shape = SubResource("RectangleShape2D_1yijl")
+
+[connection signal="entered" from="InteractionArea" to="." method="_on_interaction_area_entered"]

@@ -105,6 +105,11 @@ func handle_dialogic_signals(name):
 	match name:
 		"upgrade_menu":
 			upgrade_menu.visible = !upgrade_menu.visible
+		"fade":
+			fade_out()
+			await fade_ended
+			await get_tree().create_timer(1).timeout
+			fade_in()
 
 func claim_checkpoint(p: Vector2):
 	check_point = p
