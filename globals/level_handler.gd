@@ -24,6 +24,8 @@ func _ready():
 
 func set_level(path: String):
 	if(is_instance_valid(current_level)):
+		if(Autoload.level_handler.in_rest_level):
+			game_saver.save_level()
 		remove_child(current_level)
 		current_level.queue_free()
 	var packed_level = load(path)
