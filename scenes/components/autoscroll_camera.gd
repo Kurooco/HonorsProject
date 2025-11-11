@@ -4,9 +4,6 @@ extends Camera2D
 var speed_tween : Tween = null
 var running = false
 
-func _ready():
-	set_process(false)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_just_pressed("jump")):
