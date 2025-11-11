@@ -9,7 +9,7 @@ const ACORN_ENERGY_DECREASE = 8
 var jump_velocity = MAX_JUMP_VELOCITY
 var last_direction = 1
 var consecutive_bounces = 0
-var acorns = 1
+var acorns = 0
 var acorn_energy = 0
 var impact = Vector2.ZERO
 var disabled = false
@@ -35,7 +35,6 @@ func _ready():
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("jump") && waiting_for_start):
 		waiting_for_start = false
-		get_tree().get_nodes_in_group("level_camera")[0].start()
 	if(waiting_for_start):
 		return
 	
@@ -165,3 +164,7 @@ func handle_dialogic_signals(arg):
 	match arg:
 		"acorn_for_beer":
 			acorns = min(acorns+1, max_acorns)
+
+
+func _on_hurt_box_hurt():
+	$Blood.emitting = true

@@ -10,6 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(is_instance_valid(Autoload.player)):
+		show()
 		$ProgressBar.value = (Autoload.player.health_component.health/float(Autoload.player.health_component.max_health))*100
 		displayed_points = lerp(displayed_points, float(PlayerStats.run_points), 1 - pow(.05, delta))
 		$Points.text = "Points: "+str(int(round(displayed_points)))
@@ -20,6 +21,6 @@ func _process(delta):
 		else:
 			$AcornEnergy.hide()
 	else:
-		$ProgressBar.value = 0
+		hide()
 	
 	
