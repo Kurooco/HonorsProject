@@ -34,6 +34,7 @@ point_count = 2
 size = Vector2(58.8953, 60)
 
 [sub_resource type="Gradient" id="Gradient_5eevr"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tofvi"]
 gradient = SubResource("Gradient_5eevr")
@@ -63,11 +64,11 @@ polygon = PackedVector2Array(-260, -140, 260, -140, 260, 140, -260, 140, -260, -
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.396889, 0.396889, 0.396889, 1)
-z_index = -2
-offset_left = -280.0
-offset_top = -160.0
-offset_right = 280.0
-offset_bottom = 200.0
+z_index = -6
+offset_left = -1160.0
+offset_top = -1280.0
+offset_right = 3160.0
+offset_bottom = 660.0
 texture = ExtResource("3_1r3rq")
 stretch_mode = 1
 
@@ -102,7 +103,7 @@ shape = SubResource("RectangleShape2D_3yhub")
 position = Vector2(-320, -60)
 
 [node name="TutorialStar" parent="." instance=ExtResource("7_iig34")]
-position = Vector2(1514.59, -484.661)
+position = Vector2(-200, 100)
 positions = Array[Vector2]([Vector2(-200, 100), Vector2(200, -80), Vector2(1700, -580), Vector2(860, -580), Vector2(1273.66, -559.066), Vector2(1011.47, -481.118), Vector2(1514.59, -484.661)])
 
 [node name="Text" type="Node2D" parent="."]
@@ -250,3 +251,4 @@ next_level = "res://scenes/levels/level_1.tscn"
 [connection signal="activated" from="CameraArea2" to="." method="_on_camera_area_2_activated"]
 [connection signal="activated" from="CameraArea3" to="." method="_on_camera_area_3_activated"]
 [connection signal="captured" from="TutorialStar" to="." method="_on_tutorial_star_captured"]
+[connection signal="activated" from="LevelEnd" to="." method="_on_level_end_activated"]
