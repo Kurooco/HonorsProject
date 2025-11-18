@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://x8x4sse18q3"]
+
+[ext_resource type="Script" uid="uid://0n8spt00tskd" path="res://scenes/levels/tutorial/tutorial_text.gd" id="1_ty6qb"]
+
+[node name="TutorialText" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 100
+text = "Testing"
+script = ExtResource("1_ty6qb")

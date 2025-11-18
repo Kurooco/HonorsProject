@@ -7,6 +7,7 @@ class_name InteractionArea
 ## the interaction button
 @export var show_prompt = true
 @export var one_shot = false
+@export var disabled = false
 var is_inside = false
 var activated_since_entering = false
 
@@ -17,7 +18,7 @@ signal exited
 func enter():
 	is_inside = true
 	entered.emit()
-	if(automatic && (!activated_since_entering || !one_shot)):
+	if(automatic && (!activated_since_entering || !one_shot) && !disabled):
 		activate()
 
 func exit():
@@ -27,6 +28,6 @@ func exit():
 	exited.emit()
 
 func activate():
-	if(!activated_since_entering || !one_shot):
+	if((!activated_since_entering || !one_shot) && !disabled):
 		activated_since_entering = true
 		activated.emit()

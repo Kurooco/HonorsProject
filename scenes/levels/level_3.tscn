@@ -217,33 +217,43 @@ position = Vector2(8217, 150)
 [node name="CheckPoint2" parent="." index="28" instance=ExtResource("14_t4txi")]
 position = Vector2(16495, 73)
 
-[node name="FastEnemy" parent="." index="29" instance=ExtResource("15_apo5x")]
+[node name="CheckPoint3" parent="." index="29" instance=ExtResource("14_t4txi")]
+position = Vector2(18847, 111)
+set_as_claimed = true
+
+[node name="FastEnemy" parent="." index="30" instance=ExtResource("15_apo5x")]
 position = Vector2(9647, -187)
 
-[node name="FastEnemy3" parent="." index="30" instance=ExtResource("15_apo5x")]
+[node name="FastEnemy3" parent="." index="31" instance=ExtResource("15_apo5x")]
 position = Vector2(11980, -293)
 
-[node name="SuperAcorn" parent="." index="31" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn" parent="." index="32" instance=ExtResource("17_lgrx1")]
 position = Vector2(6378.91, 25.4032)
 
-[node name="SuperAcorn2" parent="." index="32" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn2" parent="." index="33" instance=ExtResource("17_lgrx1")]
 position = Vector2(14570.5, -5.28796)
 
-[node name="SuperAcorn3" parent="." index="33" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn3" parent="." index="34" instance=ExtResource("17_lgrx1")]
 position = Vector2(21274, -5)
 
-[node name="FastEnemy2" parent="." index="34" instance=ExtResource("15_apo5x")]
+[node name="SuperAcorn4" parent="." index="35" instance=ExtResource("17_lgrx1")]
+position = Vector2(19967, 1)
+
+[node name="FastEnemy2" parent="." index="36" instance=ExtResource("15_apo5x")]
 position = Vector2(19967.2, -227.687)
 
-[node name="FastEnemy4" parent="." index="35" instance=ExtResource("15_apo5x")]
-position = Vector2(20339.7, 5.82935)
+[node name="FastEnemy6" parent="." index="37" instance=ExtResource("15_apo5x")]
+position = Vector2(20379, -350)
 
-[node name="Enemy" parent="." index="36" instance=ExtResource("18_fhpes")]
+[node name="FastEnemy8" parent="." index="38" instance=ExtResource("15_apo5x")]
+position = Vector2(21324, -311)
+
+[node name="Enemy" parent="." index="39" instance=ExtResource("18_fhpes")]
 position = Vector2(21707, -261)
 
-[node name="Enemy2" parent="." index="37" instance=ExtResource("18_fhpes")]
+[node name="Enemy2" parent="." index="40" instance=ExtResource("18_fhpes")]
 position = Vector2(20767, -311)
 
-[node name="LevelEnd" parent="." index="38" instance=ExtResource("19_vmg1d")]
+[node name="LevelEnd" parent="." index="41" instance=ExtResource("19_vmg1d")]
 position = Vector2(23366.8, -72.0094)
 next_level = "res://scenes/levels/rest_2.tscn"

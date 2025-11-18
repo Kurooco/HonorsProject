@@ -1,0 +1,252 @@
+[gd_scene load_steps=22 format=3 uid="uid://bg46us5eba6y3"]
+
+[ext_resource type="Script" uid="uid://bptd4ef7gq12c" path="res://scenes/levels/tutorial/tutorial.gd" id="1_1r3rq"]
+[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_rnyxf"]
+[ext_resource type="Script" uid="uid://dyn2ossk0lpsn" path="res://scenes/levels/tutorial/tutorial_camera.gd" id="2_7ac3l"]
+[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/wood.png" id="3_1r3rq"]
+[ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="4_u4f7j"]
+[ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="6_iig34"]
+[ext_resource type="PackedScene" uid="uid://ddkiih5shi84d" path="res://scenes/levels/tutorial/tutorial_star.tscn" id="7_iig34"]
+[ext_resource type="PackedScene" uid="uid://x8x4sse18q3" path="res://scenes/levels/tutorial/tutorial_text.tscn" id="8_mxxi8"]
+[ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="9_j726a"]
+[ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="10_3yhub"]
+[ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/auxiliary/random_spawner.tscn" id="11_3yhub"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="12_5eevr"]
+[ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/iron_block.png" id="12_tb2as"]
+[ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_tofvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e81p"]
+size = Vector2(215, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tofvi"]
+size = Vector2(1221.25, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yhub"]
+size = Vector2(122.5, 370)
+
+[sub_resource type="Curve2D" id="Curve2D_5eevr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 960, 380, 0, 0, 0, 0, 1800, 380)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eevr"]
+size = Vector2(58.8953, 60)
+
+[sub_resource type="Gradient" id="Gradient_5eevr"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tofvi"]
+gradient = SubResource("Gradient_5eevr")
+
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
+script = ExtResource("1_1r3rq")
+textured_collision_groups = {
+NodePath("Node2D"): ExtResource("3_1r3rq")
+}
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(2420, -640)
+process_callback = 0
+position_smoothing_enabled = true
+script = ExtResource("2_7ac3l")
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("1_rnyxf")]
+floor_max_angle = 1.22697
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D"]
+polygon = PackedVector2Array(-260, -140, 260, -140, 260, 140, -260, 140, -260, -1, -320, -1, -640, -1, -640, -161, -640, -280, 720, -280, 780, -280, 780, -520, 780, -660, 1820, -660, 2380, -660, 2380, -440, 2440, -440, 2440, -500, 2440, -660, 2440, -720, 2440, -780, 3000, -780, 3000, -840, 2440, -840, 2380, -840, 2380, -720, 780, -720, 720, -720, 720, -340, -700, -340, -700, -280, -700, -161, -700, -1, -700, 59, -320, 59, -320, 220, 320, 220, 320, -141.604, 720, -141, 720, 59, 720, 120, 1880, 120, 1880, -60, 1880, -540, 2260, -540, 2260, -320, 2320, -320, 2640, -320, 2640, -380, 2640, -660, 3000, -660, 3000, -720, 2640, -720, 2580, -720, 2580, -380, 2320, -380, 2320, -540, 2320, -600, 1880, -600, 1820, -600, 1820, -60, 1480, -60, 860, -60, 760, -200, 320, -200, -320, -200, -320, -120, -260, -120)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.396889, 0.396889, 0.396889, 1)
+z_index = -2
+offset_left = -280.0
+offset_top = -160.0
+offset_right = 280.0
+offset_bottom = 200.0
+texture = ExtResource("3_1r3rq")
+stretch_mode = 1
+
+[node name="CameraArea" parent="." instance=ExtResource("4_u4f7j")]
+automatic = true
+show_prompt = false
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea"]
+position = Vector2(-420, -100)
+shape = SubResource("RectangleShape2D_3e81p")
+
+[node name="CameraArea2" parent="." instance=ExtResource("4_u4f7j")]
+position = Vector2(531.582, -366.481)
+automatic = true
+show_prompt = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2"]
+position = Vector2(697.793, 6.48126)
+shape = SubResource("RectangleShape2D_tofvi")
+
+[node name="CameraArea3" parent="." instance=ExtResource("4_u4f7j")]
+position = Vector2(531.582, -366.481)
+automatic = true
+show_prompt = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea3"]
+position = Vector2(1368.42, -193.519)
+shape = SubResource("RectangleShape2D_3yhub")
+
+[node name="Box" parent="." instance=ExtResource("6_iig34")]
+position = Vector2(-320, -60)
+
+[node name="TutorialStar" parent="." instance=ExtResource("7_iig34")]
+position = Vector2(1514.59, -484.661)
+positions = Array[Vector2]([Vector2(-200, 100), Vector2(200, -80), Vector2(1700, -580), Vector2(860, -580), Vector2(1273.66, -559.066), Vector2(1011.47, -481.118), Vector2(1514.59, -484.661)])
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="TutorialText" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = -140.0
+offset_top = -124.0
+offset_right = 1312.0
+offset_bottom = 13.0
+text = "Hiya! Use arrow keys to move."
+tutorial_star = NodePath("../../TutorialStar")
+
+[node name="TutorialText2" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = -240.0
+offset_top = 20.0
+offset_right = 1394.0
+offset_bottom = 297.0
+text = "Press the up arrow
+multiple times to fly."
+tutorial_star = NodePath("../../TutorialStar")
+ind = 1
+
+[node name="TutorialText3" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = -240.0
+offset_top = -100.0
+offset_right = 1394.0
+offset_bottom = 177.0
+text = "Press space to shoot acorns!
+Try breaking this box."
+tutorial_star = NodePath("../../TutorialStar")
+ind = 2
+
+[node name="TutorialText4" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 120.0
+offset_top = 20.0
+offset_right = 1754.0
+offset_bottom = 297.0
+scale = Vector2(0.1, 0.1)
+text = "Run into these acorns
+to collect them"
+tutorial_star = NodePath("../../TutorialStar")
+ind = 2
+
+[node name="TutorialText5" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 840.0
+offset_top = -620.0
+offset_right = 2330.0
+offset_bottom = -343.0
+scale = Vector2(0.3, 0.3)
+text = "Use food to regain your energy
+and get an extra lift!"
+tutorial_star = NodePath("../../TutorialStar")
+ind = 2
+
+[node name="TutorialText6" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 1340.0
+offset_top = -601.0
+offset_right = 2830.0
+offset_bottom = -324.0
+scale = Vector2(0.3, 0.3)
+text = "Let's practice a bit, shall we?"
+tutorial_star = NodePath("../../TutorialStar")
+ind = 3
+
+[node name="TutorialText7" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 1587.0
+offset_top = -652.0
+offset_right = 3077.0
+offset_bottom = -375.0
+scale = Vector2(0.15, 0.15)
+text = "Okay, that's enough practice.
+You can go through here."
+tutorial_star = NodePath("../../TutorialStar")
+ind = 7
+
+[node name="TutorialText8" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 2015.0
+offset_top = -810.0
+offset_right = 3835.0
+offset_bottom = -393.0
+text = "If you don't want to bounce on food
+when you land on it, press and hold
+B or Down."
+tutorial_star = NodePath("../../TutorialStar")
+ind = 7
+
+[node name="TutorialText9" parent="Text" node_paths=PackedStringArray("tutorial_star") instance=ExtResource("8_mxxi8")]
+offset_left = 2840.0
+offset_top = -640.0
+offset_right = 4660.0
+offset_bottom = -363.0
+text = "Good luck!"
+tutorial_star = NodePath("../../TutorialStar")
+ind = 7
+
+[node name="Shooters" type="Node2D" parent="."]
+
+[node name="AcornShooter" parent="Shooters" instance=ExtResource("9_j726a")]
+position = Vector2(560, 500)
+scene = ExtResource("10_3yhub")
+velocity = Vector2(-50, -700)
+show_path = false
+
+[node name="FoodSpawner" parent="Shooters" instance=ExtResource("11_3yhub")]
+position = Vector2(-20, -120)
+curve = SubResource("Curve2D_5eevr")
+spawn_time = 0.2
+y_range = Vector2(-900, -700)
+x_range = Vector2(0, 0)
+alternate = false
+
+[node name="SingleShooter" parent="Shooters" instance=ExtResource("9_j726a")]
+position = Vector2(2320, -300)
+scene = ExtResource("12_5eevr")
+velocity = Vector2(80, -600)
+delay = 0.2
+show_path = false
+
+[node name="Block" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+position = Vector2(1850.55, -630)
+shape = SubResource("RectangleShape2D_5eevr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Block"]
+position = Vector2(1851, -630)
+scale = Vector2(0.489434, 0.489434)
+texture = ExtResource("12_tb2as")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -5
+offset_left = 2680.0
+offset_top = -820.0
+offset_right = 3023.0
+offset_bottom = -711.0
+texture = SubResource("GradientTexture1D_tofvi")
+
+[node name="LevelEnd" parent="." instance=ExtResource("14_tofvi")]
+visible = false
+position = Vector2(3023, -746)
+next_level = "res://scenes/levels/level_1.tscn"
+
+[connection signal="activated" from="CameraArea" to="." method="_on_camera_area_activated"]
+[connection signal="activated" from="CameraArea2" to="." method="_on_camera_area_2_activated"]
+[connection signal="activated" from="CameraArea3" to="." method="_on_camera_area_3_activated"]
+[connection signal="captured" from="TutorialStar" to="." method="_on_tutorial_star_captured"]

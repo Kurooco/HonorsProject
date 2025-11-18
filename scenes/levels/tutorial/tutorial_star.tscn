@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddkiih5shi84d"]
+
+[ext_resource type="Script" uid="uid://b1jw5c3gkwolf" path="res://scenes/levels/tutorial/tutorial_star.gd" id="1_m8pwj"]
+[ext_resource type="Texture2D" uid="uid://c3l7bgyd60ray" path="res://art/tutorial_star.png" id="2_oh7l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_472qy"]
+size = Vector2(19.5, 20)
+
+[node name="TutorialStar" type="Area2D"]
+script = ExtResource("1_m8pwj")
+automatic = true
+show_prompt = false
+metadata/_custom_type_script = "uid://cobq73dmok7hr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_472qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, -0.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_oh7l3")
+
+[connection signal="activated" from="." to="." method="capture"]
