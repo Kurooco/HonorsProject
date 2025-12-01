@@ -26,6 +26,7 @@ var jump_velocity_decline
 @export var waiting_for_start = true
 @onready var health_component = $HealthComponent
 
+
 func _ready():
 	Autoload.player = self
 	update_stats()
@@ -66,6 +67,7 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		jump_velocity += jump_velocity_decline
 		consecutive_bounces = 0
+		DataCollector.increment_stat("jumps")
 
 	# Move left and right
 	if(!disabled && Dialogic.current_timeline == null):

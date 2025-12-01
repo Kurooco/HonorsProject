@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc330otp7uxd5"]
+
+[ext_resource type="Script" uid="uid://wfshlu1jgr3h" path="res://globals/data_collector.gd" id="1_nuosx"]
+
+[node name="DataCollector" type="Node"]
+script = ExtResource("1_nuosx")

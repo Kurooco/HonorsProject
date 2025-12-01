@@ -20,6 +20,7 @@ config/icon="uid://dtoaci7yxsavo"
 Autoload="*res://globals/Autoload.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PlayerStats="*res://globals/PlayerStats.gd"
+DataCollector="*res://globals/data_collector.gd"
 
 [dialogic]
 

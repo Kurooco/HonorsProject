@@ -1,6 +1,10 @@
+@tool
 extends Node
 
-var player = null
+signal player_changed(player)
+var player = null#: 
+	#set(new_player):
+	#	player_changed.emit(new_player)
 var level_handler = null
 
 func set_player_disabled(e: bool):
