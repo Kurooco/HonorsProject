@@ -142,6 +142,7 @@ func apply_impact(i: Vector2):
 
 
 func _on_health_component_killed():
+	DataCollector.increment_stat("deaths")
 	Autoload.level_handler.restart_level()
 	queue_free()
 
