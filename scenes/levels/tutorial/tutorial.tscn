@@ -75,7 +75,6 @@ stretch_mode = 1
 [node name="CameraArea" parent="." instance=ExtResource("4_u4f7j")]
 automatic = true
 show_prompt = false
-one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea"]
 position = Vector2(-420, -100)
