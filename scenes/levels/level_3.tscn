@@ -252,7 +252,7 @@ next_level = "res://scenes/levels/rest_2.tscn"
 [node name="LineFollower" parent="." index="39" instance=ExtResource("20_1nwmf")]
 position = Vector2(-325.844, 94.2999)
 points = PackedVector2Array(2323.03, -380.317, 2634.03, -166.5, 2963.03, 59.6829)
-speed = 2.0
+movement_type = 1
 
 [node name="LineFollower2" parent="." index="40" instance=ExtResource("20_1nwmf")]
 points = PackedVector2Array(16740, 0, 17640, 0, 18560, 0)
