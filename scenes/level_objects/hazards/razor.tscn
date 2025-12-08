@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bf0rwbbj1b2hd"]
 
-[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="1_sfhib"]
+[ext_resource type="Texture2D" uid="uid://dkm1m3eg6kxby" path="res://art/razors.png" id="1_sfhib"]
 [ext_resource type="Script" uid="uid://y6dhvdey81b4" path="res://scenes/level_objects/hazards/razor.gd" id="2_obk1l"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_mowa8"]
 
@@ -8,14 +8,16 @@
 radius = 68.0074
 
 [node name="Razor" type="Sprite2D"]
-modulate = Color(1, 0, 0, 1)
 z_index = -1
 texture = ExtResource("1_sfhib")
+offset = Vector2(22, 43)
 script = ExtResource("2_obk1l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.785398
+scale = Vector2(0.77397, 0.77397)
 texture = ExtResource("1_sfhib")
+offset = Vector2(19.1378, 45.6325)
 
 [node name="WeaponArea" parent="." instance=ExtResource("3_mowa8")]
 

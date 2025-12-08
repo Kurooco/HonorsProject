@@ -1,20 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=13 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
+[ext_resource type="PackedScene" uid="uid://nkcwknm2y4tw" path="res://scenes/levels/level_1.tscn" id="2_ssum3"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="4_d5bor"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
 [ext_resource type="PackedScene" uid="uid://bg46us5eba6y3" path="res://scenes/levels/tutorial/tutorial.tscn" id="5_ixpvp"]
 [ext_resource type="Script" uid="uid://b785gwm0fjclo" path="res://GameSaver/game_slot_saver.gd" id="6_vghx1"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71i82"]
-bg_color = Color(1, 0.18939, 0.298565, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+[ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/pen_circle.png" id="8_ssum3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dl1"]
 bg_color = Color(0.6, 0.6, 0.6, 0.414)
@@ -30,19 +25,11 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("5_ixpvp")
+opening_scene = ExtResource("2_ssum3")
 roaming_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")
-
-[node name="ProgressBar" type="ProgressBar" parent="HUD"]
-offset_left = 12.0
-offset_top = 10.0
-offset_right = 150.0
-offset_bottom = 37.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_71i82")
-show_percentage = false
 
 [node name="Points" type="Label" parent="HUD"]
 anchors_preset = 1
@@ -57,11 +44,13 @@ text = "Points: 0"
 horizontal_alignment = 2
 
 [node name="AcornProgress" type="TextureProgressBar" parent="HUD"]
-offset_left = 157.0
-offset_top = 7.0
-offset_right = 306.0
-offset_bottom = 57.0
+texture_repeat = 2
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 153.0
+offset_bottom = 75.0
 value = 50.0
+fill_mode = 4
 texture_under = ExtResource("4_d5bor")
 texture_progress = ExtResource("4_d5bor")
 tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
@@ -83,6 +72,16 @@ theme_override_styles/background = SubResource("StyleBoxFlat_j3dl1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ixpvp")
 value = 50.0
 show_percentage = false
+
+[node name="Health" type="TextureProgressBar" parent="HUD"]
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 107.0
+offset_bottom = 101.0
+fill_mode = 4
+texture_under = ExtResource("8_ssum3")
+texture_progress = ExtResource("8_ssum3")
+tint_under = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="FadeCanvas" type="CanvasLayer" parent="."]
 layer = 10

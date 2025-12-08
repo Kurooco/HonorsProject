@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	if(is_instance_valid(Autoload.player)):
 		show()
-		$ProgressBar.value = (Autoload.player.health_component.health/float(Autoload.player.health_component.max_health))*100
+		$Health.value = (Autoload.player.health_component.health/float(Autoload.player.health_component.max_health))*100
 		displayed_points = lerp(displayed_points, float(PlayerStats.run_points), 1 - pow(.05, delta))
 		$Points.text = "Points: "+str(int(round(displayed_points)))
 		$AcornProgress.value = (Autoload.player.acorns/float(Autoload.player.max_acorns))*100
