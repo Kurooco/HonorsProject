@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsgq6b0qtn3b0" path="res://scenes/level_objects/hazards/moving_razor.tscn" id="8_dga24"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="9_dga24"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_excbq"]
-[ext_resource type="Texture2D" uid="uid://bh17okwjmo2et" path="res://art/sky_light_clouds.png" id="11_excbq"]
+[ext_resource type="Texture2D" uid="uid://bhubnayog4f4i" path="res://art/cloudy_sky.png" id="11_excbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(592, 348)
@@ -36,29 +36,42 @@ limit_left = -576
 [node name="Parallax2D" parent="." index="2"]
 visible = false
 
-[node name="Parallax2D3" type="Parallax2D" parent="." index="3"]
+[node name="Parallax2D4" type="Parallax2D" parent="." index="3"]
 z_index = -50
-scroll_scale = Vector2(0.6, 1)
-repeat_size = Vector2(1920, 0)
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" index="0"]
-modulate = Color(0.347817, 0.347817, 0.347817, 1)
-position = Vector2(-139, -531)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" index="0"]
+modulate = Color(0.172833, 0.172833, 0.172833, 1)
+position = Vector2(13, -352)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_qxy0u")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="." index="4"]
+[node name="Parallax2D3" type="Parallax2D" parent="." index="4"]
+z_index = -50
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" index="0"]
+modulate = Color(0.20871, 0.20871, 0.20871, 1)
+position = Vector2(-139, -559)
+texture = ExtResource("2_qxy0u")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." index="5"]
 z_index = -50
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" index="0"]
-modulate = Color(0.779291, 0.779291, 0.779291, 1)
+modulate = Color(0.450649, 0.450648, 0.450648, 1)
 position = Vector2(-139, -538)
 texture = ExtResource("2_qxy0u")
 centered = false
 
-[node name="Platform" type="StaticBody2D" parent="." index="5"]
+[node name="Platform" type="StaticBody2D" parent="." index="6"]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" index="0"]
@@ -70,7 +83,7 @@ position = Vector2(-290.5, 161.5)
 scale = Vector2(4.78906, 2.74219)
 texture = ExtResource("2_nsrm0")
 
-[node name="Platform3" type="StaticBody2D" parent="." index="6"]
+[node name="Platform3" type="StaticBody2D" parent="." index="7"]
 position = Vector2(606, 105)
 metadata/_edit_group_ = true
 
@@ -83,7 +96,7 @@ position = Vector2(-290.5, 161.5)
 scale = Vector2(4.78906, 2.74219)
 texture = ExtResource("2_nsrm0")
 
-[node name="Platform4" type="StaticBody2D" parent="." index="7"]
+[node name="Platform4" type="StaticBody2D" parent="." index="8"]
 position = Vector2(12684, 69)
 metadata/_edit_group_ = true
 
@@ -96,91 +109,92 @@ position = Vector2(-290.5, 161.5)
 scale = Vector2(4.78906, 2.74219)
 texture = ExtResource("2_nsrm0")
 
-[node name="FoodSpawner" parent="." index="8" instance=ExtResource("4_x42e6")]
+[node name="FoodSpawner" parent="." index="9" instance=ExtResource("4_x42e6")]
 curve = SubResource("Curve2D_6761a")
 spawn_time = 0.3
 
-[node name="FoodSpawner2" parent="." index="9" instance=ExtResource("4_x42e6")]
+[node name="FoodSpawner2" parent="." index="10" instance=ExtResource("4_x42e6")]
 curve = SubResource("Curve2D_excbq")
 spawn_time = 0.3
 
-[node name="Razor" parent="." index="10" instance=ExtResource("5_6761a")]
+[node name="Razor" parent="." index="11" instance=ExtResource("5_6761a")]
 position = Vector2(3740, 260)
 
-[node name="Razor2" parent="." index="11" instance=ExtResource("5_6761a")]
+[node name="Razor2" parent="." index="12" instance=ExtResource("5_6761a")]
 position = Vector2(4509, -228)
 
-[node name="Razor3" parent="." index="12" instance=ExtResource("5_6761a")]
+[node name="Razor3" parent="." index="13" instance=ExtResource("5_6761a")]
 position = Vector2(5297, 2)
 
-[node name="Razor4" parent="." index="13" instance=ExtResource("5_6761a")]
+[node name="Razor4" parent="." index="14" instance=ExtResource("5_6761a")]
 position = Vector2(10546.1, -5.89417)
 
-[node name="Razor5" parent="." index="14" instance=ExtResource("5_6761a")]
+[node name="Razor5" parent="." index="15" instance=ExtResource("5_6761a")]
 position = Vector2(11091, -6)
 
-[node name="Razor6" parent="." index="15" instance=ExtResource("5_6761a")]
+[node name="Razor6" parent="." index="16" instance=ExtResource("5_6761a")]
 position = Vector2(11669, 255)
 
-[node name="Razor7" parent="." index="16" instance=ExtResource("5_6761a")]
+[node name="Razor7" parent="." index="17" instance=ExtResource("5_6761a")]
 position = Vector2(11669, -265)
 
-[node name="CheckPoint2" parent="." index="17" instance=ExtResource("6_sk5k4")]
+[node name="CheckPoint2" parent="." index="18" instance=ExtResource("6_sk5k4")]
 position = Vector2(5660, 21)
 
-[node name="CheckPoint4" parent="." index="18" instance=ExtResource("6_sk5k4")]
+[node name="CheckPoint4" parent="." index="19" instance=ExtResource("6_sk5k4")]
 position = Vector2(3280, 35)
 
-[node name="CheckPoint3" parent="." index="19" instance=ExtResource("6_sk5k4")]
+[node name="CheckPoint3" parent="." index="20" instance=ExtResource("6_sk5k4")]
 position = Vector2(9209, 119)
 
-[node name="SingleShooter" parent="." index="20" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter" parent="." index="21" instance=ExtResource("7_s8va5")]
 position = Vector2(6125.34, 391.827)
 scene = ExtResource("8_dga24")
 velocity = Vector2(500, -600)
 
-[node name="SingleShooter5" parent="." index="21" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter5" parent="." index="22" instance=ExtResource("7_s8va5")]
 position = Vector2(8112.15, 391.474)
 scene = ExtResource("8_dga24")
 velocity = Vector2(500, -800)
 delay = 2.0
 
-[node name="SingleShooter6" parent="." index="22" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter6" parent="." index="23" instance=ExtResource("7_s8va5")]
 position = Vector2(8432.27, 391.474)
 scene = ExtResource("8_dga24")
 velocity = Vector2(500, -800)
 delay = 1.9
 
-[node name="SingleShooter7" parent="." index="23" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter7" parent="." index="24" instance=ExtResource("7_s8va5")]
 position = Vector2(8749, 395)
 scene = ExtResource("8_dga24")
 velocity = Vector2(500, -800)
 delay = 1.8
 
-[node name="SingleShooter2" parent="." index="24" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter2" parent="." index="25" instance=ExtResource("7_s8va5")]
 position = Vector2(7227.38, -336.641)
 scene = ExtResource("8_dga24")
 
-[node name="SingleShooter3" parent="." index="25" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter3" parent="." index="26" instance=ExtResource("7_s8va5")]
 position = Vector2(7585, -340)
 scene = ExtResource("8_dga24")
 
-[node name="SingleShooter4" parent="." index="26" instance=ExtResource("7_s8va5")]
+[node name="SingleShooter4" parent="." index="27" instance=ExtResource("7_s8va5")]
 position = Vector2(7945, -340)
 scene = ExtResource("8_dga24")
 
-[node name="Coins" parent="." index="27" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
+[node name="Coins" parent="." index="28" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
 tile_map_data = PackedByteArray("AAAAAPj/AQAAAAEAAAABAPj/AQAAAAEAAAACAPj/AQAAAAEAAAADAPj/AQAAAAEAAAD///j/AQAAAAEAAAD+//j/AQAAAAEAAAD9//j/AQAAAAEAAAD8//j/AQAAAAEAAAD8//n/AQAAAAEAAAD8//r/AQAAAAEAAAD9//r/AQAAAAEAAAD+//r/AQAAAAEAAAD///r/AQAAAAEAAAAAAPr/AQAAAAEAAAABAPr/AQAAAAEAAAACAPr/AQAAAAEAAAADAPr/AQAAAAEAAAADAPn/AQAAAAEAAAACAPn/AQAAAAEAAAABAPn/AQAAAAEAAAAAAPn/AQAAAAEAAAD///n/AQAAAAEAAAD+//n/AQAAAAEAAAD9//n/AQAAAAEAAAAEAPX/AQAAAAEAAAAEAPb/AQAAAAEAAAAEAPf/AQAAAAEAAAAEAPj/AQAAAAEAAAAEAPn/AQAAAAEAAAAEAPr/AQAAAAEAAAAEAPv/AQAAAAEAAAAEAPz/AQAAAAEAAAAEAP3/AQAAAAEAAAAFAPb/AQAAAAEAAAAFAPf/AQAAAAEAAAAFAPj/AQAAAAEAAAAFAPn/AQAAAAEAAAAFAPr/AQAAAAEAAAAFAPv/AQAAAAEAAAAFAPz/AQAAAAEAAAAGAPf/AQAAAAEAAAAGAPj/AQAAAAEAAAAGAPn/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPv/AQAAAAEAAAAHAPj/AQAAAAEAAAAHAPn/AQAAAAEAAAAHAPr/AQAAAAEAAAAIAPn/AQAAAAEAAADlAP7/AQAAAAEAAADlAP//AQAAAAEAAADlAAAAAQAAAAEAAADlAAEAAQAAAAEAAADmAP7/AQAAAAEAAADmAP//AQAAAAEAAADmAAAAAQAAAAEAAADmAAEAAQAAAAEAAADnAP7/AQAAAAEAAADnAP//AQAAAAEAAADnAAAAAQAAAAEAAADnAAEAAQAAAAEAAADoAP7/AQAAAAEAAADoAP//AQAAAAEAAADoAAAAAQAAAAEAAADoAAEAAQAAAAEAAADpAP7/AQAAAAEAAADpAP//AQAAAAEAAADpAAAAAQAAAAEAAADpAAEAAQAAAAEAAADqAP7/AQAAAAEAAADqAP//AQAAAAEAAADqAAAAAQAAAAEAAADqAAEAAQAAAAEAAADrAP7/AQAAAAEAAADrAP//AQAAAAEAAADrAAAAAQAAAAEAAADrAAEAAQAAAAEAAADsAP7/AQAAAAEAAADsAP//AQAAAAEAAADsAAAAAQAAAAEAAADsAAEAAQAAAAEAAADtAP7/AQAAAAEAAADtAP//AQAAAAEAAADtAAAAAQAAAAEAAADtAAEAAQAAAAEAAADuAP7/AQAAAAEAAADuAP//AQAAAAEAAADuAAAAAQAAAAEAAADuAAEAAQAAAAEAAAAUAf7/AQAAAAEAAAAUAf//AQAAAAEAAAAUAQAAAQAAAAEAAAAUAQEAAQAAAAEAAAAVAf7/AQAAAAEAAAAVAf//AQAAAAEAAAAVAQAAAQAAAAEAAAAVAQEAAQAAAAEAAAAWAf7/AQAAAAEAAAAWAf//AQAAAAEAAAAWAQAAAQAAAAEAAAAWAQEAAQAAAAEAAAAXAf7/AQAAAAEAAAAXAf//AQAAAAEAAAAXAQAAAQAAAAEAAAAXAQEAAQAAAAEAAAAYAf7/AQAAAAEAAAAYAf//AQAAAAEAAAAYAQAAAQAAAAEAAAAYAQEAAQAAAAEAAAAZAf7/AQAAAAEAAAAZAf//AQAAAAEAAAAZAQAAAQAAAAEAAAAZAQEAAQAAAAEAAAAaAf7/AQAAAAEAAAAaAf//AQAAAAEAAAAaAQAAAQAAAAEAAAAaAQEAAQAAAAEAAAAbAf7/AQAAAAEAAAAbAf//AQAAAAEAAAAbAQAAAQAAAAEAAAAbAQEAAQAAAAEAAAAcAf7/AQAAAAEAAAAcAf//AQAAAAEAAAAcAQAAAQAAAAEAAAAcAQEAAQAAAAEAAAAdAf7/AQAAAAEAAAAdAf//AQAAAAEAAAAdAQAAAQAAAAEAAAAdAQEAAQAAAAEAAACdAvn/AQAAAAEAAACdAvr/AQAAAAEAAACdAvv/AQAAAAEAAACdAvz/AQAAAAEAAACdAv3/AQAAAAEAAACdAv7/AQAAAAEAAACdAv//AQAAAAEAAACdAgAAAQAAAAEAAACdAgEAAQAAAAEAAACdAgIAAQAAAAEAAACdAgMAAQAAAAEAAACdAgQAAQAAAAEAAACdAgUAAQAAAAEAAACdAgYAAQAAAAEAAACeAvn/AQAAAAEAAACeAvr/AQAAAAEAAACeAvv/AQAAAAEAAACeAvz/AQAAAAEAAACeAv3/AQAAAAEAAACeAv7/AQAAAAEAAACeAv//AQAAAAEAAACeAgAAAQAAAAEAAACeAgEAAQAAAAEAAACeAgIAAQAAAAEAAACeAgMAAQAAAAEAAACeAgQAAQAAAAEAAACeAgUAAQAAAAEAAACeAgYAAQAAAAEAAACfAvn/AQAAAAEAAACfAvr/AQAAAAEAAACfAvv/AQAAAAEAAACfAvz/AQAAAAEAAACfAv3/AQAAAAEAAACfAv7/AQAAAAEAAACfAv//AQAAAAEAAACfAgAAAQAAAAEAAACfAgEAAQAAAAEAAACfAgIAAQAAAAEAAACfAgMAAQAAAAEAAACfAgQAAQAAAAEAAACfAgUAAQAAAAEAAACfAgYAAQAAAAEAAACgAvn/AQAAAAEAAACgAvr/AQAAAAEAAACgAvv/AQAAAAEAAACgAvz/AQAAAAEAAACgAv3/AQAAAAEAAACgAv7/AQAAAAEAAACgAv//AQAAAAEAAACgAgAAAQAAAAEAAACgAgEAAQAAAAEAAACgAgIAAQAAAAEAAACgAgMAAQAAAAEAAACgAgQAAQAAAAEAAACgAgUAAQAAAAEAAACgAgYAAQAAAAEAAAChAvn/AQAAAAEAAAChAvr/AQAAAAEAAAChAvv/AQAAAAEAAAChAvz/AQAAAAEAAAChAv3/AQAAAAEAAAChAv7/AQAAAAEAAAChAv//AQAAAAEAAAChAgAAAQAAAAEAAAChAgEAAQAAAAEAAAChAgIAAQAAAAEAAAChAgMAAQAAAAEAAAChAgQAAQAAAAEAAAChAgUAAQAAAAEAAAChAgYAAQAAAAEAAACiAvn/AQAAAAEAAACiAvr/AQAAAAEAAACiAvv/AQAAAAEAAACiAvz/AQAAAAEAAACiAv3/AQAAAAEAAACiAv7/AQAAAAEAAACiAv//AQAAAAEAAACiAgAAAQAAAAEAAACiAgEAAQAAAAEAAACiAgIAAQAAAAEAAACiAgMAAQAAAAEAAACiAgQAAQAAAAEAAACiAgUAAQAAAAEAAACiAgYAAQAAAAEAAACjAvn/AQAAAAEAAACjAvr/AQAAAAEAAACjAvv/AQAAAAEAAACjAvz/AQAAAAEAAACjAv3/AQAAAAEAAACjAv7/AQAAAAEAAACjAv//AQAAAAEAAACjAgAAAQAAAAEAAACjAgEAAQAAAAEAAACjAgIAAQAAAAEAAACjAgMAAQAAAAEAAACjAgQAAQAAAAEAAACjAgUAAQAAAAEAAACjAgYAAQAAAAEAAACkAvn/AQAAAAEAAACkAvr/AQAAAAEAAACkAvv/AQAAAAEAAACkAvz/AQAAAAEAAACkAv3/AQAAAAEAAACkAv7/AQAAAAEAAACkAv//AQAAAAEAAACkAgAAAQAAAAEAAACkAgEAAQAAAAEAAACkAgIAAQAAAAEAAACkAgMAAQAAAAEAAACkAgQAAQAAAAEAAACkAgUAAQAAAAEAAACkAgYAAQAAAAEAAAClAvn/AQAAAAEAAAClAvr/AQAAAAEAAAClAvv/AQAAAAEAAAClAvz/AQAAAAEAAAClAv3/AQAAAAEAAAClAv7/AQAAAAEAAAClAv//AQAAAAEAAAClAgAAAQAAAAEAAAClAgEAAQAAAAEAAAClAgIAAQAAAAEAAAClAgMAAQAAAAEAAAClAgQAAQAAAAEAAAClAgUAAQAAAAEAAAClAgYAAQAAAAEAAACmAvn/AQAAAAEAAACmAvr/AQAAAAEAAACmAvv/AQAAAAEAAACmAvz/AQAAAAEAAACmAv3/AQAAAAEAAACmAv7/AQAAAAEAAACmAv//AQAAAAEAAACmAgAAAQAAAAEAAACmAgEAAQAAAAEAAACmAgIAAQAAAAEAAACmAgMAAQAAAAEAAACmAgQAAQAAAAEAAACmAgUAAQAAAAEAAACmAgYAAQAAAAEAAACnAvn/AQAAAAEAAACnAvr/AQAAAAEAAACnAvv/AQAAAAEAAACnAvz/AQAAAAEAAACnAv3/AQAAAAEAAACnAv7/AQAAAAEAAACnAv//AQAAAAEAAACnAgAAAQAAAAEAAACnAgEAAQAAAAEAAACnAgIAAQAAAAEAAACnAgMAAQAAAAEAAACnAgQAAQAAAAEAAACnAgUAAQAAAAEAAACnAgYAAQAAAAEAAACoAvn/AQAAAAEAAACoAvr/AQAAAAEAAACoAvv/AQAAAAEAAACoAvz/AQAAAAEAAACoAv3/AQAAAAEAAACoAv7/AQAAAAEAAACoAv//AQAAAAEAAACoAgAAAQAAAAEAAACoAgEAAQAAAAEAAACoAgIAAQAAAAEAAACoAgMAAQAAAAEAAACoAgQAAQAAAAEAAACoAgUAAQAAAAEAAACoAgYAAQAAAAEAAACpAvn/AQAAAAEAAACpAvr/AQAAAAEAAACpAvv/AQAAAAEAAACpAvz/AQAAAAEAAACpAv3/AQAAAAEAAACpAv7/AQAAAAEAAACpAv//AQAAAAEAAACpAgAAAQAAAAEAAACpAgEAAQAAAAEAAACpAgIAAQAAAAEAAACpAgMAAQAAAAEAAACpAgQAAQAAAAEAAACpAgUAAQAAAAEAAACpAgYAAQAAAAEAAACqAvn/AQAAAAEAAACqAvr/AQAAAAEAAACqAvv/AQAAAAEAAACqAvz/AQAAAAEAAACqAv3/AQAAAAEAAACqAv7/AQAAAAEAAACqAv//AQAAAAEAAACqAgAAAQAAAAEAAACqAgEAAQAAAAEAAACqAgIAAQAAAAEAAACqAgMAAQAAAAEAAACqAgQAAQAAAAEAAACqAgUAAQAAAAEAAACqAgYAAQAAAAEAAACrAvn/AQAAAAEAAACrAvr/AQAAAAEAAACrAvv/AQAAAAEAAACrAvz/AQAAAAEAAACrAv3/AQAAAAEAAACrAv7/AQAAAAEAAACrAv//AQAAAAEAAACrAgAAAQAAAAEAAACrAgEAAQAAAAEAAACrAgIAAQAAAAEAAACrAgMAAQAAAAEAAACrAgQAAQAAAAEAAACrAgUAAQAAAAEAAACrAgYAAQAAAAEAAAA=")
 world_node = NodePath("..")
 
-[node name="LevelEnd" parent="." index="28" instance=ExtResource("9_dga24")]
+[node name="LevelEnd" parent="." index="29" instance=ExtResource("9_dga24")]
 position = Vector2(12608.8, -9.34271)
 next_level = "res://scenes/levels/rest_1.tscn"
 
-[node name="Sky" type="CanvasLayer" parent="." index="29"]
+[node name="Sky" type="CanvasLayer" parent="." index="30"]
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky" index="0"]
 position = Vector2(580.5, 325.5)
 scale = Vector2(1.04253, 1.03549)
 texture = ExtResource("11_excbq")
+flip_v = true

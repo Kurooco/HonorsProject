@@ -128,7 +128,7 @@ func _on_detection_area_area_entered(area):
 		jump_velocity = MAX_JUMP_VELOCITY
 		area.jump_on()
 		consecutive_bounces += 1
-		$PointAwarder.award_points(10*min(consecutive_bounces, 10))
+		$PointAwarder.award_points(9 + min(consecutive_bounces, 11))
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
