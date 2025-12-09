@@ -1,12 +1,12 @@
 [gd_scene load_steps=30 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
-[ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/move_other.png" id="2_0owmy"]
+[ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_0owmy"]
 [ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_lvxji"]
 [ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_p47bc"]
-[ext_resource type="Texture2D" uid="uid://cbk6v868e6g4f" path="res://art/prompt.png" id="6_75vfm"]
-[ext_resource type="Texture2D" uid="uid://bnk4duoj7b0hm" path="res://art/coin_map.png" id="7_0owmy"]
+[ext_resource type="Texture2D" uid="uid://cbk6v868e6g4f" path="res://art/ui/prompt.png" id="6_75vfm"]
+[ext_resource type="Texture2D" uid="uid://bnk4duoj7b0hm" path="res://art/items/coin_map.png" id="7_0owmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("2_0owmy")

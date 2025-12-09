@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bf0rwbbj1b2hd"]
 
-[ext_resource type="Texture2D" uid="uid://dkm1m3eg6kxby" path="res://art/razors.png" id="1_sfhib"]
+[ext_resource type="Texture2D" uid="uid://dkm1m3eg6kxby" path="res://art/items/razors.png" id="1_sfhib"]
 [ext_resource type="Script" uid="uid://y6dhvdey81b4" path="res://scenes/level_objects/hazards/razor.gd" id="2_obk1l"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_mowa8"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbscy75a26ch8"]
 
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="1_x3448"]
-[ext_resource type="Texture2D" uid="uid://o4uuv4kq8l4m" path="res://art/pain_box.png" id="2_xl5kp"]
+[ext_resource type="Texture2D" uid="uid://o4uuv4kq8l4m" path="res://art/items/pain_box.png" id="2_xl5kp"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_yfkde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3mv7"]

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cr4ob4hn7hybp" path="res://scenes/player/collectable.tscn" id="1_yop0g"]
 [ext_resource type="Script" uid="uid://cbp5xyifv2mkf" path="res://scenes/level_objects/assist/coin.gd" id="2_cf24c"]
-[ext_resource type="Texture2D" uid="uid://b5mjg84vx8vn4" path="res://art/coin.png" id="2_dxdg0"]
+[ext_resource type="Texture2D" uid="uid://b5mjg84vx8vn4" path="res://art/items/coin.png" id="2_dxdg0"]
 [ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="4_aqels"]
-[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/white_sparkle.png" id="5_aqels"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/particles/white_sparkle.png" id="5_aqels"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu0rm"]
 atlas = ExtResource("2_dxdg0")

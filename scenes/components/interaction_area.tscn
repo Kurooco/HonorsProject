@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccf81jq8qw3do"]
 
 [ext_resource type="Script" uid="uid://cobq73dmok7hr" path="res://scenes/components/interaction_area.gd" id="1_whyk4"]
-[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_x8yby"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/misc/icon.svg" id="2_x8yby"]
 
 [node name="InteractionArea" type="Area2D"]
 z_index = 5

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
-[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_l37oo"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/misc/icon.svg" id="2_l37oo"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="3_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/auxiliary/random_spawner.tscn" id="4_ibugp"]
 [ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="6_8qukl"]

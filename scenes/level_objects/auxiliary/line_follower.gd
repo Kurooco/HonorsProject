@@ -19,6 +19,7 @@ func _ready():
 		c.add_point(point)
 	if(closed):
 		c.add_point(points[0])
+		gradient = load("res://art/styles/line_follower_cyclic.tres")
 	path.curve = c
 	add_child(path)
 	for i in range(number):

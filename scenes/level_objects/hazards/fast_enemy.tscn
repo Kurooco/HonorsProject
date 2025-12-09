@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://duw7cmwdtrv2e"]
 
 [ext_resource type="PackedScene" uid="uid://car5sxy6gpfc" path="res://scenes/level_objects/hazards/enemy.tscn" id="1_fmlje"]
-[ext_resource type="Texture2D" uid="uid://b2xpbchj41t2f" path="res://art/leaves.png" id="2_aw6y0"]
+[ext_resource type="Texture2D" uid="uid://b2xpbchj41t2f" path="res://art/environment/parallax/leaves.png" id="2_aw6y0"]
 
 [node name="FastEnemy" instance=ExtResource("1_fmlje")]
 SPEED = 40.0

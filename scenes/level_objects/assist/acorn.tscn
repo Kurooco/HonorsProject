@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://oh37nacj7g3i"]
 
 [ext_resource type="PackedScene" uid="uid://cr4ob4hn7hybp" path="res://scenes/player/collectable.tscn" id="1_lol5v"]
-[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="2_ce3kf"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="2_ce3kf"]
 [ext_resource type="Script" uid="uid://dwn852x1mhgua" path="res://scenes/level_objects/assist/acorn.gd" id="2_ihngi"]
 [ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="4_ihngi"]
-[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/white_sparkle.png" id="5_5sm0t"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/particles/white_sparkle.png" id="5_5sm0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihngi"]
 size = Vector2(38, 40)
