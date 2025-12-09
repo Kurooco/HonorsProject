@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://nkcwknm2y4tw"]
+[gd_scene load_steps=16 format=4 uid="uid://nkcwknm2y4tw"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="2_nsrm0"]
@@ -11,19 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="9_dga24"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_excbq"]
 [ext_resource type="Texture2D" uid="uid://bhubnayog4f4i" path="res://art/cloudy_sky.png" id="11_excbq"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="12_iav0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(592, 348)
 
 [sub_resource type="Curve2D" id="Curve2D_6761a"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 366, 0, 0, 0, 0, 9000, 366)
+"points": PackedVector2Array(0, 0, 0, 0, 500, 366, 0, 0, 0, 0, 5544.79, 366)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_excbq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 8998, 366, 0, 0, 0, 0, 11891, 366)
+"points": PackedVector2Array(0, 0, 0, 0, 9763, 366, 0, 0, 0, 0, 11891, 366)
 }
 point_count = 2
 
@@ -140,6 +141,7 @@ position = Vector2(11669, -265)
 
 [node name="CheckPoint2" parent="." index="18" instance=ExtResource("6_sk5k4")]
 position = Vector2(5660, 21)
+set_as_claimed = true
 
 [node name="CheckPoint4" parent="." index="19" instance=ExtResource("6_sk5k4")]
 position = Vector2(3280, 35)
@@ -147,50 +149,15 @@ position = Vector2(3280, 35)
 [node name="CheckPoint3" parent="." index="20" instance=ExtResource("6_sk5k4")]
 position = Vector2(9209, 119)
 
-[node name="SingleShooter" parent="." index="21" instance=ExtResource("7_s8va5")]
-position = Vector2(6125.34, 391.827)
-scene = ExtResource("8_dga24")
-velocity = Vector2(500, -600)
-
-[node name="SingleShooter5" parent="." index="22" instance=ExtResource("7_s8va5")]
-position = Vector2(8112.15, 391.474)
-scene = ExtResource("8_dga24")
-velocity = Vector2(500, -800)
-delay = 2.0
-
-[node name="SingleShooter6" parent="." index="23" instance=ExtResource("7_s8va5")]
-position = Vector2(8432.27, 391.474)
-scene = ExtResource("8_dga24")
-velocity = Vector2(500, -800)
-delay = 1.9
-
-[node name="SingleShooter7" parent="." index="24" instance=ExtResource("7_s8va5")]
-position = Vector2(8749, 395)
-scene = ExtResource("8_dga24")
-velocity = Vector2(500, -800)
-delay = 1.8
-
-[node name="SingleShooter2" parent="." index="25" instance=ExtResource("7_s8va5")]
-position = Vector2(7227.38, -336.641)
-scene = ExtResource("8_dga24")
-
-[node name="SingleShooter3" parent="." index="26" instance=ExtResource("7_s8va5")]
-position = Vector2(7585, -340)
-scene = ExtResource("8_dga24")
-
-[node name="SingleShooter4" parent="." index="27" instance=ExtResource("7_s8va5")]
-position = Vector2(7945, -340)
-scene = ExtResource("8_dga24")
-
-[node name="Coins" parent="." index="28" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
+[node name="Coins" parent="." index="21" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
 tile_map_data = PackedByteArray("AAAAAPj/AQAAAAEAAAABAPj/AQAAAAEAAAACAPj/AQAAAAEAAAADAPj/AQAAAAEAAAD///j/AQAAAAEAAAD+//j/AQAAAAEAAAD9//j/AQAAAAEAAAD8//j/AQAAAAEAAAD8//n/AQAAAAEAAAD8//r/AQAAAAEAAAD9//r/AQAAAAEAAAD+//r/AQAAAAEAAAD///r/AQAAAAEAAAAAAPr/AQAAAAEAAAABAPr/AQAAAAEAAAACAPr/AQAAAAEAAAADAPr/AQAAAAEAAAADAPn/AQAAAAEAAAACAPn/AQAAAAEAAAABAPn/AQAAAAEAAAAAAPn/AQAAAAEAAAD///n/AQAAAAEAAAD+//n/AQAAAAEAAAD9//n/AQAAAAEAAAAEAPX/AQAAAAEAAAAEAPb/AQAAAAEAAAAEAPf/AQAAAAEAAAAEAPj/AQAAAAEAAAAEAPn/AQAAAAEAAAAEAPr/AQAAAAEAAAAEAPv/AQAAAAEAAAAEAPz/AQAAAAEAAAAEAP3/AQAAAAEAAAAFAPb/AQAAAAEAAAAFAPf/AQAAAAEAAAAFAPj/AQAAAAEAAAAFAPn/AQAAAAEAAAAFAPr/AQAAAAEAAAAFAPv/AQAAAAEAAAAFAPz/AQAAAAEAAAAGAPf/AQAAAAEAAAAGAPj/AQAAAAEAAAAGAPn/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPv/AQAAAAEAAAAHAPj/AQAAAAEAAAAHAPn/AQAAAAEAAAAHAPr/AQAAAAEAAAAIAPn/AQAAAAEAAADlAP7/AQAAAAEAAADlAP//AQAAAAEAAADlAAAAAQAAAAEAAADlAAEAAQAAAAEAAADmAP7/AQAAAAEAAADmAP//AQAAAAEAAADmAAAAAQAAAAEAAADmAAEAAQAAAAEAAADnAP7/AQAAAAEAAADnAP//AQAAAAEAAADnAAAAAQAAAAEAAADnAAEAAQAAAAEAAADoAP7/AQAAAAEAAADoAP//AQAAAAEAAADoAAAAAQAAAAEAAADoAAEAAQAAAAEAAADpAP7/AQAAAAEAAADpAP//AQAAAAEAAADpAAAAAQAAAAEAAADpAAEAAQAAAAEAAADqAP7/AQAAAAEAAADqAP//AQAAAAEAAADqAAAAAQAAAAEAAADqAAEAAQAAAAEAAADrAP7/AQAAAAEAAADrAP//AQAAAAEAAADrAAAAAQAAAAEAAADrAAEAAQAAAAEAAADsAP7/AQAAAAEAAADsAP//AQAAAAEAAADsAAAAAQAAAAEAAADsAAEAAQAAAAEAAADtAP7/AQAAAAEAAADtAP//AQAAAAEAAADtAAAAAQAAAAEAAADtAAEAAQAAAAEAAADuAP7/AQAAAAEAAADuAP//AQAAAAEAAADuAAAAAQAAAAEAAADuAAEAAQAAAAEAAAAUAf7/AQAAAAEAAAAUAf//AQAAAAEAAAAUAQAAAQAAAAEAAAAUAQEAAQAAAAEAAAAVAf7/AQAAAAEAAAAVAf//AQAAAAEAAAAVAQAAAQAAAAEAAAAVAQEAAQAAAAEAAAAWAf7/AQAAAAEAAAAWAf//AQAAAAEAAAAWAQAAAQAAAAEAAAAWAQEAAQAAAAEAAAAXAf7/AQAAAAEAAAAXAf//AQAAAAEAAAAXAQAAAQAAAAEAAAAXAQEAAQAAAAEAAAAYAf7/AQAAAAEAAAAYAf//AQAAAAEAAAAYAQAAAQAAAAEAAAAYAQEAAQAAAAEAAAAZAf7/AQAAAAEAAAAZAf//AQAAAAEAAAAZAQAAAQAAAAEAAAAZAQEAAQAAAAEAAAAaAf7/AQAAAAEAAAAaAf//AQAAAAEAAAAaAQAAAQAAAAEAAAAaAQEAAQAAAAEAAAAbAf7/AQAAAAEAAAAbAf//AQAAAAEAAAAbAQAAAQAAAAEAAAAbAQEAAQAAAAEAAAAcAf7/AQAAAAEAAAAcAf//AQAAAAEAAAAcAQAAAQAAAAEAAAAcAQEAAQAAAAEAAAAdAf7/AQAAAAEAAAAdAf//AQAAAAEAAAAdAQAAAQAAAAEAAAAdAQEAAQAAAAEAAACdAvn/AQAAAAEAAACdAvr/AQAAAAEAAACdAvv/AQAAAAEAAACdAvz/AQAAAAEAAACdAv3/AQAAAAEAAACdAv7/AQAAAAEAAACdAv//AQAAAAEAAACdAgAAAQAAAAEAAACdAgEAAQAAAAEAAACdAgIAAQAAAAEAAACdAgMAAQAAAAEAAACdAgQAAQAAAAEAAACdAgUAAQAAAAEAAACdAgYAAQAAAAEAAACeAvn/AQAAAAEAAACeAvr/AQAAAAEAAACeAvv/AQAAAAEAAACeAvz/AQAAAAEAAACeAv3/AQAAAAEAAACeAv7/AQAAAAEAAACeAv//AQAAAAEAAACeAgAAAQAAAAEAAACeAgEAAQAAAAEAAACeAgIAAQAAAAEAAACeAgMAAQAAAAEAAACeAgQAAQAAAAEAAACeAgUAAQAAAAEAAACeAgYAAQAAAAEAAACfAvn/AQAAAAEAAACfAvr/AQAAAAEAAACfAvv/AQAAAAEAAACfAvz/AQAAAAEAAACfAv3/AQAAAAEAAACfAv7/AQAAAAEAAACfAv//AQAAAAEAAACfAgAAAQAAAAEAAACfAgEAAQAAAAEAAACfAgIAAQAAAAEAAACfAgMAAQAAAAEAAACfAgQAAQAAAAEAAACfAgUAAQAAAAEAAACfAgYAAQAAAAEAAACgAvn/AQAAAAEAAACgAvr/AQAAAAEAAACgAvv/AQAAAAEAAACgAvz/AQAAAAEAAACgAv3/AQAAAAEAAACgAv7/AQAAAAEAAACgAv//AQAAAAEAAACgAgAAAQAAAAEAAACgAgEAAQAAAAEAAACgAgIAAQAAAAEAAACgAgMAAQAAAAEAAACgAgQAAQAAAAEAAACgAgUAAQAAAAEAAACgAgYAAQAAAAEAAAChAvn/AQAAAAEAAAChAvr/AQAAAAEAAAChAvv/AQAAAAEAAAChAvz/AQAAAAEAAAChAv3/AQAAAAEAAAChAv7/AQAAAAEAAAChAv//AQAAAAEAAAChAgAAAQAAAAEAAAChAgEAAQAAAAEAAAChAgIAAQAAAAEAAAChAgMAAQAAAAEAAAChAgQAAQAAAAEAAAChAgUAAQAAAAEAAAChAgYAAQAAAAEAAACiAvn/AQAAAAEAAACiAvr/AQAAAAEAAACiAvv/AQAAAAEAAACiAvz/AQAAAAEAAACiAv3/AQAAAAEAAACiAv7/AQAAAAEAAACiAv//AQAAAAEAAACiAgAAAQAAAAEAAACiAgEAAQAAAAEAAACiAgIAAQAAAAEAAACiAgMAAQAAAAEAAACiAgQAAQAAAAEAAACiAgUAAQAAAAEAAACiAgYAAQAAAAEAAACjAvn/AQAAAAEAAACjAvr/AQAAAAEAAACjAvv/AQAAAAEAAACjAvz/AQAAAAEAAACjAv3/AQAAAAEAAACjAv7/AQAAAAEAAACjAv//AQAAAAEAAACjAgAAAQAAAAEAAACjAgEAAQAAAAEAAACjAgIAAQAAAAEAAACjAgMAAQAAAAEAAACjAgQAAQAAAAEAAACjAgUAAQAAAAEAAACjAgYAAQAAAAEAAACkAvn/AQAAAAEAAACkAvr/AQAAAAEAAACkAvv/AQAAAAEAAACkAvz/AQAAAAEAAACkAv3/AQAAAAEAAACkAv7/AQAAAAEAAACkAv//AQAAAAEAAACkAgAAAQAAAAEAAACkAgEAAQAAAAEAAACkAgIAAQAAAAEAAACkAgMAAQAAAAEAAACkAgQAAQAAAAEAAACkAgUAAQAAAAEAAACkAgYAAQAAAAEAAAClAvn/AQAAAAEAAAClAvr/AQAAAAEAAAClAvv/AQAAAAEAAAClAvz/AQAAAAEAAAClAv3/AQAAAAEAAAClAv7/AQAAAAEAAAClAv//AQAAAAEAAAClAgAAAQAAAAEAAAClAgEAAQAAAAEAAAClAgIAAQAAAAEAAAClAgMAAQAAAAEAAAClAgQAAQAAAAEAAAClAgUAAQAAAAEAAAClAgYAAQAAAAEAAACmAvn/AQAAAAEAAACmAvr/AQAAAAEAAACmAvv/AQAAAAEAAACmAvz/AQAAAAEAAACmAv3/AQAAAAEAAACmAv7/AQAAAAEAAACmAv//AQAAAAEAAACmAgAAAQAAAAEAAACmAgEAAQAAAAEAAACmAgIAAQAAAAEAAACmAgMAAQAAAAEAAACmAgQAAQAAAAEAAACmAgUAAQAAAAEAAACmAgYAAQAAAAEAAACnAvn/AQAAAAEAAACnAvr/AQAAAAEAAACnAvv/AQAAAAEAAACnAvz/AQAAAAEAAACnAv3/AQAAAAEAAACnAv7/AQAAAAEAAACnAv//AQAAAAEAAACnAgAAAQAAAAEAAACnAgEAAQAAAAEAAACnAgIAAQAAAAEAAACnAgMAAQAAAAEAAACnAgQAAQAAAAEAAACnAgUAAQAAAAEAAACnAgYAAQAAAAEAAACoAvn/AQAAAAEAAACoAvr/AQAAAAEAAACoAvv/AQAAAAEAAACoAvz/AQAAAAEAAACoAv3/AQAAAAEAAACoAv7/AQAAAAEAAACoAv//AQAAAAEAAACoAgAAAQAAAAEAAACoAgEAAQAAAAEAAACoAgIAAQAAAAEAAACoAgMAAQAAAAEAAACoAgQAAQAAAAEAAACoAgUAAQAAAAEAAACoAgYAAQAAAAEAAACpAvn/AQAAAAEAAACpAvr/AQAAAAEAAACpAvv/AQAAAAEAAACpAvz/AQAAAAEAAACpAv3/AQAAAAEAAACpAv7/AQAAAAEAAACpAv//AQAAAAEAAACpAgAAAQAAAAEAAACpAgEAAQAAAAEAAACpAgIAAQAAAAEAAACpAgMAAQAAAAEAAACpAgQAAQAAAAEAAACpAgUAAQAAAAEAAACpAgYAAQAAAAEAAACqAvn/AQAAAAEAAACqAvr/AQAAAAEAAACqAvv/AQAAAAEAAACqAvz/AQAAAAEAAACqAv3/AQAAAAEAAACqAv7/AQAAAAEAAACqAv//AQAAAAEAAACqAgAAAQAAAAEAAACqAgEAAQAAAAEAAACqAgIAAQAAAAEAAACqAgMAAQAAAAEAAACqAgQAAQAAAAEAAACqAgUAAQAAAAEAAACqAgYAAQAAAAEAAACrAvn/AQAAAAEAAACrAvr/AQAAAAEAAACrAvv/AQAAAAEAAACrAvz/AQAAAAEAAACrAv3/AQAAAAEAAACrAv7/AQAAAAEAAACrAv//AQAAAAEAAACrAgAAAQAAAAEAAACrAgEAAQAAAAEAAACrAgIAAQAAAAEAAACrAgMAAQAAAAEAAACrAgQAAQAAAAEAAACrAgUAAQAAAAEAAACrAgYAAQAAAAEAAAA=")
 world_node = NodePath("..")
 
-[node name="LevelEnd" parent="." index="29" instance=ExtResource("9_dga24")]
+[node name="LevelEnd" parent="." index="22" instance=ExtResource("9_dga24")]
 position = Vector2(12608.8, -9.34271)
 next_level = "res://scenes/levels/rest_1.tscn"
 
-[node name="Sky" type="CanvasLayer" parent="." index="30"]
+[node name="Sky" type="CanvasLayer" parent="." index="23"]
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky" index="0"]
@@ -198,3 +165,89 @@ position = Vector2(580.5, 325.5)
 scale = Vector2(1.04253, 1.03549)
 texture = ExtResource("11_excbq")
 flip_v = true
+
+[node name="Shooters" type="Node2D" parent="." index="24"]
+
+[node name="SingleShooter" parent="Shooters" index="0" instance=ExtResource("7_s8va5")]
+position = Vector2(6125.34, 391.827)
+scene = ExtResource("8_dga24")
+velocity = Vector2(500, -600)
+
+[node name="FoodShooter" parent="Shooters" index="1" instance=ExtResource("7_s8va5")]
+position = Vector2(5973.34, 391.827)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(500, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter2" parent="Shooters" index="2" instance=ExtResource("7_s8va5")]
+position = Vector2(6960, 415)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -700)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter4" parent="Shooters" index="3" instance=ExtResource("7_s8va5")]
+position = Vector2(7768, 415)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -700)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter5" parent="Shooters" index="4" instance=ExtResource("7_s8va5")]
+position = Vector2(8616, 415)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(-150, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter8" parent="Shooters" index="5" instance=ExtResource("7_s8va5")]
+position = Vector2(8616, 415)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(150, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter6" parent="Shooters" index="6" instance=ExtResource("7_s8va5")]
+position = Vector2(9002, 412)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(450, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter3" parent="Shooters" index="7" instance=ExtResource("7_s8va5")]
+position = Vector2(7373, 415)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -600)
+delay = 0.4
+show_path = false
+
+[node name="SingleShooter5" parent="Shooters" index="8" instance=ExtResource("7_s8va5")]
+position = Vector2(8112.15, 391.474)
+scene = ExtResource("8_dga24")
+velocity = Vector2(500, -800)
+delay = 2.0
+
+[node name="SingleShooter6" parent="Shooters" index="9" instance=ExtResource("7_s8va5")]
+position = Vector2(8432.27, 391.474)
+scene = ExtResource("8_dga24")
+velocity = Vector2(500, -800)
+delay = 1.9
+
+[node name="SingleShooter7" parent="Shooters" index="10" instance=ExtResource("7_s8va5")]
+position = Vector2(8749, 395)
+scene = ExtResource("8_dga24")
+velocity = Vector2(500, -800)
+delay = 1.8
+
+[node name="SingleShooter2" parent="Shooters" index="11" instance=ExtResource("7_s8va5")]
+position = Vector2(7227.38, -336.641)
+scene = ExtResource("8_dga24")
+
+[node name="SingleShooter3" parent="Shooters" index="12" instance=ExtResource("7_s8va5")]
+position = Vector2(7585, -340)
+scene = ExtResource("8_dga24")
+
+[node name="SingleShooter4" parent="Shooters" index="13" instance=ExtResource("7_s8va5")]
+position = Vector2(7945, -340)
+scene = ExtResource("8_dga24")

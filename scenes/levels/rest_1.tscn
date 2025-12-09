@@ -63,7 +63,7 @@ NodePath("LevelCollision"): ExtResource("2_hpyij")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
-polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -56, -256, -56, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -8, -256, -8, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="LevelCollision"]
 position = Vector2(272, 488)
