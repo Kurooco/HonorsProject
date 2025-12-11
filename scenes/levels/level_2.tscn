@@ -15,15 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://x2q5wh5wj5sl" path="res://scenes/level_objects/assist/super_acorn.tscn" id="13_tv7cl"]
 [ext_resource type="Texture2D" uid="uid://bylb7a6xgj0o" path="res://art/environment/parallax/trees.png" id="14_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_r88tb"]
+[ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="16_ndlae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
 size = Vector2(459, 298)
-
-[sub_resource type="Curve2D" id="Curve2D_3p04p"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -200, 339, 0, 0, 0, 0, 2229, 339)
-}
-point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_r88tb"]
 _data = {
@@ -98,128 +93,126 @@ texture = ExtResource("2_l37oo")
 [node name="Coins" parent="." index="7" instance=ExtResource("3_qpwj6")]
 tile_map_data = PackedByteArray("AAD2//3/AQAAAAEAAAD2//z/AQAAAAEAAAD2//v/AQAAAAEAAAD3//v/AQAAAAEAAAD4//v/AQAAAAEAAAD5//v/AQAAAAEAAAD6//v/AQAAAAEAAAD7//v/AQAAAAEAAAD8//v/AQAAAAEAAAD8//z/AQAAAAEAAAD7//z/AQAAAAEAAAD6//3/AQAAAAEAAAD5//3/AQAAAAEAAAD4//3/AQAAAAEAAAD3//3/AQAAAAEAAAD3//z/AQAAAAEAAAD4//z/AQAAAAEAAAD5//z/AQAAAAEAAAD6//z/AQAAAAEAAAD7//3/AQAAAAEAAAD8//3/AQAAAAEAAAD8//r/AQAAAAEAAAD8//n/AQAAAAEAAAD8//7/AQAAAAEAAAD8////AQAAAAEAAAD9//7/AQAAAAEAAAD9//3/AQAAAAEAAAD9//z/AQAAAAEAAAD9//v/AQAAAAEAAAD9//r/AQAAAAEAAAD+//v/AQAAAAEAAAD+//z/AQAAAAEAAAD+//3/AQAAAAEAAAD///z/AQAAAAEAAACbAAsAAQABAAAAAACdAAsAAQABAAAAAACfAAsAAQABAAAAAAChAAsAAQABAAAAAACjAAsAAQABAAAAAAClAAsAAQABAAAAAACnAAsAAQABAAAAAACZAAsAAQABAAAAAACZAA0AAQABAAAAAACbAA0AAQABAAAAAACdAA0AAQABAAAAAACfAA0AAQABAAAAAAChAA0AAQABAAAAAACjAA0AAQABAAAAAAClAA0AAQABAAAAAACnAA0AAQABAAAAAACZAA8AAQABAAAAAACbAA8AAQABAAAAAACdAA8AAQABAAAAAACfAA8AAQABAAAAAAChAA8AAQABAAAAAACjAA8AAQABAAAAAAClAA8AAQABAAAAAACnAA8AAQABAAAAAADdAPj/AQAAAAEAAADdAPn/AQAAAAEAAADdAPr/AQAAAAEAAADdAPv/AQAAAAEAAADdAPz/AQAAAAEAAADdAP3/AQAAAAEAAADdAP7/AQAAAAEAAADdAP//AQAAAAEAAADdAAAAAQAAAAEAAADdAAEAAQAAAAEAAADeAPj/AQAAAAEAAADeAPn/AQAAAAEAAADeAPr/AQAAAAEAAADeAPv/AQAAAAEAAADeAPz/AQAAAAEAAADeAP3/AQAAAAEAAADeAP7/AQAAAAEAAADeAP//AQAAAAEAAADeAAAAAQAAAAEAAADeAAEAAQAAAAEAAADfAPj/AQAAAAEAAADfAPn/AQAAAAEAAADfAPr/AQAAAAEAAADfAPv/AQAAAAEAAADfAPz/AQAAAAEAAADfAP3/AQAAAAEAAADfAP7/AQAAAAEAAADfAP//AQAAAAEAAADfAAAAAQAAAAEAAADfAAEAAQAAAAEAAADgAPj/AQAAAAEAAADgAPn/AQAAAAEAAADgAPr/AQAAAAEAAADgAPv/AQAAAAEAAADgAPz/AQAAAAEAAADgAP3/AQAAAAEAAADgAP7/AQAAAAEAAADgAP//AQAAAAEAAADgAAAAAQAAAAEAAADgAAEAAQAAAAEAAADhAPj/AQAAAAEAAADhAPn/AQAAAAEAAADhAPr/AQAAAAEAAADhAPv/AQAAAAEAAADhAPz/AQAAAAEAAADhAP3/AQAAAAEAAADhAP7/AQAAAAEAAADhAP//AQAAAAEAAADhAAAAAQAAAAEAAADhAAEAAQAAAAEAAADiAPj/AQAAAAEAAADiAPn/AQAAAAEAAADiAPr/AQAAAAEAAADiAPv/AQAAAAEAAADiAPz/AQAAAAEAAADiAP3/AQAAAAEAAADiAP7/AQAAAAEAAADiAP//AQAAAAEAAADiAAAAAQAAAAEAAADiAAEAAQAAAAEAAADjAPj/AQAAAAEAAADjAPn/AQAAAAEAAADjAPr/AQAAAAEAAADjAPv/AQAAAAEAAADjAPz/AQAAAAEAAADjAP3/AQAAAAEAAADjAP7/AQAAAAEAAADjAP//AQAAAAEAAADjAAAAAQAAAAEAAADjAAEAAQAAAAEAAADkAPj/AQAAAAEAAADkAPn/AQAAAAEAAADkAPr/AQAAAAEAAADkAPv/AQAAAAEAAADkAPz/AQAAAAEAAADkAP3/AQAAAAEAAADkAP7/AQAAAAEAAADkAP//AQAAAAEAAADkAAAAAQAAAAEAAADkAAEAAQAAAAEAAADlAPj/AQAAAAEAAADlAPn/AQAAAAEAAADlAPr/AQAAAAEAAADlAPv/AQAAAAEAAADlAPz/AQAAAAEAAADlAP3/AQAAAAEAAADlAP7/AQAAAAEAAADlAP//AQAAAAEAAADlAAAAAQAAAAEAAADlAAEAAQAAAAEAAADmAPj/AQAAAAEAAADmAPn/AQAAAAEAAADmAPr/AQAAAAEAAADmAPv/AQAAAAEAAADmAPz/AQAAAAEAAADmAP3/AQAAAAEAAADmAP7/AQAAAAEAAADmAP//AQAAAAEAAADmAAAAAQAAAAEAAADmAAEAAQAAAAEAAADnAPj/AQAAAAEAAADnAPn/AQAAAAEAAADnAPr/AQAAAAEAAADnAPv/AQAAAAEAAADnAPz/AQAAAAEAAADnAP3/AQAAAAEAAADnAP7/AQAAAAEAAADnAP//AQAAAAEAAADnAAAAAQAAAAEAAADnAAEAAQAAAAEAAADoAPj/AQAAAAEAAADoAPn/AQAAAAEAAADoAPr/AQAAAAEAAADoAPv/AQAAAAEAAADoAPz/AQAAAAEAAADoAP3/AQAAAAEAAADoAP7/AQAAAAEAAADoAP//AQAAAAEAAADoAAAAAQAAAAEAAADoAAEAAQAAAAEAAADpAPj/AQAAAAEAAADpAPn/AQAAAAEAAADpAPr/AQAAAAEAAADpAPv/AQAAAAEAAADpAPz/AQAAAAEAAADpAP3/AQAAAAEAAADpAP7/AQAAAAEAAADpAP//AQAAAAEAAADpAAAAAQAAAAEAAADpAAEAAQAAAAEAAADqAPj/AQAAAAEAAADqAPn/AQAAAAEAAADqAPr/AQAAAAEAAADqAPv/AQAAAAEAAADqAPz/AQAAAAEAAADqAP3/AQAAAAEAAADqAP7/AQAAAAEAAADqAP//AQAAAAEAAADqAAAAAQAAAAEAAADqAAEAAQAAAAEAAADrAPj/AQAAAAEAAADrAPn/AQAAAAEAAADrAPr/AQAAAAEAAADrAPv/AQAAAAEAAADrAPz/AQAAAAEAAADrAP3/AQAAAAEAAADrAP7/AQAAAAEAAADrAP//AQAAAAEAAADrAAAAAQAAAAEAAADrAAEAAQAAAAEAAADsAPj/AQAAAAEAAADsAPn/AQAAAAEAAADsAPr/AQAAAAEAAADsAPv/AQAAAAEAAADsAPz/AQAAAAEAAADsAP3/AQAAAAEAAADsAP7/AQAAAAEAAADsAP//AQAAAAEAAADsAAAAAQAAAAEAAADsAAEAAQAAAAEAAADtAPj/AQAAAAEAAADtAPn/AQAAAAEAAADtAPr/AQAAAAEAAADtAPv/AQAAAAEAAADtAPz/AQAAAAEAAADtAP3/AQAAAAEAAADtAP7/AQAAAAEAAADtAP//AQAAAAEAAADtAAAAAQAAAAEAAADtAAEAAQAAAAEAAADuAPj/AQAAAAEAAADuAPn/AQAAAAEAAADuAPr/AQAAAAEAAADuAPv/AQAAAAEAAADuAPz/AQAAAAEAAADuAP3/AQAAAAEAAADuAP7/AQAAAAEAAADuAP//AQAAAAEAAADuAAAAAQAAAAEAAADuAAEAAQAAAAEAAADvAPj/AQAAAAEAAADvAPn/AQAAAAEAAADvAPr/AQAAAAEAAADvAPv/AQAAAAEAAADvAPz/AQAAAAEAAADvAP3/AQAAAAEAAADvAP7/AQAAAAEAAADvAP//AQAAAAEAAADvAAAAAQAAAAEAAADvAAEAAQAAAAEAAADwAPj/AQAAAAEAAADwAPn/AQAAAAEAAADwAPr/AQAAAAEAAADwAPv/AQAAAAEAAADwAPz/AQAAAAEAAADwAP3/AQAAAAEAAADwAP7/AQAAAAEAAADwAP//AQAAAAEAAADwAAAAAQAAAAEAAADwAAEAAQAAAAEAAADxAPj/AQAAAAEAAADxAPn/AQAAAAEAAADxAPr/AQAAAAEAAADxAPv/AQAAAAEAAADxAPz/AQAAAAEAAADxAP3/AQAAAAEAAADxAP7/AQAAAAEAAADxAP//AQAAAAEAAADxAAAAAQAAAAEAAADxAAEAAQAAAAEAAAA8AfT/AQAAAAEAAAA8AfX/AQAAAAEAAAA8Afb/AQAAAAEAAAA8Aff/AQAAAAEAAAA9AfT/AQAAAAEAAAA9AfX/AQAAAAEAAAA9Afb/AQAAAAEAAAA9Aff/AQAAAAEAAAA+AfT/AQAAAAEAAAA+AfX/AQAAAAEAAAA+Afb/AQAAAAEAAAA+Aff/AQAAAAEAAAA/AfT/AQAAAAEAAAA/AfX/AQAAAAEAAAA/Afb/AQAAAAEAAAA/Aff/AQAAAAEAAABAAfT/AQAAAAEAAABAAfX/AQAAAAEAAABAAfb/AQAAAAEAAABAAff/AQAAAAEAAABBAfT/AQAAAAEAAABBAfX/AQAAAAEAAABBAfb/AQAAAAEAAABBAff/AQAAAAEAAABCAfT/AQAAAAEAAABCAfX/AQAAAAEAAABCAfb/AQAAAAEAAABCAff/AQAAAAEAAABDAfT/AQAAAAEAAABDAfX/AQAAAAEAAABDAfb/AQAAAAEAAABDAff/AQAAAAEAAABEAfT/AQAAAAEAAABEAfX/AQAAAAEAAABEAfb/AQAAAAEAAABEAff/AQAAAAEAAABFAfT/AQAAAAEAAABFAfX/AQAAAAEAAABFAfb/AQAAAAEAAABFAff/AQAAAAEAAABGAfT/AQAAAAEAAABGAfX/AQAAAAEAAABGAfb/AQAAAAEAAABGAff/AQAAAAEAAABHAfT/AQAAAAEAAABHAfX/AQAAAAEAAABHAfb/AQAAAAEAAABHAff/AQAAAAEAAABIAfT/AQAAAAEAAABIAfX/AQAAAAEAAABIAfb/AQAAAAEAAABIAff/AQAAAAEAAABJAfT/AQAAAAEAAABJAfX/AQAAAAEAAABJAfb/AQAAAAEAAABJAff/AQAAAAEAAABKAfT/AQAAAAEAAABKAfX/AQAAAAEAAABKAfb/AQAAAAEAAABKAff/AQAAAAEAAABLAfT/AQAAAAEAAABLAfX/AQAAAAEAAABLAfb/AQAAAAEAAABLAff/AQAAAAEAAABMAfT/AQAAAAEAAABMAfX/AQAAAAEAAABMAfb/AQAAAAEAAABMAff/AQAAAAEAAABNAfT/AQAAAAEAAABNAfX/AQAAAAEAAABNAfb/AQAAAAEAAABNAff/AQAAAAEAAABOAfT/AQAAAAEAAABOAfX/AQAAAAEAAABOAfb/AQAAAAEAAABOAff/AQAAAAEAAABPAfT/AQAAAAEAAABPAfX/AQAAAAEAAABPAfb/AQAAAAEAAABPAff/AQAAAAEAAABQAfT/AQAAAAEAAABQAfX/AQAAAAEAAABQAfb/AQAAAAEAAABQAff/AQAAAAEAAADuAfX/AQAAAAEAAADuAfb/AQAAAAEAAADuAff/AQAAAAEAAADuAfj/AQAAAAEAAADuAfn/AQAAAAEAAADuAfr/AQAAAAEAAADuAfv/AQAAAAEAAADuAfz/AQAAAAEAAADvAfX/AQAAAAEAAADvAfb/AQAAAAEAAADvAff/AQAAAAEAAADvAfj/AQAAAAEAAADvAfn/AQAAAAEAAADvAfr/AQAAAAEAAADvAfv/AQAAAAEAAADvAfz/AQAAAAEAAADwAfX/AQAAAAEAAADwAfb/AQAAAAEAAADwAff/AQAAAAEAAADwAfj/AQAAAAEAAADwAfn/AQAAAAEAAADwAfr/AQAAAAEAAADwAfv/AQAAAAEAAADwAfz/AQAAAAEAAADxAfX/AQAAAAEAAADxAfb/AQAAAAEAAADxAff/AQAAAAEAAADxAfj/AQAAAAEAAADxAfn/AQAAAAEAAADxAfr/AQAAAAEAAADxAfv/AQAAAAEAAADxAfz/AQAAAAEAAADyAfX/AQAAAAEAAADyAfb/AQAAAAEAAADyAff/AQAAAAEAAADyAfj/AQAAAAEAAADyAfn/AQAAAAEAAADyAfr/AQAAAAEAAADyAfv/AQAAAAEAAADyAfz/AQAAAAEAAADzAfX/AQAAAAEAAADzAfb/AQAAAAEAAADzAff/AQAAAAEAAADzAfj/AQAAAAEAAADzAfn/AQAAAAEAAADzAfr/AQAAAAEAAADzAfv/AQAAAAEAAADzAfz/AQAAAAEAAAD0AfX/AQAAAAEAAAD0Afb/AQAAAAEAAAD0Aff/AQAAAAEAAAD0Afj/AQAAAAEAAAD0Afn/AQAAAAEAAAD0Afr/AQAAAAEAAAD0Afv/AQAAAAEAAAD0Afz/AQAAAAEAAAD1AfX/AQAAAAEAAAD1Afb/AQAAAAEAAAD1Aff/AQAAAAEAAAD1Afj/AQAAAAEAAAD1Afn/AQAAAAEAAAD1Afr/AQAAAAEAAAD1Afv/AQAAAAEAAAD1Afz/AQAAAAEAAAD/Af//AQAAAAEAAAD/AQAAAQAAAAEAAAD/AQEAAQAAAAEAAAD/AQIAAQAAAAEAAAD/AQMAAQAAAAEAAAD/AQQAAQAAAAEAAAD/AQUAAQAAAAEAAAD/AQYAAQAAAAEAAAAAAv//AQAAAAEAAAAAAgAAAQAAAAEAAAAAAgEAAQAAAAEAAAAAAgIAAQAAAAEAAAAAAgMAAQAAAAEAAAAAAgQAAQAAAAEAAAAAAgUAAQAAAAEAAAAAAgYAAQAAAAEAAAABAv//AQAAAAEAAAABAgAAAQAAAAEAAAABAgEAAQAAAAEAAAABAgIAAQAAAAEAAAABAgMAAQAAAAEAAAABAgQAAQAAAAEAAAABAgUAAQAAAAEAAAABAgYAAQAAAAEAAAACAv//AQAAAAEAAAACAgAAAQAAAAEAAAACAgEAAQAAAAEAAAACAgIAAQAAAAEAAAACAgMAAQAAAAEAAAACAgQAAQAAAAEAAAACAgUAAQAAAAEAAAACAgYAAQAAAAEAAAADAv//AQAAAAEAAAADAgAAAQAAAAEAAAADAgEAAQAAAAEAAAADAgIAAQAAAAEAAAADAgMAAQAAAAEAAAADAgQAAQAAAAEAAAADAgUAAQAAAAEAAAADAgYAAQAAAAEAAAAEAv//AQAAAAEAAAAEAgAAAQAAAAEAAAAEAgEAAQAAAAEAAAAEAgIAAQAAAAEAAAAEAgMAAQAAAAEAAAAEAgQAAQAAAAEAAAAEAgUAAQAAAAEAAAAEAgYAAQAAAAEAAAAFAv//AQAAAAEAAAAFAgAAAQAAAAEAAAAFAgEAAQAAAAEAAAAFAgIAAQAAAAEAAAAFAgMAAQAAAAEAAAAFAgQAAQAAAAEAAAAFAgUAAQAAAAEAAAAFAgYAAQAAAAEAAAAGAv//AQAAAAEAAAAGAgAAAQAAAAEAAAAGAgEAAQAAAAEAAAAGAgIAAQAAAAEAAAAGAgMAAQAAAAEAAAAGAgQAAQAAAAEAAAAGAgUAAQAAAAEAAAAGAgYAAQAAAAEAAAAqAv//AQAAAAEAAAAqAgAAAQAAAAEAAAAqAgEAAQAAAAEAAAAqAgIAAQAAAAEAAAAqAgMAAQAAAAEAAAAqAgQAAQAAAAEAAAAqAgUAAQAAAAEAAAAqAgYAAQAAAAEAAAArAv//AQAAAAEAAAArAgAAAQAAAAEAAAArAgEAAQAAAAEAAAArAgIAAQAAAAEAAAArAgMAAQAAAAEAAAArAgQAAQAAAAEAAAArAgUAAQAAAAEAAAArAgYAAQAAAAEAAAAsAv//AQAAAAEAAAAsAgAAAQAAAAEAAAAsAgEAAQAAAAEAAAAsAgIAAQAAAAEAAAAsAgMAAQAAAAEAAAAsAgQAAQAAAAEAAAAsAgUAAQAAAAEAAAAsAgYAAQAAAAEAAAAtAv//AQAAAAEAAAAtAgAAAQAAAAEAAAAtAgEAAQAAAAEAAAAtAgIAAQAAAAEAAAAtAgMAAQAAAAEAAAAtAgQAAQAAAAEAAAAtAgUAAQAAAAEAAAAtAgYAAQAAAAEAAAAuAv//AQAAAAEAAAAuAgAAAQAAAAEAAAAuAgEAAQAAAAEAAAAuAgIAAQAAAAEAAAAuAgMAAQAAAAEAAAAuAgQAAQAAAAEAAAAuAgUAAQAAAAEAAAAuAgYAAQAAAAEAAAAvAv//AQAAAAEAAAAvAgAAAQAAAAEAAAAvAgEAAQAAAAEAAAAvAgIAAQAAAAEAAAAvAgMAAQAAAAEAAAAvAgQAAQAAAAEAAAAvAgUAAQAAAAEAAAAvAgYAAQAAAAEAAAAwAv//AQAAAAEAAAAwAgAAAQAAAAEAAAAwAgEAAQAAAAEAAAAwAgIAAQAAAAEAAAAwAgMAAQAAAAEAAAAwAgQAAQAAAAEAAAAwAgUAAQAAAAEAAAAwAgYAAQAAAAEAAAAxAv//AQAAAAEAAAAxAgAAAQAAAAEAAAAxAgEAAQAAAAEAAAAxAgIAAQAAAAEAAAAxAgMAAQAAAAEAAAAxAgQAAQAAAAEAAAAxAgUAAQAAAAEAAAAxAgYAAQAAAAEAAAA6AvX/AQAAAAEAAAA6Avb/AQAAAAEAAAA6Avf/AQAAAAEAAAA6Avj/AQAAAAEAAAA6Avn/AQAAAAEAAAA6Avr/AQAAAAEAAAA6Avv/AQAAAAEAAAA6Avz/AQAAAAEAAAA7AvX/AQAAAAEAAAA7Avb/AQAAAAEAAAA7Avf/AQAAAAEAAAA7Avj/AQAAAAEAAAA7Avn/AQAAAAEAAAA7Avr/AQAAAAEAAAA7Avv/AQAAAAEAAAA7Avz/AQAAAAEAAAA8AvX/AQAAAAEAAAA8Avb/AQAAAAEAAAA8Avf/AQAAAAEAAAA8Avj/AQAAAAEAAAA8Avn/AQAAAAEAAAA8Avr/AQAAAAEAAAA8Avv/AQAAAAEAAAA8Avz/AQAAAAEAAAA9AvX/AQAAAAEAAAA9Avb/AQAAAAEAAAA9Avf/AQAAAAEAAAA9Avj/AQAAAAEAAAA9Avn/AQAAAAEAAAA9Avr/AQAAAAEAAAA9Avv/AQAAAAEAAAA9Avz/AQAAAAEAAAA+AvX/AQAAAAEAAAA+Avb/AQAAAAEAAAA+Avf/AQAAAAEAAAA+Avj/AQAAAAEAAAA+Avn/AQAAAAEAAAA+Avr/AQAAAAEAAAA+Avv/AQAAAAEAAAA+Avz/AQAAAAEAAAA/AvX/AQAAAAEAAAA/Avb/AQAAAAEAAAA/Avf/AQAAAAEAAAA/Avj/AQAAAAEAAAA/Avn/AQAAAAEAAAA/Avr/AQAAAAEAAAA/Avv/AQAAAAEAAAA/Avz/AQAAAAEAAABAAvX/AQAAAAEAAABAAvb/AQAAAAEAAABAAvf/AQAAAAEAAABAAvj/AQAAAAEAAABAAvn/AQAAAAEAAABAAvr/AQAAAAEAAABAAvv/AQAAAAEAAABAAvz/AQAAAAEAAABBAvX/AQAAAAEAAABBAvb/AQAAAAEAAABBAvf/AQAAAAEAAABBAvj/AQAAAAEAAABBAvn/AQAAAAEAAABBAvr/AQAAAAEAAABBAvv/AQAAAAEAAABBAvz/AQAAAAEAAAAWA/T/AQABAAAAAAAWA/b/AQABAAAAAAAWA/j/AQABAAAAAAAWA/r/AQABAAAAAAAWA/z/AQABAAAAAAAlAwEAAQABAAAAAAAlAwMAAQABAAAAAAAlAwUAAQABAAAAAAAlAwcAAQABAAAAAAAlAwkAAQABAAAAAAA0A/T/AQABAAAAAAA0A/b/AQABAAAAAAA0A/j/AQABAAAAAAA0A/r/AQABAAAAAAA0A/z/AQABAAAAAABDAwEAAQABAAAAAABDAwMAAQABAAAAAABDAwUAAQABAAAAAABDAwcAAQABAAAAAABDAwkAAQABAAAAAAA=")
 
-[node name="FoodSpawner" parent="." index="8" instance=ExtResource("4_ibugp")]
-curve = SubResource("Curve2D_3p04p")
-spawn_time = 0.3
-
-[node name="FoodSpawner2" parent="." index="9" instance=ExtResource("4_ibugp")]
+[node name="FoodSpawner2" parent="." index="8" instance=ExtResource("4_ibugp")]
 curve = SubResource("Curve2D_r88tb")
 
-[node name="FoodSpawner3" parent="." index="10" instance=ExtResource("4_ibugp")]
+[node name="FoodSpawner3" parent="." index="9" instance=ExtResource("4_ibugp")]
 curve = SubResource("Curve2D_brxtv")
 
-[node name="Boxes" parent="." index="11" instance=ExtResource("6_brxtv")]
+[node name="Boxes" parent="." index="10" instance=ExtResource("6_brxtv")]
 position = Vector2(1, -1)
 
-[node name="Fan" parent="." index="12" instance=ExtResource("11_nt80m")]
+[node name="Fan" parent="." index="11" instance=ExtResource("11_nt80m")]
 position = Vector2(5950, 256)
 
-[node name="Fan2" parent="." index="13" instance=ExtResource("11_nt80m")]
+[node name="Fan2" parent="." index="12" instance=ExtResource("11_nt80m")]
 position = Vector2(6198, 171)
 
-[node name="Fan3" parent="." index="14" instance=ExtResource("11_nt80m")]
+[node name="Fan3" parent="." index="13" instance=ExtResource("11_nt80m")]
 position = Vector2(6449, 275)
 
-[node name="Fan8" parent="." index="15" instance=ExtResource("11_nt80m")]
+[node name="Fan8" parent="." index="14" instance=ExtResource("11_nt80m")]
 position = Vector2(6562, 219)
 
-[node name="Fan9" parent="." index="16" instance=ExtResource("11_nt80m")]
+[node name="Fan9" parent="." index="15" instance=ExtResource("11_nt80m")]
 position = Vector2(6678, 156)
 
-[node name="Fan4" parent="." index="17" instance=ExtResource("11_nt80m")]
+[node name="Fan4" parent="." index="16" instance=ExtResource("11_nt80m")]
 position = Vector2(6884, 55)
 rotation = -1.5708
 
-[node name="Fan5" parent="." index="18" instance=ExtResource("11_nt80m")]
+[node name="Fan5" parent="." index="17" instance=ExtResource("11_nt80m")]
 position = Vector2(8395, -192)
 rotation = -1.5708
 
-[node name="Fan6" parent="." index="19" instance=ExtResource("11_nt80m")]
+[node name="Fan6" parent="." index="18" instance=ExtResource("11_nt80m")]
 position = Vector2(8396, 130)
 rotation = -1.5708
 
-[node name="Fan7" parent="." index="20" instance=ExtResource("11_nt80m")]
+[node name="Fan7" parent="." index="19" instance=ExtResource("11_nt80m")]
 position = Vector2(7828, -42)
 rotation = 1.5708
 
-[node name="Fan10" parent="." index="21" instance=ExtResource("11_nt80m")]
+[node name="Fan10" parent="." index="20" instance=ExtResource("11_nt80m")]
 position = Vector2(9340, -203)
 rotation = -1.5708
 
-[node name="Fan11" parent="." index="22" instance=ExtResource("11_nt80m")]
+[node name="Fan11" parent="." index="21" instance=ExtResource("11_nt80m")]
 position = Vector2(9341, 119)
 rotation = -1.5708
 
-[node name="Fan12" parent="." index="23" instance=ExtResource("11_nt80m")]
+[node name="Fan12" parent="." index="22" instance=ExtResource("11_nt80m")]
 position = Vector2(8776, -49)
 rotation = 1.5708
 
-[node name="Fan13" parent="." index="24" instance=ExtResource("11_nt80m")]
+[node name="Fan13" parent="." index="23" instance=ExtResource("11_nt80m")]
 position = Vector2(12756, 188)
 rotation = -1.5708
 
-[node name="Fan14" parent="." index="25" instance=ExtResource("11_nt80m")]
+[node name="Fan14" parent="." index="24" instance=ExtResource("11_nt80m")]
 position = Vector2(12831, -50)
 rotation = -1.5708
 
-[node name="Fan15" parent="." index="26" instance=ExtResource("11_nt80m")]
+[node name="Fan15" parent="." index="25" instance=ExtResource("11_nt80m")]
 position = Vector2(13070, -169)
 rotation = -1.5708
 
-[node name="Fan16" parent="." index="27" instance=ExtResource("11_nt80m")]
+[node name="Fan16" parent="." index="26" instance=ExtResource("11_nt80m")]
 position = Vector2(13108, 66)
 rotation = -1.5708
 
-[node name="Fan17" parent="." index="28" instance=ExtResource("11_nt80m")]
+[node name="Fan17" parent="." index="27" instance=ExtResource("11_nt80m")]
 position = Vector2(13328, 182)
 rotation = -1.5708
 
-[node name="Fan18" parent="." index="29" instance=ExtResource("11_nt80m")]
+[node name="Fan18" parent="." index="28" instance=ExtResource("11_nt80m")]
 position = Vector2(13413, -63)
 rotation = -1.5708
 
-[node name="Fan19" parent="." index="30" instance=ExtResource("11_nt80m")]
+[node name="Fan19" parent="." index="29" instance=ExtResource("11_nt80m")]
 position = Vector2(14101, -179)
 rotation = 1.5708
 
-[node name="Fan20" parent="." index="31" instance=ExtResource("11_nt80m")]
+[node name="Fan20" parent="." index="30" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, -63)
 rotation = 1.5708
 
-[node name="Fan21" parent="." index="32" instance=ExtResource("11_nt80m")]
+[node name="Fan21" parent="." index="31" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, 60)
 rotation = 1.5708
 
-[node name="Fan22" parent="." index="33" instance=ExtResource("11_nt80m")]
+[node name="Fan22" parent="." index="32" instance=ExtResource("11_nt80m")]
 position = Vector2(14100, 173)
 rotation = 1.5708
 
-[node name="CheckPoint" parent="." index="34" instance=ExtResource("12_brxtv")]
+[node name="CheckPoint" parent="." index="33" instance=ExtResource("12_brxtv")]
 position = Vector2(5729, 27)
+set_as_claimed = true
 
-[node name="CheckPoint2" parent="." index="35" instance=ExtResource("12_brxtv")]
+[node name="CheckPoint2" parent="." index="34" instance=ExtResource("12_brxtv")]
 position = Vector2(9790, -64)
 
-[node name="LevelEnd" parent="." index="36" instance=ExtResource("14_r88tb")]
+[node name="LevelEnd" parent="." index="35" instance=ExtResource("14_r88tb")]
 position = Vector2(16047.3, 30.2179)
 next_level = "res://scenes/levels/rest_1.tscn"
 
-[node name="SuperAcorn" parent="." index="37" instance=ExtResource("13_tv7cl")]
+[node name="SuperAcorn" parent="." index="36" instance=ExtResource("13_tv7cl")]
 position = Vector2(10007, -126)
 
-[node name="SuperAcorn2" parent="." index="38" instance=ExtResource("13_tv7cl")]
+[node name="SuperAcorn2" parent="." index="37" instance=ExtResource("13_tv7cl")]
 position = Vector2(12163.4, 5.38336)
 
-[node name="SuperAcorn3" parent="." index="39" instance=ExtResource("13_tv7cl")]
+[node name="SuperAcorn3" parent="." index="38" instance=ExtResource("13_tv7cl")]
 position = Vector2(13931.5, -3.86249)
 
-[node name="Shooters" type="Node2D" parent="." index="40"]
+[node name="Shooters" type="Node2D" parent="." index="39"]
 
 [node name="SingleShooter" parent="Shooters" index="0" instance=ExtResource("6_8qukl")]
 position = Vector2(2103.57, 350.25)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-200, -700)
 delay = 0.2
+show_path = false
 
 [node name="SingleShooter3" parent="Shooters" index="1" instance=ExtResource("6_8qukl")]
 position = Vector2(3051.99, 347.112)
@@ -227,77 +220,102 @@ scene = ExtResource("8_8qukl")
 velocity = Vector2(200, -500)
 
 [node name="FoodShooter" parent="Shooters" index="2" instance=ExtResource("6_8qukl")]
-position = Vector2(3051.99, 347.112)
+position = Vector2(2968.99, 347.112)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(200, -600)
 delay = 0.5
+show_path = false
 
 [node name="FoodShooter2" parent="Shooters" index="3" instance=ExtResource("6_8qukl")]
-position = Vector2(3467.99, 347.112)
+position = Vector2(3371.99, 347.112)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(200, -600)
 delay = 0.5
+show_path = false
 
 [node name="FoodShooter3" parent="Shooters" index="4" instance=ExtResource("6_8qukl")]
 position = Vector2(4499.99, 355.112)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(-200, -600)
 delay = 0.5
+show_path = false
 
-[node name="FoodShooter4" parent="Shooters" index="5" instance=ExtResource("6_8qukl")]
+[node name="FoodShooter5" parent="Shooters" index="5" instance=ExtResource("6_8qukl")]
+position = Vector2(107.222, 342.66)
+scene = ExtResource("10_qsp8v")
+velocity = Vector2(500, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter6" parent="Shooters" index="6" instance=ExtResource("6_8qukl")]
+position = Vector2(1011.22, 342.66)
+scene = ExtResource("10_qsp8v")
+velocity = Vector2(500, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter7" parent="Shooters" index="7" instance=ExtResource("6_8qukl")]
+position = Vector2(1651.22, 342.66)
+scene = ExtResource("10_qsp8v")
+velocity = Vector2(200, -400)
+delay = 0.3
+show_path = false
+
+[node name="FoodShooter4" parent="Shooters" index="8" instance=ExtResource("6_8qukl")]
 position = Vector2(4299.99, 355.112)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(200, -800)
-delay = 1.2
+delay = 0.7
+show_path = false
 
-[node name="SingleShooter4" parent="Shooters" index="6" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter4" parent="Shooters" index="9" instance=ExtResource("6_8qukl")]
 position = Vector2(3470, 345)
 scene = ExtResource("8_8qukl")
 velocity = Vector2(200, -500)
 
-[node name="SingleShooter5" parent="Shooters" index="7" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter5" parent="Shooters" index="10" instance=ExtResource("6_8qukl")]
 position = Vector2(4629, -403)
 scene = ExtResource("8_8qukl")
 
-[node name="SingleShooter6" parent="Shooters" index="8" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter6" parent="Shooters" index="11" instance=ExtResource("6_8qukl")]
 position = Vector2(5092.05, 356.526)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(0, -300)
 delay = 2.0
 show_path = null
 
-[node name="SingleShooter7" parent="Shooters" index="9" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter7" parent="Shooters" index="12" instance=ExtResource("6_8qukl")]
 position = Vector2(5324.3, 356.526)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(0, -300)
 delay = 2.0
 show_path = null
 
-[node name="SingleShooter2" parent="Shooters" index="10" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter2" parent="Shooters" index="13" instance=ExtResource("6_8qukl")]
 position = Vector2(1373, 347)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-300, -800)
 delay = 0.2
+show_path = false
 
-[node name="SingleShooter8" parent="Shooters" index="11" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter8" parent="Shooters" index="14" instance=ExtResource("6_8qukl")]
 position = Vector2(8317, 345)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(-100, -800)
 
-[node name="SingleShooter9" parent="Shooters" index="12" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter9" parent="Shooters" index="15" instance=ExtResource("6_8qukl")]
 position = Vector2(8827, 351)
 scene = ExtResource("7_3p04p")
 velocity = Vector2(100, -800)
 delay = 0.5
 
-[node name="SingleShooter10" parent="Shooters" index="13" instance=ExtResource("6_8qukl")]
+[node name="SingleShooter10" parent="Shooters" index="16" instance=ExtResource("6_8qukl")]
 position = Vector2(14462, 353)
 scene = ExtResource("10_qsp8v")
 velocity = Vector2(200, -820)
 show_path = false
 
-[node name="SingleShooter11" parent="Shooters" index="14" instance=ExtResource("6_8qukl")]
-position = Vector2(4414, 357)
+[node name="LineFollower" parent="." index="40" instance=ExtResource("16_ndlae")]
+points = PackedVector2Array(7153, -230, 7581, -358, 7650, 36, 7182, 130)
+closed = true
 scene = ExtResource("10_qsp8v")
-velocity = Vector2(50, -820)
-show_path = false
