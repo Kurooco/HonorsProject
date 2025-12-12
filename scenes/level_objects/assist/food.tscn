@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct0ogc4qicje4"]
+[gd_scene load_steps=4 format=3 uid="uid://ct0ogc4qicje4"]
 
 [ext_resource type="Script" uid="uid://brl54pqvga73l" path="res://scenes/level_objects/assist/food.gd" id="1_1otte"]
 [ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/items/food/apple.png" id="2_1otte"]
-[ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="3_11ufl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswwm"]
 size = Vector2(61, 63)
@@ -18,6 +17,3 @@ shape = SubResource("RectangleShape2D_jswwm")
 position = Vector2(-7, -3)
 scale = Vector2(1.66, 1.66)
 texture = ExtResource("2_1otte")
-
-[node name="ArcMover" parent="." node_paths=PackedStringArray("move_object") instance=ExtResource("3_11ufl")]
-move_object = NodePath("..")

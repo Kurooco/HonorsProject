@@ -38,6 +38,5 @@ func _process(delta):
 			follower.progress_ratio = .5 + cos((Time.get_ticks_msec()/5000.0)*speed + offset)/2.0
 		else:
 			offset = float(ind)/followers.size()
-			print_debug(offset)
 			follower.progress_ratio = ((Time.get_ticks_msec()/5000.0)*speed) + offset
 		ind += 1

@@ -59,7 +59,9 @@ func _process(delta):
 	
 	$PathFollow2D.progress_ratio = randf_range((start_x-start_point)/distance, ((end_x-start_point))/distance)
 	var new_food = spawn_item.instantiate()
-	var arc_mover = get_arc_mover(new_food)
+	var arc_mover = ArcMover.new()
+	new_food.add_child(arc_mover)
+	arc_mover.move_object = new_food
 	new_food.global_position = $PathFollow2D.global_position
 	var relative_position_ratio = ($PathFollow2D.position.x - get_viewport().get_camera_2d().position.x)/get_viewport_rect().size.x
 	arc_mover.velocity.y = randf_range(y_range.x, y_range.y)
