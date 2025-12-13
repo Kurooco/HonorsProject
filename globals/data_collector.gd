@@ -7,8 +7,15 @@ var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0}
 # stats per-level. Automatically copied from general_stats
 var level_stats : Array[Dictionary]
 var participant_num = 0
+var enabled = false
 
 func _ready():
+	await get_tree().physics_frame
+	for levels in Autoload.level_handler.level_order:
+		level_stats.append(general_stats.duplicate())
+
+func enable():
+	enabled = true
 	#participant_num = DirAccess.get_directories_at("data").size()
 	var count_file = FileAccess.open("data/count.txt", FileAccess.READ_WRITE)
 	participant_num = int(count_file.get_line())
@@ -16,11 +23,7 @@ func _ready():
 	count_file.seek(0)
 	count_file.store_line(str(participant_num+1))
 	count_file.close()
-	await get_tree().physics_frame
-	for levels in Autoload.level_handler.level_order:
-		level_stats.append(general_stats.duplicate())
 		
-
 func set_stat(stat_name:String, value):
 	if(stat_name in general_stats.keys()):
 		general_stats[stat_name] = value
@@ -38,11 +41,12 @@ func increment_stat(stat_name:String, amount=1):
 	update_level_file(Autoload.level_handler.level_number)
 
 func update_stat_file(path: String, dict: Dictionary):
-	if(!DirAccess.dir_exists_absolute(path)):
-		DirAccess.make_dir_recursive_absolute(path)
-	var file = FileAccess.open(path+"/stats"+str(participant_num)+".txt", FileAccess.WRITE)
-	file.store_line(",".join(dict.values()))
-	file.close()
+	if(enabled):
+		if(!DirAccess.dir_exists_absolute(path)):
+			DirAccess.make_dir_recursive_absolute(path)
+		var file = FileAccess.open(path+"/stats"+str(participant_num)+".txt", FileAccess.WRITE)
+		file.store_line(",".join(dict.values()))
+		file.close()
 
 func update_global_file():
 	update_stat_file("res://data/global_stats", global_stats)

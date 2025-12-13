@@ -17,12 +17,14 @@ signal fade_ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Autoload.level_handler = self
+	set_level("res://scenes/ui/recording_question.tscn")
+	
+func begin():
 	game_saver.clear_temp()
 	game_saver.load_game(0)
-	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
-
 
 func set_level(path: String):
 	if(is_instance_valid(current_level)):

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2tc8gqpk1bo3"]
+
+[ext_resource type="Script" uid="uid://b0j6tvovt7tnu" path="res://scenes/ui/recording_question.gd" id="1_mnhcq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soqg2"]
+bg_color = Color(0.214783, 0, 0.00834049, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnhcq"]
+bg_color = Color(0.117102, 0.220434, 9.62615e-08, 1)
+
+[node name="RecordingQuestion" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 659.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_mnhcq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.5
+offset_top = -236.5
+offset_right = 441.5
+offset_bottom = 236.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "What mode will you use?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Without" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_soqg2")
+text = "Continue WITHOUT data recording"
+
+[node name="With" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_mnhcq")
+text = "Continue WITH data recording"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Without" to="." method="_on_without_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/With" to="." method="_on_with_pressed"]
