@@ -6,18 +6,52 @@ var global_stats = {}
 var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0}
 # stats per-level. Automatically copied from general_stats
 var level_stats : Array[Dictionary]
+var participant_num = 0
+
+func _ready():
+	#participant_num = DirAccess.get_directories_at("data").size()
+	var count_file = FileAccess.open("data/count.txt", FileAccess.READ_WRITE)
+	participant_num = int(count_file.get_line())
+	print_debug(participant_num)
+	count_file.seek(0)
+	count_file.store_line(str(participant_num+1))
+	count_file.close()
+	await get_tree().physics_frame
+	for levels in Autoload.level_handler.level_order:
+		level_stats.append(general_stats.duplicate())
+		
 
 func set_stat(stat_name:String, value):
 	if(stat_name in general_stats.keys()):
 		general_stats[stat_name] = value
-	update_file()
+	if(Autoload.level_handler.level_number != -1):
+		level_stats[Autoload.level_handler.level_number][stat_name] = value
+	update_general_file()
+	update_level_file(Autoload.level_handler.level_number)
 	
 func increment_stat(stat_name:String, amount=1):
 	if(stat_name in general_stats.keys()):
 		general_stats[stat_name] += amount
-	update_file()
+	if(Autoload.level_handler.level_number != -1):
+		level_stats[Autoload.level_handler.level_number][stat_name] += amount
+	update_general_file()
+	update_level_file(Autoload.level_handler.level_number)
 
-func update_file():
-	var file = FileAccess.open("res://data/stats.txt", FileAccess.WRITE)
-	file.store_line(",".join(general_stats.values()))
+func update_stat_file(path: String, dict: Dictionary):
+	if(!DirAccess.dir_exists_absolute(path)):
+		DirAccess.make_dir_recursive_absolute(path)
+	var file = FileAccess.open(path+"/stats"+str(participant_num)+".txt", FileAccess.WRITE)
+	file.store_line(",".join(dict.values()))
 	file.close()
+
+func update_global_file():
+	update_stat_file("res://data/global_stats", global_stats)
+
+
+func update_general_file():
+	update_stat_file("res://data/general_stats", general_stats)
+
+
+func update_level_file(level:int):
+	var dir = "res://data/level"+str(level)+"/"
+	update_stat_file(dir, level_stats[level])

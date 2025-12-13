@@ -2,6 +2,7 @@ extends Node
 
 @export var opening_scene : PackedScene
 @export var roaming_levels : Array[PackedScene]
+@export var level_order : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
 @onready var game_saver = $GameSaver
@@ -10,6 +11,7 @@ var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
 var in_rest_level = false
+var level_number = -1
 
 signal fade_ended
 
@@ -30,6 +32,7 @@ func set_level(path: String):
 		current_level.queue_free()
 	var packed_level = load(path)
 	var new_level = packed_level.instantiate()
+	set_level_number(packed_level)
 	current_level = new_level
 	game_saver.world_scene = new_level
 	if(packed_level in roaming_levels):
@@ -41,7 +44,7 @@ func set_level(path: String):
 	if(is_instance_valid(player)):
 		check_point = player.position
 	add_child(new_level)
-
+	
 
 func restart_level():
 	if(Autoload.level_handler.in_rest_level):
@@ -53,6 +56,7 @@ func restart_level():
 		remove_child(current_level)
 		current_level.queue_free()
 	var new_level = load(current_level.scene_file_path).instantiate()
+	set_level_number(load(current_level.scene_file_path))
 	current_level = new_level
 	game_saver.world_scene = new_level
 	game_saver.load_level()
@@ -132,3 +136,6 @@ func end_level(level:String):
 func show_save_menu():
 	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()
 	add_child(menu)
+
+func set_level_number(scene: PackedScene):
+	level_number = level_order.find(scene)
