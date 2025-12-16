@@ -27,18 +27,24 @@ func enable():
 func set_stat(stat_name:String, value):
 	if(stat_name in general_stats.keys()):
 		general_stats[stat_name] = value
-	if(Autoload.level_handler.level_number != -1):
-		level_stats[Autoload.level_handler.level_number][stat_name] = value
-	update_general_file()
-	update_level_file(Autoload.level_handler.level_number)
+		update_general_file()
+		if(Autoload.level_handler.level_number != -1):
+			level_stats[Autoload.level_handler.level_number][stat_name] = value
+			update_level_file(Autoload.level_handler.level_number)
+	if(stat_name in global_stats.keys()):
+		global_stats[stat_name] = value
+		update_global_file()
 	
 func increment_stat(stat_name:String, amount=1):
 	if(stat_name in general_stats.keys()):
 		general_stats[stat_name] += amount
-	if(Autoload.level_handler.level_number != -1):
-		level_stats[Autoload.level_handler.level_number][stat_name] += amount
-	update_general_file()
-	update_level_file(Autoload.level_handler.level_number)
+		update_general_file()
+		if(Autoload.level_handler.level_number != -1):
+			level_stats[Autoload.level_handler.level_number][stat_name] += amount
+			update_level_file(Autoload.level_handler.level_number)
+	if(stat_name in global_stats.keys()):
+		global_stats[stat_name] += amount
+		update_global_file()
 
 func update_stat_file(path: String, dict: Dictionary):
 	if(enabled):
