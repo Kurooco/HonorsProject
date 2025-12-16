@@ -20,6 +20,7 @@ config/icon="uid://du5l78yshangn"
 Autoload="*res://globals/Autoload.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PlayerStats="*res://globals/PlayerStats.gd"
+MusicHandler="*res://globals/MusicHandler.gd"
 
 [dialogic]
 
@@ -41,7 +42,7 @@ variables={
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

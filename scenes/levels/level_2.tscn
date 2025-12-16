@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bjjdqtfdmqet3"]
+[gd_scene load_steps=17 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
 [ext_resource type="Texture2D" uid="uid://ccwbnhp27b2cw" path="res://art/environment/ground/wood_platform.png" id="3_1yj8c"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://x2q5wh5wj5sl" path="res://scenes/level_objects/assist/super_acorn.tscn" id="13_tv7cl"]
 [ext_resource type="Texture2D" uid="uid://bylb7a6xgj0o" path="res://art/environment/parallax/trees.png" id="14_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_r88tb"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="15_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="16_ndlae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
@@ -355,3 +356,6 @@ points = PackedVector2Array(13673, 156, 13817.7, 156, 13960, 156)
 scene = ExtResource("10_qsp8v")
 number = 3
 movement_type = 1
+
+[node name="LevelMusicPlayer" parent="." index="44" instance=ExtResource("15_1yj8c")]
+path = "res://sound/music/King of the Hill.wav"

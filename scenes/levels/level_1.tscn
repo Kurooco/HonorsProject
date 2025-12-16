@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://nkcwknm2y4tw"]
+[gd_scene load_steps=17 format=4 uid="uid://nkcwknm2y4tw"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/parallax/thick_corn.png" id="2_qxy0u"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://biovpcqqspods" path="res://art/environment/sky/cloudy_sky_upside_down_ground.png" id="9_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="13_dnkej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(592, 348)
@@ -259,3 +260,6 @@ scene = ExtResource("8_dga24")
 [node name="SingleShooter4" parent="Shooters" index="14" instance=ExtResource("7_s8va5")]
 position = Vector2(7945, -340)
 scene = ExtResource("8_dga24")
+
+[node name="LevelMusicPlayer" parent="." index="25" instance=ExtResource("13_dnkej")]
+path = "res://sound/music/Leaving Home.wav"

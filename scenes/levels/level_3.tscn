@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://chkul5njl0r85"]
+[gd_scene load_steps=29 format=4 uid="uid://chkul5njl0r85"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_44gv1"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_0ljxa"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://car5sxy6gpfc" path="res://scenes/level_objects/hazards/enemy.tscn" id="18_fhpes"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="19_vmg1d"]
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="20_1nwmf"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="21_5f5xw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qepi"]
 size = Vector2(454, 311)
@@ -258,3 +259,6 @@ movement_type = 1
 points = PackedVector2Array(16740, 0, 17640, 0, 18560, 0)
 speed = 3.0
 movement_type = 1
+
+[node name="LevelMusicPlayer" parent="." index="41" instance=ExtResource("21_5f5xw")]
+path = "res://sound/music/Balance is Everything.wav"
