@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=12 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
-[ext_resource type="PackedScene" uid="uid://chkul5njl0r85" path="res://scenes/levels/level_3.tscn" id="2_ssum3"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="4_d5bor"]
@@ -25,7 +24,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("2_ssum3")
+opening_scene = ExtResource("3_np1er")
 roaming_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
 
 [node name="HUD" type="CanvasLayer" parent="."]

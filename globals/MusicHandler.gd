@@ -2,7 +2,7 @@ extends Node
 
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
-var play_music = true
+var play_music = false
 
 func play(path:String):
 	if(!play_music):

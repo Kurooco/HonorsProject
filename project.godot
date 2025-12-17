@@ -37,6 +37,7 @@ directories/dtl_directory={
 variables={
 "beer_given": false,
 "has_beer": false,
+"met_seller": false,
 "table_broken": false
 }
 
