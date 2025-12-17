@@ -31,6 +31,7 @@ directories/dtl_directory={
 "acorn_dealer": "res://dialogue/timelines/acorn_dealer.dtl",
 "boyfriend": "res://dialogue/timelines/boyfriend.dtl",
 "date": "res://dialogue/timelines/date.dtl",
+"pelican": "res://dialogue/timelines/pelican.dtl",
 "redeem_points": "res://dialogue/timelines/redeem_points.dtl",
 "test": "res://dialogue/timelines/test.dtl"
 }

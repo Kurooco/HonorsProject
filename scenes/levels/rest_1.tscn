@@ -63,7 +63,7 @@ NodePath("LevelCollision"): ExtResource("2_hpyij")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
-polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -8, -256, -8, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -8, -256, -8, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 752, -256, 752, -224, 576, -224, 576, 128, 512, 128, 512, -192, -128, -192)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="LevelCollision"]
 position = Vector2(272, 488)
@@ -301,6 +301,21 @@ scale = Vector2(0.25, 0.267438)
 texture = ExtResource("15_6fi6k")
 region_enabled = true
 region_rect = Rect2(141.331, 73.5827, 310.705, 298.151)
+
+[node name="DialogueArea3" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(619.595, -281.995)
+timeline = "pelican"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea3"]
+position = Vector2(116.405, 17.9954)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea3"]
+position = Vector2(125.406, -8.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(1044.22, 76.8919, 407.218, 324.218)
 
 [node name="DialogueArea2" parent="Characters" instance=ExtResource("4_7ewig")]
 position = Vector2(-1404.94, 201.267)
