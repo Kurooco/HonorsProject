@@ -50,6 +50,7 @@ radius = 14.1168
 size = Vector2(29, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxap"]
+size = Vector2(20, 33.5852)
 
 [node name="Rest1" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
 script = ExtResource("1_n71rw")
@@ -303,19 +304,51 @@ region_enabled = true
 region_rect = Rect2(141.331, 73.5827, 310.705, 298.151)
 
 [node name="DialogueArea3" parent="Characters" instance=ExtResource("4_7ewig")]
-position = Vector2(619.595, -281.995)
+position = Vector2(739.595, -281.995)
 timeline = "pelican"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea3"]
-position = Vector2(116.405, 17.9954)
+position = Vector2(-3.59454, 17.9954)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea3"]
-position = Vector2(125.406, -8.00464)
+position = Vector2(4.40546, -6.00464)
 scale = Vector2(0.25, 0.267438)
 texture = ExtResource("15_6fi6k")
 region_enabled = true
 region_rect = Rect2(1044.22, 76.8919, 407.218, 324.218)
+
+[node name="DialogueArea4" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(424, -680)
+timeline = "big_bird"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea4"]
+position = Vector2(5.36603, 2.41016)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea4"]
+position = Vector2(4.40546, -6.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(596.031, 27.6108, 326.812, 350.155)
+
+[node name="DialogueArea5" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(-880, -496)
+timeline = "punk_bird"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea5"]
+position = Vector2(-5.63397, 23.4102)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea5"]
+position = Vector2(4.40546, -6.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(-21.8108, 382.954, 516.155, 435.749)
 
 [node name="DialogueArea2" parent="Characters" instance=ExtResource("4_7ewig")]
 position = Vector2(-1404.94, 201.267)
