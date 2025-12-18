@@ -137,3 +137,24 @@ func end_level(level:String):
 func show_save_menu():
 	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()
 	add_child(menu)
+
+func pause_game(pause: bool):
+	set_pause_subtree(current_level, pause)
+
+# Credit needed: found this on a reddit form
+func set_pause_subtree(root: Node, pause: bool) -> void:
+	var process_setters = ["set_process",
+	"set_physics_process",
+	"set_process_input",
+	"set_process_unhandled_input",
+	"set_process_unhandled_key_input",
+	"set_process_shortcut_input"]
+	
+	for setter in process_setters:
+		root.propagate_call(setter, [!pause])
+	root.propagate_call("set", ["paused", pause])
+	
+	if(pause):
+		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_IGNORE])
+	else:
+		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_PASS])
