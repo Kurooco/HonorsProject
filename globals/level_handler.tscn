@@ -1,12 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=15 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
+[ext_resource type="PackedScene" uid="uid://chkul5njl0r85" path="res://scenes/levels/level_3.tscn" id="2_ssum3"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
 [ext_resource type="PackedScene" uid="uid://bg46us5eba6y3" path="res://scenes/levels/tutorial/tutorial.tscn" id="5_ixpvp"]
+[ext_resource type="PackedScene" uid="uid://nkcwknm2y4tw" path="res://scenes/levels/level_1.tscn" id="5_jd30t"]
 [ext_resource type="Texture2D" uid="uid://48x80ye1t141" path="res://art/ui/counters/acorns3.png" id="6_ixpvp"]
+[ext_resource type="PackedScene" uid="uid://bjjdqtfdmqet3" path="res://scenes/levels/level_2.tscn" id="6_vgd30"]
 [ext_resource type="Script" uid="uid://b785gwm0fjclo" path="res://GameSaver/game_slot_saver.gd" id="6_vghx1"]
 [ext_resource type="Texture2D" uid="uid://cu7npego5orm6" path="res://art/ui/counters/hearts3.png" id="7_ixpvp"]
 
@@ -26,6 +29,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 script = ExtResource("1_2e1au")
 opening_scene = ExtResource("3_np1er")
 roaming_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
+level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")

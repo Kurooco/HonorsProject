@@ -2,6 +2,7 @@ extends Node
 
 @export var opening_scene : PackedScene
 @export var roaming_levels : Array[PackedScene]
+@export var level_order : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
 @onready var game_saver = $GameSaver
@@ -31,6 +32,8 @@ func set_level(path: String):
 		remove_child(current_level)
 		current_level.queue_free()
 	var packed_level = load(path)
+	if(packed_level in roaming_levels and level_order.find(packed_level) >= PlayerStats.levels_unlocked):
+		PlayerStats.levels_unlocked = level_order.find(packed_level)+2
 	var new_level = packed_level.instantiate()
 	current_level = new_level
 	game_saver.world_scene = new_level

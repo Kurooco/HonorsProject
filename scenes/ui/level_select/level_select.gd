@@ -4,8 +4,13 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var ind = 0
 	for location in location_container.get_children():
-		location.selected.connect(hide)
+		if(ind >= PlayerStats.levels_unlocked):
+			location.lock()
+		else:
+			location.selected.connect(hide)
+		ind += 1
 
 
 func _on_cancel_pressed():
