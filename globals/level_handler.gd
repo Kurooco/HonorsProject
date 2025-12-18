@@ -1,7 +1,7 @@
 extends Node
 
 @export var opening_scene : PackedScene
-@export var roaming_levels : Array[PackedScene]
+@export var rest_levels : Array[PackedScene]
 @export var level_order : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
@@ -11,6 +11,7 @@ var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
 var in_rest_level = false
+var last_rest_level_visited : PackedScene = null
 
 signal fade_ended
 signal data_loaded
@@ -32,12 +33,14 @@ func set_level(path: String):
 		remove_child(current_level)
 		current_level.queue_free()
 	var packed_level = load(path)
-	if(packed_level in roaming_levels and level_order.find(packed_level) >= PlayerStats.levels_unlocked):
-		PlayerStats.levels_unlocked = level_order.find(packed_level)+2
+	if(packed_level in rest_levels):
+		last_rest_level_visited = packed_level
+		if(level_order.find(packed_level) >= PlayerStats.levels_unlocked):
+			PlayerStats.levels_unlocked = level_order.find(packed_level)+2
 	var new_level = packed_level.instantiate()
 	current_level = new_level
 	game_saver.world_scene = new_level
-	if(packed_level in roaming_levels):
+	if(packed_level in rest_levels):
 		game_saver.load_level()
 		in_rest_level = true
 	else:
@@ -75,6 +78,7 @@ func restart_level():
 	fade_in()
 
 func fade_out(color=Color.BLACK):
+	fade.show()
 	if(is_instance_valid(fade_tween)):
 		fade_tween.kill()
 	fade_tween = create_tween()
@@ -88,6 +92,7 @@ func fade_in():
 	fade_tween = create_tween()
 	fade_tween.tween_property(fade, "color", transparent_color, 1)
 	fade_tween.tween_callback(fade_ended.emit)
+	fade_tween.tween_callback(fade.hide)
 
 func get_node_in_group(node, group) -> Node:
 	var children : Array = node.get_children().duplicate()

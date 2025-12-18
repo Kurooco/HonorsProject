@@ -29,23 +29,18 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
 opening_scene = ExtResource("3_np1er")
-roaming_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
+rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")
 
 [node name="Points" type="Label" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -221.0
-offset_top = 8.0
-offset_right = -16.0
-offset_bottom = 31.0
-grow_horizontal = 0
+offset_left = 6.0
+offset_top = 47.0
+offset_right = 211.0
+offset_bottom = 70.0
 text = "Points: 0"
-horizontal_alignment = 2
 
 [node name="AcornProgress" type="TextureProgressBar" parent="HUD"]
 texture_repeat = 2
@@ -92,11 +87,11 @@ tint_under = Color(0.169245, 0.169245, 0.169245, 1)
 layer = 10
 
 [node name="Fade" type="ColorRect" parent="FadeCanvas"]
+visible = false
 offset_left = -85.0
 offset_top = -56.0
 offset_right = 1268.0
 offset_bottom = 751.0
-mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("5_bisso")]
