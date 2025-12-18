@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
-[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="4_d5bor"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
 [ext_resource type="PackedScene" uid="uid://bg46us5eba6y3" path="res://scenes/levels/tutorial/tutorial.tscn" id="5_ixpvp"]
+[ext_resource type="Texture2D" uid="uid://48x80ye1t141" path="res://art/ui/counters/acorns3.png" id="6_ixpvp"]
 [ext_resource type="Script" uid="uid://b785gwm0fjclo" path="res://GameSaver/game_slot_saver.gd" id="6_vghx1"]
-[ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/ui/pen_circle.png" id="8_ssum3"]
+[ext_resource type="Texture2D" uid="uid://cu7npego5orm6" path="res://art/ui/counters/hearts3.png" id="7_ixpvp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dl1"]
 bg_color = Color(0.6, 0.6, 0.6, 0.414)
@@ -44,14 +44,14 @@ horizontal_alignment = 2
 
 [node name="AcornProgress" type="TextureProgressBar" parent="HUD"]
 texture_repeat = 2
-offset_left = 28.0
-offset_top = 25.0
-offset_right = 153.0
-offset_bottom = 75.0
+offset_left = 4.0
+offset_top = 27.0
+offset_right = 129.0
+offset_bottom = 77.0
+scale = Vector2(0.7, 0.7)
 value = 50.0
-fill_mode = 4
-texture_under = ExtResource("4_d5bor")
-texture_progress = ExtResource("4_d5bor")
+texture_under = ExtResource("6_ixpvp")
+texture_progress = ExtResource("6_ixpvp")
 tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
 tint_progress = Color(0.724643, 0.724643, 0.724643, 1)
 
@@ -73,13 +73,14 @@ value = 50.0
 show_percentage = false
 
 [node name="Health" type="TextureProgressBar" parent="HUD"]
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 107.0
-offset_bottom = 101.0
-fill_mode = 4
-texture_under = ExtResource("8_ssum3")
-texture_progress = ExtResource("8_ssum3")
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 104.0
+scale = Vector2(0.7, 0.7)
+value = 50.0
+texture_under = ExtResource("7_ixpvp")
+texture_progress = ExtResource("7_ixpvp")
 tint_under = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="FadeCanvas" type="CanvasLayer" parent="."]

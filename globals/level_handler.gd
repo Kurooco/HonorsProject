@@ -12,11 +12,13 @@ var check_point = Vector2.ZERO
 var in_rest_level = false
 
 signal fade_ended
+signal data_loaded
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_saver.clear_temp()
 	game_saver.load_game(0)
+	data_loaded.emit()
 	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)

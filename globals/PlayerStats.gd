@@ -8,6 +8,8 @@ var total_points = 0
 var level_points = 0
 var run_points = 0
 
+signal stat_updated
+
 func update_player_stats():
 	Autoload.player.update_stats()
 
