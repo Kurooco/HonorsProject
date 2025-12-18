@@ -3,6 +3,7 @@ extends Node
 var jumps = 0
 var acorns = 0
 var lives = 0
+var levels_unlocked = 1
 
 var total_points = 0
 var level_points = 0

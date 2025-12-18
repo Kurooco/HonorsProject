@@ -68,6 +68,7 @@ func _physics_process(delta):
 		jump_velocity += jump_velocity_decline
 		consecutive_bounces = 0
 		animation.play("fly")
+		$Flap.play()
 
 	# Move left and right
 	var direction = Input.get_axis("left", "right")

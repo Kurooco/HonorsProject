@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=31 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_0owmy"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cbk6v868e6g4f" path="res://art/ui/prompt.png" id="6_75vfm"]
 [ext_resource type="Texture2D" uid="uid://bnk4duoj7b0hm" path="res://art/items/coin_map.png" id="7_0owmy"]
+[ext_resource type="AudioStream" uid="uid://30iwe2keter8" path="res://sound/sfx/Flap.wav" id="8_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("2_0owmy")
@@ -217,6 +218,13 @@ scale_amount_min = 0.4
 scale_amount_max = 0.8
 color = Color(0.836122, 0.0505151, 0.0286336, 1)
 color_ramp = SubResource("Gradient_qek5x")
+
+[node name="Flap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_qek5x")
+volume_db = -5.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]

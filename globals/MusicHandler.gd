@@ -2,7 +2,7 @@ extends Node
 
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
-var play_music = false
+var play_music = true
 
 func play(path:String):
 	if(!play_music):
@@ -12,6 +12,7 @@ func play(path:String):
 		if(is_instance_valid(current_song_node)):
 			current_song_node.queue_free()
 		current_song_node = AudioStreamPlayer.new()
+		current_song_node.bus = "Music"
 		current_song_node.stream = load(path)
 		get_tree().current_scene.add_child(current_song_node)
 		current_song_node.play()
