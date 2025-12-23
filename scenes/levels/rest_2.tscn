@@ -39,7 +39,7 @@ NodePath("Metal"): ExtResource("3_y1dq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brick/StaticBody2D"]
 position = Vector2(0, 10)
-polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -624, 334, -624, 128, -624, -360, -472, -360, 1928, -360, 2024, -360, 2024, 336, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
+polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -912, 334, -912, -362, -472, -360, 1928, -360, 2024, -360, 2024, 336, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
 
 [node name="Metal" type="Node2D" parent="."]
 
@@ -67,40 +67,38 @@ metadata/_edit_group_ = true
 [node name="DialogueAreas" type="Node2D" parent="."]
 
 [node name="DialogueArea" parent="DialogueAreas" instance=ExtResource("7_tofga")]
+position = Vector2(-437.372, 89.157)
 timeline = "acorn_dealer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea"]
-position = Vector2(-442.5, 88.2824)
 shape = SubResource("RectangleShape2D_11yvy")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea"]
-position = Vector2(-437.811, 89.4451)
+position = Vector2(0, 8)
 scale = Vector2(0.387026, 0.632216)
 texture = ExtResource("8_yeoc4")
 
 [node name="DialogueArea2" parent="DialogueAreas" instance=ExtResource("7_tofga")]
-position = Vector2(1056.53, 35.5648)
+position = Vector2(1077.53, 48.5648)
 timeline = "date"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea2"]
-position = Vector2(18.0475, 24.4394)
+position = Vector2(3.0475, 8.4394)
 shape = SubResource("RectangleShape2D_03jph")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea2"]
-position = Vector2(18.6014, 26.5734)
+position = Vector2(2.60132, 11.5734)
 scale = Vector2(0.266464, 0.529429)
 texture = ExtResource("8_yeoc4")
 
 [node name="DialogueArea3" parent="DialogueAreas" instance=ExtResource("7_tofga")]
-position = Vector2(1056.53, 35.5648)
+position = Vector2(1227.53, 59.5648)
 timeline = "boyfriend"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea3"]
-position = Vector2(181.031, 22.6678)
 shape = SubResource("RectangleShape2D_03jph")
 
 [node name="Sprite2D2" type="Sprite2D" parent="DialogueAreas/DialogueArea3"]
-position = Vector2(181.585, 26.5734)
 scale = Vector2(0.266464, 0.529429)
 texture = ExtResource("8_yeoc4")
 
@@ -230,4 +228,4 @@ scale = Vector2(0.284608, 0.284608)
 texture = ExtResource("10_yeoc4")
 
 [node name="SaveArea" parent="." instance=ExtResource("12_q5ui7")]
-position = Vector2(-24, 600)
+position = Vector2(-264, 112)

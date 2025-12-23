@@ -3,7 +3,7 @@ extends Node
 var jumps = 0
 var acorns = 0
 var lives = 0
-var levels_unlocked = 1
+var levels_unlocked = 50
 var saved_level_path : String = ""
 
 var total_points = 0

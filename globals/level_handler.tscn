@@ -28,7 +28,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("3_np1er")
+opening_scene = ExtResource("2_np1er")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3")])
 
@@ -108,11 +108,14 @@ visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -333.0
-offset_right = 333.0
-offset_bottom = 205.0
+offset_left = -337.5
+offset_top = 67.0
+offset_right = 337.5
+offset_bottom = 272.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 150
-text = "You won!"
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "Level Cleared!"
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_vgd30")]
+visible = false

@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbscy75a26ch8"]
+[gd_scene load_steps=7 format=3 uid="uid://cbscy75a26ch8"]
 
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="1_x3448"]
 [ext_resource type="Texture2D" uid="uid://o4uuv4kq8l4m" path="res://art/items/pain_box.png" id="2_xl5kp"]
+[ext_resource type="Texture2D" uid="uid://c26k75lka2mmn" path="res://art/particles/spike.png" id="3_xl5kp"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_yfkde"]
+
+[sub_resource type="Gradient" id="Gradient_7oj2n"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3mv7"]
 size = Vector2(120, 121)
@@ -13,7 +17,27 @@ size = Vector2(120, 121)
 scale = Vector2(1.14844, 1.14844)
 texture = ExtResource("2_xl5kp")
 
-[node name="WeaponArea" parent="." index="6" instance=ExtResource("3_yfkde")]
+[node name="DeathHandler" parent="." index="4" node_paths=PackedStringArray("particles")]
+particles = NodePath("../CPUParticles2D2")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." index="6"]
+position = Vector2(26.4378, 127)
+emitting = false
+amount = 15
+texture = ExtResource("3_xl5kp")
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(64, 64)
+direction = Vector2(0, -1)
+initial_velocity_min = 269.84
+initial_velocity_max = 420.63
+angular_velocity_min = -157.5
+angular_velocity_max = 135.0
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_7oj2n")
+
+[node name="WeaponArea" parent="." index="7" instance=ExtResource("3_yfkde")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea" index="1"]
 position = Vector2(-1, -0.5)

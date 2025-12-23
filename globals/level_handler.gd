@@ -22,7 +22,10 @@ func _ready():
 	game_saver.load_game(0)
 	data_loaded.emit()
 	Autoload.level_handler = self
-	set_level(opening_scene.resource_path)
+	if(PlayerStats.saved_level_path != ""):
+		set_level(PlayerStats.saved_level_path)
+	else:
+		set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 
 
