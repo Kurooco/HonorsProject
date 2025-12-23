@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmywb7sdrlhyc"]
+[gd_scene load_steps=19 format=3 uid="uid://cmywb7sdrlhyc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_x10i0"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_5ppkx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bapo6eptyb2m2" path="res://scenes/level_objects/interactive/breakable_table.tscn" id="9_yeoc4"]
 [ext_resource type="Texture2D" uid="uid://h3o6yr3i7wi1" path="res://art/environment/interactive/cup.png" id="10_yeoc4"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="12_q5ui7"]
+[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/environment/parallax/wall.png" id="14_k5565"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11yvy"]
 size = Vector2(69, 105.435)
@@ -229,3 +230,12 @@ texture = ExtResource("10_yeoc4")
 
 [node name="SaveArea" parent="." instance=ExtResource("12_q5ui7")]
 position = Vector2(-264, 112)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+offset_left = -688.0
+offset_top = -392.0
+offset_right = 2000.0
+offset_bottom = 1120.0
+texture = ExtResource("14_k5565")
+stretch_mode = 1
