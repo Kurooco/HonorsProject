@@ -116,8 +116,8 @@ func _physics_process(delta):
 	else:
 		if(velocity.y > 0 && !animation.is_playing()):
 			animation.play("fall")
-		
-			
+	
+
 
 
 func _on_detection_area_area_entered(area):
@@ -186,3 +186,11 @@ func handle_dialogic_signals(arg):
 
 func _on_hurt_box_hurt():
 	$Blood.emitting = true
+
+
+func _on_dialogic_signal_handler_matched():
+	$Beer.show()
+
+
+func _on_dialogic_signal_handler_2_matched():
+	$Beer.hide()

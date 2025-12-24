@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=33 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_0owmy"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cbk6v868e6g4f" path="res://art/ui/prompt.png" id="6_75vfm"]
 [ext_resource type="Texture2D" uid="uid://bnk4duoj7b0hm" path="res://art/items/coin_map.png" id="7_0owmy"]
 [ext_resource type="AudioStream" uid="uid://30iwe2keter8" path="res://sound/sfx/Flap.wav" id="8_qek5x"]
+[ext_resource type="Texture2D" uid="uid://c45tkcrxhoof3" path="res://art/characters/player/beer.png" id="9_5gtgg"]
+[ext_resource type="PackedScene" uid="uid://benf067d2viqs" path="res://scenes/components/dialogic_signal_handler.tscn" id="10_h17s1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("2_0owmy")
@@ -170,7 +172,7 @@ z_index = 1
 position = Vector2(-4, -5)
 scale = Vector2(0.0664572, 0.0664572)
 sprite_frames = SubResource("SpriteFrames_lgqa7")
-animation = &"stand"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dovo2")
@@ -226,7 +228,21 @@ volume_db = -5.0
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
+[node name="Beer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-3, -6)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("9_5gtgg")
+
+[node name="DialogicSignalHandler" parent="." instance=ExtResource("10_h17s1")]
+string = "get_beer"
+
+[node name="DialogicSignalHandler2" parent="." instance=ExtResource("10_h17s1")]
+string = "acorn_for_beer"
+
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
 [connection signal="killed" from="HealthComponent" to="." method="_on_health_component_killed"]
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+[connection signal="matched" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched"]
+[connection signal="matched" from="DialogicSignalHandler2" to="." method="_on_dialogic_signal_handler_2_matched"]
