@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_yhxqo"]
 [ext_resource type="Script" uid="uid://lem62tmpg4vt" path="res://scenes/level_objects/assist/check_point.gd" id="2_gpq37"]
-[ext_resource type="Texture2D" uid="uid://7mm1lmf8hl2d" path="res://art/perch.png" id="3_2dbrd"]
+[ext_resource type="Texture2D" uid="uid://7mm1lmf8hl2d" path="res://art/items/perch.png" id="3_2dbrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq37"]
 size = Vector2(75, 488.5)

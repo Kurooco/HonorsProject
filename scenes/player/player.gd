@@ -25,6 +25,7 @@ var jump_velocity_decline
 
 @export var waiting_for_start = true
 @onready var health_component = $HealthComponent
+@onready var animation = $Animation
 
 
 func _ready():
@@ -68,14 +69,18 @@ func _physics_process(delta):
 		jump_velocity += jump_velocity_decline
 		consecutive_bounces = 0
 		DataCollector.increment_stat("jumps")
+		animation.play("fly")
+		$Flap.play()
 
 	# Move left and right
+	var direction = Input.get_axis("left", "right")
 	if(!disabled && Dialogic.current_timeline == null):
-		var direction = Input.get_axis("left", "right")
 		if direction:
+			animation.flip_h = direction == -1
 			last_direction = direction
 			velocity.x += direction * SPEED
 		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
+		
 	
 	# Handle Interactions
 	if(Input.is_action_just_pressed("interact")):
@@ -87,9 +92,9 @@ func _physics_process(delta):
 	$Prompt.visible = areas_inside
 	
 	if($HurtBox.currently_invincible):
-		$Sprite2D.self_modulate = Color(1, 1, 1, .5)
+		animation.self_modulate = Color(1, 1, 1, .5)
 	else:
-		$Sprite2D.self_modulate = Color.WHITE
+		animation.self_modulate = Color.WHITE
 		
 	if(Input.is_action_just_pressed("shoot") && acorns > 0 && Dialogic.current_timeline == null):
 		shoot_acorn(last_direction)
@@ -103,6 +108,18 @@ func _physics_process(delta):
 	
 	if(!disabled && Dialogic.current_timeline == null):
 		move_and_slide()
+		
+	# Animation
+	if(is_on_floor()):
+		if(direction != 0):
+			animation.play("walk")
+		else:
+			animation.play("stand")
+	else:
+		if(velocity.y > 0 && !animation.is_playing()):
+			animation.play("fall")
+	
+
 
 
 func _on_detection_area_area_entered(area):
@@ -112,9 +129,10 @@ func _on_detection_area_area_entered(area):
 		if(!Input.is_action_pressed("dive")):
 			velocity.y = MAX_JUMP_VELOCITY
 		jump_velocity = MAX_JUMP_VELOCITY
-		area.jump_on()
-		consecutive_bounces += 1
-		$PointAwarder.award_points(10*min(consecutive_bounces, 10))
+		if(!area.consumed):
+			area.jump_on()
+			consecutive_bounces += 1
+			$PointAwarder.award_points(9 + min(consecutive_bounces, 11))
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1
@@ -171,3 +189,11 @@ func handle_dialogic_signals(arg):
 
 func _on_hurt_box_hurt():
 	$Blood.emitting = true
+
+
+func _on_dialogic_signal_handler_matched():
+	$Beer.show()
+
+
+func _on_dialogic_signal_handler_2_matched():
+	$Beer.hide()

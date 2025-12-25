@@ -7,7 +7,7 @@ var rotate_timer = 0
 func _ready():
 	rotate_offset = randf_range(0, PI)
 	seed(position.length())
-	var size = randf_range(1, 2)
+	var size = randf_range(.8, 1.2)
 	scale = Vector2(size, size)
 
 

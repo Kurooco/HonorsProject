@@ -13,6 +13,7 @@ func _on_cancel_pressed():
 
 
 func _on_save_game_pressed():
+	PlayerStats.saved_level_path = Autoload.level_handler.current_level.resource_path
 	Autoload.level_handler.game_saver.save_level()
 	Autoload.level_handler.game_saver.save_game(0)
 	text.text = "Saved!"

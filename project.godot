@@ -13,7 +13,7 @@ config_version=5
 config/name="HonorsProject (Data Collection Version)"
 run/main_scene="uid://jip4wup8hkl7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="uid://dtoaci7yxsavo"
+config/icon="uid://du5l78yshangn"
 
 [autoload]
 
@@ -21,6 +21,7 @@ Autoload="*res://globals/Autoload.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PlayerStats="*res://globals/PlayerStats.gd"
 DataCollector="*res://globals/data_collector.gd"
+MusicHandler="*res://globals/MusicHandler.gd"
 
 [dialogic]
 
@@ -29,20 +30,24 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "acorn_dealer": "res://dialogue/timelines/acorn_dealer.dtl",
+"big_bird": "res://dialogue/timelines/big_bird.dtl",
 "boyfriend": "res://dialogue/timelines/boyfriend.dtl",
 "date": "res://dialogue/timelines/date.dtl",
+"pelican": "res://dialogue/timelines/pelican.dtl",
+"punk_bird": "res://dialogue/timelines/punk_bird.dtl",
 "redeem_points": "res://dialogue/timelines/redeem_points.dtl",
 "test": "res://dialogue/timelines/test.dtl"
 }
 variables={
 "beer_given": false,
 "has_beer": false,
+"met_seller": false,
 "table_broken": false
 }
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

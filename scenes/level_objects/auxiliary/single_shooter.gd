@@ -31,7 +31,9 @@ func _on_timer_timeout():
 
 func shoot(vel):
 	var new_scene = scene.instantiate()
-	var arc_mover = get_arc_mover(new_scene)
+	var arc_mover = ArcMover.new()
+	new_scene.add_child(arc_mover)
+	arc_mover.move_object = new_scene
 	new_scene.global_position = global_position
 	arc_mover.velocity = vel
 	Autoload.level_handler.current_level.add_child(new_scene)

@@ -1,18 +1,20 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmywb7sdrlhyc"]
+[gd_scene load_steps=20 format=3 uid="uid://cmywb7sdrlhyc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_x10i0"]
-[ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/small_bricks_but_cooler.png" id="2_5ppkx"]
+[ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_5ppkx"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_kw3gv"]
-[ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/iron_block.png" id="3_y1dq6"]
+[ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/environment/ground/iron_block.png" id="3_y1dq6"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="4_kw3gv"]
 [ext_resource type="PackedScene" uid="uid://bbals2yc1b3ml" path="res://scenes/ui/level_select/level_select_area.tscn" id="5_5ppkx"]
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="6_4hy2x"]
 [ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="7_tofga"]
-[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="8_yeoc4"]
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/misc/icon.svg" id="8_yeoc4"]
 [ext_resource type="PackedScene" uid="uid://p3teoaa3ptvm" path="res://scenes/level_objects/interactive/kickable_item.tscn" id="9_03jph"]
 [ext_resource type="PackedScene" uid="uid://bapo6eptyb2m2" path="res://scenes/level_objects/interactive/breakable_table.tscn" id="9_yeoc4"]
-[ext_resource type="Texture2D" uid="uid://h3o6yr3i7wi1" path="res://art/cup.png" id="10_yeoc4"]
+[ext_resource type="Texture2D" uid="uid://h3o6yr3i7wi1" path="res://art/environment/interactive/cup.png" id="10_yeoc4"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="12_q5ui7"]
+[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/environment/parallax/wall.png" id="14_k5565"]
+[ext_resource type="Texture2D" uid="uid://cnitnsokqqvrd" path="res://art/environment/parallax/bar.png" id="15_1yijl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11yvy"]
 size = Vector2(69, 105.435)
@@ -39,7 +41,7 @@ NodePath("Metal"): ExtResource("3_y1dq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brick/StaticBody2D"]
 position = Vector2(0, 10)
-polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -624, 334, -624, 128, -624, -360, -472, -360, 1928, -360, 2024, -360, 2024, 336, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
+polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1696, 88, 1696, 336, 648, 336, -912, 334, -912, -362, -472, -360, 1928, -360, 2024, -360, 2024, 336, 1720, 336, 1720, -240, -472, -238.062, -472, 128, -102.23, 128.107)
 
 [node name="Metal" type="Node2D" parent="."]
 
@@ -67,40 +69,38 @@ metadata/_edit_group_ = true
 [node name="DialogueAreas" type="Node2D" parent="."]
 
 [node name="DialogueArea" parent="DialogueAreas" instance=ExtResource("7_tofga")]
+position = Vector2(-437.372, 89.157)
 timeline = "acorn_dealer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea"]
-position = Vector2(-442.5, 88.2824)
 shape = SubResource("RectangleShape2D_11yvy")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea"]
-position = Vector2(-437.811, 89.4451)
+position = Vector2(0, 8)
 scale = Vector2(0.387026, 0.632216)
 texture = ExtResource("8_yeoc4")
 
 [node name="DialogueArea2" parent="DialogueAreas" instance=ExtResource("7_tofga")]
-position = Vector2(1056.53, 35.5648)
+position = Vector2(1077.53, 48.5648)
 timeline = "date"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea2"]
-position = Vector2(18.0475, 24.4394)
+position = Vector2(3.0475, 8.4394)
 shape = SubResource("RectangleShape2D_03jph")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea2"]
-position = Vector2(18.6014, 26.5734)
+position = Vector2(2.60132, 11.5734)
 scale = Vector2(0.266464, 0.529429)
 texture = ExtResource("8_yeoc4")
 
 [node name="DialogueArea3" parent="DialogueAreas" instance=ExtResource("7_tofga")]
-position = Vector2(1056.53, 35.5648)
+position = Vector2(1227.53, 59.5648)
 timeline = "boyfriend"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea3"]
-position = Vector2(181.031, 22.6678)
 shape = SubResource("RectangleShape2D_03jph")
 
 [node name="Sprite2D2" type="Sprite2D" parent="DialogueAreas/DialogueArea3"]
-position = Vector2(181.585, 26.5734)
 scale = Vector2(0.266464, 0.529429)
 texture = ExtResource("8_yeoc4")
 
@@ -230,4 +230,19 @@ scale = Vector2(0.284608, 0.284608)
 texture = ExtResource("10_yeoc4")
 
 [node name="SaveArea" parent="." instance=ExtResource("12_q5ui7")]
-position = Vector2(-24, 600)
+position = Vector2(-264, 112)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+offset_left = -688.0
+offset_top = -392.0
+offset_right = 2000.0
+offset_bottom = 1120.0
+texture = ExtResource("14_k5565")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1320.89, -42.5)
+scale = Vector2(0.723765, 0.634259)
+texture = ExtResource("15_1yijl")

@@ -1,7 +1,7 @@
 extends Node
 
 @export var opening_scene : PackedScene
-@export var roaming_levels : Array[PackedScene]
+@export var rest_levels : Array[PackedScene]
 @export var level_order : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
@@ -12,8 +12,10 @@ var fade_tween : Tween = null
 var check_point = Vector2.ZERO
 var in_rest_level = false
 var level_number = -1
+var last_rest_level_visited : PackedScene = null
 
 signal fade_ended
+signal data_loaded
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,11 +35,15 @@ func set_level(path: String):
 		remove_child(current_level)
 		current_level.queue_free()
 	var packed_level = load(path)
+	if(packed_level in rest_levels):
+		last_rest_level_visited = packed_level
+		if(level_order.find(packed_level) >= PlayerStats.levels_unlocked):
+			PlayerStats.levels_unlocked = level_order.find(packed_level)+2
 	var new_level = packed_level.instantiate()
 	set_level_number(packed_level)
 	current_level = new_level
 	game_saver.world_scene = new_level
-	if(packed_level in roaming_levels):
+	if(packed_level in rest_levels):
 		game_saver.load_level()
 		in_rest_level = true
 	else:
@@ -76,6 +82,7 @@ func restart_level():
 	fade_in()
 
 func fade_out(color=Color.BLACK):
+	fade.show()
 	if(is_instance_valid(fade_tween)):
 		fade_tween.kill()
 	fade_tween = create_tween()
@@ -89,6 +96,7 @@ func fade_in():
 	fade_tween = create_tween()
 	fade_tween.tween_property(fade, "color", transparent_color, 1)
 	fade_tween.tween_callback(fade_ended.emit)
+	fade_tween.tween_callback(fade.hide)
 
 func get_node_in_group(node, group) -> Node:
 	var children : Array = node.get_children().duplicate()
@@ -141,3 +149,24 @@ func show_save_menu():
 
 func set_level_number(scene: PackedScene):
 	level_number = level_order.find(scene)
+	
+func pause_game(pause: bool):
+	set_pause_subtree(current_level, pause)
+
+# Credit needed: found this on a reddit form
+func set_pause_subtree(root: Node, pause: bool) -> void:
+	var process_setters = ["set_process",
+	"set_physics_process",
+	"set_process_input",
+	"set_process_unhandled_input",
+	"set_process_unhandled_key_input",
+	"set_process_shortcut_input"]
+	
+	for setter in process_setters:
+		root.propagate_call(setter, [!pause])
+	root.propagate_call("set", ["paused", pause])
+	
+	if(pause):
+		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_IGNORE])
+	else:
+		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_PASS])

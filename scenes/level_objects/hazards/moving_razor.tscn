@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsgq6b0qtn3b0"]
+[gd_scene load_steps=2 format=3 uid="uid://dsgq6b0qtn3b0"]
 
 [ext_resource type="PackedScene" uid="uid://bf0rwbbj1b2hd" path="res://scenes/level_objects/hazards/razor.tscn" id="1_2m8ma"]
-[ext_resource type="PackedScene" uid="uid://cxaoik11opnua" path="res://scenes/components/arc_mover.tscn" id="2_s2ori"]
 
 [node name="MovingRazor" instance=ExtResource("1_2m8ma")]
 scale = Vector2(0.5, 0.5)
-
-[node name="ArcMover" parent="." index="2" node_paths=PackedStringArray("move_object") instance=ExtResource("2_s2ori")]
-move_object = NodePath("..")

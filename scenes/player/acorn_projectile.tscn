@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3e2gvt3gew0g"]
 
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="1_0aaw5"]
-[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="1_7won4"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="1_7won4"]
 [ext_resource type="Script" uid="uid://d0j6yhtl3hu52" path="res://scenes/player/acorn_projectile.gd" id="2_0vk6t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7won4"]

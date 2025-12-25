@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dht0i8ylltdsg"]
 
-[ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/pen_circle.png" id="1_4j6xr"]
-[ext_resource type="Texture2D" uid="uid://bbvnu8h4p35ij" path="res://art/flag.png" id="2_661ac"]
+[ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/ui/pen_circle.png" id="1_4j6xr"]
+[ext_resource type="Texture2D" uid="uid://bbvnu8h4p35ij" path="res://art/ui/flag.png" id="2_661ac"]
 [ext_resource type="Script" uid="uid://w84p1q2wwr1c" path="res://scenes/ui/level_select/location_button.gd" id="3_661ac"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth3g"]

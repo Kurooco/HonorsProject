@@ -8,6 +8,7 @@ if {table_broken} == true:
 			[wait time="3.0"]
 			Okay, here you go!
 			set {has_beer} = true
+			[signal arg="get_beer"]
 		- No, you're fine.
 			Well, let me know if you think of something you need.
 else:

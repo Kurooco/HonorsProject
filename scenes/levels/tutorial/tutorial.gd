@@ -38,3 +38,4 @@ func _on_camera_area_3_activated():
 
 func _on_level_end_activated():
 	PlayerStats.run_points = 0
+	PlayerStats.sync_points()

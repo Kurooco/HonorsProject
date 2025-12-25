@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://car5sxy6gpfc"]
 
-[ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/apple.png" id="1_ga6pt"]
+[ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/items/food/apple.png" id="1_ga6pt"]
 [ext_resource type="Script" uid="uid://deal2cwf0qygb" path="res://scenes/level_objects/hazards/enemy.gd" id="1_kuaqs"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_2xud0"]
 [ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_bbkmn"]
@@ -22,6 +22,7 @@ size = Vector2(36, 35)
 scale = Vector2(2, 2)
 collision_layer = 0
 script = ExtResource("1_kuaqs")
+MAX_JUMP_VELOCITY = -700.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kuaqs")

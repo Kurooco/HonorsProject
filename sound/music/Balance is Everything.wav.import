@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvolvda6odiw4"
+path="res://.godot/imported/Balance is Everything.wav-d1a77be1033d201a75dd37d51324efe9.sample"
+
+[deps]
+
+source_file="res://sound/music/Balance is Everything.wav"
+dest_files=["res://.godot/imported/Balance is Everything.wav-d1a77be1033d201a75dd37d51324efe9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

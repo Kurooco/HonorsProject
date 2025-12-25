@@ -3,12 +3,16 @@ extends Node
 var jumps = 0
 var acorns = 0
 var lives = 0
+var levels_unlocked = 50
+var saved_level_path : String = ""
 
 var total_points = 0
 var level_points = 0
 var run_points = 0 : 
 	set(amount):
 		DataCollector.increment_stat("points", amount)
+
+signal stat_updated
 
 func update_player_stats():
 	Autoload.player.update_stats()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddlm7h37grkjp"]
 
-[ext_resource type="Texture2D" uid="uid://dfskuf0xpl1lb" path="res://art/speed_change.png" id="1_ntc22"]
+[ext_resource type="Texture2D" uid="uid://dfskuf0xpl1lb" path="res://art/items/speed_change.png" id="1_ntc22"]
 [ext_resource type="Script" uid="uid://b3pwwcrka1mbp" path="res://scenes/level_objects/auxiliary/speed_change.gd" id="2_cxm3a"]
 
 [node name="SpeedChange" type="Sprite2D"]

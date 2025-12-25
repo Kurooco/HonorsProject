@@ -38,4 +38,5 @@ func _on_upgrade_pressed():
 	upgrades += 1
 	PlayerStats.set(upgrade_var_name, PlayerStats.get(upgrade_var_name)+1)
 	PlayerStats.update_player_stats()
+	PlayerStats.stat_updated.emit()
 	update_display()

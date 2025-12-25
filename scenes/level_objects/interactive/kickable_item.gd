@@ -26,6 +26,7 @@ func shatter():
 		var coin = load("res://scenes/components/dropped_item.tscn").instantiate()
 		coin.scene = load("res://scenes/level_objects/assist/coin.tscn")
 		coin.global_position = global_position
+		coin.remove_from_group("saveable")
 		Autoload.level_handler.current_level.call_deferred("add_child", coin)
 	queue_free()
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bptd4ef7gq12c" path="res://scenes/levels/tutorial/tutorial.gd" id="1_1r3rq"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_rnyxf"]
 [ext_resource type="Script" uid="uid://dyn2ossk0lpsn" path="res://scenes/levels/tutorial/tutorial_camera.gd" id="2_7ac3l"]
-[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/wood.png" id="3_1r3rq"]
+[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/textures/wood.png" id="3_1r3rq"]
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="4_u4f7j"]
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="6_iig34"]
 [ext_resource type="PackedScene" uid="uid://ddkiih5shi84d" path="res://scenes/levels/tutorial/tutorial_star.tscn" id="7_iig34"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="10_3yhub"]
 [ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/auxiliary/random_spawner.tscn" id="11_3yhub"]
 [ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="12_5eevr"]
-[ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/iron_block.png" id="12_tb2as"]
+[ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/environment/ground/iron_block.png" id="12_tb2as"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_tofvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e81p"]
@@ -75,7 +75,6 @@ stretch_mode = 1
 [node name="CameraArea" parent="." instance=ExtResource("4_u4f7j")]
 automatic = true
 show_prompt = false
-one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea"]
 position = Vector2(-420, -100)

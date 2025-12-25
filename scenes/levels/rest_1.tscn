@@ -1,22 +1,21 @@
-[gd_scene load_steps=27 format=4 uid="uid://cknpb7qewaitc"]
+[gd_scene load_steps=28 format=4 uid="uid://cknpb7qewaitc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_n71rw"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_7ktey"]
-[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/wood.png" id="2_hpyij"]
+[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/textures/wood.png" id="2_hpyij"]
 [ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="4_7ewig"]
-[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/icon.svg" id="5_ttr3h"]
 [ext_resource type="PackedScene" uid="uid://cdgl20hnfapbx" path="res://scenes/level_objects/decorations/leaves.tscn" id="6_ttr3h"]
-[ext_resource type="Texture2D" uid="uid://174onlcxwjjh" path="res://art/tree_branch.png" id="6_wqxap"]
+[ext_resource type="Texture2D" uid="uid://174onlcxwjjh" path="res://art/environment/parallax/tree_branch.png" id="6_wqxap"]
 [ext_resource type="Shader" uid="uid://dpvjj3hljomcl" path="res://resources/rest_1.gdshader" id="8_sgpcg"]
-[ext_resource type="Texture2D" uid="uid://cw71o70a47u76" path="res://art/farm_background.png" id="9_d7a7v"]
+[ext_resource type="Texture2D" uid="uid://cw71o70a47u76" path="res://art/environment/sky/farm_background.png" id="9_d7a7v"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_fodfp"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="11_5cji3"]
 [ext_resource type="PackedScene" uid="uid://bbals2yc1b3ml" path="res://scenes/ui/level_select/level_select_area.tscn" id="12_qp0hj"]
 [ext_resource type="PackedScene" uid="uid://p3teoaa3ptvm" path="res://scenes/level_objects/interactive/kickable_item.tscn" id="13_d605d"]
+[ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="15_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="15_ckulk"]
-[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/acorn.png" id="15_hpyij"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxap"]
+[ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="15_hpyij"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="16_ckulk"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqxap"]
 scenes/1/scene = ExtResource("6_ttr3h")
@@ -51,6 +50,9 @@ radius = 14.1168
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5b4g"]
 size = Vector2(29, 27)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxap"]
+size = Vector2(20, 33.5852)
+
 [node name="Rest1" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
 script = ExtResource("1_n71rw")
 textured_collision_groups = {
@@ -63,7 +65,7 @@ NodePath("LevelCollision"): ExtResource("2_hpyij")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelCollision/StaticBody2D"]
-polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -56, -256, -56, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 576, 128, 512, 128, 512, -192, -128, -192)
+polygon = PackedVector2Array(-128, 0, 192, 0, 192, -128, 384, -128, 384, 128, -256, 128, -256, 64, -552, 64, -552, 392, -792, 392, -792, -8, -256, -8, -256, -256, 24, -256, 24, -456, 576, -456, 784, -456, 784, -408, 576, -408, 576, -256, 752, -256, 752, -224, 576, -224, 576, 128, 512, 128, 512, -192, -128, -192)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="LevelCollision"]
 position = Vector2(272, 488)
@@ -103,29 +105,6 @@ polygon = PackedVector2Array(828.921, -61.8965, 1228.92, -61.8965, 1204.92, -21.
 [node name="Player" parent="." instance=ExtResource("2_7ktey")]
 position = Vector2(40.7991, -119.26)
 waiting_for_start = false
-
-[node name="DialogueArea" parent="." instance=ExtResource("4_7ewig")]
-position = Vector2(-304.797, 443.97)
-timeline = "test"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
-shape = SubResource("RectangleShape2D_wqxap")
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogueArea"]
-position = Vector2(-6, 13)
-scale = Vector2(0.25, 0.267438)
-texture = ExtResource("5_ttr3h")
-
-[node name="DialogueArea2" parent="." instance=ExtResource("4_7ewig")]
-position = Vector2(-1404.94, 201.267)
-timeline = "redeem_points"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea2"]
-shape = SubResource("RectangleShape2D_wqxap")
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogueArea2"]
-scale = Vector2(0.25, 0.267438)
-texture = ExtResource("5_ttr3h")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -10
@@ -307,3 +286,83 @@ shape = SubResource("RectangleShape2D_f5b4g")
 player = NodePath("../Player")
 x_bounds = Vector2(-1, 1)
 y_bounds = Vector2(-1, 1)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="DialogueArea" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(-304.797, 443.97)
+timeline = "test"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea"]
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea"]
+position = Vector2(0.796997, 4.03)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(141.331, 73.5827, 310.705, 298.151)
+
+[node name="DialogueArea3" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(739.595, -281.995)
+timeline = "pelican"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea3"]
+position = Vector2(-3.59454, 17.9954)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea3"]
+position = Vector2(4.40546, -6.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(1044.22, 76.8919, 407.218, 324.218)
+
+[node name="DialogueArea4" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(424, -680)
+timeline = "big_bird"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea4"]
+position = Vector2(5.36603, 2.41016)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea4"]
+position = Vector2(4.40546, -6.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(596.031, 27.6108, 326.812, 350.155)
+
+[node name="DialogueArea5" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(-880, -496)
+timeline = "punk_bird"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea5"]
+position = Vector2(-5.63397, 23.4102)
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea5"]
+position = Vector2(4.40546, -6.00464)
+scale = Vector2(0.25, 0.267438)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(-21.8108, 382.954, 516.155, 435.749)
+
+[node name="DialogueArea2" parent="Characters" instance=ExtResource("4_7ewig")]
+position = Vector2(-1404.94, 201.267)
+timeline = "redeem_points"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea2"]
+shape = SubResource("RectangleShape2D_wqxap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea2"]
+position = Vector2(-3.06009, -17.267)
+scale = Vector2(0.1906, 0.203894)
+texture = ExtResource("15_6fi6k")
+region_enabled = true
+region_rect = Rect2(620.216, 445.155, 355.343, 342.374)
+
+[node name="LevelMusicPlayer" parent="." instance=ExtResource("16_ckulk")]
+path = "res://sound/music/The Gathering Tree.wav"
