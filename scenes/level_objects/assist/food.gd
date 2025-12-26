@@ -5,7 +5,6 @@ var consumed = false
 
 func jump_on():
 	if(!consumed):
-		print_debug("jumped on!")
 		consumed = true
 		for child in get_children():
 			if child is ArcMover:

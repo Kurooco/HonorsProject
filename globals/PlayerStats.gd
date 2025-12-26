@@ -8,11 +8,10 @@ var saved_level_path : String = ""
 
 var total_points = 0
 var level_points = 0
-var run_points = 0 : 
-	set(amount):
-		DataCollector.increment_stat("points", amount)
+var run_points = 0 
 
 signal stat_updated
+
 
 func update_player_stats():
 	Autoload.player.update_stats()

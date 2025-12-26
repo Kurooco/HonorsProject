@@ -9,6 +9,7 @@ size = Vector2(35, 35)
 [node name="SaveArea" type="Area2D"]
 z_index = -1
 script = ExtResource("1_nrbfy")
+disabled = true
 metadata/_custom_type_script = "uid://cobq73dmok7hr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

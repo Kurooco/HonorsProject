@@ -6,6 +6,7 @@ func award_points(amount: int) -> void:
 		PlayerStats.add_points_permanent(amount)
 	else:
 		PlayerStats.run_points += amount 
+	DataCollector.increment_stat("points", amount)
 	var new_label : Label = load("res://scenes/ui/point_label.tscn").instantiate()
 	new_label.text = str(amount)
 	new_label.global_position = global_position

@@ -39,8 +39,9 @@ func _process(delta):
 			$AcornEnergy.hide()
 	else:
 		hide()
-	
+
 func update_hud():
+	print_debug("Hud updated!")
 	$Health.texture_progress = heart_progress[PlayerStats.lives]
 	$Health.texture_under = heart_progress[PlayerStats.lives]
 	$AcornProgress.texture_progress = acorn_progress[PlayerStats.acorns]
