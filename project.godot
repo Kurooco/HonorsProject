@@ -29,6 +29,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "acorn_dealer": "res://dialogue/timelines/acorn_dealer.dtl",
+"bar": "res://dialogue/timelines/bar.dtl",
 "big_bird": "res://dialogue/timelines/big_bird.dtl",
 "boyfriend": "res://dialogue/timelines/boyfriend.dtl",
 "date": "res://dialogue/timelines/date.dtl",
