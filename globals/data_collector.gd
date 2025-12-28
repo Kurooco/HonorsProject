@@ -3,16 +3,26 @@ extends Node
 # stats overall
 var global_stats = {}
 # stats overall and per-level
-var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0}
+var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0,"time":0.0}
 # stats per-level. Automatically copied from general_stats
 var level_stats : Array[Dictionary]
 var participant_num = 0
 var enabled = false
 
+var last_time : float = 0.0
+
 func _ready():
 	await get_tree().physics_frame
+	last_time = Time.get_ticks_msec()
+	Autoload.level_handler.level_loaded.connect(update_time)
 	for levels in Autoload.level_handler.level_order:
 		level_stats.append(general_stats.duplicate())
+	var timer = get_tree().create_timer(1)
+	timer.timeout.connect(update_time)
+
+func update_time():
+	increment_stat("time", Time.get_ticks_msec()-last_time)
+	last_time = Time.get_ticks_msec()
 
 func enable():
 	enabled = true

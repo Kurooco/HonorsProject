@@ -16,6 +16,7 @@ var last_rest_level_visited : PackedScene = null
 
 signal fade_ended
 signal data_loaded
+signal level_loaded
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,6 +53,7 @@ func set_level(path: String):
 	if(is_instance_valid(player)):
 		check_point = player.position
 	add_child(new_level)
+	level_loaded.emit()
 	
 
 func restart_level():
