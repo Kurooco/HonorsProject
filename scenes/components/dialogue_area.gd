@@ -11,7 +11,7 @@ func _on_activated():
 		in_conversation = true
 		Dialogic.start(timeline)
 		var camera = get_tree().get_first_node_in_group("level_camera")
-		camera.focus(position)
+		camera.focus(global_position)
 		Dialogic.timeline_ended.connect(camera.defocus)
 
 func _on_cooldown_timer_timeout():
