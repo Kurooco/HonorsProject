@@ -27,6 +27,8 @@ var jump_velocity_decline
 @onready var health_component = $HealthComponent
 @onready var animation = $Animation
 
+signal started
+
 
 func _ready():
 	Autoload.player = self
@@ -37,6 +39,7 @@ func _ready():
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("jump") && waiting_for_start):
 		waiting_for_start = false
+		started.emit()
 	if(waiting_for_start):
 		return
 	
@@ -51,7 +54,7 @@ func _physics_process(delta):
 	
 	# Out of bounds death
 	if(!Autoload.level_handler.in_rest_level && (global_position.y > camera.global_position.y + get_viewport_rect().size.y/zoom/2.0
-		|| position.x < camera.position.x - get_viewport_rect().size.x/zoom)):
+		|| global_position.x < camera.global_position.x - get_viewport_rect().size.x/zoom)):
 		$HealthComponent.kill()
 		set_physics_process(false)
 	
