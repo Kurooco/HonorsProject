@@ -6,5 +6,6 @@ extends "res://scenes/player/collectable.gd"
 
 func _on_collected():
 	#tilemap.erase_cell(coordinates)
+	$GlobalSound.play()
 	$PointAwarder.award_points(value)
 	queue_free()
