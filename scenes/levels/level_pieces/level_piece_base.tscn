@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://tiyg1qnsj2y6"]
+
+[ext_resource type="Texture2D" uid="uid://bc4d1grhqpqah" path="res://art/misc/icon.svg" id="1_3r41y"]
+[ext_resource type="Script" uid="uid://cgrmi8fik00a" path="res://scenes/levels/level_pieces/level_piece_base.gd" id="1_rslan"]
+[ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="3_rslan"]
+[ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="4_tl58t"]
+
+[node name="LevelPiece" type="Node2D"]
+script = ExtResource("1_rslan")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.121)
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(9.0625, 5)
+texture = ExtResource("1_3r41y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(560, -4.54747e-13)
+scale = Vector2(5.5, 5.5)
+
+[node name="Boxes" parent="." instance=ExtResource("3_rslan")]
+tile_map_data = PackedByteArray()
+
+[node name="Coins" parent="." instance=ExtResource("4_tl58t")]
+tile_map_data = PackedByteArray()
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

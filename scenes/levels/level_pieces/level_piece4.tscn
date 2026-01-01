@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=4 uid="uid://dxx7sjloubnep"]
+
+[ext_resource type="PackedScene" uid="uid://tiyg1qnsj2y6" path="res://scenes/levels/level_pieces/level_piece_base.tscn" id="1_qpdwf"]
+[ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="2_8qmvc"]
+[ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="3_ibxtm"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="4_juiru"]
+
+[node name="LevelPiece" instance=ExtResource("1_qpdwf")]
+
+[node name="Boxes" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAgABAP7/AAAAAAAAAgADAP3/AAAAAAAAAQADAP7/AAAAAAAAAQADAP//AAAAAAAAAQADAAAAAAAAAAAAAQADAAEAAAAAAAAAAQADAAIAAAAAAAAAAQA=")
+
+[node name="Coins" parent="." index="4" node_paths=PackedStringArray("world_node")]
+tile_map_data = PackedByteArray("AAAKAAAAAQAAAAEAAAAKAP//AQAAAAEAAAAKAP7/AQAAAAEAAAAMAAAAAQAAAAEAAAALAAAAAQAAAAEAAAALAP//AQAAAAEAAAALAP7/AQAAAAEAAAAMAP//AQAAAAEAAAAMAP7/AQAAAAEAAADk////AQAAAAEAAADj////AQAAAAEAAADi////AQAAAAEAAADi//7/AQAAAAEAAADi//3/AQAAAAEAAADj//3/AQAAAAEAAADj//7/AQAAAAEAAADk//7/AQAAAAEAAADk//3/AQAAAAEAAAA=")
+world_node = NodePath("..")
+
+[node name="SingleShooter" parent="." index="5" node_paths=PackedStringArray("parent") instance=ExtResource("2_8qmvc")]
+position = Vector2(-448, 327)
+scene = ExtResource("3_ibxtm")
+velocity = Vector2(300, -600)
+parent = NodePath("..")
+
+[node name="SingleShooter2" parent="." index="6" node_paths=PackedStringArray("parent") instance=ExtResource("2_8qmvc")]
+position = Vector2(92, 327)
+scene = ExtResource("4_juiru")
+velocity = Vector2(-300, -600)
+parent = NodePath("..")
+
+[node name="SingleShooter3" parent="." index="7" node_paths=PackedStringArray("parent") instance=ExtResource("2_8qmvc")]
+position = Vector2(92, 327)
+scene = ExtResource("4_juiru")
+velocity = Vector2(300, -600)
+parent = NodePath("..")

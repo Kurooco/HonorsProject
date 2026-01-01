@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ruisl5g2ue"]
+
+[ext_resource type="PackedScene" uid="uid://tiyg1qnsj2y6" path="res://scenes/levels/level_pieces/level_piece_base.tscn" id="1_fe1e1"]
+[ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="2_g20nw"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="3_qxt37"]
+
+[node name="LevelPiece" instance=ExtResource("1_fe1e1")]
+
+[node name="Boxes" parent="." index="3"]
+tile_map_data = PackedByteArray(0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 2, 0)
+
+[node name="SingleShooter" parent="." index="5" node_paths=PackedStringArray("parent") instance=ExtResource("2_g20nw")]
+position = Vector2(-440, 340)
+scene = ExtResource("3_qxt37")
+velocity = Vector2(50, -500)
+parent = NodePath("..")
+
+[node name="SingleShooter2" parent="." index="6" node_paths=PackedStringArray("parent") instance=ExtResource("2_g20nw")]
+position = Vector2(-40, 340)
+scene = ExtResource("3_qxt37")
+velocity = Vector2(50, -500)
+parent = NodePath("..")
+
+[node name="SingleShooter3" parent="." index="7" node_paths=PackedStringArray("parent") instance=ExtResource("2_g20nw")]
+position = Vector2(340, 340)
+scene = ExtResource("3_qxt37")
+velocity = Vector2(50, -500)
+parent = NodePath("..")

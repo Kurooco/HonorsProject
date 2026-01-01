@@ -8,6 +8,7 @@ extends Node2D
 		create_curve()
 @export var delay = 1.0
 @export var show_path = true
+@export var parent : Node
 
 func _ready():
 	$Timer.wait_time = delay
@@ -34,9 +35,12 @@ func shoot(vel):
 	var arc_mover = ArcMover.new()
 	new_scene.add_child(arc_mover)
 	arc_mover.move_object = new_scene
-	new_scene.global_position = global_position
 	arc_mover.velocity = vel
-	Autoload.level_handler.current_level.add_child(new_scene)
+	if(!is_instance_valid(parent)):
+		Autoload.level_handler.current_level.add_child(new_scene)
+	else:
+		parent.add_child(new_scene)
+	new_scene.global_position = global_position
 
 func create_curve():
 	$Line2D.clear_points()

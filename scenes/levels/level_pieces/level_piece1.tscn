@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=4 uid="uid://drdfh2c7pahqn"]
+
+[ext_resource type="PackedScene" uid="uid://tiyg1qnsj2y6" path="res://scenes/levels/level_pieces/level_piece_base.tscn" id="1_h483x"]
+
+[node name="LevelPiece" instance=ExtResource("1_h483x")]
+
+[node name="Boxes" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD8/wIAAAAAAAAAAQD9/wIAAAAAAAAAAQD+/wIAAAAAAAAAAQD//wIAAAAAAAAAAQAAAAIAAAAAAAAAAQABAAIAAAAAAAAAAQACAAIAAAAAAAAAAQADAAIAAAAAAAAAAQD8//3/AAAAAAAAAQD9//3/AAAAAAAAAQD+//3/AAAAAAAAAQD///3/AAAAAAAAAQAAAP3/AAAAAAAAAQABAP3/AAAAAAAAAQACAP3/AAAAAAAAAQADAP3/AAAAAAAAAQD9/wEAAAAAAAAAAwD/////AAAAAAAAAwD//wAAAAAAAAAAAwD9//7/AAAAAAAAAwABAP7/AAAAAAAAAwABAAEAAAAAAAAAAwADAP//AAAAAAAAAwADAAAAAAAAAAAAAwA=")
