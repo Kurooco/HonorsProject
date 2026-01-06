@@ -12,6 +12,7 @@ var enabled = false
 var last_time : float = 0.0
 
 func _ready():
+	set_process(false)
 	await get_tree().physics_frame
 	last_time = Time.get_ticks_msec()
 	Autoload.level_handler.level_loaded.connect(update_time)
@@ -20,11 +21,15 @@ func _ready():
 	var timer = get_tree().create_timer(1)
 	timer.timeout.connect(update_time)
 
+func _process(delta):
+	update_time()
+
 func update_time():
 	increment_stat("time", Time.get_ticks_msec()-last_time)
 	last_time = Time.get_ticks_msec()
 
 func enable():
+	set_process(true)
 	enabled = true
 	#participant_num = DirAccess.get_directories_at("data").size()
 	var count_file = FileAccess.open("data/count.txt", FileAccess.READ_WRITE)
