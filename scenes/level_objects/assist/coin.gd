@@ -6,6 +6,6 @@ extends "res://scenes/player/collectable.gd"
 
 func _on_collected():
 	#tilemap.erase_cell(coordinates)
-	$GlobalSound.play()
+	MusicHandler.play_single_polyphony_sound(position, "res://sound/sfx/game sounds/sfx13.wav")
 	$PointAwarder.award_points(value)
 	queue_free()
