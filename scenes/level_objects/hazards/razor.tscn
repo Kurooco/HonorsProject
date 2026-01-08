@@ -30,5 +30,4 @@ debug_color = Color(0.921369, 5.25588e-05, 0.691468, 0.42)
 stream = ExtResource("4_obk1l")
 volume_db = 6.209
 autoplay = true
-stream_paused = true
 attenuation = 8.87654

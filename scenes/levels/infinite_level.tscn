@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://difku7qihwom8"]
+[gd_scene load_steps=14 format=3 uid="uid://difku7qihwom8"]
 
 [ext_resource type="Script" uid="uid://cu8yk1n8pho0m" path="res://scenes/levels/infinite_level.gd" id="1_6wjjk"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_wvt3o"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://com4m44gt2dkx" path="res://scenes/levels/level_pieces/level_piece5.tscn" id="6_n85v4"]
 [ext_resource type="PackedScene" uid="uid://bpf3chrbe6tar" path="res://scenes/levels/level_pieces/level_piece6.tscn" id="7_n85v4"]
 [ext_resource type="PackedScene" uid="uid://bgs13fekgr6f1" path="res://scenes/levels/level_pieces/level_piece7.tscn" id="8_t7bqu"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="12_lx0x5"]
+[ext_resource type="Texture2D" uid="uid://ckda11jo21tf" path="res://art/environment/sky/cloudy_sey.png" id="13_mbc26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evm6t"]
 size = Vector2(575, 270)
@@ -35,5 +37,16 @@ shape = SubResource("RectangleShape2D_evm6t")
 position = Vector2(-300, 160)
 scale = Vector2(0.802952, 0.558642)
 texture = ExtResource("2_evm6t")
+
+[node name="Sky" type="CanvasLayer" parent="Roller"]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Roller/Sky"]
+position = Vector2(578, 325)
+scale = Vector2(1.01736, 1.01543)
+texture = ExtResource("13_mbc26")
+
+[node name="LevelMusicPlayer" parent="." instance=ExtResource("12_lx0x5")]
+path = "res://sound/music/King of the Hill.wav"
 
 [connection signal="started" from="Roller/Player" to="." method="_on_player_started"]
