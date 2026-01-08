@@ -5,6 +5,7 @@ extends Node2D
 @onready var player = $Roller/Player
 
 var placed_position = 576
+var ready_pieces = []
 
 func _ready():
 	seed(0)
@@ -23,8 +24,10 @@ func _process(delta):
 		placed_position += get_viewport_rect().size.x
 
 func place_piece(place):
+	if(ready_pieces.is_empty()):
+		ready_pieces = pieces.duplicate()
 	#print_debug("new piece added at "+str(place))
-	var piece = pieces[randi_range(0, pieces.size()-1)].instantiate()
+	var piece = ready_pieces.pop_at(randi_range(0, ready_pieces.size()-1)).instantiate()
 	$Roller.add_child(piece)
 	piece.position = Vector2(place, 0)
 	
