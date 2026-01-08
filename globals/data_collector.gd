@@ -29,6 +29,7 @@ func update_time():
 	last_time = Time.get_ticks_msec()
 
 func enable():
+	last_time = Time.get_ticks_msec()
 	set_process(true)
 	enabled = true
 	#participant_num = DirAccess.get_directories_at("data").size()
