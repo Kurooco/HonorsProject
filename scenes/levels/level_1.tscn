@@ -235,7 +235,7 @@ velocity = Vector2(500, -800)
 delay = 1.8
 
 [node name="SingleShooter2" parent="Shooters" index="10" instance=ExtResource("7_s8va5")]
-position = Vector2(7227.38, -336.641)
+position = Vector2(5297, -391)
 scene = ExtResource("8_dga24")
 
 [node name="SingleShooter3" parent="Shooters" index="11" instance=ExtResource("7_s8va5")]
