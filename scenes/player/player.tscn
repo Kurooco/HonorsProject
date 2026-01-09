@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=36 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_0owmy"]
@@ -10,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://30iwe2keter8" path="res://sound/sfx/Flap.wav" id="8_qek5x"]
 [ext_resource type="Texture2D" uid="uid://c45tkcrxhoof3" path="res://art/characters/player/beer.png" id="9_5gtgg"]
 [ext_resource type="PackedScene" uid="uid://benf067d2viqs" path="res://scenes/components/dialogic_signal_handler.tscn" id="10_h17s1"]
+[ext_resource type="PackedScene" uid="uid://cjknfqlnupu67" path="res://scenes/components/global_sound.tscn" id="11_fm80t"]
+[ext_resource type="AudioStream" uid="uid://b265a7xwmwph8" path="res://sound/sfx/game sounds/sfx11.wav" id="12_gx1jg"]
+[ext_resource type="AudioStream" uid="uid://bl7srlcrilcls" path="res://sound/sfx/pop.wav" id="13_gx1jg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("2_0owmy")
@@ -239,6 +242,12 @@ string = "get_beer"
 
 [node name="DialogicSignalHandler2" parent="." instance=ExtResource("10_h17s1")]
 string = "acorn_for_beer"
+
+[node name="HurtSound" parent="." instance=ExtResource("11_fm80t")]
+sound = ExtResource("12_gx1jg")
+
+[node name="AcornSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_gx1jg")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]

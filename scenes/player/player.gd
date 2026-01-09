@@ -156,6 +156,7 @@ func shoot_acorn(dir):
 	new_acorn.global_position = global_position
 	Autoload.level_handler.current_level.add_child(new_acorn)
 	acorns -= 1
+	$AcornSound.play()
 
 
 func apply_impact(i: Vector2):
@@ -192,6 +193,7 @@ func handle_dialogic_signals(arg):
 
 func _on_hurt_box_hurt():
 	$Blood.emitting = true
+	$HurtSound.play()
 
 
 func _on_dialogic_signal_handler_matched():
