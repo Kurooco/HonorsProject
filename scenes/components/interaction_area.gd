@@ -8,6 +8,7 @@ class_name InteractionArea
 @export var show_prompt = true
 @export var one_shot = false
 @export var disabled = false
+@export var sound : AudioStream
 var is_inside = false
 var activated_since_entering = false
 
@@ -29,5 +30,8 @@ func exit():
 
 func activate():
 	if((!activated_since_entering || !one_shot) && !disabled):
+		if(is_instance_valid(sound)):
+			$AudioStreamPlayer2D.stream = sound
+			$AudioStreamPlayer2D.play()
 		activated_since_entering = true
 		activated.emit()

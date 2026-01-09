@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cx75lgerfs20d"
+path="res://.godot/imported/sfx16.wav-ad9d2735ce45b0bbb06249881fe47ea2.sample"
+
+[deps]
+
+source_file="res://sound/sfx/game sounds/sfx16.wav"
+dest_files=["res://.godot/imported/sfx16.wav-ad9d2735ce45b0bbb06249881fe47ea2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

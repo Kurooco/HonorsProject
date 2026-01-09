@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct0ogc4qicje4"]
+[gd_scene load_steps=5 format=3 uid="uid://ct0ogc4qicje4"]
 
 [ext_resource type="Script" uid="uid://brl54pqvga73l" path="res://scenes/level_objects/assist/food.gd" id="1_1otte"]
 [ext_resource type="Texture2D" uid="uid://0uv02x5kv7ic" path="res://art/items/food/apple2.png" id="2_1otte"]
+[ext_resource type="AudioStream" uid="uid://dnfmiy1pqbtu2" path="res://sound/sfx/game sounds/sfx10.wav" id="3_11ufl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswwm"]
 size = Vector2(61, 63)
@@ -16,3 +17,7 @@ shape = SubResource("RectangleShape2D_jswwm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.8775, 0.8775)
 texture = ExtResource("2_1otte")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_11ufl")
+volume_db = -3.881

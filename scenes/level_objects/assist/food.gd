@@ -5,6 +5,7 @@ var consumed = false
 
 func jump_on():
 	if(!consumed):
+		$AudioStreamPlayer2D.play()
 		consumed = true
 		for child in get_children():
 			if child is ArcMover:

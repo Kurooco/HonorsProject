@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b265a7xwmwph8"
+path="res://.godot/imported/sfx11.wav-34bf45c025c53bb89e8a966c99b51cce.sample"
+
+[deps]
+
+source_file="res://sound/sfx/game sounds/sfx11.wav"
+dest_files=["res://.godot/imported/sfx11.wav-34bf45c025c53bb89e8a966c99b51cce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

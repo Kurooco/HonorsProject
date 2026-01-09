@@ -3,6 +3,7 @@ extends Node
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
 var play_music = true
+var single_polyphony_sounds : Dictionary[String, AudioStreamPlayer2D]
 
 func play(path:String):
 	if(!play_music):
@@ -20,3 +21,11 @@ func play(path:String):
 func stop():
 	current_song_node.queue_free()
 	current_song_path = ""
+
+func play_single_polyphony_sound(pos:Vector2, path:String):
+	if(!single_polyphony_sounds.has(path)):
+		single_polyphony_sounds[path] = AudioStreamPlayer2D.new()
+		single_polyphony_sounds[path].stream = load(path)
+		get_tree().current_scene.add_child(single_polyphony_sounds[path])
+	single_polyphony_sounds[path].position = pos
+	single_polyphony_sounds[path].play()
