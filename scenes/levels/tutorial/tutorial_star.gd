@@ -17,6 +17,7 @@ func _ready():
 func capture():
 	ind += 1
 	captured.emit(ind)
+	$AudioStreamPlayer2D.play()
 	
 	disabled = true
 	var fade_tween = create_tween()
