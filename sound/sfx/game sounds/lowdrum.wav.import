@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnfmiy1pqbtu2"
-path="res://.godot/imported/sfx10.wav-d7c76b27ee7fd8428951fb7a9a63d3db.sample"
+path="res://.godot/imported/lowdrum.wav-b9112385bb85a79896ab948f3c18d09c.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx10.wav"
-dest_files=["res://.godot/imported/sfx10.wav-d7c76b27ee7fd8428951fb7a9a63d3db.sample"]
+source_file="res://sound/sfx/game sounds/lowdrum.wav"
+dest_files=["res://.godot/imported/lowdrum.wav-b9112385bb85a79896ab948f3c18d09c.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://stlickn3xefn"
-path="res://.godot/imported/sfx18.wav-d111782ebda56d243a1a7b98e91a6f6d.sample"
+path="res://.godot/imported/razor.wav-fcaef266a51a31293a0cc39a01ffc029.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx18.wav"
-dest_files=["res://.godot/imported/sfx18.wav-d111782ebda56d243a1a7b98e91a6f6d.sample"]
+source_file="res://sound/sfx/game sounds/razor.wav"
+dest_files=["res://.godot/imported/razor.wav-fcaef266a51a31293a0cc39a01ffc029.sample"]
 
 [params]
 

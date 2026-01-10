@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1tmimgqn0iqw"
-path="res://.godot/imported/sfx2.wav-81966497e8bc40f23efd2534b9f32c1a.sample"
+path="res://.godot/imported/welldone.wav-111590d69630fdce03eda192f5671654.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx2.wav"
-dest_files=["res://.godot/imported/sfx2.wav-81966497e8bc40f23efd2534b9f32c1a.sample"]
+source_file="res://sound/sfx/game sounds/welldone.wav"
+dest_files=["res://.godot/imported/welldone.wav-111590d69630fdce03eda192f5671654.sample"]
 
 [params]
 

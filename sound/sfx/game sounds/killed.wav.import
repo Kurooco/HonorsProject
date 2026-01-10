@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bm84dt8s74t7t"
-path="res://.godot/imported/sfx178.wav-c2df8d981d1226076cb181bc03ab40de.sample"
+uid="uid://c62ai6gvscrln"
+path="res://.godot/imported/killed.wav-d8bb0448bc13839e59762b03ed7e670a.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx178.wav"
-dest_files=["res://.godot/imported/sfx178.wav-c2df8d981d1226076cb181bc03ab40de.sample"]
+source_file="res://sound/sfx/game sounds/killed.wav"
+dest_files=["res://.godot/imported/killed.wav-d8bb0448bc13839e59762b03ed7e670a.sample"]
 
 [params]
 

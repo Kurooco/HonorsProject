@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://6ga7ojr5t06c"
-path="res://.godot/imported/sfx3.wav-25344274d6d46fc50469c393948f1fa0.sample"
+path="res://.godot/imported/pitchtune.wav-3dc38b9c6bd75e9916b56819271aad77.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx3.wav"
-dest_files=["res://.godot/imported/sfx3.wav-25344274d6d46fc50469c393948f1fa0.sample"]
+source_file="res://sound/sfx/game sounds/pitchtune.wav"
+dest_files=["res://.godot/imported/pitchtune.wav-3dc38b9c6bd75e9916b56819271aad77.sample"]
 
 [params]
 

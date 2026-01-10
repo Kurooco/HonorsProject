@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://di7cc4846yesl"
-path="res://.godot/imported/sfx4.wav-a87643bf76ab03d0935643adcc379793.sample"
+path="res://.godot/imported/upgather.wav-5d532604fb40782f22dd81139a5a42b5.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx4.wav"
-dest_files=["res://.godot/imported/sfx4.wav-a87643bf76ab03d0935643adcc379793.sample"]
+source_file="res://sound/sfx/game sounds/upgather.wav"
+dest_files=["res://.godot/imported/upgather.wav-5d532604fb40782f22dd81139a5a42b5.sample"]
 
 [params]
 

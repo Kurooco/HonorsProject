@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1jw5c3gkwolf" path="res://scenes/levels/tutorial/tutorial_star.gd" id="1_m8pwj"]
 [ext_resource type="Texture2D" uid="uid://c3l7bgyd60ray" path="res://art/items/tutorial_star.png" id="2_oh7l3"]
-[ext_resource type="AudioStream" uid="uid://db3wn3arjmb41" path="res://sound/sfx/game sounds/sfx15.wav" id="3_3pbya"]
+[ext_resource type="AudioStream" uid="uid://db3wn3arjmb41" path="res://sound/sfx/game sounds/maxupgrade.wav" id="3_3pbya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472qy"]
 size = Vector2(19.5, 20)

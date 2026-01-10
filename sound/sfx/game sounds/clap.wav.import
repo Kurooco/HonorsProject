@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bq8i1pb7vyqhf"
-path="res://.godot/imported/sfx12.wav-b622fb72f0c99597ffe81887d2a7aceb.sample"
+uid="uid://dfp32bb2q7ijt"
+path="res://.godot/imported/clap.wav-fa6c0d60cbaf8f83756f58f86de6db88.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx12.wav"
-dest_files=["res://.godot/imported/sfx12.wav-b622fb72f0c99597ffe81887d2a7aceb.sample"]
+source_file="res://sound/sfx/game sounds/clap.wav"
+dest_files=["res://.godot/imported/clap.wav-fa6c0d60cbaf8f83756f58f86de6db88.sample"]
 
 [params]
 

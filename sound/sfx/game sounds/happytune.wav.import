@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm84dt8s74t7t"
+path="res://.godot/imported/happytune.wav-30cd2c48ce1dbcf3ff7eb45b366e7fbe.sample"
+
+[deps]
+
+source_file="res://sound/sfx/game sounds/happytune.wav"
+dest_files=["res://.godot/imported/happytune.wav-30cd2c48ce1dbcf3ff7eb45b366e7fbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

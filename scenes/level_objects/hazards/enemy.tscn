@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://car5sxy6gpfc"]
+[gd_scene load_steps=13 format=3 uid="uid://car5sxy6gpfc"]
 
 [ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/items/food/apple.png" id="1_ga6pt"]
 [ext_resource type="Script" uid="uid://deal2cwf0qygb" path="res://scenes/level_objects/hazards/enemy.gd" id="1_kuaqs"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_bbkmn"]
 [ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_5ky15"]
 [ext_resource type="PackedScene" uid="uid://mis4ukjv3ob3" path="res://scenes/components/death_handler.tscn" id="6_5sfx2"]
+[ext_resource type="AudioStream" uid="uid://dfp32bb2q7ijt" path="res://sound/sfx/game sounds/clap.wav" id="6_laihp"]
+[ext_resource type="AudioStream" uid="uid://c62ai6gvscrln" path="res://sound/sfx/game sounds/killed.wav" id="8_5gba0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuaqs"]
 
@@ -56,6 +58,7 @@ max_health = 2
 health_component = NodePath("../HealthComponent")
 invincible_time = 0.0
 impact_reciever = NodePath("..")
+sound = ExtResource("6_laihp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(4, 0.5)
@@ -65,6 +68,7 @@ shape = SubResource("RectangleShape2D_laihp")
 scene_root = NodePath("..")
 health_component = NodePath("../HealthComponent")
 point_worth = 200
+sound = ExtResource("8_5gba0")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

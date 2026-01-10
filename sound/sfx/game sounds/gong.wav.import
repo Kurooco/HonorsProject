@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3ynh2nv3pv2w"
-path="res://.godot/imported/sfx19.wav-23e00a145c40525b7cc97a48a3a8cefc.sample"
+path="res://.godot/imported/gong.wav-ca88ae03672ccedf9d0c50e0b681a45a.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx19.wav"
-dest_files=["res://.godot/imported/sfx19.wav-23e00a145c40525b7cc97a48a3a8cefc.sample"]
+source_file="res://sound/sfx/game sounds/gong.wav"
+dest_files=["res://.godot/imported/gong.wav-ca88ae03672ccedf9d0c50e0b681a45a.sample"]
 
 [params]
 

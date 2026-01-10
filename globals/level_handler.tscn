@@ -28,7 +28,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("5_ixpvp")
+opening_scene = ExtResource("2_ssum3")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3")])
 

@@ -5,6 +5,7 @@ class_name HurtBox
 @export var friendly = false
 @export var invincible_time = 2.0
 @export var impact_reciever : CharacterBody2D
+@export var sound : AudioStream
 var currently_invincible = false
 
 signal became_vulnerable
@@ -18,6 +19,8 @@ func _ready():
 func damage(amount:int, impact:Vector2) -> bool:
 	if(!currently_invincible):
 		hurt.emit()
+		$GlobalSound.sound = sound
+		$GlobalSound.play()
 		health_component.hurt(amount)
 		if(invincible_time > 0):
 			currently_invincible = true

@@ -263,3 +263,4 @@ scene = ExtResource("8_dga24")
 
 [node name="LevelMusicPlayer" parent="." index="25" instance=ExtResource("13_dnkej")]
 path = "res://sound/music/Leaving Home.wav"
+db = -5.0

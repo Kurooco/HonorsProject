@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1cmicma3ggh4"
-path="res://.godot/imported/sfx6.wav-56ac3aec1119b699f47427a12e3c9c68.sample"
+path="res://.godot/imported/smallcoin.wav-03eecef2bc3560cb9fe1e194b39e5b7b.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx6.wav"
-dest_files=["res://.godot/imported/sfx6.wav-56ac3aec1119b699f47427a12e3c9c68.sample"]
+source_file="res://sound/sfx/game sounds/smallcoin.wav"
+dest_files=["res://.godot/imported/smallcoin.wav-03eecef2bc3560cb9fe1e194b39e5b7b.sample"]
 
 [params]
 

@@ -3,7 +3,7 @@ class_name Acorn
 
 func collect():
 	super()
-	MusicHandler.play_single_polyphony_sound(position, "res://sound/sfx/game sounds/sfx4.wav")
+	MusicHandler.play_single_polyphony_sound(position, "res://sound/sfx/game sounds/upgather.wav")
 	queue_free()
 
 func _process(delta):
