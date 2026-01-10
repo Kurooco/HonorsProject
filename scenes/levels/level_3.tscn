@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://chkul5njl0r85"]
+[gd_scene load_steps=27 format=4 uid="uid://chkul5njl0r85"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_44gv1"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_0ljxa"]
-[ext_resource type="PackedScene" uid="uid://c64x5ruyxsgfq" path="res://scenes/level_objects/auxiliary/random_spawner.tscn" id="3_0ljxa"]
 [ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="5_ftfob"]
 [ext_resource type="PackedScene" uid="uid://oh37nacj7g3i" path="res://scenes/level_objects/assist/acorn.tscn" id="6_fkk1g"]
 [ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="6_josfm"]
@@ -20,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="19_vmg1d"]
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="20_1nwmf"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="21_5f5xw"]
+[ext_resource type="Texture2D" uid="uid://h0vssklobj22" path="res://art/environment/parallax/filled_hills.png" id="21_o3ttr"]
+[ext_resource type="Texture2D" uid="uid://bv2t8qyrf84t4" path="res://art/environment/parallax/city_back.png" id="22_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://cxjvp1uqhf1b8" path="res://art/environment/sky/sunset.png" id="22_o3ttr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qepi"]
 size = Vector2(454, 311)
@@ -41,12 +43,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetScenesCollectionSource_qi5uv")
 sources/1 = SubResource("TileSetAtlasSource_t4txi")
 
-[sub_resource type="Curve2D" id="Curve2D_apo5x"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 9020, 486, 0, 0, 0, 0, 10880, 486)
-}
-point_count = 2
-
 [node name="Level3" instance=ExtResource("1_44gv1")]
 
 [node name="Player" parent="." index="0"]
@@ -54,6 +50,9 @@ position = Vector2(-625, -30)
 
 [node name="AutoscrollCamera" parent="." index="1"]
 zoom = Vector2(0.7, 0.7)
+
+[node name="Parallax2D" parent="." index="2"]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
 position = Vector2(-295, 41)
@@ -301,57 +300,124 @@ speed = 250
 [node name="SpeedChange4" parent="." index="41" instance=ExtResource("12_qi5uv")]
 position = Vector2(15977, -22)
 
-[node name="FoodSpawner2" parent="." index="42" instance=ExtResource("3_0ljxa")]
-curve = SubResource("Curve2D_apo5x")
-spawn_time = 0.3
-y_range = Vector2(-900, -800)
-
-[node name="CheckPoint" parent="." index="43" instance=ExtResource("14_t4txi")]
+[node name="CheckPoint" parent="." index="42" instance=ExtResource("14_t4txi")]
 position = Vector2(8217, 150)
 
-[node name="CheckPoint2" parent="." index="44" instance=ExtResource("14_t4txi")]
+[node name="CheckPoint2" parent="." index="43" instance=ExtResource("14_t4txi")]
 position = Vector2(16495, 73)
 
-[node name="SuperAcorn" parent="." index="45" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn" parent="." index="44" instance=ExtResource("17_lgrx1")]
 position = Vector2(6378.91, 25.4032)
 
-[node name="SuperAcorn2" parent="." index="46" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn2" parent="." index="45" instance=ExtResource("17_lgrx1")]
 position = Vector2(14570.5, -5.28796)
 
-[node name="SuperAcorn3" parent="." index="47" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn3" parent="." index="46" instance=ExtResource("17_lgrx1")]
 position = Vector2(21274, -5)
 
-[node name="SuperAcorn4" parent="." index="48" instance=ExtResource("17_lgrx1")]
+[node name="SuperAcorn4" parent="." index="47" instance=ExtResource("17_lgrx1")]
 position = Vector2(19967, 1)
 
-[node name="Enemy" parent="." index="49" instance=ExtResource("18_fhpes")]
+[node name="Enemy" parent="." index="48" instance=ExtResource("18_fhpes")]
 position = Vector2(21707, -261)
 
-[node name="Enemy4" parent="." index="50" instance=ExtResource("18_fhpes")]
+[node name="Enemy4" parent="." index="49" instance=ExtResource("18_fhpes")]
 position = Vector2(9760, -156)
 
-[node name="Enemy5" parent="." index="51" instance=ExtResource("18_fhpes")]
+[node name="Enemy5" parent="." index="50" instance=ExtResource("18_fhpes")]
 position = Vector2(11740, -240)
 
-[node name="Enemy2" parent="." index="52" instance=ExtResource("18_fhpes")]
+[node name="Enemy2" parent="." index="51" instance=ExtResource("18_fhpes")]
 position = Vector2(20767, -311)
 
-[node name="Enemy3" parent="." index="53" instance=ExtResource("18_fhpes")]
+[node name="Enemy3" parent="." index="52" instance=ExtResource("18_fhpes")]
 position = Vector2(20120, -167)
 
-[node name="LevelEnd" parent="." index="54" instance=ExtResource("19_vmg1d")]
+[node name="LevelEnd" parent="." index="53" instance=ExtResource("19_vmg1d")]
 position = Vector2(23366.8, -72.0094)
 next_level = "res://scenes/levels/rest_2.tscn"
 
-[node name="LineFollower" parent="." index="55" instance=ExtResource("20_1nwmf")]
+[node name="LineFollower" parent="." index="54" instance=ExtResource("20_1nwmf")]
 position = Vector2(-325.844, 94.2999)
 points = PackedVector2Array(2323.03, -380.317, 2634.03, -166.5, 2963.03, 59.6829)
 movement_type = 1
 
-[node name="LineFollower2" parent="." index="56" instance=ExtResource("20_1nwmf")]
+[node name="LineFollower2" parent="." index="55" instance=ExtResource("20_1nwmf")]
 points = PackedVector2Array(16740, 0, 17640, 0, 18560, 0)
 speed = 3.0
 movement_type = 1
 
-[node name="LevelMusicPlayer" parent="." index="57" instance=ExtResource("21_5f5xw")]
+[node name="LevelMusicPlayer" parent="." index="56" instance=ExtResource("21_5f5xw")]
 path = "res://sound/music/Balance is Everything.wav"
+
+[node name="Parallax2D5" type="Parallax2D" parent="." index="57"]
+z_index = -10
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" index="0"]
+modulate = Color(0.0807833, 0.0807834, 0.0807833, 1)
+position = Vector2(640, -552)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("22_kdsi4")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D5" index="1"]
+modulate = Color(0.0807833, 0.0807834, 0.0807833, 1)
+position = Vector2(1580, -632)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("22_kdsi4")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="." index="58"]
+z_index = -10
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1020.8, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" index="0"]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)
+position = Vector2(0, -51)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_o3ttr")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." index="59"]
+z_index = -10
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1276, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" index="0"]
+modulate = Color(0.408329, 0.40833, 0.408329, 1)
+position = Vector2(0, 47)
+texture = ExtResource("21_o3ttr")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="." index="60"]
+z_index = -10
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1531.2, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" index="0"]
+modulate = Color(0.581033, 0.581033, 0.581033, 1)
+position = Vector2(0, 207)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("21_o3ttr")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="61"]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" index="0"]
+modulate = Color(0.662452, 0.662452, 0.662452, 1)
+position = Vector2(593, 318)
+scale = Vector2(1.05556, 1.05556)
+texture = ExtResource("22_o3ttr")
+
+[node name="LineFollower3" parent="." index="62" instance=ExtResource("20_1nwmf")]
+points = PackedVector2Array(9180, 360, 10700, 360, 10700, 460, 9180, 460)
+closed = true
+scene = ExtResource("6_josfm")
+number = 40
+speed = 1.0
