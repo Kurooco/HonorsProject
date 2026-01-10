@@ -3,7 +3,7 @@ extends Node
 # stats overall
 var global_stats = {}
 # stats overall and per-level
-var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0,"time":0.0}
+var general_stats = {"jumps":0,"points":0,"deaths":0,"bounces":0,"time":0.0,"max_progress":0.0}
 # stats per-level. Automatically copied from general_stats
 var level_stats : Array[Dictionary]
 var participant_num = 0

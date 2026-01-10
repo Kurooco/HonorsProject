@@ -83,7 +83,12 @@ func _physics_process(delta):
 			last_direction = direction
 			velocity.x += direction * SPEED
 		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
-		
+	
+	# Update progress
+	if(position.x > DataCollector.level_stats[Autoload.level_handler.level_number]["max_progress"]):
+		var max_progress = position.x
+		print_debug(max_progress)
+		DataCollector.set_stat("max_progress", max_progress)
 	
 	# Handle Interactions
 	if(Input.is_action_just_pressed("interact")):
@@ -121,8 +126,6 @@ func _physics_process(delta):
 	else:
 		if(velocity.y > 0 && !animation.is_playing()):
 			animation.play("fall")
-	
-
 
 
 func _on_detection_area_area_entered(area):
