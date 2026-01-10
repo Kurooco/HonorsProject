@@ -14,4 +14,5 @@ func _process(delta):
 
 func _on_collected():
 	Autoload.player.acorn_energy = 100
+	$GlobalSound.play()
 	queue_free()
