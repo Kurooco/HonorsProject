@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://r4nv7ornmrys"
-path="res://.godot/imported/sfx20.wav-5cadab5bb75c9501db6a95d4f79d0a60.sample"
+path="res://.godot/imported/drumloop.wav-0a1e35bd1102ab6dd4824d683b30e608.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx20.wav"
-dest_files=["res://.godot/imported/sfx20.wav-5cadab5bb75c9501db6a95d4f79d0a60.sample"]
+source_file="res://sound/sfx/game sounds/drumloop.wav"
+dest_files=["res://.godot/imported/drumloop.wav-0a1e35bd1102ab6dd4824d683b30e608.sample"]
 
 [params]
 

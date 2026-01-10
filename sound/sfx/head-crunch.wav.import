@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://p15x0pebwswj"
-path="res://.godot/imported/sfx1.wav-f882b55ee47f8813fd40fcb974fc8677.sample"
+uid="uid://d3avpa0yw31ko"
+path="res://.godot/imported/head-crunch.wav-bf052e9381ad9569d05529c33a587ca9.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx1.wav"
-dest_files=["res://.godot/imported/sfx1.wav-f882b55ee47f8813fd40fcb974fc8677.sample"]
+source_file="res://sound/sfx/head-crunch.wav"
+dest_files=["res://.godot/imported/head-crunch.wav-bf052e9381ad9569d05529c33a587ca9.sample"]
 
 [params]
 

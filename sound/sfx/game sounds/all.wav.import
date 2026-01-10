@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ds82bbhyc1x6c"
-path="res://.godot/imported/sfx7.wav-f433b7f8007b6a57b118bd26409b4acf.sample"
+uid="uid://p15x0pebwswj"
+path="res://.godot/imported/all.wav-288d6741261eb79d072c25c50b080632.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx7.wav"
-dest_files=["res://.godot/imported/sfx7.wav-f433b7f8007b6a57b118bd26409b4acf.sample"]
+source_file="res://sound/sfx/game sounds/all.wav"
+dest_files=["res://.godot/imported/all.wav-288d6741261eb79d072c25c50b080632.sample"]
 
 [params]
 

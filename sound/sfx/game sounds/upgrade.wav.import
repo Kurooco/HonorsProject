@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://db3wn3arjmb41"
-path="res://.godot/imported/sfx15.wav-4b6069ddde59af13b5f733fc717266d6.sample"
+uid="uid://4lmlbs5wyjqw"
+path="res://.godot/imported/upgrade.wav-70d85042b885f994af0ec6d990d2db64.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx15.wav"
-dest_files=["res://.godot/imported/sfx15.wav-4b6069ddde59af13b5f733fc717266d6.sample"]
+source_file="res://sound/sfx/game sounds/upgrade.wav"
+dest_files=["res://.godot/imported/upgrade.wav-70d85042b885f994af0ec6d990d2db64.sample"]
 
 [params]
 

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7wsoqjunvbbs" path="res://scenes/ui/point_awarder.tscn" id="4_aqels"]
 [ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/particles/white_sparkle.png" id="5_aqels"]
 [ext_resource type="PackedScene" uid="uid://cjknfqlnupu67" path="res://scenes/components/global_sound.tscn" id="6_qisvj"]
-[ext_resource type="AudioStream" uid="uid://dawuxptjfujsb" path="res://sound/sfx/game sounds/sfx13.wav" id="7_rkoty"]
+[ext_resource type="AudioStream" uid="uid://dawuxptjfujsb" path="res://sound/sfx/game sounds/coin.wav" id="7_rkoty"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu0rm"]
 atlas = ExtResource("2_dxdg0")

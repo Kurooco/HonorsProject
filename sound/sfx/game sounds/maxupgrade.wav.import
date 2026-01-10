@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db3wn3arjmb41"
+path="res://.godot/imported/maxupgrade.wav-4fa71f8c18e39eda92556f1f395b599e.sample"
+
+[deps]
+
+source_file="res://sound/sfx/game sounds/maxupgrade.wav"
+dest_files=["res://.godot/imported/maxupgrade.wav-4fa71f8c18e39eda92556f1f395b599e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

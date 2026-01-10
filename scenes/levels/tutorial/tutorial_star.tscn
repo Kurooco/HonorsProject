@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddkiih5shi84d"]
+[gd_scene load_steps=5 format=3 uid="uid://ddkiih5shi84d"]
 
 [ext_resource type="Script" uid="uid://b1jw5c3gkwolf" path="res://scenes/levels/tutorial/tutorial_star.gd" id="1_m8pwj"]
 [ext_resource type="Texture2D" uid="uid://c3l7bgyd60ray" path="res://art/items/tutorial_star.png" id="2_oh7l3"]
+[ext_resource type="AudioStream" uid="uid://db3wn3arjmb41" path="res://sound/sfx/game sounds/maxupgrade.wav" id="3_3pbya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472qy"]
 size = Vector2(19.5, 20)
@@ -19,5 +20,9 @@ shape = SubResource("RectangleShape2D_472qy")
 position = Vector2(1.5, -0.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_oh7l3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3pbya")
+volume_db = -17.086
 
 [connection signal="activated" from="." to="." method="capture"]

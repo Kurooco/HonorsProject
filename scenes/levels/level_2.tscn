@@ -215,7 +215,7 @@ position = Vector2(9790, -64)
 
 [node name="LevelEnd" parent="." index="36" instance=ExtResource("14_r88tb")]
 position = Vector2(15582, 0)
-next_level = "res://scenes/levels/rest_1.tscn"
+next_level = "res://scenes/levels/rest_2.tscn"
 
 [node name="SuperAcorn" parent="." index="37" instance=ExtResource("13_tv7cl")]
 position = Vector2(10384, -65)

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dawuxptjfujsb"
-path="res://.godot/imported/sfx13.wav-cebde415f04fb7abee460ad1c274a6ed.sample"
+uid="uid://bq8i1pb7vyqhf"
+path="res://.godot/imported/joke.wav-75baf522e9e2582aa7c69c5d92006a6a.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx13.wav"
-dest_files=["res://.godot/imported/sfx13.wav-cebde415f04fb7abee460ad1c274a6ed.sample"]
+source_file="res://sound/sfx/game sounds/joke.wav"
+dest_files=["res://.godot/imported/joke.wav-75baf522e9e2582aa7c69c5d92006a6a.sample"]
 
 [params]
 

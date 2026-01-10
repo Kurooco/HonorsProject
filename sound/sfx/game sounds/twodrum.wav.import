@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c62ai6gvscrln"
-path="res://.godot/imported/sfx8.wav-6e660d5032f806b94396bac9b3170be5.sample"
+uid="uid://ds82bbhyc1x6c"
+path="res://.godot/imported/twodrum.wav-7ad9e78a6f1e348ca620713afac2bd10.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx8.wav"
-dest_files=["res://.godot/imported/sfx8.wav-6e660d5032f806b94396bac9b3170be5.sample"]
+source_file="res://sound/sfx/game sounds/twodrum.wav"
+dest_files=["res://.godot/imported/twodrum.wav-7ad9e78a6f1e348ca620713afac2bd10.sample"]
 
 [params]
 

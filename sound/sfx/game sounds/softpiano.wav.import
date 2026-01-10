@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cx75lgerfs20d"
-path="res://.godot/imported/sfx16.wav-ad9d2735ce45b0bbb06249881fe47ea2.sample"
+path="res://.godot/imported/softpiano.wav-39e07287ac5658df62d1a9089b99edf0.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx16.wav"
-dest_files=["res://.godot/imported/sfx16.wav-ad9d2735ce45b0bbb06249881fe47ea2.sample"]
+source_file="res://sound/sfx/game sounds/softpiano.wav"
+dest_files=["res://.godot/imported/softpiano.wav-39e07287ac5658df62d1a9089b99edf0.sample"]
 
 [params]
 

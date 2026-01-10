@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://4btqg8ljmyg"
-path="res://.godot/imported/sfx21.wav-d6d8fba634ccf4ab0fd3fa5644ed9e4c.sample"
+path="res://.godot/imported/waterdrop.wav-af0e15ce48c0323f6db5ffbddb15aa53.sample"
 
 [deps]
 
-source_file="res://sound/sfx/game sounds/sfx21.wav"
-dest_files=["res://.godot/imported/sfx21.wav-d6d8fba634ccf4ab0fd3fa5644ed9e4c.sample"]
+source_file="res://sound/sfx/game sounds/waterdrop.wav"
+dest_files=["res://.godot/imported/waterdrop.wav-af0e15ce48c0323f6db5ffbddb15aa53.sample"]
 
 [params]
 
