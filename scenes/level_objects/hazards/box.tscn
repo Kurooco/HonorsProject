@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://6bl2et5qhduw"]
+[gd_scene load_steps=9 format=3 uid="uid://6bl2et5qhduw"]
 
 [ext_resource type="Texture2D" uid="uid://b66740cixvb4r" path="res://art/items/box_rough.png" id="1_0tp4e"]
 [ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="2_7oj2n"]
 [ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="3_0tp4e"]
 [ext_resource type="PackedScene" uid="uid://mis4ukjv3ob3" path="res://scenes/components/death_handler.tscn" id="4_7oj2n"]
 [ext_resource type="Texture2D" uid="uid://bmp0exeeulnbt" path="res://art/particles/wood.png" id="5_0tp4e"]
-[ext_resource type="AudioStream" uid="uid://d3avpa0yw31ko" path="res://sound/sfx/head-crunch.wav" id="5_mnkl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnkl0"]
 size = Vector2(115, 110)
@@ -39,7 +38,6 @@ max_health = 1
 scene_root = NodePath("..")
 health_component = NodePath("../HealthComponent")
 particles = NodePath("../CPUParticles2D")
-sound = ExtResource("5_mnkl0")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(26.4378, 127)

@@ -4,7 +4,6 @@ extends Node
 @export var health_component : HealthComponent
 @export var particles : CPUParticles2D
 @export var point_worth : int
-@export var sound : AudioStream
 
 signal died
 
@@ -14,9 +13,6 @@ func _ready():
 
 
 func die():
-	if(is_instance_valid(sound)):
-		$GlobalSound.sound = sound
-		$GlobalSound.play()
 	if(point_worth > 0):
 		await $PointAwarder.award_points(point_worth)
 	if(is_instance_valid(particles)):
