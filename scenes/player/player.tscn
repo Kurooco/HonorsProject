@@ -249,9 +249,13 @@ sound = ExtResource("12_gx1jg")
 [node name="AcornSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gx1jg")
 
+[node name="UpdateProgressTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
 [connection signal="killed" from="HealthComponent" to="." method="_on_health_component_killed"]
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 [connection signal="matched" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched"]
 [connection signal="matched" from="DialogicSignalHandler2" to="." method="_on_dialogic_signal_handler_2_matched"]
+[connection signal="timeout" from="UpdateProgressTimer" to="." method="_on_update_progress_timer_timeout"]
