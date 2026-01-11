@@ -156,8 +156,9 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(43, 42)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gx1jg"]
+radius = 12.0
+height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
 size = Vector2(42, 41)
@@ -170,20 +171,19 @@ offsets = PackedFloat32Array(0, 0.855769, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.856, 1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(0, 10)
 collision_layer = 4
 script = ExtResource("1_dovo2")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(-7, -18)
+position = Vector2(-7, -12)
 scale = Vector2(0.116254, 0.116254)
 sprite_frames = SubResource("SpriteFrames_lgqa7")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -11)
-shape = SubResource("RectangleShape2D_dovo2")
+position = Vector2(-1, -6)
+shape = SubResource("CapsuleShape2D_gx1jg")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_mask = 3
@@ -241,8 +241,8 @@ current = true
 
 [node name="Beer" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-3, -6)
-scale = Vector2(0.24, 0.24)
+position = Vector2(-5.5, -13.5)
+scale = Vector2(0.43, 0.43)
 texture = ExtResource("9_5gtgg")
 
 [node name="DialogicSignalHandler" parent="." instance=ExtResource("10_h17s1")]
