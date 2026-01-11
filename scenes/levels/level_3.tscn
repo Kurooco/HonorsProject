@@ -195,6 +195,7 @@ show_path = false
 position = Vector2(20895.3, 470.171)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-300, -800)
+delay = 1.5
 
 [node name="SingleShooter31" parent="." index="24" instance=ExtResource("5_ftfob")]
 position = Vector2(21649.3, 470.171)
@@ -246,12 +247,12 @@ scene = ExtResource("10_n6eey")
 velocity = Vector2(200, 800)
 
 [node name="SingleShooter13" parent="." index="32" instance=ExtResource("5_ftfob")]
-position = Vector2(13387, -480)
+position = Vector2(13467, -480)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-500, 800)
 
 [node name="SingleShooter17" parent="." index="33" instance=ExtResource("5_ftfob")]
-position = Vector2(13026, -483)
+position = Vector2(13086, -483)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-500, 800)
 
@@ -316,7 +317,6 @@ position = Vector2(8217, 150)
 
 [node name="CheckPoint2" parent="." index="45" instance=ExtResource("14_t4txi")]
 position = Vector2(16495, 73)
-set_as_claimed = true
 
 [node name="SuperAcorn" parent="." index="46" instance=ExtResource("17_lgrx1")]
 position = Vector2(6378.91, 25.4032)
@@ -334,10 +334,10 @@ position = Vector2(19967, 1)
 position = Vector2(21707, -261)
 
 [node name="Enemy4" parent="." index="51" instance=ExtResource("18_fhpes")]
-position = Vector2(9760, -156)
+position = Vector2(9832, -153)
 
 [node name="Enemy5" parent="." index="52" instance=ExtResource("18_fhpes")]
-position = Vector2(11740, -240)
+position = Vector2(11940, -240)
 
 [node name="Enemy2" parent="." index="53" instance=ExtResource("18_fhpes")]
 position = Vector2(20767, -311)

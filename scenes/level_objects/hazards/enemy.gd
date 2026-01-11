@@ -56,23 +56,31 @@ func _physics_process(delta):
 		# Handle jump.
 		if(is_on_floor()):
 			jump_velocity = MAX_JUMP_VELOCITY 
+		# Jump
 		if(target.position.y < position.y-50 && jump_velocity <= 0 && can_jump):
 			velocity.y = jump_velocity
 			jump_velocity += JUMP_VELOCITY_DECLINE
 			can_jump = false
 			$JumpTimer.start()
+			$Sprite2D.play("flap")
 
 		# Move left and right
 		var direction = abs(target.position.x - position.x)/(target.position.x - position.x)
 		if direction:
 			velocity.x += direction * current_speed
+			$Sprite2D.flip_h = direction == -1
 		velocity.x = lerp(velocity.x, 0.0, 1 - pow(.005, delta))
 		
 		#Avoid other enemies
 		for enemy in get_tree().get_nodes_in_group("enemy"):
 			if(enemy.on_screen && enemy != self):
 				velocity += (position - enemy.position)/(position.distance_squared_to(enemy.position)*.001)
-	
+		
+		if(velocity.y > 0):
+			$Sprite2D.play("fall")
+		elif($Sprite2D.animation != "flap"):
+			$Sprite2D.play("flap")
+
 	move_and_slide()
 
 
