@@ -157,33 +157,39 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(43, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
+size = Vector2(42, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+size = Vector2(43, 42)
 
 [sub_resource type="Gradient" id="Gradient_qek5x"]
 offsets = PackedFloat32Array(0, 0.855769, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.856, 1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(0, 10)
 collision_layer = 4
 script = ExtResource("1_dovo2")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(-4, -5)
-scale = Vector2(0.0664572, 0.0664572)
+position = Vector2(-7, -18)
+scale = Vector2(0.116254, 0.116254)
 sprite_frames = SubResource("SpriteFrames_lgqa7")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_gmlin")
 debug_color = Color(0.979518, 0, 0.387373, 0.42)
 
@@ -199,7 +205,9 @@ invincible_time = 1.0
 impact_reciever = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.5, -11)
 shape = SubResource("RectangleShape2D_p47bc")
+debug_color = Color(0.719305, 0, 0.0153673, 0.42)
 
 [node name="Prompt" type="Sprite2D" parent="."]
 visible = false

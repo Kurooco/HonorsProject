@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://car5sxy6gpfc"]
+[gd_scene load_steps=21 format=3 uid="uid://car5sxy6gpfc"]
 
-[ext_resource type="Texture2D" uid="uid://cui2wmmtxqnv5" path="res://art/items/food/apple.png" id="1_ga6pt"]
 [ext_resource type="Script" uid="uid://deal2cwf0qygb" path="res://scenes/level_objects/hazards/enemy.gd" id="1_kuaqs"]
+[ext_resource type="Texture2D" uid="uid://do2adjdtq2p5i" path="res://art/characters/enemy.png" id="2_5sfx2"]
 [ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="3_2xud0"]
 [ext_resource type="PackedScene" uid="uid://k141qqnjhfun" path="res://scenes/components/health_component.tscn" id="4_bbkmn"]
 [ext_resource type="PackedScene" uid="uid://bkp0jvpu4joh5" path="res://scenes/components/hurt_box.tscn" id="5_5ky15"]
@@ -10,6 +10,73 @@
 [ext_resource type="AudioStream" uid="uid://c62ai6gvscrln" path="res://sound/sfx/game sounds/killed.wav" id="8_5gba0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuaqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laihp"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(0, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gba0"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(0, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo55k"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(395, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri24d"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(790, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wyaw"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(0, 378, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le5bg"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(395, 378, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v465"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(395, 378, 395, 378)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuyxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laihp")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gba0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo55k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri24d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wyaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le5bg")
+}],
+"loop": false,
+"name": &"flap",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v465")
+}],
+"loop": true,
+"name": &"rise",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xud0"]
 size = Vector2(26.5, 22.5)
@@ -29,9 +96,11 @@ MAX_JUMP_VELOCITY = -700.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kuaqs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 59.669, 1)
-texture = ExtResource("1_ga6pt")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.724892, -8.49999)
+scale = Vector2(0.185185, 0.185185)
+sprite_frames = SubResource("SpriteFrames_wuyxl")
+animation = &"fall"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
