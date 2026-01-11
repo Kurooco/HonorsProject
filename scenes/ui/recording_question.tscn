@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2tc8gqpk1bo3"]
+[gd_scene load_steps=6 format=3 uid="uid://b2tc8gqpk1bo3"]
 
 [ext_resource type="Script" uid="uid://b0j6tvovt7tnu" path="res://scenes/ui/recording_question.gd" id="1_mnhcq"]
+[ext_resource type="Texture2D" uid="uid://ctmxwym5xd8g7" path="res://art/particles/white_sparkle.png" id="2_f8yd4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8yd4"]
+bg_color = Color(0.693928, 0, 0.230425, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soqg2"]
 bg_color = Color(0.214783, 0, 0.00834049, 1)
@@ -11,8 +15,10 @@ bg_color = Color(0.117102, 0.220434, 9.62615e-08, 1)
 [node name="RecordingQuestion" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 659.0
+offset_left = -22.0
+offset_top = -18.0
+offset_right = 1133.0
+offset_bottom = 641.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("1_mnhcq")
@@ -40,6 +46,19 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="GroupNumber" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f8yd4")
+selected = 0
+item_count = 3
+popup/item_0/text = "Select Group"
+popup/item_0/icon = ExtResource("2_f8yd4")
+popup/item_0/id = 0
+popup/item_1/text = "Group 1"
+popup/item_1/id = 1
+popup/item_2/text = "Group 2"
+popup/item_2/id = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx5puomam5gcp"]
+
+[ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="1_bol0s"]
+[ext_resource type="Script" uid="uid://dl6sdrw2b8m30" path="res://level_end_special.gd" id="2_wd1se"]
+
+[node name="LevelEndSpecial" instance=ExtResource("1_bol0s")]
+script = ExtResource("2_wd1se")
+automatic = false
+show_prompt = true
+one_shot = false
