@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://em24rq11ddm5"]
 
-[ext_resource type="Script" uid="uid://7p5n84dsy3pg" path="res://level_music_player.gd" id="1_xl6ud"]
+[ext_resource type="Script" uid="uid://7p5n84dsy3pg" path="res://scenes/components/level_music_player.gd" id="1_xl6ud"]
 
 [node name="LevelMusicPlayer" type="Node"]
 script = ExtResource("1_xl6ud")
