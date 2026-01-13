@@ -118,7 +118,7 @@ func _physics_process(delta):
 		else:
 			animation.play("stand")
 	else:
-		if(velocity.y > 0 && !animation.is_playing()):
+		if(velocity.y > 0):# && !animation.is_playing()):
 			animation.play("fall")
 
 
@@ -202,6 +202,14 @@ func _on_dialogic_signal_handler_2_matched():
 
 
 func _on_update_progress_timer_timeout():
-	if(position.x > DataCollector.level_stats[Autoload.level_handler.level_number]["max_progress"]):
-		var max_progress = position.x
+	var max_progress
+	if(Autoload.level_handler.level_number == 3):
+		max_progress = -get_tree().get_first_node_in_group("roller").position.x
+	else:
+		max_progress = position.x
+		
+	#print_debug(max_progress)
+	
+	if(max_progress > DataCollector.level_stats[Autoload.level_handler.level_number]["max_progress"]):
+		#print_debug("NEW MAX: "+str(max_progress))
 		DataCollector.set_stat("max_progress", round(max_progress))

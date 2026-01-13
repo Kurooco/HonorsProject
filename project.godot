@@ -60,6 +60,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 enemy=""
 level_camera=""
 saveable=""
+roller=""
 
 [input]
 

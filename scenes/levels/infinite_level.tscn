@@ -22,7 +22,7 @@ pieces = Array[PackedScene]([ExtResource("2_8tt1w"), ExtResource("3_dtofg"), Ext
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Roller" type="Node2D" parent="."]
+[node name="Roller" type="Node2D" parent="." groups=["roller"]]
 
 [node name="Player" parent="Roller" instance=ExtResource("1_wvt3o")]
 position = Vector2(-480, 34)
