@@ -204,5 +204,4 @@ func _on_dialogic_signal_handler_2_matched():
 func _on_update_progress_timer_timeout():
 	if(position.x > DataCollector.level_stats[Autoload.level_handler.level_number]["max_progress"]):
 		var max_progress = position.x
-		print_debug(max_progress)
 		DataCollector.set_stat("max_progress", round(max_progress))

@@ -6,6 +6,7 @@ extends Node2D
 
 var placed_position = 576
 var ready_pieces = []
+var piece_stack = []
 
 func _ready():
 	seed(0)
@@ -23,11 +24,20 @@ func _process(delta):
 		place_piece(placed_position)
 		placed_position += get_viewport_rect().size.x
 
+func add_pieces_to_stack(num:int):
+	for i in range(num):
+		if(ready_pieces.is_empty()):
+			ready_pieces = pieces.duplicate()
+		piece_stack.append(ready_pieces.pop_at(randi_range(0, ready_pieces.size()-1)).instantiate())
+		
 func place_piece(place):
-	if(ready_pieces.is_empty()):
+	"""if(ready_pieces.is_empty()):
 		ready_pieces = pieces.duplicate()
 	#print_debug("new piece added at "+str(place))
-	var piece = ready_pieces.pop_at(randi_range(0, ready_pieces.size()-1)).instantiate()
+	var piece = ready_pieces.pop_at(randi_range(0, ready_pieces.size()-1)).instantiate()"""
+	if(piece_stack.is_empty()):
+		add_pieces_to_stack(100)
+	var piece = piece_stack.pop_front()
 	$Roller.add_child(piece)
 	piece.position = Vector2(place, 0)
 	

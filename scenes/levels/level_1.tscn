@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://nkcwknm2y4tw"]
+[gd_scene load_steps=16 format=4 uid="uid://nkcwknm2y4tw"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_ksju7"]
 [ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/parallax/thick_corn.png" id="2_qxy0u"]
@@ -16,12 +16,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(592, 348)
-
-[sub_resource type="Curve2D" id="Curve2D_6761a"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 366, 0, 0, 0, 0, 5544.79, 366)
-}
-point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_excbq"]
 _data = {
@@ -114,46 +108,42 @@ position = Vector2(-265, 203)
 scale = Vector2(0.855659, 0.489946)
 texture = ExtResource("3_dnkej")
 
-[node name="FoodSpawner" parent="." index="9" instance=ExtResource("4_x42e6")]
-curve = SubResource("Curve2D_6761a")
-spawn_time = 0.3
-
-[node name="FoodSpawner2" parent="." index="10" instance=ExtResource("4_x42e6")]
+[node name="FoodSpawner2" parent="." index="9" instance=ExtResource("4_x42e6")]
 curve = SubResource("Curve2D_excbq")
 spawn_time = 0.3
 
-[node name="Razor" parent="." index="11" instance=ExtResource("5_6761a")]
+[node name="Razor" parent="." index="10" instance=ExtResource("5_6761a")]
 position = Vector2(3740, 260)
 
-[node name="Razor2" parent="." index="12" instance=ExtResource("5_6761a")]
+[node name="Razor2" parent="." index="11" instance=ExtResource("5_6761a")]
 position = Vector2(4509, -228)
 
-[node name="Razor3" parent="." index="13" instance=ExtResource("5_6761a")]
+[node name="Razor3" parent="." index="12" instance=ExtResource("5_6761a")]
 position = Vector2(5297, 2)
 
-[node name="Razor4" parent="." index="14" instance=ExtResource("5_6761a")]
+[node name="Razor4" parent="." index="13" instance=ExtResource("5_6761a")]
 position = Vector2(10546.1, -5.89417)
 
-[node name="Razor5" parent="." index="15" instance=ExtResource("5_6761a")]
+[node name="Razor5" parent="." index="14" instance=ExtResource("5_6761a")]
 position = Vector2(11091, -6)
 
-[node name="Razor6" parent="." index="16" instance=ExtResource("5_6761a")]
+[node name="Razor6" parent="." index="15" instance=ExtResource("5_6761a")]
 position = Vector2(11669, 255)
 
-[node name="Razor7" parent="." index="17" instance=ExtResource("5_6761a")]
+[node name="Razor7" parent="." index="16" instance=ExtResource("5_6761a")]
 position = Vector2(11669, -265)
 
-[node name="CheckPoint4" parent="." index="18" instance=ExtResource("6_sk5k4")]
+[node name="CheckPoint4" parent="." index="17" instance=ExtResource("6_sk5k4")]
 position = Vector2(3280, 35)
 
-[node name="CheckPoint3" parent="." index="19" instance=ExtResource("6_sk5k4")]
+[node name="CheckPoint3" parent="." index="18" instance=ExtResource("6_sk5k4")]
 position = Vector2(9209, 119)
 
-[node name="Coins" parent="." index="20" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
+[node name="Coins" parent="." index="19" node_paths=PackedStringArray("world_node") instance=ExtResource("10_excbq")]
 tile_map_data = PackedByteArray("AADlAP7/AQAAAAEAAADlAP//AQAAAAEAAADlAAAAAQAAAAEAAADlAAEAAQAAAAEAAADmAP7/AQAAAAEAAADmAP//AQAAAAEAAADmAAAAAQAAAAEAAADmAAEAAQAAAAEAAADnAP7/AQAAAAEAAADnAP//AQAAAAEAAADnAAAAAQAAAAEAAADnAAEAAQAAAAEAAADoAP7/AQAAAAEAAADoAP//AQAAAAEAAADoAAAAAQAAAAEAAADoAAEAAQAAAAEAAADpAP7/AQAAAAEAAADpAP//AQAAAAEAAADpAAAAAQAAAAEAAADpAAEAAQAAAAEAAADqAP7/AQAAAAEAAADqAP//AQAAAAEAAADqAAAAAQAAAAEAAADqAAEAAQAAAAEAAADrAP7/AQAAAAEAAADrAP//AQAAAAEAAADrAAAAAQAAAAEAAADrAAEAAQAAAAEAAADsAP7/AQAAAAEAAADsAP//AQAAAAEAAADsAAAAAQAAAAEAAADsAAEAAQAAAAEAAADtAP7/AQAAAAEAAADtAP//AQAAAAEAAADtAAAAAQAAAAEAAADtAAEAAQAAAAEAAADuAP7/AQAAAAEAAADuAP//AQAAAAEAAADuAAAAAQAAAAEAAADuAAEAAQAAAAEAAAAUAf7/AQAAAAEAAAAUAf//AQAAAAEAAAAUAQAAAQAAAAEAAAAUAQEAAQAAAAEAAAAVAf7/AQAAAAEAAAAVAf//AQAAAAEAAAAVAQAAAQAAAAEAAAAVAQEAAQAAAAEAAAAWAf7/AQAAAAEAAAAWAf//AQAAAAEAAAAWAQAAAQAAAAEAAAAWAQEAAQAAAAEAAAAXAf7/AQAAAAEAAAAXAf//AQAAAAEAAAAXAQAAAQAAAAEAAAAXAQEAAQAAAAEAAAAYAf7/AQAAAAEAAAAYAf//AQAAAAEAAAAYAQAAAQAAAAEAAAAYAQEAAQAAAAEAAAAZAf7/AQAAAAEAAAAZAf//AQAAAAEAAAAZAQAAAQAAAAEAAAAZAQEAAQAAAAEAAAAaAf7/AQAAAAEAAAAaAf//AQAAAAEAAAAaAQAAAQAAAAEAAAAaAQEAAQAAAAEAAAAbAf7/AQAAAAEAAAAbAf//AQAAAAEAAAAbAQAAAQAAAAEAAAAbAQEAAQAAAAEAAAAcAf7/AQAAAAEAAAAcAf//AQAAAAEAAAAcAQAAAQAAAAEAAAAcAQEAAQAAAAEAAAAdAf7/AQAAAAEAAAAdAf//AQAAAAEAAAAdAQAAAQAAAAEAAAAdAQEAAQAAAAEAAACdAvn/AQAAAAEAAACdAvr/AQAAAAEAAACdAvv/AQAAAAEAAACdAvz/AQAAAAEAAACdAv3/AQAAAAEAAACdAv7/AQAAAAEAAACdAv//AQAAAAEAAACdAgAAAQAAAAEAAACdAgEAAQAAAAEAAACdAgIAAQAAAAEAAACdAgMAAQAAAAEAAACdAgQAAQAAAAEAAACdAgUAAQAAAAEAAACdAgYAAQAAAAEAAACeAvn/AQAAAAEAAACeAvr/AQAAAAEAAACeAvv/AQAAAAEAAACeAvz/AQAAAAEAAACeAv3/AQAAAAEAAACeAv7/AQAAAAEAAACeAv//AQAAAAEAAACeAgAAAQAAAAEAAACeAgEAAQAAAAEAAACeAgIAAQAAAAEAAACeAgMAAQAAAAEAAACeAgQAAQAAAAEAAACeAgUAAQAAAAEAAACeAgYAAQAAAAEAAACfAvn/AQAAAAEAAACfAvr/AQAAAAEAAACfAvv/AQAAAAEAAACfAvz/AQAAAAEAAACfAv3/AQAAAAEAAACfAv7/AQAAAAEAAACfAv//AQAAAAEAAACfAgAAAQAAAAEAAACfAgEAAQAAAAEAAACfAgIAAQAAAAEAAACfAgMAAQAAAAEAAACfAgQAAQAAAAEAAACfAgUAAQAAAAEAAACfAgYAAQAAAAEAAACgAvn/AQAAAAEAAACgAvr/AQAAAAEAAACgAvv/AQAAAAEAAACgAvz/AQAAAAEAAACgAv3/AQAAAAEAAACgAv7/AQAAAAEAAACgAv//AQAAAAEAAACgAgAAAQAAAAEAAACgAgEAAQAAAAEAAACgAgIAAQAAAAEAAACgAgMAAQAAAAEAAACgAgQAAQAAAAEAAACgAgUAAQAAAAEAAACgAgYAAQAAAAEAAAChAvn/AQAAAAEAAAChAvr/AQAAAAEAAAChAvv/AQAAAAEAAAChAvz/AQAAAAEAAAChAv3/AQAAAAEAAAChAv7/AQAAAAEAAAChAv//AQAAAAEAAAChAgAAAQAAAAEAAAChAgEAAQAAAAEAAAChAgIAAQAAAAEAAAChAgMAAQAAAAEAAAChAgQAAQAAAAEAAAChAgUAAQAAAAEAAAChAgYAAQAAAAEAAACiAvn/AQAAAAEAAACiAvr/AQAAAAEAAACiAvv/AQAAAAEAAACiAvz/AQAAAAEAAACiAv3/AQAAAAEAAACiAv7/AQAAAAEAAACiAv//AQAAAAEAAACiAgAAAQAAAAEAAACiAgEAAQAAAAEAAACiAgIAAQAAAAEAAACiAgMAAQAAAAEAAACiAgQAAQAAAAEAAACiAgUAAQAAAAEAAACiAgYAAQAAAAEAAACjAvn/AQAAAAEAAACjAvr/AQAAAAEAAACjAvv/AQAAAAEAAACjAvz/AQAAAAEAAACjAv3/AQAAAAEAAACjAv7/AQAAAAEAAACjAv//AQAAAAEAAACjAgAAAQAAAAEAAACjAgEAAQAAAAEAAACjAgIAAQAAAAEAAACjAgMAAQAAAAEAAACjAgQAAQAAAAEAAACjAgUAAQAAAAEAAACjAgYAAQAAAAEAAACkAvn/AQAAAAEAAACkAvr/AQAAAAEAAACkAvv/AQAAAAEAAACkAvz/AQAAAAEAAACkAv3/AQAAAAEAAACkAv7/AQAAAAEAAACkAv//AQAAAAEAAACkAgAAAQAAAAEAAACkAgEAAQAAAAEAAACkAgIAAQAAAAEAAACkAgMAAQAAAAEAAACkAgQAAQAAAAEAAACkAgUAAQAAAAEAAACkAgYAAQAAAAEAAAClAvn/AQAAAAEAAAClAvr/AQAAAAEAAAClAvv/AQAAAAEAAAClAvz/AQAAAAEAAAClAv3/AQAAAAEAAAClAv7/AQAAAAEAAAClAv//AQAAAAEAAAClAgAAAQAAAAEAAAClAgEAAQAAAAEAAAClAgIAAQAAAAEAAAClAgMAAQAAAAEAAAClAgQAAQAAAAEAAAClAgUAAQAAAAEAAAClAgYAAQAAAAEAAACmAvn/AQAAAAEAAACmAvr/AQAAAAEAAACmAvv/AQAAAAEAAACmAvz/AQAAAAEAAACmAv3/AQAAAAEAAACmAv7/AQAAAAEAAACmAv//AQAAAAEAAACmAgAAAQAAAAEAAACmAgEAAQAAAAEAAACmAgIAAQAAAAEAAACmAgMAAQAAAAEAAACmAgQAAQAAAAEAAACmAgUAAQAAAAEAAACmAgYAAQAAAAEAAACnAvn/AQAAAAEAAACnAvr/AQAAAAEAAACnAvv/AQAAAAEAAACnAvz/AQAAAAEAAACnAv3/AQAAAAEAAACnAv7/AQAAAAEAAACnAv//AQAAAAEAAACnAgAAAQAAAAEAAACnAgEAAQAAAAEAAACnAgIAAQAAAAEAAACnAgMAAQAAAAEAAACnAgQAAQAAAAEAAACnAgUAAQAAAAEAAACnAgYAAQAAAAEAAACoAvn/AQAAAAEAAACoAvr/AQAAAAEAAACoAvv/AQAAAAEAAACoAvz/AQAAAAEAAACoAv3/AQAAAAEAAACoAv7/AQAAAAEAAACoAv//AQAAAAEAAACoAgAAAQAAAAEAAACoAgEAAQAAAAEAAACoAgIAAQAAAAEAAACoAgMAAQAAAAEAAACoAgQAAQAAAAEAAACoAgUAAQAAAAEAAACoAgYAAQAAAAEAAACpAvn/AQAAAAEAAACpAvr/AQAAAAEAAACpAvv/AQAAAAEAAACpAvz/AQAAAAEAAACpAv3/AQAAAAEAAACpAv7/AQAAAAEAAACpAv//AQAAAAEAAACpAgAAAQAAAAEAAACpAgEAAQAAAAEAAACpAgIAAQAAAAEAAACpAgMAAQAAAAEAAACpAgQAAQAAAAEAAACpAgUAAQAAAAEAAACpAgYAAQAAAAEAAACqAvn/AQAAAAEAAACqAvr/AQAAAAEAAACqAvv/AQAAAAEAAACqAvz/AQAAAAEAAACqAv3/AQAAAAEAAACqAv7/AQAAAAEAAACqAv//AQAAAAEAAACqAgAAAQAAAAEAAACqAgEAAQAAAAEAAACqAgIAAQAAAAEAAACqAgMAAQAAAAEAAACqAgQAAQAAAAEAAACqAgUAAQAAAAEAAACqAgYAAQAAAAEAAACrAvn/AQAAAAEAAACrAvr/AQAAAAEAAACrAvv/AQAAAAEAAACrAvz/AQAAAAEAAACrAv3/AQAAAAEAAACrAv7/AQAAAAEAAACrAv//AQAAAAEAAACrAgAAAQAAAAEAAACrAgEAAQAAAAEAAACrAgIAAQAAAAEAAACrAgMAAQAAAAEAAACrAgQAAQAAAAEAAACrAgUAAQAAAAEAAACrAgYAAQAAAAEAAAD2//7/AQAAAAEAAAD2////AQAAAAEAAAD2/wAAAQAAAAEAAAD3//7/AQAAAAEAAAD3////AQAAAAEAAAD3/wAAAQAAAAEAAAD4//7/AQAAAAEAAAD4////AQAAAAEAAAD4/wAAAQAAAAEAAAD5//7/AQAAAAEAAAD5////AQAAAAEAAAD5/wAAAQAAAAEAAAD6//7/AQAAAAEAAAD6////AQAAAAEAAAD6/wAAAQAAAAEAAAD7//7/AQAAAAEAAAD7////AQAAAAEAAAD7/wAAAQAAAAEAAAD8//7/AQAAAAEAAAD8////AQAAAAEAAAD8/wAAAQAAAAEAAAD9//7/AQAAAAEAAAD9////AQAAAAEAAAD9/wAAAQAAAAEAAAD+//v/AQAAAAEAAAD+//z/AQAAAAEAAAD+//3/AQAAAAEAAAD+//7/AQAAAAEAAAD+////AQAAAAEAAAD+/wAAAQAAAAEAAAD+/wEAAQAAAAEAAAD+/wIAAQAAAAEAAAD+/wMAAQAAAAEAAAD///z/AQAAAAEAAAD///3/AQAAAAEAAAD///7/AQAAAAEAAAD/////AQAAAAEAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAAAAP3/AQAAAAEAAAAAAP7/AQAAAAEAAAAAAP//AQAAAAEAAAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAABAP7/AQAAAAEAAAABAP//AQAAAAEAAAABAAAAAQAAAAEAAAACAP//AQAAAAEAAAA=")
 world_node = NodePath("..")
 
-[node name="Sky" type="CanvasLayer" parent="." index="21"]
+[node name="Sky" type="CanvasLayer" parent="." index="20"]
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky" index="0"]
@@ -161,7 +151,7 @@ position = Vector2(580.5, 319.5)
 scale = Vector2(1.04253, 1.03549)
 texture = ExtResource("9_iav0o")
 
-[node name="Shooters" type="Node2D" parent="." index="22"]
+[node name="Shooters" type="Node2D" parent="." index="21"]
 
 [node name="FoodShooter2" parent="Shooters" index="0" instance=ExtResource("7_s8va5")]
 position = Vector2(6960, 415)
@@ -242,11 +232,65 @@ scene = ExtResource("8_dga24")
 position = Vector2(7945, -340)
 scene = ExtResource("8_dga24")
 
-[node name="LevelMusicPlayer" parent="." index="23" instance=ExtResource("13_dnkej")]
+[node name="FoodShooter" parent="Shooters" index="13" instance=ExtResource("7_s8va5")]
+position = Vector2(715, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(400, -500)
+delay = 0.3
+
+[node name="FoodShooter9" parent="Shooters" index="14" instance=ExtResource("7_s8va5")]
+position = Vector2(1443, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(400, -500)
+delay = 0.4
+
+[node name="FoodShooter10" parent="Shooters" index="15" instance=ExtResource("7_s8va5")]
+position = Vector2(2171, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(400, -500)
+delay = 0.5
+
+[node name="FoodShooter11" parent="Shooters" index="16" instance=ExtResource("7_s8va5")]
+position = Vector2(3467, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(-200, -700)
+delay = 0.5
+
+[node name="FoodShooter12" parent="Shooters" index="17" instance=ExtResource("7_s8va5")]
+position = Vector2(3467, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -700)
+delay = 0.5
+
+[node name="FoodShooter13" parent="Shooters" index="18" instance=ExtResource("7_s8va5")]
+position = Vector2(3931, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -500)
+delay = 0.5
+
+[node name="FoodShooter14" parent="Shooters" index="19" instance=ExtResource("7_s8va5")]
+position = Vector2(4595, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(-300, -700)
+delay = 0.5
+
+[node name="FoodShooter15" parent="Shooters" index="20" instance=ExtResource("7_s8va5")]
+position = Vector2(4675, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(100, -600)
+delay = 0.5
+
+[node name="FoodShooter16" parent="Shooters" index="21" instance=ExtResource("7_s8va5")]
+position = Vector2(4963, 374)
+scene = ExtResource("12_iav0o")
+velocity = Vector2(200, -800)
+delay = 0.6
+
+[node name="LevelMusicPlayer" parent="." index="22" instance=ExtResource("13_dnkej")]
 path = "res://sound/music/Leaving Home.wav"
 db = -5.0
 
-[node name="LevelEndSpecial" parent="." index="24" instance=ExtResource("13_mm8aj")]
+[node name="LevelEndSpecial" parent="." index="23" instance=ExtResource("13_mm8aj")]
 position = Vector2(6112, 31)
 automatic = true
 show_prompt = false

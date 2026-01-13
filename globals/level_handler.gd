@@ -24,6 +24,7 @@ func _ready():
 	set_level("res://scenes/ui/recording_question.tscn")
 	
 func begin():
+	print_debug(Autoload.group)
 	game_saver.clear_temp()
 	game_saver.load_game(0)
 	set_level(opening_scene.resource_path)

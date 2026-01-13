@@ -4,12 +4,13 @@ extends Control
 
 
 func _on_without_pressed():
+	Autoload.group = group_number.selected
 	Autoload.level_handler.begin()
 
 
 func _on_with_pressed():
 	DataCollector.enable()
-	Autoload.group = int(group_number.text)
+	Autoload.group = group_number.selected
 	if(Autoload.group == 0):
 		get_tree().quit()
 	print_debug(Autoload.group)
