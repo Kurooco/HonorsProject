@@ -1,47 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://birqojqel5wh6"]
+[gd_scene load_steps=7 format=3 uid="uid://birqojqel5wh6"]
 
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_yhxqo"]
 [ext_resource type="Script" uid="uid://lem62tmpg4vt" path="res://scenes/level_objects/assist/check_point.gd" id="2_gpq37"]
-[ext_resource type="Texture2D" uid="uid://7mm1lmf8hl2d" path="res://art/items/perch.png" id="3_2dbrd"]
+[ext_resource type="Texture2D" uid="uid://bps5sdvkvishy" path="res://art/items/detailed_perch.png" id="3_2dbrd"]
+[ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="4_3bi5p"]
+[ext_resource type="AudioStream" uid="uid://bm84dt8s74t7t" path="res://sound/sfx/game sounds/happytune.wav" id="4_dlfrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq37"]
-size = Vector2(75, 488.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bi5p"]
-atlas = ExtResource("3_2dbrd")
-region = Rect2(0, 0, 100, 492)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlfrr"]
-atlas = ExtResource("3_2dbrd")
-region = Rect2(100, 0, 100, 492)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bu7k8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3bi5p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dlfrr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+size = Vector2(75, 940)
 
 [node name="CheckPoint" groups=["checkpoint"] instance=ExtResource("1_yhxqo")]
 script = ExtResource("2_gpq37")
 set_as_claimed = false
 automatic = true
 show_prompt = false
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-position = Vector2(-1, 217.75)
+position = Vector2(-1, -8)
 shape = SubResource("RectangleShape2D_gpq37")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+[node name="Perch" type="Sprite2D" parent="." index="2"]
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
-position = Vector2(-3, 210)
-sprite_frames = SubResource("SpriteFrames_bu7k8")
+self_modulate = Color(2, 2, 2, 1)
+position = Vector2(3, 0)
+scale = Vector2(0.87963, 0.87963)
+texture = ExtResource("3_2dbrd")
+offset = Vector2(25.7684, 175.074)
+
+[node name="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("4_dlfrr")
+volume_db = 2.0
+pitch_scale = 1.5
+
+[node name="Bird" type="Sprite2D" parent="." index="4"]
+position = Vector2(29, 21)
+scale = Vector2(0.520758, 0.520758)
+texture = ExtResource("4_3bi5p")
+offset = Vector2(-19.2028, -119.057)
+region_enabled = true
+region_rect = Rect2(623, 59.318, 277, 278)
 
 [connection signal="activated" from="." to="." method="_on_activated"]

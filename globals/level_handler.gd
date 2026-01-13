@@ -74,7 +74,7 @@ func restart_level():
 	camera.position.x = max(check_point.x, camera.position.x)
 	for i in get_nodes_in_group(current_level, "checkpoint"):
 		if(i.position == check_point):
-			i.claim()
+			i.claim(false)
 	PlayerStats.run_points = PlayerStats.level_points
 	add_child(new_level)
 	
