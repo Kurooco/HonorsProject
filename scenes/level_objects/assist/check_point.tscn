@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://lem62tmpg4vt" path="res://scenes/level_objects/assist/check_point.gd" id="2_gpq37"]
 [ext_resource type="Texture2D" uid="uid://bps5sdvkvishy" path="res://art/items/detailed_perch.png" id="3_2dbrd"]
 [ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="4_3bi5p"]
-[ext_resource type="AudioStream" uid="uid://bm84dt8s74t7t" path="res://sound/sfx/game sounds/happytune.wav" id="4_dlfrr"]
+[ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="4_dlfrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq37"]
 size = Vector2(75, 940)
@@ -31,7 +31,6 @@ offset = Vector2(25.7684, 175.074)
 [node name="AudioStreamPlayer2D" parent="." index="3"]
 stream = ExtResource("4_dlfrr")
 volume_db = 2.0
-pitch_scale = 1.5
 
 [node name="Bird" type="Sprite2D" parent="." index="4"]
 position = Vector2(29, 21)

@@ -71,7 +71,8 @@ func restart_level():
 	var player = get_node_in_group(current_level, "player")
 	var camera = get_node_in_group(current_level, "level_camera")
 	player.position = check_point
-	camera.position.x = max(check_point.x, camera.position.x)
+	if(is_instance_valid(camera)):
+		camera.position.x = max(check_point.x, camera.position.x)
 	for i in get_nodes_in_group(current_level, "checkpoint"):
 		if(i.position == check_point):
 			i.claim(false)

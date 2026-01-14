@@ -19,7 +19,7 @@
 size = Vector2(215, 290)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tofvi"]
-size = Vector2(1221.25, 720)
+size = Vector2(1141.25, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yhub"]
 size = Vector2(122.5, 370)
@@ -86,7 +86,7 @@ automatic = true
 show_prompt = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea2"]
-position = Vector2(697.793, 6.48126)
+position = Vector2(657.793, 6.48126)
 shape = SubResource("RectangleShape2D_tofvi")
 
 [node name="CameraArea3" parent="." instance=ExtResource("4_u4f7j")]

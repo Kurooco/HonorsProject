@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d03xqtws18ys8"]
+
+[ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
+[ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
+[ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_2x00t"]
+[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="3_2x00t"]
+
+[node name="rest3" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
+script = ExtResource("1_fdvpl")
+textured_collision_groups = {
+NodePath("Collision1"): ExtResource("2_2x00t")
+}
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_02jrk")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_2x00t")]
+waiting_for_start = false
+
+[node name="Collision1" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collision1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision1/StaticBody2D"]
+polygon = PackedVector2Array(-160, 160, 2480, 160, 2480, 1400, -160, 1400)
