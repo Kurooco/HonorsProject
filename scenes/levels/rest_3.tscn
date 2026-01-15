@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=9 format=3 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="3_2x00t"]
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="5_2x00t"]
 [ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/environment/parallax/wall.png" id="6_7oqgi"]
+[ext_resource type="Texture2D" uid="uid://dv5r6uvbajgbw" path="res://art/environment/parallax/city_background.png" id="7_3xo3m"]
+[ext_resource type="Texture2D" uid="uid://d0c8e5ht8w5nw" path="res://art/environment/sky/city_sky.png" id="8_t6ird"]
 
 [node name="rest3" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
 script = ExtResource("1_fdvpl")
@@ -78,3 +80,49 @@ offset_right = 1520.0
 offset_bottom = 240.0
 texture = ExtResource("6_7oqgi")
 stretch_mode = 1
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(0.06, 0.06)
+repeat_size = Vector2(576, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.7047, 0.521041, 0.185952, 1)
+position = Vector2(0, 186)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_3xo3m")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(806.4, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.521376, 0.380694, 0.122028, 1)
+position = Vector2(0, 199)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3xo3m")
+centered = false
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(0.246466, 0.172655, 0.0366322, 1)
+position = Vector2(0, 160)
+texture = ExtResource("7_3xo3m")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_t6ird")
