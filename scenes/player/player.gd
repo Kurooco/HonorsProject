@@ -24,10 +24,13 @@ var max_acorns
 var jump_velocity_decline
 
 @export var waiting_for_start = true
+@export var invincible = false
 @onready var health_component = $HealthComponent
 @onready var animation = $Animation
 
 func _ready():
+	if(invincible):
+		$HurtBox.set_deferred("monitorable", false)
 	Autoload.player = self
 	update_stats()
 	Dialogic.signal_event.connect(handle_dialogic_signals)

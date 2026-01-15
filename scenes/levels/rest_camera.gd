@@ -21,7 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(!focused):
+	if(!focused && is_instance_valid(player)):
 		var x_screen = round(player.position.x/screen_width) 
 		var y_screen = round(player.position.y/screen_height)
 		if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen >= x_bounds.x && x_screen <= x_bounds.y):
