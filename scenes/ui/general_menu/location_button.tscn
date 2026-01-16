@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh42ej8crnk6n"]
+
+[ext_resource type="Script" uid="uid://c212yt65h5aw0" path="res://scenes/ui/general_menu/location_button.gd" id="1_xci1a"]
+
+[node name="LocationButton" type="Button"]
+offset_right = 46.0
+offset_bottom = 21.0
+text = "Click"
+script = ExtResource("1_xci1a")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
