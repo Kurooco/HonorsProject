@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h0vssklobj22"
-path="res://.godot/imported/filled_hills.png-fbf9bd51e81cde8e220940374b980ad5.ctex"
+uid="uid://jfbhmeli6gsg"
+path="res://.godot/imported/corn.png-91db37255419a6be96db43b38606f700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/filled_hills.png"
-dest_files=["res://.godot/imported/filled_hills.png-fbf9bd51e81cde8e220940374b980ad5.ctex"]
+source_file="res://art/environment/background/corn.png"
+dest_files=["res://.godot/imported/corn.png-91db37255419a6be96db43b38606f700.ctex"]
 
 [params]
 

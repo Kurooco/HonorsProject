@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/textures/wood.png" id="2_hpyij"]
 [ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="4_7ewig"]
 [ext_resource type="PackedScene" uid="uid://cdgl20hnfapbx" path="res://scenes/level_objects/decorations/leaves.tscn" id="6_ttr3h"]
-[ext_resource type="Texture2D" uid="uid://174onlcxwjjh" path="res://art/environment/parallax/tree_branch.png" id="6_wqxap"]
+[ext_resource type="Texture2D" uid="uid://174onlcxwjjh" path="res://art/environment/background/tree_branch.png" id="6_wqxap"]
 [ext_resource type="Texture2D" uid="uid://bhubnayog4f4i" path="res://art/environment/sky/cloudy_sky.png" id="7_ckulk"]
 [ext_resource type="Shader" uid="uid://dpvjj3hljomcl" path="res://resources/rest_1.gdshader" id="8_sgpcg"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="10_fodfp"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="15_ckulk"]
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="15_hpyij"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="16_ckulk"]
-[ext_resource type="Texture2D" uid="uid://c3pnbxw3hb0ic" path="res://art/environment/parallax/trees_background.png" id="17_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://c3pnbxw3hb0ic" path="res://art/environment/background/trees_background.png" id="17_6fi6k"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqxap"]
 scenes/1/scene = ExtResource("6_ttr3h")

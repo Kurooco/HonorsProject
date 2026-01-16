@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="19_vmg1d"]
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="20_1nwmf"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="21_5f5xw"]
-[ext_resource type="Texture2D" uid="uid://h0vssklobj22" path="res://art/environment/parallax/filled_hills.png" id="21_o3ttr"]
-[ext_resource type="Texture2D" uid="uid://bv2t8qyrf84t4" path="res://art/environment/parallax/city_back.png" id="22_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://h0vssklobj22" path="res://art/environment/background/filled_hills.png" id="21_o3ttr"]
+[ext_resource type="Texture2D" uid="uid://bv2t8qyrf84t4" path="res://art/environment/background/city_back.png" id="22_kdsi4"]
 [ext_resource type="Texture2D" uid="uid://cxjvp1uqhf1b8" path="res://art/environment/sky/sunset.png" id="22_o3ttr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qepi"]

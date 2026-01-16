@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=16 format=3 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_2x00t"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="3_2x00t"]
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="5_2x00t"]
-[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/environment/parallax/wall.png" id="6_7oqgi"]
-[ext_resource type="Texture2D" uid="uid://dv5r6uvbajgbw" path="res://art/environment/parallax/city_background.png" id="7_3xo3m"]
+[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/textures/wall.png" id="6_7oqgi"]
+[ext_resource type="Texture2D" uid="uid://dv5r6uvbajgbw" path="res://art/environment/background/city_background.png" id="7_3xo3m"]
 [ext_resource type="Texture2D" uid="uid://d0c8e5ht8w5nw" path="res://art/environment/sky/city_sky.png" id="8_t6ird"]
+[ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="9_1qtdr"]
+[ext_resource type="Texture2D" uid="uid://bh6gbldj52g3p" path="res://art/characters/bar_birds.png" id="10_gqf74"]
+[ext_resource type="Texture2D" uid="uid://d2j8btok2mdlj" path="res://art/environment/background/fence.png" id="11_gqf74"]
+[ext_resource type="Texture2D" uid="uid://b3j324fla074e" path="res://art/environment/background/food_stand.png" id="12_kghlb"]
+[ext_resource type="Texture2D" uid="uid://cg8cl5kwleqcq" path="res://art/environment/background/detailed_tree.png" id="13_7mcp4"]
+[ext_resource type="Texture2D" uid="uid://cgkaasy5yiijb" path="res://art/environment/background/detailed_tree2.png" id="14_7mcp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kghlb"]
+size = Vector2(126.667, 145)
 
 [node name="rest3" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
 script = ExtResource("1_fdvpl")
@@ -15,7 +24,7 @@ textured_collision_groups = {
 NodePath("Collision1"): ExtResource("2_2x00t")
 }
 
-[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_02jrk")]
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"] instance=ExtResource("2_02jrk")]
 player = NodePath("../Player")
 x_bounds = Vector2(0, 5)
 y_bounds = Vector2(-3, 1)
@@ -29,7 +38,7 @@ invincible = true
 [node name="StaticBody2D" type="StaticBody2D" parent="Collision1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision1/StaticBody2D"]
-polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5100.14, 300, 5100, -1720, 5220, -1720, 5220, 300, 5220, 1400, 3360, 1400, 2480, 1400, -160, 1400)
+polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5100.14, 300, 5100, -1720, 5220, -1720, 5220, 300, 5220, 1400, 3360, 1400, 2480, 1400, -160, 1400, -160, 640, -420, 640, -420, 540, -160, 540)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collision1"]
 
@@ -41,7 +50,7 @@ polygon = PackedVector2Array(1920, 400, 1920, -900, 2140, -900, 2140, -800, 2020
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collision1/StaticBody2D3"]
 position = Vector2(-1000, -360)
-polygon = PackedVector2Array(2280, -900, 2520, -900, 2520, 400, 2420, 400, 2300, 400, 2300, 320, 2420, 320, 2420, -580, 2240, -580, 2240, -660, 2420, -660, 2420, -800, 2280, -800)
+polygon = PackedVector2Array(2280, -900, 2520, -900, 2520, 400, 2420, 400, 2340, 400, 2340, 320, 2420, 320, 2420, -580, 2240, -580, 2240, -660, 2420, -660, 2420, -800, 2280, -800)
 
 [node name="Fan" parent="." instance=ExtResource("5_2x00t")]
 position = Vector2(1200, 140)
@@ -72,15 +81,6 @@ rotation = 0.427704
 position = Vector2(1100, -60)
 rotation = 0.448681
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -5
-offset_left = 920.0
-offset_top = -1260.0
-offset_right = 1520.0
-offset_bottom = 240.0
-texture = ExtResource("6_7oqgi")
-stretch_mode = 1
-
 [node name="Parallax2D3" type="Parallax2D" parent="."]
 z_index = -10
 scroll_scale = Vector2(0.06, 0.06)
@@ -88,7 +88,7 @@ repeat_size = Vector2(576, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
-modulate = Color(0.7047, 0.521041, 0.185952, 1)
+modulate = Color(0.295656, 0.209823, 0.0516282, 1)
 position = Vector2(0, 186)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_3xo3m")
@@ -101,7 +101,7 @@ repeat_size = Vector2(806.4, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
-modulate = Color(0.521376, 0.380694, 0.122028, 1)
+modulate = Color(0.18129, 0.113818, 0.0324188, 1)
 position = Vector2(0, 199)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("7_3xo3m")
@@ -114,7 +114,7 @@ repeat_size = Vector2(1152, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-modulate = Color(0.246466, 0.172655, 0.0366322, 1)
+modulate = Color(0.0737569, 0.0334908, 0.00332284, 1)
 position = Vector2(0, 160)
 texture = ExtResource("7_3xo3m")
 centered = false
@@ -126,3 +126,78 @@ layer = -1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("8_t6ird")
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="DialogueArea" parent="Characters" instance=ExtResource("9_1qtdr")]
+position = Vector2(1039, 113)
+scale = Vector2(0.6, 0.6)
+timeline = "fans"
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea"]
+texture = ExtResource("10_gqf74")
+region_enabled = true
+region_rect = Rect2(285, 68.357, 172, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea"]
+position = Vector2(-98.3334, 4.16667)
+shape = SubResource("RectangleShape2D_kghlb")
+
+[node name="BackgroundDetails" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Sprite2D" type="TextureRect" parent="BackgroundDetails"]
+z_index = -1
+offset_left = -161.0
+offset_top = 60.0
+offset_right = 2810.0
+offset_bottom = 160.0
+texture = ExtResource("11_gqf74")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundDetails"]
+z_index = -1
+offset_left = 920.0
+offset_top = -1260.0
+offset_right = 1520.0
+offset_bottom = 240.0
+texture = ExtResource("6_7oqgi")
+stretch_mode = 1
+
+[node name="Foodstand" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(3260, 200)
+texture = ExtResource("12_kghlb")
+
+[node name="Tree" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(3560, 120)
+texture = ExtResource("13_7mcp4")
+region_enabled = true
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
+[node name="Tree2" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(4580, 120)
+texture = ExtResource("13_7mcp4")
+region_enabled = true
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
+[node name="Tree4" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(3840, 140)
+scale = Vector2(1.04027, 1.04027)
+texture = ExtResource("14_7mcp4")
+region_enabled = true
+region_rect = Rect2(330, 59.25, 414, 418.5)
+
+[node name="Tree5" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(4260, 181)
+scale = Vector2(1.04027, 1.04027)
+texture = ExtResource("14_7mcp4")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(330, 59.25, 414, 418.5)
+
+[node name="Tree6" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(4840, 180)
+scale = Vector2(0.762262, 0.762262)
+texture = ExtResource("14_7mcp4")
+region_enabled = true
+region_rect = Rect2(330, 59.25, 414, 418.5)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clyob2xbmafpg"
-path="res://.godot/imported/leaf_cluster.png-09f6b856000dd0d7e0224aae31ab01ed.ctex"
+uid="uid://dv5r6uvbajgbw"
+path="res://.godot/imported/city_background.png-32c0fbd5907cba084bf9a90a02c5c37b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/leaf_cluster.png"
-dest_files=["res://.godot/imported/leaf_cluster.png-09f6b856000dd0d7e0224aae31ab01ed.ctex"]
+source_file="res://art/environment/background/city_background.png"
+dest_files=["res://.godot/imported/city_background.png-32c0fbd5907cba084bf9a90a02c5c37b.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdgl20hnfapbx"]
 
 [ext_resource type="Script" uid="uid://dou1vkd0kpxq7" path="res://scenes/level_objects/decorations/leaves.gd" id="1_4cm1n"]
-[ext_resource type="Texture2D" uid="uid://clyob2xbmafpg" path="res://art/environment/parallax/leaf_cluster.png" id="1_e1000"]
+[ext_resource type="Texture2D" uid="uid://clyob2xbmafpg" path="res://art/environment/background/leaf_cluster.png" id="1_e1000"]
 
 [node name="Leaves" type="Sprite2D"]
 texture = ExtResource("1_e1000")

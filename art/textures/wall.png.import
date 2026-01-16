@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://174onlcxwjjh"
-path="res://.godot/imported/tree_branch.png-c117333945194ba00c3eba008a4451c3.ctex"
+uid="uid://bbdtmn3gbn2fr"
+path="res://.godot/imported/wall.png-adc4fcd72a0b6f3120e9d4eea3c5ddd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/tree_branch.png"
-dest_files=["res://.godot/imported/tree_branch.png-c117333945194ba00c3eba008a4451c3.ctex"]
+source_file="res://art/textures/wall.png"
+dest_files=["res://.godot/imported/wall.png-adc4fcd72a0b6f3120e9d4eea3c5ddd5.ctex"]
 
 [params]
 

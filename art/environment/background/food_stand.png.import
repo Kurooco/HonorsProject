@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciavtdduwl1jk"
-path="res://.godot/imported/houses.png-9901a1dbdc3429351f144d495c88414f.ctex"
+uid="uid://b3j324fla074e"
+path="res://.godot/imported/food_stand.png-7b34233e39c248a68b6c6c3ca2c9d2e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/houses.png"
-dest_files=["res://.godot/imported/houses.png-9901a1dbdc3429351f144d495c88414f.ctex"]
+source_file="res://art/environment/background/food_stand.png"
+dest_files=["res://.godot/imported/food_stand.png-7b34233e39c248a68b6c6c3ca2c9d2e6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnitnsokqqvrd"
-path="res://.godot/imported/bar.png-27044c07fc07beae022e67122768dd58.ctex"
+uid="uid://d2j8btok2mdlj"
+path="res://.godot/imported/fence.png-6f40eb04f91741a107d4b19844320b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/bar.png"
-dest_files=["res://.godot/imported/bar.png-27044c07fc07beae022e67122768dd58.ctex"]
+source_file="res://art/environment/background/fence.png"
+dest_files=["res://.godot/imported/fence.png-6f40eb04f91741a107d4b19844320b85.ctex"]
 
 [params]
 

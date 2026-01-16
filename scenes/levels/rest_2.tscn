@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bh6gbldj52g3p" path="res://art/characters/bar_birds.png" id="10_62gy0"]
 [ext_resource type="Texture2D" uid="uid://h3o6yr3i7wi1" path="res://art/environment/interactive/cup.png" id="10_yeoc4"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="12_q5ui7"]
-[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/environment/parallax/wall.png" id="14_k5565"]
-[ext_resource type="Texture2D" uid="uid://cnitnsokqqvrd" path="res://art/environment/parallax/bar.png" id="15_1yijl"]
+[ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/textures/wall.png" id="14_k5565"]
+[ext_resource type="Texture2D" uid="uid://cnitnsokqqvrd" path="res://art/environment/background/bar.png" id="15_1yijl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11yvy"]
 size = Vector2(69, 105.435)

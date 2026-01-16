@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jfbhmeli6gsg"
-path="res://.godot/imported/corn.png-6094cef992e35719897e1db644195337.ctex"
+uid="uid://cg8cl5kwleqcq"
+path="res://.godot/imported/detailed_tree.png-044fe28218a3d2b3be5af6d06e5056cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/corn.png"
-dest_files=["res://.godot/imported/corn.png-6094cef992e35719897e1db644195337.ctex"]
+source_file="res://art/environment/background/detailed_tree.png"
+dest_files=["res://.godot/imported/detailed_tree.png-044fe28218a3d2b3be5af6d06e5056cc.ctex"]
 
 [params]
 

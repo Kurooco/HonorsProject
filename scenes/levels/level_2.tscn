@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
-[ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/parallax/thick_corn.png" id="2_v8d84"]
+[ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/background/thick_corn.png" id="2_v8d84"]
 [ext_resource type="Texture2D" uid="uid://ccwbnhp27b2cw" path="res://art/environment/ground/wood_platform.png" id="3_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="3_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://b4gmd4bgevkmw" path="res://scenes/level_objects/auxiliary/single_shooter.tscn" id="6_8qukl"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="11_nt80m"]
 [ext_resource type="PackedScene" uid="uid://birqojqel5wh6" path="res://scenes/level_objects/assist/check_point.tscn" id="12_brxtv"]
 [ext_resource type="PackedScene" uid="uid://x2q5wh5wj5sl" path="res://scenes/level_objects/assist/super_acorn.tscn" id="13_tv7cl"]
-[ext_resource type="Texture2D" uid="uid://bylb7a6xgj0o" path="res://art/environment/parallax/trees.png" id="14_1yj8c"]
+[ext_resource type="Texture2D" uid="uid://bylb7a6xgj0o" path="res://art/environment/background/trees.png" id="14_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_r88tb"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="15_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="16_ndlae"]

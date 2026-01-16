@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv5r6uvbajgbw"
-path="res://.godot/imported/city_background.png-14a0f8018d1fb9434a8ee6cbb25206d6.ctex"
+uid="uid://c3pnbxw3hb0ic"
+path="res://.godot/imported/trees_background.png-c27b2f047595cc0db6ccd12dc9901ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/parallax/city_background.png"
-dest_files=["res://.godot/imported/city_background.png-14a0f8018d1fb9434a8ee6cbb25206d6.ctex"]
+source_file="res://art/environment/background/trees_background.png"
+dest_files=["res://.godot/imported/trees_background.png-c27b2f047595cc0db6ccd12dc9901ec2.ctex"]
 
 [params]
 
