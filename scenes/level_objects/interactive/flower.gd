@@ -9,6 +9,6 @@ func _on_entered():
 	sway_tween.tween_property(self, "sway", 0.0, 1)
 
 func _process(delta):
-	rotation = sin(Time.get_ticks_msec()/100.0)*sway
+	rotation = sin((Time.get_ticks_msec()/100.0) + position.x)*sway
 	#if(!is_instance_valid(sway_tween) || !sway_tween.is_running()):
 	#	sway = max(0, sway-(delta/2.0))

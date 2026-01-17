@@ -45,7 +45,7 @@ invincible = true
 [node name="StaticBody2D" type="StaticBody2D" parent="Collision1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision1/StaticBody2D"]
-polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5100.14, 300, 5100, -1720, 5220, -1720, 5220, 300, 5220, 1400, 3360, 1400, 2480, 1400, -160, 1400, -160, 640, -420, 640, -420, 540, -160, 540)
+polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5100.14, 300, 5100, -1720, 6020, -1720, 6020, -2640, 6540, -2640, 6540, 1400, 3360, 1400, 2480, 1400, -160, 1400, -160, 640, -420, 640, -420, 540, -160, 540)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collision1"]
 
@@ -61,6 +61,18 @@ polygon = PackedVector2Array(2280, -900, 2520, -900, 2520, 400, 2420, 400, 2340,
 
 [node name="Fan" parent="." instance=ExtResource("5_2x00t")]
 position = Vector2(1200, 140)
+
+[node name="Fan9" parent="." instance=ExtResource("5_2x00t")]
+position = Vector2(5040, 280)
+
+[node name="Fan10" parent="." instance=ExtResource("5_2x00t")]
+position = Vector2(5040, -140)
+
+[node name="Fan11" parent="." instance=ExtResource("5_2x00t")]
+position = Vector2(5040, -540)
+
+[node name="Fan12" parent="." instance=ExtResource("5_2x00t")]
+position = Vector2(5040, -855)
 
 [node name="Fan8" parent="." instance=ExtResource("5_2x00t")]
 position = Vector2(2320, 100)
@@ -233,7 +245,7 @@ position = Vector2(297.225, 86.3849)
 
 [node name="Sprite2D3" parent="BackgroundDetails" instance=ExtResource("16_eo723")]
 z_index = 0
-position = Vector2(3597.22, 215.385)
+position = Vector2(3597.22, 223.385)
 
 [node name="PopupArea" parent="." instance=ExtResource("15_herwu")]
 position = Vector2(688.143, 91.9392)
