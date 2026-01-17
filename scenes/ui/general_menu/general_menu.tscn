@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bos7hmfiyx51d"]
+[gd_scene load_steps=2 format=3 uid="uid://bos7hmfiyx51d"]
 
 [ext_resource type="Script" uid="uid://c3fhyi183us3m" path="res://scenes/ui/general_menu/general_menu.gd" id="1_agnxe"]
-[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="2_1mnis"]
 
 [node name="GeneralMenu" type="CanvasLayer"]
 layer = 3
@@ -14,9 +13,3 @@ offset_top = -176.0
 offset_right = 1330.0
 offset_bottom = 1198.0
 color = Color(1, 1, 1, 0)
-
-[node name="LocationButton" parent="." node_paths=PackedStringArray("menu") instance=ExtResource("2_1mnis")]
-offset_right = 99.0
-offset_bottom = 53.0
-text = "Back"
-menu = NodePath("..")

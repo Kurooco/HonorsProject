@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://owmr0iid0wjy"]
+
+[ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_oj3hx"]
+
+[node name="GeneralMenu" instance=ExtResource("1_oj3hx")]
+
+[node name="ClickBlocker" parent="." index="0"]
+color = Color(0.135862, 0.118066, 0.111565, 1)

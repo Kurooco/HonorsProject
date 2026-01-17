@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv163gi5giv3j"]
 
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_ufwhr"]
-[ext_resource type="Script" uid="uid://cda5j03hwltty" path="res://popup_area.gd" id="2_fp5d0"]
+[ext_resource type="Script" uid="uid://cda5j03hwltty" path="res://scenes/components/popup_area.gd" id="2_fp5d0"]
 
 [node name="PopupArea" instance=ExtResource("1_ufwhr")]
 script = ExtResource("2_fp5d0")

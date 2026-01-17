@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://djx1w3miyx2qi"]
+
+[ext_resource type="Texture2D" uid="uid://8p6e2utxwq0s" path="res://art/environment/background/planter.png" id="1_5u8er"]
+[ext_resource type="PackedScene" uid="uid://knbwsan5uj2y" path="res://scenes/level_objects/interactive/flower.tscn" id="2_yxwp6"]
+
+[node name="Planter" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_5u8er")
+
+[node name="Flower" parent="." instance=ExtResource("2_yxwp6")]
+position = Vector2(-60, 30)
+
+[node name="Flower2" parent="." instance=ExtResource("2_yxwp6")]
+position = Vector2(0, 30)
+
+[node name="Flower3" parent="." instance=ExtResource("2_yxwp6")]
+position = Vector2(60, 30)

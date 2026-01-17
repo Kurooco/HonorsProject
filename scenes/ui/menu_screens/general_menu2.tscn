@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cur4ynr2t2meo"]
+
+[ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_qwx14"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="2_ww6wn"]
+
+[node name="GeneralMenu" instance=ExtResource("1_qwx14")]
+
+[node name="LocationButton" parent="." index="1" node_paths=PackedStringArray("menu") instance=ExtResource("2_ww6wn")]
+offset_left = 405.0
+offset_top = 226.0
+offset_right = 696.0
+offset_bottom = 357.0
+text = "Press me"
+menu = NodePath("..")

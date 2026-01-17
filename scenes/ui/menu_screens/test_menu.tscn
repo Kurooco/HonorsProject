@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh6kwdondo3wy"]
+
+[ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_7h7b1"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="2_85k0w"]
+[ext_resource type="PackedScene" uid="uid://cur4ynr2t2meo" path="res://scenes/ui/menu_screens/general_menu2.tscn" id="3_85k0w"]
+
+[node name="GeneralMenu" instance=ExtResource("1_7h7b1")]
+
+[node name="Panel" type="Panel" parent="." index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.5
+offset_top = -243.0
+offset_right = 476.5
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LocationButton" parent="Panel" index="0" node_paths=PackedStringArray("menu") instance=ExtResource("2_85k0w")]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 37.0
+text = "Back"
+menu = NodePath("../..")
+
+[node name="LocationButton2" parent="Panel" index="1" node_paths=PackedStringArray("menu") instance=ExtResource("2_85k0w")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_right = 0.0
+offset_bottom = 31.0
+grow_horizontal = 0
+menu = NodePath("../..")
+location = ExtResource("3_85k0w")
