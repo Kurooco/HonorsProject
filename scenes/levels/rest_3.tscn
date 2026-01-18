@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=22 format=3 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dv163gi5giv3j" path="res://scenes/components/popup_area.tscn" id="15_herwu"]
 [ext_resource type="PackedScene" uid="uid://djx1w3miyx2qi" path="res://scenes/level_objects/interactive/planter.tscn" id="16_eo723"]
 [ext_resource type="PackedScene" uid="uid://bh6kwdondo3wy" path="res://scenes/ui/menu_screens/test_menu.tscn" id="16_herwu"]
+[ext_resource type="PackedScene" uid="uid://bbals2yc1b3ml" path="res://scenes/ui/level_select/level_select_area.tscn" id="19_ke0mr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghlb"]
 size = Vector2(126.667, 145)
@@ -254,3 +255,6 @@ popup = ExtResource("16_herwu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PopupArea"]
 position = Vector2(30.9284, 39.0304)
 shape = SubResource("RectangleShape2D_eo723")
+
+[node name="LevelSelectArea" parent="." instance=ExtResource("19_ke0mr")]
+position = Vector2(4570.04, 282.151)
