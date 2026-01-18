@@ -13,6 +13,7 @@ z_index = -1
 texture = ExtResource("1_sfhib")
 offset = Vector2(22, 43)
 script = ExtResource("2_obk1l")
+pitch_range = Vector2(0.5, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.785398

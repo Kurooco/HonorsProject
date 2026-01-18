@@ -3,7 +3,7 @@ class_name ArcMover
 
 @export var move_object : Node
 @export var disabled = false
-const GRAVITY = 500
+var GRAVITY = 500
 var velocity : Vector2
 var birth_y : float
 

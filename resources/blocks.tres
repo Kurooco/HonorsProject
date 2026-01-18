@@ -1,14 +1,16 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dqgrmt22rhxdq"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dqgrmt22rhxdq"]
 
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="1_8pmu3"]
 [ext_resource type="PackedScene" uid="uid://cbscy75a26ch8" path="res://scenes/level_objects/hazards/pain_box.tscn" id="2_etqwc"]
 [ext_resource type="PackedScene" uid="uid://bf0rwbbj1b2hd" path="res://scenes/level_objects/hazards/razor.tscn" id="3_u4n8i"]
 [ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/environment/ground/iron_block.png" id="4_aofvb"]
+[ext_resource type="PackedScene" uid="uid://ct0ogc4qicje4" path="res://scenes/level_objects/assist/food.tscn" id="4_etqwc"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qi5uv"]
 scenes/1/scene = ExtResource("1_8pmu3")
 scenes/2/scene = ExtResource("2_etqwc")
 scenes/3/scene = ExtResource("3_u4n8i")
+scenes/4/scene = ExtResource("4_etqwc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4txi"]
 texture = ExtResource("4_aofvb")

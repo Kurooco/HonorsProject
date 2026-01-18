@@ -54,6 +54,8 @@ position = Vector2(60.5198, 481.364)
 scene = ExtResource("6_fkk1g")
 velocity = Vector2(700, -900)
 delay = 0.3
+gravity = null
+object_rotation = null
 
 [node name="FoodShooter" parent="." index="5" instance=ExtResource("5_ftfob")]
 position = Vector2(560.52, 481.364)
@@ -61,6 +63,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(-300, -600)
 delay = 0.3
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="FoodShooter2" parent="." index="6" instance=ExtResource("5_ftfob")]
 position = Vector2(560.52, 481.364)
@@ -68,6 +72,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(300, -700)
 delay = 0.5
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="FoodShooter4" parent="." index="7" instance=ExtResource("5_ftfob")]
 position = Vector2(2080.52, 481.364)
@@ -75,6 +81,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(230, -600)
 delay = 0.5
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="FoodShooter3" parent="." index="8" instance=ExtResource("5_ftfob")]
 position = Vector2(7978.67, 505.396)
@@ -82,66 +90,88 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(600, -700)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter8" parent="." index="9" instance=ExtResource("5_ftfob")]
 position = Vector2(9157.8, 478.734)
 scene = ExtResource("6_fkk1g")
 velocity = Vector2(500, -800)
 delay = 0.5
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter32" parent="." index="10" instance=ExtResource("5_ftfob")]
 position = Vector2(10417.8, 478.734)
 scene = ExtResource("6_josfm")
 velocity = Vector2(200, -600)
 delay = 0.5
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter9" parent="." index="11" instance=ExtResource("5_ftfob")]
 position = Vector2(10982.6, 478.734)
 scene = ExtResource("6_josfm")
 velocity = Vector2(100, -600)
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter10" parent="." index="12" instance=ExtResource("5_ftfob")]
 position = Vector2(11487.8, 478.734)
 scene = ExtResource("6_josfm")
 velocity = Vector2(100, -900)
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter18" parent="." index="13" instance=ExtResource("5_ftfob")]
 position = Vector2(12267.8, 478.734)
 scene = ExtResource("6_josfm")
 velocity = Vector2(-100, -900)
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter19" parent="." index="14" instance=ExtResource("5_ftfob")]
 position = Vector2(16735, -480)
 scene = ExtResource("6_josfm")
 delay = 0.8
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter20" parent="." index="15" instance=ExtResource("5_ftfob")]
 position = Vector2(17220, -480)
 scene = ExtResource("6_josfm")
 delay = 0.8
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter21" parent="." index="16" instance=ExtResource("5_ftfob")]
 position = Vector2(17700, -480)
 scene = ExtResource("6_josfm")
 delay = 0.8
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter22" parent="." index="17" instance=ExtResource("5_ftfob")]
 position = Vector2(18180, -480)
 scene = ExtResource("6_josfm")
 delay = 0.8
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter23" parent="." index="18" instance=ExtResource("5_ftfob")]
 position = Vector2(18659, -480)
 scene = ExtResource("6_josfm")
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter24" parent="." index="19" instance=ExtResource("5_ftfob")]
 position = Vector2(19129.3, 470.171)
@@ -149,6 +179,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(300, -800)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter25" parent="." index="20" instance=ExtResource("5_ftfob")]
 position = Vector2(19789.3, 470.171)
@@ -156,6 +188,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(-300, -500)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter26" parent="." index="21" instance=ExtResource("5_ftfob")]
 position = Vector2(20369.3, 470.171)
@@ -163,6 +197,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(-200, -600)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter28" parent="." index="22" instance=ExtResource("5_ftfob")]
 position = Vector2(20749.3, 470.171)
@@ -170,12 +206,16 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(400, -600)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter33" parent="." index="23" instance=ExtResource("5_ftfob")]
 position = Vector2(20895.3, 470.171)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-300, -800)
 delay = 1.5
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter31" parent="." index="24" instance=ExtResource("5_ftfob")]
 position = Vector2(21649.3, 470.171)
@@ -183,6 +223,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(400, -600)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter29" parent="." index="25" instance=ExtResource("5_ftfob")]
 position = Vector2(21900, -482)
@@ -190,6 +232,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(-400, 400)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter30" parent="." index="26" instance=ExtResource("5_ftfob")]
 position = Vector2(21200, -485)
@@ -197,6 +241,8 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(600, 400)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter27" parent="." index="27" instance=ExtResource("5_ftfob")]
 position = Vector2(20169.3, 470.171)
@@ -204,42 +250,58 @@ scene = ExtResource("6_josfm")
 velocity = Vector2(300, -800)
 delay = 0.4
 show_path = false
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter11" parent="." index="28" instance=ExtResource("5_ftfob")]
 position = Vector2(11674.2, 481.872)
 scene = ExtResource("6_fkk1g")
 velocity = Vector2(100, -800)
 delay = 0.5
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter12" parent="." index="29" instance=ExtResource("5_ftfob")]
 position = Vector2(12931.8, -496.078)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(200, 800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter15" parent="." index="30" instance=ExtResource("5_ftfob")]
 position = Vector2(13308, -484)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(200, 800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter16" parent="." index="31" instance=ExtResource("5_ftfob")]
 position = Vector2(13663, -481)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(200, 800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter13" parent="." index="32" instance=ExtResource("5_ftfob")]
 position = Vector2(13467, -480)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-500, 800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter17" parent="." index="33" instance=ExtResource("5_ftfob")]
 position = Vector2(13086, -483)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-500, 800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter14" parent="." index="34" instance=ExtResource("5_ftfob")]
 position = Vector2(13808, -483)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-500, 800)
+gravity = null
+object_rotation = null
 
 [node name="Blocks" type="TileMapLayer" parent="." index="35"]
 position = Vector2(1, 0)
@@ -253,11 +315,15 @@ tile_map_data = PackedByteArray("AADk////AQAAAAEAAADk//7/AQAAAAEAAADk//3/AQAAAAE
 position = Vector2(4224, 494)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(200, -800)
+gravity = null
+object_rotation = null
 
 [node name="SingleShooter3" parent="." index="38" instance=ExtResource("5_ftfob")]
 position = Vector2(5263, 516)
 scene = ExtResource("10_n6eey")
 velocity = Vector2(-200, -900)
+gravity = null
+object_rotation = null
 
 [node name="Fans" type="Node2D" parent="." index="39"]
 
