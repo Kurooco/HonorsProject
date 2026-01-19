@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="4_dlfrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq37"]
-size = Vector2(75, 940)
+size = Vector2(75, 562)
 
 [node name="CheckPoint" groups=["checkpoint"] instance=ExtResource("1_yhxqo")]
 script = ExtResource("2_gpq37")
@@ -17,7 +17,7 @@ show_prompt = false
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-position = Vector2(-1, -8)
+position = Vector2(-1, 181)
 shape = SubResource("RectangleShape2D_gpq37")
 
 [node name="Perch" type="Sprite2D" parent="." index="2"]
