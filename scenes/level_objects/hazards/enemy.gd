@@ -74,7 +74,13 @@ func _physics_process(delta):
 		#Avoid other enemies
 		for enemy in get_tree().get_nodes_in_group("enemy"):
 			if(enemy.on_screen && enemy != self):
-				velocity += (position - enemy.position)/(position.distance_squared_to(enemy.position)*.001)
+				var vel_change : Vector2 = (position - enemy.position)/(position.distance_squared_to(enemy.position)*.001)
+				var cut = 100
+				if vel_change.length() > cut:
+					vel_change = vel_change.normalized()*cut
+				if vel_change.length() < -cut:
+					vel_change = vel_change.normalized()*(-cut)
+				velocity += vel_change
 		
 		if(velocity.y > 0):
 			$Sprite2D.play("fall")
