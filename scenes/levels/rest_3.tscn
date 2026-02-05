@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=23 format=3 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d0c8e5ht8w5nw" path="res://art/environment/sky/city_sky.png" id="8_t6ird"]
 [ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="9_1qtdr"]
 [ext_resource type="Texture2D" uid="uid://bh6gbldj52g3p" path="res://art/characters/bar_birds.png" id="10_gqf74"]
+[ext_resource type="Texture2D" uid="uid://d4d5ngbmu2vtw" path="res://art/characters/chef_bird.png" id="10_jfacm"]
 [ext_resource type="Texture2D" uid="uid://d2j8btok2mdlj" path="res://art/environment/background/fence.png" id="11_gqf74"]
 [ext_resource type="Texture2D" uid="uid://b3j324fla074e" path="res://art/environment/background/food_stand.png" id="12_kghlb"]
 [ext_resource type="Texture2D" uid="uid://cg8cl5kwleqcq" path="res://art/environment/background/detailed_tree.png" id="13_7mcp4"]
@@ -161,6 +162,20 @@ region_rect = Rect2(285, 68.357, 172, 206)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea"]
 position = Vector2(-98.3334, 4.16667)
+shape = SubResource("RectangleShape2D_kghlb")
+
+[node name="DialogueArea2" parent="Characters" instance=ExtResource("9_1qtdr")]
+position = Vector2(3099.06, 239)
+scale = Vector2(0.6, 0.6)
+timeline = "chef"
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea2"]
+position = Vector2(26.6665, 40)
+texture = ExtResource("10_jfacm")
+region_rect = Rect2(285, 68.357, 172, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea2"]
+position = Vector2(75.0001, 30.8333)
 shape = SubResource("RectangleShape2D_kghlb")
 
 [node name="BackgroundDetails" type="Node2D" parent="."]

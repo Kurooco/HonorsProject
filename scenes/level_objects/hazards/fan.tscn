@@ -23,7 +23,7 @@ script = ExtResource("1_8agpp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 1)
-scale = Vector2(-0.442011, 0.5)
+scale = Vector2(0.413604, 0.5)
 texture = ExtResource("2_yx01c")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -56,7 +56,7 @@ position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_epcwd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, 1)
 rotation = -1.57079
 scale = Vector2(0.564243, 0.564243)
 texture = ExtResource("6_epcwd")

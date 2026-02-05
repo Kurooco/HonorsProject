@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx05pyktucy0t"]
+[gd_scene load_steps=9 format=3 uid="uid://bx05pyktucy0t"]
 
 [ext_resource type="Script" uid="uid://c5moictho2rmj" path="res://scenes/ui/level_select/level_select.gd" id="1_dqbig"]
 [ext_resource type="PackedScene" uid="uid://dht0i8ylltdsg" path="res://scenes/ui/level_select/location_button.tscn" id="1_kvtm6"]
+[ext_resource type="Texture2D" uid="uid://d2euore2653pj" path="res://art/ui/level_icons/field.png" id="3_sgptt"]
+[ext_resource type="Texture2D" uid="uid://r34lm01wryqu" path="res://art/ui/level_icons/forest.png" id="5_dg5cu"]
+[ext_resource type="Texture2D" uid="uid://c4vrv6s8s6d40" path="res://art/ui/level_icons/restaurant.png" id="6_afrkd"]
+[ext_resource type="Texture2D" uid="uid://c1bxivfn73a2j" path="res://art/ui/level_icons/neighborhood.png" id="7_ih84l"]
+[ext_resource type="Texture2D" uid="uid://snb47txoibq6" path="res://art/ui/level_icons/skygarden.png" id="7_sgptt"]
+[ext_resource type="Texture2D" uid="uid://jdiinlw3fi3w" path="res://art/ui/level_icons/city.png" id="8_re87o"]
 
 [node name="LevelSelect" type="CanvasLayer"]
 script = ExtResource("1_dqbig")
@@ -21,6 +27,7 @@ offset_bottom = 370.0
 
 [node name="LocationButton" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
+icon = ExtResource("3_sgptt")
 level = "res://scenes/levels/level_1.tscn"
 level_name = "Open Field"
 
@@ -31,18 +38,33 @@ level_name = "Gathering Tree"
 
 [node name="LocationButton3" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
+icon = ExtResource("5_dg5cu")
 level = "res://scenes/levels/level_2.tscn"
 level_name = "The Long Copse"
 
 [node name="LocationButton4" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
+icon = ExtResource("6_afrkd")
 level = "res://scenes/levels/rest_2.tscn"
 level_name = "Restaurant"
 
 [node name="LocationButton5" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
 layout_mode = 2
+icon = ExtResource("7_ih84l")
 level = "res://scenes/levels/level_3.tscn"
 level_name = "Wealthy Subdivision"
+
+[node name="LocationButton6" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+icon = ExtResource("7_sgptt")
+level = "res://scenes/levels/rest_3.tscn"
+level_name = "Sky Garden"
+
+[node name="LocationButton7" parent="LocationContainer" instance=ExtResource("1_kvtm6")]
+layout_mode = 2
+icon = ExtResource("8_re87o")
+level = "res://scenes/levels/level_4.tscn"
+level_name = "Bird City"
 
 [node name="Cancel" type="Button" parent="."]
 offset_right = 8.0

@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dht0i8ylltdsg"]
 
 [ext_resource type="Texture2D" uid="uid://cpl4bsla33ec5" path="res://art/ui/pen_circle.png" id="1_4j6xr"]
-[ext_resource type="Texture2D" uid="uid://bbvnu8h4p35ij" path="res://art/ui/flag.png" id="2_661ac"]
+[ext_resource type="Texture2D" uid="uid://c4370iugf7xcv" path="res://art/ui/level_icons/tree.png" id="2_661ac"]
 [ext_resource type="Script" uid="uid://w84p1q2wwr1c" path="res://scenes/ui/level_select/location_button.gd" id="3_661ac"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gth3g"]
 texture = ExtResource("1_4j6xr")
 
 [node name="LocationButton" type="Button"]
+self_modulate = Color(0.191294, 0.156049, 0.10703, 1)
 size_flags_horizontal = 6
 theme_override_styles/focus = SubResource("StyleBoxTexture_gth3g")
 icon = ExtResource("2_661ac")
@@ -28,7 +29,6 @@ offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.118557, 0.0756355, 0.019432, 1)
-text = "Test"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
