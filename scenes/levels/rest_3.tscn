@@ -170,7 +170,8 @@ scale = Vector2(0.6, 0.6)
 timeline = "chef"
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea2"]
-position = Vector2(26.6665, 40)
+position = Vector2(5.33319, 47.8334)
+scale = Vector2(0.893519, 0.893519)
 texture = ExtResource("10_jfacm")
 region_rect = Rect2(285, 68.357, 172, 206)
 
