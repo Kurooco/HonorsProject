@@ -252,7 +252,9 @@ next_level = "res://scenes/levels/level_1.tscn"
 path = "res://sound/music/The Gathering Tree.wav"
 
 [node name="LevelEndSpecial" parent="." instance=ExtResource("16_8grxy")]
-position = Vector2(-140, 40)
+position = Vector2(3051, -750)
+show_prompt = false
+one_shot = true
 
 [connection signal="activated" from="CameraArea" to="." method="_on_camera_area_activated"]
 [connection signal="activated" from="CameraArea2" to="." method="_on_camera_area_2_activated"]

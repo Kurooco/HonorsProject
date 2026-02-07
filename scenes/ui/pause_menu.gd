@@ -7,10 +7,6 @@ func _ready():
 
 func _on_pause_button_pressed():
 	Autoload.level_handler.pause_game(true)
-	if(Autoload.level_handler.in_rest_level || Autoload.level_handler.last_rest_level_visited == null):
-		back_to_safe_zone.hide()
-	else:
-		back_to_safe_zone.show()
 	$Menu.show()
 
 func _on_continue_pressed():

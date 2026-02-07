@@ -68,6 +68,7 @@ shortcut = SubResource("Shortcut_8uki6")
 text = "Continue"
 
 [node name="BackToSafeZone" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "Go To Previous Safe Zone"
