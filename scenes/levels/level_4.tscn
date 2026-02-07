@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dtnhijbjq0o6r"]
+[gd_scene load_steps=23 format=4 uid="uid://dtnhijbjq0o6r"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_rhbrn"]
 [ext_resource type="TileSet" uid="uid://dqgrmt22rhxdq" path="res://resources/blocks.tres" id="2_5imyg"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d1kr07r32wiws" path="res://art/environment/background/lights.png" id="18_vq5n0"]
 [ext_resource type="Texture2D" uid="uid://woic2bjxaqco" path="res://art/environment/sky/night.png" id="19_xt2o7"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="20_beuva"]
+[ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="21_05se8"]
+[ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="22_12cdj"]
 
 [node name="Level4" instance=ExtResource("1_rhbrn")]
 
@@ -31,7 +33,7 @@ speed = 200
 visible = false
 
 [node name="Boxes" parent="." index="3" instance=ExtResource("2_fktxq")]
-tile_map_data = PackedByteArray("AAAeAP3/AQAAAAAAAAAfAP3/AQAAAAAAAAAjAP3/AQAAAAAAAABVAAAAAAAAAAAABABZAAIAAAAAAAAABABpAP3/AAAAAAAAAQBpAAIAAQAAAAAAAAB3AP//AAAAAAAABAB7AP//AAAAAAAABAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD8/wIAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wEAAQAAAAAAAAD6/wEAAQAAAAAAAAD8/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD6/wAAAQAAAAAAAAD6/wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAARAP7/AAAAAAAAAwAWAP7/AAAAAAAAAwAbAP7/AAAAAAAAAwAeAPz/AQAAAAAAAAAeAP7/AQAAAAAAAAAeAP//AQAAAAAAAAAfAP//AQAAAAAAAAAgAP//AQAAAAAAAAAhAP//AQAAAAAAAAAiAP7/AQAAAAAAAAAjAP7/AQAAAAAAAAAiAP3/AQAAAAAAAAAhAP3/AQAAAAAAAAAhAPz/AQAAAAAAAAAgAPz/AQAAAAAAAAAfAPz/AQAAAAAAAAAfAP7/AQAAAAAAAAAgAP7/AQAAAAAAAAAhAP7/AQAAAAAAAAAiAP//AQAAAAAAAAAjAP//AQAAAAAAAAAjAPz/AQAAAAAAAAAiAPz/AQAAAAAAAAAgAP3/AQAAAAAAAAAsAAAAAAAAAAAABAAuAAEAAAAAAAAABAAwAP//AAAAAAAABAAyAAIAAAAAAAAABAA1AAEAAAAAAAAABAA4AP//AAAAAAAABAA8AAEAAAAAAAAABAA/AP7/AAAAAAAABABAAAIAAAAAAAAABABEAAEAAAAAAAAABABIAAEAAAAAAAAABABMAAAAAAAAAAAAAQBMAAEAAQAAAAAAAABMAAIAAQAAAAAAAABMAAMAAQAAAAAAAABMAAQAAQAAAAAAAABMAP//AAAAAAAAAQBMAP7/AQAAAAAAAABMAP3/AQAAAAAAAABMAPz/AQAAAAAAAABMAPv/AQAAAAAAAABOAAEAAAAAAAAABABSAP7/AAAAAAAABABWAPz/AAAAAAAABABcAP7/AQAAAAAAAABcAP3/AQAAAAAAAABcAPz/AQAAAAAAAABcAPv/AQAAAAAAAABcAPr/AQAAAAAAAABcAP//AQAAAAAAAABcAAAAAQAAAAAAAABcAAMAAQAAAAAAAABcAAQAAQAAAAAAAABcAAEAAAAAAAAAAQBcAAIAAAAAAAAAAQBeAAIAAAAAAAAABABfAAEAAAAAAAAABABgAAAAAAAAAAAABABhAP//AAAAAAAABABkAAAAAAAAAAAABABlAP//AAAAAAAABABmAP7/AAAAAAAABABpAPz/AAAAAAAAAQBpAPv/AQAAAAAAAABpAP7/AQAAAAAAAABpAP//AQAAAAAAAABpAAAAAQAAAAAAAABpAAEAAQAAAAAAAABpAAMAAQAAAAAAAABpAAQAAQAAAAAAAABrAP//AAAAAAAABABtAAEAAAAAAAAABABvAP//AAAAAAAABABxAAEAAAAAAAAABABzAP//AAAAAAAABAB1AAEAAAAAAAAABAB5AAEAAAAAAAAABAB+APz/AAAAAAAAAgB/AP3/AAAAAAAAAgB+AP7/AAAAAAAAAgB/AP//AAAAAAAAAgB+AAAAAAAAAAAAAgB/AAEAAAAAAAAAAgB+AAIAAAAAAAAAAgB/AAMAAAAAAAAAAgB+AAQAAAAAAAAAAgCAAP7/AAAAAAAAAgCAAAAAAAAAAAAAAgCAAAIAAAAAAAAAAgCAAAQAAAAAAAAAAgCBAAMAAAAAAAAAAgCBAAEAAAAAAAAAAgCBAP//AAAAAAAAAgCBAP3/AAAAAAAAAgCAAPz/AAAAAAAAAgCCAAQAAQAAAAAAAACDAAQAAQAAAAAAAACEAAQAAQAAAAAAAACFAAQAAQAAAAAAAACGAAQAAQAAAAAAAACHAAQAAQAAAAAAAACCAAMAAQAAAAAAAACDAAMAAQAAAAAAAACEAAMAAQAAAAAAAACFAAMAAQAAAAAAAACGAAMAAQAAAAAAAACHAAMAAQAAAAAAAACWAAAAAAAAAAAABACXAAAAAAAAAAAABACYAAAAAAAAAAAABACZAAAAAAAAAAAABACaAAAAAAAAAAAABACbAAAAAAAAAAAABACcAAAAAAAAAAAABACdAAAAAAAAAAAABACdAAEAAAAAAAAABACcAAEAAAAAAAAABACbAAEAAAAAAAAABACaAAEAAAAAAAAABACZAAEAAAAAAAAABACYAAEAAAAAAAAABACXAAEAAAAAAAAABACWAAEAAAAAAAAABACeAAAAAAAAAAAABACfAAAAAAAAAAAABACgAAAAAAAAAAAABAChAAAAAAAAAAAABACiAAAAAAAAAAAABACjAAAAAAAAAAAABACjAAEAAAAAAAAABACiAAEAAAAAAAAABAChAAEAAAAAAAAABACgAAEAAAAAAAAABACfAAEAAAAAAAAABACeAAEAAAAAAAAABACkAAAAAAAAAAAABAClAAAAAAAAAAAABAClAAEAAAAAAAAABACkAAEAAAAAAAAABACmAAAAAAAAAAAABACmAP//AAAAAAAABACnAP//AAAAAAAABACnAP7/AAAAAAAABACoAP//AAAAAAAABACoAAAAAAAAAAAABACpAAAAAAAAAAAABACpAAEAAAAAAAAABACqAAEAAAAAAAAABACqAAIAAAAAAAAABACrAAEAAAAAAAAABACrAAAAAAAAAAAABACsAAAAAAAAAAAABACsAP//AAAAAAAABACtAAAAAAAAAAAABACtAAEAAAAAAAAABACuAAAAAAAAAAAABACuAP//AAAAAAAABACvAP//AAAAAAAABACvAP7/AAAAAAAABACwAP//AAAAAAAABACwAAAAAAAAAAAABACxAAAAAAAAAAAABACxAAEAAAAAAAAABACyAAEAAAAAAAAABACyAAIAAAAAAAAABACzAAIAAAAAAAAABACzAAMAAAAAAAAABAC1AAIAAAAAAAAABAC1AAMAAAAAAAAABAC2AAEAAAAAAAAABAC2AAIAAAAAAAAABAC3AAAAAAAAAAAABAC3AAEAAAAAAAAABAC4AAAAAAAAAAAABAC4AAEAAAAAAAAABAC5AAAAAAAAAAAABAC5AAEAAAAAAAAABAC0AAIAAAAAAAAABAC0AAMAAAAAAAAABAC8APz/AQAAAAAAAAC9APz/AQAAAAAAAAC8AAMAAQAAAAAAAAC9AAMAAQAAAAAAAAC+AAMAAQAAAAAAAAC+APz/AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAeAP3/AQAAAAAAAAAfAP3/AQAAAAAAAAAjAP3/AQAAAAAAAABVAAAAAAAAAAAABABZAAIAAAAAAAAABABpAP3/AAAAAAAAAQBpAAIAAQAAAAAAAAB3AP//AAAAAAAABAB7AP//AAAAAAAABAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD8/wIAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wEAAQAAAAAAAAD6/wEAAQAAAAAAAAD8/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD6/wAAAQAAAAAAAAD6/wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAARAP7/AAAAAAAAAwAWAP7/AAAAAAAAAwAbAP7/AAAAAAAAAwAeAPz/AQAAAAAAAAAeAP7/AQAAAAAAAAAeAP//AQAAAAAAAAAfAP//AQAAAAAAAAAgAP//AQAAAAAAAAAhAP//AQAAAAAAAAAiAP7/AQAAAAAAAAAjAP7/AQAAAAAAAAAiAP3/AQAAAAAAAAAhAP3/AQAAAAAAAAAhAPz/AQAAAAAAAAAgAPz/AQAAAAAAAAAfAPz/AQAAAAAAAAAfAP7/AQAAAAAAAAAgAP7/AQAAAAAAAAAhAP7/AQAAAAAAAAAiAP//AQAAAAAAAAAjAP//AQAAAAAAAAAjAPz/AQAAAAAAAAAiAPz/AQAAAAAAAAAgAP3/AQAAAAAAAAAsAAAAAAAAAAAABAAuAAEAAAAAAAAABAAwAP//AAAAAAAABAAyAAIAAAAAAAAABAA1AAEAAAAAAAAABAA4AP//AAAAAAAABAA8AAEAAAAAAAAABAA/AP7/AAAAAAAABABAAAIAAAAAAAAABABEAAEAAAAAAAAABABIAAEAAAAAAAAABABMAAAAAAAAAAAAAQBMAAEAAQAAAAAAAABMAAIAAQAAAAAAAABMAAMAAQAAAAAAAABMAAQAAQAAAAAAAABMAP//AAAAAAAAAQBMAP7/AQAAAAAAAABMAP3/AQAAAAAAAABMAPz/AQAAAAAAAABMAPv/AQAAAAAAAABOAAEAAAAAAAAABABSAP7/AAAAAAAABABWAPz/AAAAAAAABABcAP7/AQAAAAAAAABcAP3/AQAAAAAAAABcAPz/AQAAAAAAAABcAPv/AQAAAAAAAABcAPr/AQAAAAAAAABcAP//AQAAAAAAAABcAAAAAQAAAAAAAABcAAMAAQAAAAAAAABcAAQAAQAAAAAAAABcAAEAAAAAAAAAAQBcAAIAAAAAAAAAAQBeAAIAAAAAAAAABABfAAEAAAAAAAAABABgAAAAAAAAAAAABABhAP//AAAAAAAABABkAAAAAAAAAAAABABlAP//AAAAAAAABABmAP7/AAAAAAAABABpAPz/AAAAAAAAAQBpAPv/AQAAAAAAAABpAP7/AQAAAAAAAABpAP//AQAAAAAAAABpAAAAAQAAAAAAAABpAAEAAQAAAAAAAABpAAMAAQAAAAAAAABpAAQAAQAAAAAAAABrAP//AAAAAAAABABtAAEAAAAAAAAABABvAP//AAAAAAAABABxAAEAAAAAAAAABABzAP//AAAAAAAABAB1AAEAAAAAAAAABAB5AAEAAAAAAAAABAB+APz/AAAAAAAAAgB/AP3/AAAAAAAAAgB+AP7/AAAAAAAAAgB/AP//AAAAAAAAAgB+AAAAAAAAAAAAAgB/AAEAAAAAAAAAAgB+AAIAAAAAAAAAAgB/AAMAAAAAAAAAAgB+AAQAAAAAAAAAAgCAAP7/AAAAAAAAAgCAAAAAAAAAAAAAAgCAAAIAAAAAAAAAAgCAAAQAAAAAAAAAAgCBAAMAAAAAAAAAAgCBAAEAAAAAAAAAAgCBAP//AAAAAAAAAgCBAP3/AAAAAAAAAgCAAPz/AAAAAAAAAgCCAAQAAQAAAAAAAACDAAQAAQAAAAAAAACEAAQAAQAAAAAAAACFAAQAAQAAAAAAAACGAAQAAQAAAAAAAACHAAQAAQAAAAAAAACCAAMAAQAAAAAAAACDAAMAAQAAAAAAAACEAAMAAQAAAAAAAACFAAMAAQAAAAAAAACGAAMAAQAAAAAAAACHAAMAAQAAAAAAAACWAAAAAAAAAAAABACXAAAAAAAAAAAABACYAAAAAAAAAAAABACZAAAAAAAAAAAABACaAAAAAAAAAAAABACbAAAAAAAAAAAABACcAAAAAAAAAAAABACdAAAAAAAAAAAABACdAAEAAAAAAAAABACcAAEAAAAAAAAABACbAAEAAAAAAAAABACaAAEAAAAAAAAABACZAAEAAAAAAAAABACYAAEAAAAAAAAABACXAAEAAAAAAAAABACWAAEAAAAAAAAABACeAAAAAAAAAAAABACfAAAAAAAAAAAABACgAAAAAAAAAAAABAChAAAAAAAAAAAABACiAAAAAAAAAAAABACjAAAAAAAAAAAABACjAAEAAAAAAAAABACiAAEAAAAAAAAABAChAAEAAAAAAAAABACgAAEAAAAAAAAABACfAAEAAAAAAAAABACeAAEAAAAAAAAABACkAAAAAAAAAAAABAClAAAAAAAAAAAABAClAAEAAAAAAAAABACkAAEAAAAAAAAABACmAAAAAAAAAAAABACmAP//AAAAAAAABACnAP//AAAAAAAABACnAP7/AAAAAAAABACoAP//AAAAAAAABACoAAAAAAAAAAAABACpAAAAAAAAAAAABACpAAEAAAAAAAAABACqAAEAAAAAAAAABACqAAIAAAAAAAAABACrAAEAAAAAAAAABACrAAAAAAAAAAAABACsAAAAAAAAAAAABACsAP//AAAAAAAABACtAAAAAAAAAAAABACtAAEAAAAAAAAABACuAAAAAAAAAAAABACuAP//AAAAAAAABACvAP//AAAAAAAABACvAP7/AAAAAAAABACwAP//AAAAAAAABACwAAAAAAAAAAAABACxAAAAAAAAAAAABACxAAEAAAAAAAAABACyAAEAAAAAAAAABACyAAIAAAAAAAAABACzAAIAAAAAAAAABACzAAMAAAAAAAAABAC1AAIAAAAAAAAABAC1AAMAAAAAAAAABAC2AAEAAAAAAAAABAC2AAIAAAAAAAAABAC3AAAAAAAAAAAABAC3AAEAAAAAAAAABAC4AAAAAAAAAAAABAC4AAEAAAAAAAAABAC5AAAAAAAAAAAABAC5AAEAAAAAAAAABAC0AAIAAAAAAAAABAC0AAMAAAAAAAAABAC8APz/AQAAAAAAAAC9APz/AQAAAAAAAAC8AAMAAQAAAAAAAAC9AAMAAQAAAAAAAAC+AAMAAQAAAAAAAAC+APz/AQAAAAAAAAAPAQMAAAAAAAAAAQAPAQIAAAAAAAAAAQAPAQEAAAAAAAAAAQAPAQAAAAAAAAAAAQAPAf//AAAAAAAAAQAPAf7/AAAAAAAAAQAPAf3/AAAAAAAAAQAPAfz/AAAAAAAAAQAlAfz/AAAAAAAAAQAlAf3/AAAAAAAAAQAlAf7/AAAAAAAAAQAlAf//AAAAAAAAAQAlAQAAAAAAAAAAAQAlAQEAAAAAAAAAAQAlAQIAAAAAAAAAAQAlAQMAAAAAAAAAAQAuAQAAAAAAAAAAAgAuAQEAAAAAAAAAAgAuAQIAAAAAAAAAAgAuAQMAAAAAAAAAAgAyAf//AAAAAAAAAgAyAf7/AAAAAAAAAgAyAf3/AAAAAAAAAgAyAfz/AAAAAAAAAgA3AQMAAQAAAAAAAAA3AQIAAQAAAAAAAAA3AQEAAQAAAAAAAAA4AQEAAQAAAAAAAAA5AQEAAQAAAAAAAAA6AQEAAQAAAAAAAAA7AQEAAQAAAAAAAAA8AQEAAQAAAAAAAAA9AQEAAQAAAAAAAAA+AQEAAQAAAAAAAAA/AQEAAQAAAAAAAAA/AQIAAQAAAAAAAAA/AQMAAQAAAAAAAAA+AQMAAQAAAAAAAAA9AQMAAQAAAAAAAAA8AQMAAQAAAAAAAAA7AQMAAQAAAAAAAAA4AQMAAQAAAAAAAAA4AQIAAQAAAAAAAAA5AQIAAQAAAAAAAAA6AQIAAQAAAAAAAAA7AQIAAQAAAAAAAAA8AQIAAQAAAAAAAAA9AQIAAQAAAAAAAAA+AQIAAQAAAAAAAAA5AQMAAQAAAAAAAAA6AQMAAQAAAAAAAAA=")
 tile_set = ExtResource("2_5imyg")
 
 [node name="Coins" parent="." index="4" instance=ExtResource("4_vyqrp")]
@@ -93,31 +95,128 @@ scene = ExtResource("10_qvnao")
 velocity = Vector2(350, -850)
 show_path = false
 
-[node name="AcornShooter4" parent="Shooters" index="9" instance=ExtResource("7_ts8eg")]
+[node name="FoodShooter6" parent="Shooters" index="9" instance=ExtResource("7_ts8eg")]
+position = Vector2(23059, 511)
+scene = ExtResource("8_um320")
+velocity = Vector2(400, -400)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter7" parent="Shooters" index="10" instance=ExtResource("7_ts8eg")]
+position = Vector2(24220, 511)
+scene = ExtResource("8_um320")
+velocity = Vector2(400, -400)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter11" parent="Shooters" index="11" instance=ExtResource("7_ts8eg")]
+position = Vector2(25590, 511)
+scene = ExtResource("8_um320")
+velocity = Vector2(400, -405)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter12" parent="Shooters" index="12" instance=ExtResource("7_ts8eg")]
+position = Vector2(26526, 511)
+scene = ExtResource("8_um320")
+velocity = Vector2(200, -400)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter13" parent="Shooters" index="13" instance=ExtResource("7_ts8eg")]
+position = Vector2(27304, 520)
+scene = ExtResource("8_um320")
+velocity = Vector2(600, -500)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter10" parent="Shooters" index="14" instance=ExtResource("7_ts8eg")]
+position = Vector2(24446, -506)
+scene = ExtResource("8_um320")
+velocity = Vector2(600, 401)
+delay = 0.5
+show_path = false
+gravity = -200
+
+[node name="FoodShooter14" parent="Shooters" index="15" instance=ExtResource("7_ts8eg")]
+position = Vector2(29125.9, -505.744)
+scene = ExtResource("8_um320")
+velocity = Vector2(600, 401)
+delay = 0.5
+show_path = false
+gravity = -200
+
+[node name="FoodShooter15" parent="Shooters" index="16" instance=ExtResource("7_ts8eg")]
+position = Vector2(31368, 536)
+scene = ExtResource("8_um320")
+velocity = Vector2(600, -400)
+delay = 0.5
+show_path = false
+gravity = 200
+
+[node name="FoodShooter17" parent="Shooters" index="17" instance=ExtResource("7_ts8eg")]
+position = Vector2(37416, 456)
+scene = ExtResource("8_um320")
+velocity = Vector2(-700, -500)
+delay = 0.3
+show_path = false
+gravity = 200
+
+[node name="FoodShooter18" parent="Shooters" index="18" instance=ExtResource("7_ts8eg")]
+position = Vector2(36176, 480)
+scene = ExtResource("8_um320")
+velocity = Vector2(-400, -600)
+delay = 0.5
+show_path = false
+
+[node name="FoodShooter16" parent="Shooters" index="19" instance=ExtResource("7_ts8eg")]
+position = Vector2(32694.4, -524.575)
+scene = ExtResource("8_um320")
+velocity = Vector2(700, 500)
+delay = 0.5
+show_path = false
+gravity = -200
+
+[node name="AcornShooter4" parent="Shooters" index="20" instance=ExtResource("7_ts8eg")]
 position = Vector2(20176, 504)
 scene = ExtResource("6_5vn0v")
 velocity = Vector2(350, -800)
 delay = 2.0
 
-[node name="AcornShooter5" parent="Shooters" index="10" instance=ExtResource("7_ts8eg")]
+[node name="AcornShooter5" parent="Shooters" index="21" instance=ExtResource("7_ts8eg")]
 position = Vector2(19648, 504)
 scene = ExtResource("6_5vn0v")
 velocity = Vector2(-100, -900)
 delay = 2.0
 
-[node name="FoodShooter9" parent="Shooters" index="11" instance=ExtResource("7_ts8eg")]
+[node name="AcornShooter6" parent="Shooters" index="22" instance=ExtResource("7_ts8eg")]
+position = Vector2(32288, -464)
+scene = ExtResource("10_qvnao")
+show_path = false
+
+[node name="AcornShooter7" parent="Shooters" index="23" instance=ExtResource("7_ts8eg")]
+position = Vector2(33896, -472)
+scene = ExtResource("10_qvnao")
+show_path = false
+
+[node name="FoodShooter9" parent="Shooters" index="24" instance=ExtResource("7_ts8eg")]
 position = Vector2(17120, -424)
 scene = ExtResource("8_um320")
 velocity = Vector2(200, 900)
 show_path = false
 gravity = -500
 
-[node name="SingleShooter5" parent="Shooters" index="12" instance=ExtResource("7_ts8eg")]
+[node name="SingleShooter5" parent="Shooters" index="25" instance=ExtResource("7_ts8eg")]
 position = Vector2(4296, 512)
 scene = ExtResource("9_um320")
 velocity = Vector2(300, -600)
 
-[node name="WaitShooter" parent="Shooters" index="13" instance=ExtResource("14_fcb7b")]
+[node name="WaitShooter" parent="Shooters" index="26" instance=ExtResource("14_fcb7b")]
 position = Vector2(7456, 464)
 scene = ExtResource("10_qvnao")
 velocity = Vector2(400, -500)
@@ -125,7 +224,7 @@ delay = 1.5
 show_path = false
 gravity = 200
 
-[node name="WaitShooter2" parent="Shooters" index="14" instance=ExtResource("14_fcb7b")]
+[node name="WaitShooter2" parent="Shooters" index="27" instance=ExtResource("14_fcb7b")]
 position = Vector2(8944, 464)
 scene = ExtResource("10_qvnao")
 velocity = Vector2(380, -500)
@@ -133,7 +232,7 @@ delay = 0.7
 show_path = false
 gravity = 200
 
-[node name="WaitShooter3" parent="Shooters" index="15" instance=ExtResource("14_fcb7b")]
+[node name="WaitShooter3" parent="Shooters" index="28" instance=ExtResource("14_fcb7b")]
 position = Vector2(11104, 504)
 scene = ExtResource("10_qvnao")
 velocity = Vector2(350, -580)
@@ -141,7 +240,7 @@ delay = 0.7
 show_path = false
 gravity = 200
 
-[node name="WaitShooter4" parent="Shooters" index="16" instance=ExtResource("14_fcb7b")]
+[node name="WaitShooter4" parent="Shooters" index="29" instance=ExtResource("14_fcb7b")]
 position = Vector2(12553.4, 509.783)
 scene = ExtResource("11_hsvsk")
 velocity = Vector2(450, -580)
@@ -151,7 +250,6 @@ gravity = 200
 
 [node name="CheckPoint" parent="." index="6" instance=ExtResource("11_4wsov")]
 position = Vector2(5040, 72)
-set_as_claimed = true
 
 [node name="CheckPoint2" parent="." index="7" instance=ExtResource("11_4wsov")]
 position = Vector2(15976, 192)
@@ -159,22 +257,33 @@ position = Vector2(15976, 192)
 [node name="CheckPoint3" parent="." index="8" instance=ExtResource("11_4wsov")]
 position = Vector2(22501, 189)
 
-[node name="SpeedChange" parent="." index="9" instance=ExtResource("11_qvnao")]
+[node name="CheckPoint4" parent="." index="9" instance=ExtResource("11_4wsov")]
+position = Vector2(31328, 160)
+
+[node name="SpeedChange" parent="." index="10" instance=ExtResource("11_qvnao")]
 position = Vector2(5194, 62.7011)
 speed = 400
 
-[node name="SpeedChange2" parent="." index="10" instance=ExtResource("11_qvnao")]
+[node name="SpeedChange2" parent="." index="11" instance=ExtResource("11_qvnao")]
 position = Vector2(15502.5, 86.0954)
 speed = 200
 
-[node name="SpeedChange3" parent="." index="11" instance=ExtResource("11_qvnao")]
+[node name="SpeedChange3" parent="." index="12" instance=ExtResource("11_qvnao")]
 position = Vector2(17939.5, 69.0861)
 
-[node name="SpeedChange4" parent="." index="12" instance=ExtResource("11_qvnao")]
+[node name="SpeedChange4" parent="." index="13" instance=ExtResource("11_qvnao")]
 position = Vector2(22709, 22.4396)
 speed = 400
 
-[node name="Lines" type="Node2D" parent="." index="13"]
+[node name="SpeedChange5" parent="." index="14" instance=ExtResource("11_qvnao")]
+position = Vector2(31432, 40)
+speed = 400
+
+[node name="SpeedChange6" parent="." index="15" instance=ExtResource("11_qvnao")]
+position = Vector2(37416, 16)
+speed = 0
+
+[node name="Lines" type="Node2D" parent="." index="16"]
 
 [node name="LineFollower3" parent="Lines" index="0" instance=ExtResource("5_rej77")]
 points = PackedVector2Array(1984, -384, 2717, -384, 3448, -384)
@@ -223,19 +332,161 @@ points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
 number = 2
 movement_type = 1
 
-[node name="Enemy" parent="." index="14" instance=ExtResource("16_pmra4")]
+[node name="Rotater3" parent="Lines" index="5" instance=ExtResource("15_ov8fk")]
+position = Vector2(23816.2, -160.518)
+speed = 2
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater3" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater3" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="Rotater4" parent="Lines" index="6" instance=ExtResource("15_ov8fk")]
+position = Vector2(24968.2, 79.4825)
+speed = -2
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater4" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater4" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="Rotater5" parent="Lines" index="7" instance=ExtResource("15_ov8fk")]
+position = Vector2(25904, -336)
+speed = 3
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater5" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater5" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="Rotater6" parent="Lines" index="8" instance=ExtResource("15_ov8fk")]
+position = Vector2(29632, 232)
+speed = 3
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater6" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater6" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="Rotater7" parent="Lines" index="9" instance=ExtResource("15_ov8fk")]
+position = Vector2(30072, 448)
+speed = 3
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater7" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater7" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="Rotater8" parent="Lines" index="10" instance=ExtResource("15_ov8fk")]
+position = Vector2(30536, 216)
+speed = 3
+metadata/_edit_group_ = true
+
+[node name="LineFollower" parent="Lines/Rotater8" index="0" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, -250, 3.13916, 3.13922, 250, 250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower2" parent="Lines/Rotater8" index="1" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(-250, 250, 3.13916, 3.13922, 250, -250)
+scene = ExtResource("6_5vn0v")
+number = 2
+movement_type = 1
+
+[node name="LineFollower4" parent="Lines" index="11" instance=ExtResource("5_rej77")]
+points = PackedVector2Array(27101, 558, 27520, 128, 27752, 336, 28176, -104, 28424, 120, 28696, -176, 28568, -288, 28720, -456, 29199, -54, 28896, 312, 29360, 688)
+scene = ExtResource("6_5vn0v")
+number = 10
+speed = 0.5
+
+[node name="LineFollower5" parent="Lines" index="12" instance=ExtResource("5_rej77")]
+position = Vector2(0, 9)
+points = PackedVector2Array(32912, -480, 32912, -16, 32912, 432)
+speed = 15.0
+movement_type = 1
+
+[node name="LineFollower6" parent="Lines" index="13" instance=ExtResource("5_rej77")]
+position = Vector2(568, 9)
+points = PackedVector2Array(32912, -480, 32912, -16, 32912, 432)
+movement_type = 1
+
+[node name="LineFollower7" parent="Lines" index="14" instance=ExtResource("5_rej77")]
+position = Vector2(1352, 9)
+points = PackedVector2Array(32912, -480, 32912, -16, 32912, 432)
+speed = 15.0
+movement_type = 1
+
+[node name="LineFollower8" parent="Lines" index="15" instance=ExtResource("5_rej77")]
+position = Vector2(1920, 9)
+points = PackedVector2Array(32912, -480, 32912, -16, 32912, 432)
+movement_type = 1
+
+[node name="LineFollower9" parent="Lines" index="16" instance=ExtResource("5_rej77")]
+position = Vector2(35985.1, 23.0508)
+points = PackedVector2Array(500, -480, 0, -16, -500, 432)
+speed = 15.0
+movement_type = 1
+
+[node name="LineFollower10" parent="Lines" index="17" instance=ExtResource("5_rej77")]
+position = Vector2(37113.1, 23.0508)
+points = PackedVector2Array(500, -480, 0, -16, -500, 432)
+speed = 15.0
+movement_type = 1
+
+[node name="Enemy" parent="." index="17" instance=ExtResource("16_pmra4")]
 position = Vector2(19032, -288)
 
-[node name="Enemy2" parent="." index="15" instance=ExtResource("16_pmra4")]
+[node name="Enemy2" parent="." index="18" instance=ExtResource("16_pmra4")]
 position = Vector2(19704, -456)
 
-[node name="Enemy3" parent="." index="16" instance=ExtResource("16_pmra4")]
+[node name="Enemy3" parent="." index="19" instance=ExtResource("16_pmra4")]
 position = Vector2(20865.2, -285.556)
 
-[node name="Enemy4" parent="." index="17" instance=ExtResource("16_pmra4")]
+[node name="Enemy4" parent="." index="20" instance=ExtResource("16_pmra4")]
 position = Vector2(21631, -47.0358)
 
-[node name="Parallax2D4" type="Parallax2D" parent="." index="18"]
+[node name="Parallax2D4" type="Parallax2D" parent="." index="21"]
 z_index = -5
 scroll_scale = Vector2(0.55, 0.6)
 scroll_offset = Vector2(0, 312)
@@ -255,7 +506,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("18_vq5n0")
 centered = false
 
-[node name="Parallax2D3" type="Parallax2D" parent="." index="19"]
+[node name="Parallax2D3" type="Parallax2D" parent="." index="22"]
 z_index = -5
 scroll_scale = Vector2(0.6, 0.7)
 scroll_offset = Vector2(0, 248)
@@ -275,7 +526,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("18_vq5n0")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="." index="20"]
+[node name="Parallax2D2" type="Parallax2D" parent="." index="23"]
 z_index = -5
 scroll_scale = Vector2(0.7, 0.8)
 scroll_offset = Vector2(0, 136)
@@ -291,7 +542,7 @@ centered = false
 texture = ExtResource("18_vq5n0")
 centered = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="21"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="24"]
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" index="0"]
@@ -299,7 +550,36 @@ scale = Vector2(1, 0.733025)
 texture = ExtResource("19_xt2o7")
 centered = false
 
-[node name="LevelMusicPlayer" parent="." index="22" instance=ExtResource("20_beuva")]
+[node name="LevelMusicPlayer" parent="." index="25" instance=ExtResource("20_beuva")]
 path = "res://sound/music/Gentle Jumping.wav"
 db = -5.0
-mute = true
+
+[node name="Node2D" type="Node2D" parent="." index="26"]
+
+[node name="Fan" parent="Node2D" index="0" instance=ExtResource("21_05se8")]
+position = Vector2(26404, 291)
+rotation = 0.837758
+
+[node name="Fan2" parent="Node2D" index="1" instance=ExtResource("21_05se8")]
+position = Vector2(26500, 387)
+rotation = 0.837758
+
+[node name="Fan3" parent="Node2D" index="2" instance=ExtResource("21_05se8")]
+position = Vector2(26588, 483)
+rotation = 0.837758
+
+[node name="Fan4" parent="Node2D" index="3" instance=ExtResource("21_05se8")]
+position = Vector2(26821, -233)
+rotation = 2.39285
+
+[node name="Fan5" parent="Node2D" index="4" instance=ExtResource("21_05se8")]
+position = Vector2(26918, -332)
+rotation = 2.39285
+
+[node name="Fan6" parent="Node2D" index="5" instance=ExtResource("21_05se8")]
+position = Vector2(27024, -430)
+rotation = 2.39285
+
+[node name="LevelEnd" parent="." index="27" instance=ExtResource("22_12cdj")]
+position = Vector2(38296, 40)
+next_level = "res://scenes/levels/rest_3.tscn"

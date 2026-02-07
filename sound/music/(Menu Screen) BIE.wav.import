@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clq3g3vpaxssv"
+path="res://.godot/imported/(Menu Screen) BIE.wav-79f4b72a563215dd09eb0f43e3c0112a.sample"
+
+[deps]
+
+source_file="res://sound/music/(Menu Screen) BIE.wav"
+dest_files=["res://.godot/imported/(Menu Screen) BIE.wav-79f4b72a563215dd09eb0f43e3c0112a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
