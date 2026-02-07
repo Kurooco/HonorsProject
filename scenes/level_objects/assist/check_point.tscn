@@ -1,13 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://birqojqel5wh6"]
+[gd_scene load_steps=9 format=3 uid="uid://birqojqel5wh6"]
 
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_yhxqo"]
 [ext_resource type="Script" uid="uid://lem62tmpg4vt" path="res://scenes/level_objects/assist/check_point.gd" id="2_gpq37"]
 [ext_resource type="Texture2D" uid="uid://bps5sdvkvishy" path="res://art/items/detailed_perch.png" id="3_2dbrd"]
 [ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="4_3bi5p"]
 [ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="4_dlfrr"]
+[ext_resource type="FontFile" uid="uid://kd4g4yciplry" path="res://art/fonts/RobotoSlab-VariableFont_wght.ttf" id="6_bu7k8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq37"]
 size = Vector2(75, 562)
+
+[sub_resource type="Theme" id="Theme_ewqnb"]
+default_font = ExtResource("6_bu7k8")
+Label/colors/font_color = Color(0.953033, 0.63197, 0.277621, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.564706)
+Label/constants/outline_size = 5
+Label/constants/shadow_offset_x = 2
+Label/constants/shadow_offset_y = 2
+Label/constants/shadow_outline_size = 5
+Label/font_sizes/font_size = 50
 
 [node name="CheckPoint" groups=["checkpoint"] instance=ExtResource("1_yhxqo")]
 script = ExtResource("2_gpq37")
@@ -39,5 +51,14 @@ texture = ExtResource("4_3bi5p")
 offset = Vector2(-19.2028, -119.057)
 region_enabled = true
 region_rect = Rect2(623, 59.318, 277, 278)
+
+[node name="Label" type="Label" parent="." index="5"]
+visible = false
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 158.0
+offset_bottom = -59.0
+theme = SubResource("Theme_ewqnb")
+text = "Checkpoint!"
 
 [connection signal="activated" from="." to="." method="_on_activated"]
