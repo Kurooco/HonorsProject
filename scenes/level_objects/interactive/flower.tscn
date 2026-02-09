@@ -1,23 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://knbwsan5uj2y"]
+[gd_scene load_steps=5 format=3 uid="uid://knbwsan5uj2y"]
 
 [ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_6ohdp"]
 [ext_resource type="Script" uid="uid://cshgtnpv5ijft" path="res://scenes/level_objects/interactive/flower.gd" id="2_dgtw7"]
-[ext_resource type="Texture2D" uid="uid://danio3bn0dwd5" path="res://art/environment/interactive/flower1.png" id="3_3vtij"]
 [ext_resource type="Texture2D" uid="uid://8a4r4a51tfge" path="res://art/environment/interactive/flower2.png" id="4_o4bls"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7axkl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_o4bls")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_3vtij")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ohdp"]
 size = Vector2(35, 78)
@@ -25,13 +10,13 @@ size = Vector2(35, 78)
 [node name="Flower" instance=ExtResource("1_6ohdp")]
 z_index = 0
 script = ExtResource("2_dgtw7")
+min_sway = 0.0
 show_prompt = false
 disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." index="2"]
 position = Vector2(1, -2)
-sprite_frames = SubResource("SpriteFrames_7axkl")
-frame_progress = 0.0446376
+texture = ExtResource("4_o4bls")
 offset = Vector2(-3, -98)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]

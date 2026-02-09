@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jfdg1elsowb"]
+
+[ext_resource type="Texture2D" uid="uid://8p6e2utxwq0s" path="res://art/environment/background/planter.png" id="1_b2u8g"]
+[ext_resource type="PackedScene" uid="uid://knbwsan5uj2y" path="res://scenes/level_objects/interactive/flower.tscn" id="2_07q71"]
+[ext_resource type="Texture2D" uid="uid://171iwna7a2yy" path="res://art/environment/interactive/leaf.png" id="3_63j3e"]
+
+[node name="LeafyPlant" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+scale = Vector2(0.38, 1)
+texture = ExtResource("1_b2u8g")
+
+[node name="Flower4" parent="." instance=ExtResource("2_07q71")]
+position = Vector2(0, 8)
+rotation = 0.330799
+scale = Vector2(0.8, 0.8)
+min_sway = 0.1
+
+[node name="AnimatedSprite2D" parent="Flower4" index="2"]
+position = Vector2(8, -1.52588e-05)
+scale = Vector2(0.216, 0.236)
+texture = ExtResource("3_63j3e")
+offset = Vector2(-10, -228)
+
+[node name="Flower5" parent="." instance=ExtResource("2_07q71")]
+position = Vector2(0, 8)
+rotation = -0.394249
+scale = Vector2(0.8, 0.8)
+min_sway = 0.1
+
+[node name="AnimatedSprite2D" parent="Flower5" index="2"]
+position = Vector2(8, -1.52588e-05)
+scale = Vector2(0.216, 0.236)
+texture = ExtResource("3_63j3e")
+offset = Vector2(-10, -228)
+
+[node name="Flower" parent="." instance=ExtResource("2_07q71")]
+position = Vector2(0, 8)
+min_sway = 0.1
+
+[node name="AnimatedSprite2D" parent="Flower" index="2"]
+position = Vector2(8, -1.52588e-05)
+scale = Vector2(0.216, 0.236)
+texture = ExtResource("3_63j3e")
+offset = Vector2(-10, -228)
+
+[node name="Flower2" parent="." instance=ExtResource("2_07q71")]
+position = Vector2(0, 8)
+rotation = -0.75799
+min_sway = 0.1
+
+[node name="AnimatedSprite2D" parent="Flower2" index="2"]
+position = Vector2(8, -1.52588e-05)
+scale = Vector2(0.216, 0.236)
+texture = ExtResource("3_63j3e")
+offset = Vector2(-10, -228)
+
+[node name="Flower3" parent="." instance=ExtResource("2_07q71")]
+position = Vector2(0, 8)
+rotation = 0.652597
+min_sway = 0.1
+
+[node name="AnimatedSprite2D" parent="Flower3" index="2"]
+position = Vector2(8, -1.52588e-05)
+scale = Vector2(0.216, 0.236)
+texture = ExtResource("3_63j3e")
+offset = Vector2(-10, -228)
+
+[editable path="Flower4"]
+[editable path="Flower5"]
+[editable path="Flower"]
+[editable path="Flower2"]
+[editable path="Flower3"]
