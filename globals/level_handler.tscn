@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d03xqtws18ys8" path="res://scenes/levels/rest_3.tscn" id="2_a54fh"]
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
 [ext_resource type="PackedScene" uid="uid://chkul5njl0r85" path="res://scenes/levels/level_3.tscn" id="2_ssum3"]
-[ext_resource type="PackedScene" uid="uid://dtnhijbjq0o6r" path="res://scenes/levels/level_4.tscn" id="2_yx0rp"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
@@ -15,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b785gwm0fjclo" path="res://GameSaver/game_slot_saver.gd" id="6_vghx1"]
 [ext_resource type="Texture2D" uid="uid://cu7npego5orm6" path="res://art/ui/counters/hearts3.png" id="7_ixpvp"]
 [ext_resource type="PackedScene" uid="uid://8pqmpmujp6c7" path="res://scenes/ui/pause_menu.tscn" id="13_vgd30"]
+[ext_resource type="PackedScene" uid="uid://benf067d2viqs" path="res://scenes/components/dialogic_signal_handler.tscn" id="15_yx0rp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dl1"]
 bg_color = Color(0.6, 0.6, 0.6, 0.414)
@@ -30,7 +30,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("2_yx0rp")
+opening_scene = ExtResource("2_a54fh")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp"), ExtResource("2_a54fh")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3")])
 
@@ -120,3 +120,10 @@ theme_override_font_sizes/font_size = 100
 text = "Level Cleared!"
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_vgd30")]
+
+[node name="DialogicSignalHandler" parent="." instance=ExtResource("15_yx0rp")]
+dictionary = {
+"popup": null
+}
+
+[connection signal="matched_key" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched_key"]

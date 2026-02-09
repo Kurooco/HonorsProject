@@ -249,6 +249,9 @@ next_level = "res://scenes/levels/level_1.tscn"
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("15_bnul6")]
 path = "res://sound/music/(Menu Screen) BIE.wav"
+db = null
+mute = null
+pitch = null
 
 [connection signal="activated" from="CameraArea" to="." method="_on_camera_area_activated"]
 [connection signal="activated" from="CameraArea2" to="." method="_on_camera_area_2_activated"]

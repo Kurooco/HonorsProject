@@ -342,6 +342,9 @@ movement_type = 1
 
 [node name="LevelMusicPlayer" parent="." index="58" instance=ExtResource("21_5f5xw")]
 path = "res://sound/music/Balance is Everything.wav"
+db = null
+mute = null
+pitch = null
 
 [node name="Parallax2D5" type="Parallax2D" parent="." index="59"]
 z_index = -10

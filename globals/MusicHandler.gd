@@ -2,10 +2,10 @@ extends Node
 
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
-var play_music = true
+var play_music = false
 var single_polyphony_sounds : Dictionary[String, AudioStreamPlayer2D]
 
-func play(path:String, db=0.0):
+func play(path:String, db=0.0, pitch=1.0):
 	if(!play_music):
 		print_debug("WARNING: Music turned off!!!")
 	if(path != current_song_path && play_music):
@@ -14,6 +14,7 @@ func play(path:String, db=0.0):
 			current_song_node.queue_free()
 		current_song_node = AudioStreamPlayer.new()
 		current_song_node.volume_db = db
+		current_song_node.pitch_scale = pitch
 		current_song_node.bus = "Music"
 		current_song_node.stream = load(path)
 		get_tree().current_scene.add_child(current_song_node)

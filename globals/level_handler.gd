@@ -167,3 +167,8 @@ func set_pause_subtree(root: Node, pause: bool) -> void:
 		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_IGNORE])
 	else:
 		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_PASS])
+
+
+func _on_dialogic_signal_handler_matched_key(key: Variant, value: Variant) -> void:
+	var p = load(value).instantiate()
+	get_tree().current_scene.add_child(p)

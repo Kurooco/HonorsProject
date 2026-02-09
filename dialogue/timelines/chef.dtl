@@ -1,2 +1,9 @@
-<Empty Text Event>
-<Empty Text Event>
+You look like you are weary from your travels.
+Please, won't you sit down and enjoy some of my world-famous bird seed? It's on the house.
+- I should be on my way.
+	Well, if the mood ever strikes you, come by sometime, yeah?
+- Yes, please!
+	Coming right up!
+	[signal arg="fade"]
+	[wait time="1.0"]
+	[signal arg_type="dict" arg="{"popup":"res://scenes/ui/menu_screens/bird_seed.tscn"}"]
