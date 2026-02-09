@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpq5f5wct88y0"]
+[gd_scene load_steps=8 format=3 uid="uid://dpq5f5wct88y0"]
 
 [ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_epxgj"]
 [ext_resource type="Texture2D" uid="uid://hdnthn7bdrh8" path="res://art/misc/Screenshot 2026-02-08 194753.png" id="2_bf2h4"]
 [ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="3_bf2h4"]
+[ext_resource type="Texture2D" uid="uid://i3utmp74pyx2" path="res://art/environment/interactive/bird_seed_table.png" id="3_rums1"]
+[ext_resource type="Script" uid="uid://bh1al6xeqmb54" path="res://scenes/level_objects/interactive/bird_seed.gd" id="5_64eli"]
+[ext_resource type="Texture2D" uid="uid://nm2u3illpgte" path="res://art/environment/interactive/bird_seed1.png" id="6_pgg83"]
+[ext_resource type="AudioStream" uid="uid://bm84dt8s74t7t" path="res://sound/sfx/game sounds/happytune.wav" id="7_pgg83"]
 
 [node name="GeneralMenu" instance=ExtResource("1_epxgj")]
 
@@ -11,6 +15,37 @@ offset_right = 1160.0
 offset_bottom = 666.0
 texture = ExtResource("2_bf2h4")
 
-[node name="LocationButton" parent="." index="2" node_paths=PackedStringArray("menu") instance=ExtResource("3_bf2h4")]
+[node name="TextureRect2" type="TextureRect" parent="." index="2"]
+offset_right = 1160.0
+offset_bottom = 666.0
+texture = ExtResource("3_rums1")
+
+[node name="LocationButton" parent="." index="3" node_paths=PackedStringArray("menu") instance=ExtResource("3_bf2h4")]
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 87.0
+offset_bottom = 52.0
+text = "Back"
 menu = NodePath("..")
 fade = true
+
+[node name="BirdSeed" type="Button" parent="." index="4"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 870.0
+offset_top = 454.0
+offset_right = 989.0
+offset_bottom = 559.0
+script = ExtResource("5_64eli")
+
+[node name="TextureRect" type="TextureRect" parent="BirdSeed" index="0"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -39.0
+offset_right = 141.0
+offset_bottom = 116.0
+texture = ExtResource("6_pgg83")
+
+[node name="HappyTune" type="AudioStreamPlayer" parent="BirdSeed" index="1"]
+stream = ExtResource("7_pgg83")
+
+[connection signal="pressed" from="BirdSeed" to="BirdSeed" method="_on_pressed"]
