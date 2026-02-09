@@ -10,6 +10,7 @@ func _on_without_pressed():
 
 func _on_with_pressed():
 	DataCollector.enable()
+	DataCollector.set_stat("group", group_number.selected)
 	Autoload.group = group_number.selected
 	if(Autoload.group == 0):
 		get_tree().quit()
