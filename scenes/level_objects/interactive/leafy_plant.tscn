@@ -16,6 +16,8 @@ position = Vector2(0, 8)
 rotation = 0.330799
 scale = Vector2(0.8, 0.8)
 min_sway = 0.1
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 
 [node name="AnimatedSprite2D" parent="Flower4" index="2"]
 position = Vector2(8, -1.52588e-05)
@@ -28,6 +30,8 @@ position = Vector2(0, 8)
 rotation = -0.394249
 scale = Vector2(0.8, 0.8)
 min_sway = 0.1
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 
 [node name="AnimatedSprite2D" parent="Flower5" index="2"]
 position = Vector2(8, -1.52588e-05)
@@ -38,6 +42,8 @@ offset = Vector2(-10, -228)
 [node name="Flower" parent="." instance=ExtResource("2_07q71")]
 position = Vector2(0, 8)
 min_sway = 0.1
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 
 [node name="AnimatedSprite2D" parent="Flower" index="2"]
 position = Vector2(8, -1.52588e-05)
@@ -49,6 +55,8 @@ offset = Vector2(-10, -228)
 position = Vector2(0, 8)
 rotation = -0.75799
 min_sway = 0.1
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 
 [node name="AnimatedSprite2D" parent="Flower2" index="2"]
 position = Vector2(8, -1.52588e-05)
@@ -60,6 +68,8 @@ offset = Vector2(-10, -228)
 position = Vector2(0, 8)
 rotation = 0.652597
 min_sway = 0.1
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 
 [node name="AnimatedSprite2D" parent="Flower3" index="2"]
 position = Vector2(8, -1.52588e-05)

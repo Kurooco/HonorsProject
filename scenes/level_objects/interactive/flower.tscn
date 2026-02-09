@@ -11,6 +11,8 @@ size = Vector2(35, 78)
 z_index = 0
 script = ExtResource("2_dgtw7")
 min_sway = 0.0
+min_sway_speed = 1.0
+max_sway_speed = 8.0
 show_prompt = false
 disabled = true
 
