@@ -56,7 +56,7 @@ script = ExtResource("2_7ac3l")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_rnyxf")]
-position = Vector2(1936.66, -644.309)
+position = Vector2(-9.94409, -14.5548)
 floor_max_angle = 1.22697
 waiting_for_start = false
 
@@ -103,7 +103,7 @@ show_prompt = false
 position = Vector2(1750.29, -193.519)
 shape = SubResource("RectangleShape2D_3yhub")
 
-[node name="Box" parent="." instance=ExtResource("6_iig34")]
+[node name="Box" parent="." groups=["saveable"] instance=ExtResource("6_iig34")]
 position = Vector2(-320, -60)
 
 [node name="TutorialStar" parent="." instance=ExtResource("7_iig34")]
@@ -209,7 +209,6 @@ ind = 7
 position = Vector2(560, 500)
 scene = ExtResource("10_3yhub")
 velocity = Vector2(-50, -700)
-show_path = false
 
 [node name="FoodSpawner" parent="Shooters" instance=ExtResource("11_3yhub")]
 position = Vector2(-20, -120)
@@ -224,9 +223,8 @@ position = Vector2(2320, -300)
 scene = ExtResource("12_5eevr")
 velocity = Vector2(80, -600)
 delay = 0.2
-show_path = false
 
-[node name="Block" type="StaticBody2D" parent="."]
+[node name="Block" type="StaticBody2D" parent="." groups=["saveable"]]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]

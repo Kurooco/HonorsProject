@@ -5,13 +5,15 @@ extends Node2D
 @export var velocity : Vector2: 
 	set(new_vel): 
 		velocity = new_vel
-		create_curve()
+		if(Engine.is_editor_hint()):
+			create_curve()
 @export var delay = 1.0
 @export var show_path = true
 @export var gravity = 500
 @export var object_rotation = 0.0
 
 func _ready():
+	print_debug($Line2D.name)
 	$Timer.wait_time = delay
 	if(show_path):
 		create_curve()
@@ -43,7 +45,6 @@ func shoot(vel):
 	Autoload.level_handler.current_level.add_child(new_scene)
 
 func create_curve():
-	if(!is_instance_valid(self)): return
 	$Line2D.clear_points()
 	var v = velocity
 	var pos = Vector2.ZERO

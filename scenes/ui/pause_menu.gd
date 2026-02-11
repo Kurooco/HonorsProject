@@ -22,7 +22,6 @@ func _on_continue_pressed():
 
 func _on_quit_pressed():
 	Autoload.level_handler.set_level("res://scenes/ui/main_menu.tscn", true)
-	Autoload.level_handler.pause_game(false)
 	$Menu.hide()
 
 
