@@ -91,20 +91,20 @@ func restart_level():
 	
 	fade_in()
 
-func fade_out(color=Color.BLACK):
+func fade_out(color=Color.BLACK, duration=1.0):
 	fade.show()
 	if(is_instance_valid(fade_tween)):
 		fade_tween.kill()
 	fade_tween = create_tween()
-	fade_tween.tween_property(fade, "color", color, 1)
+	fade_tween.tween_property(fade, "color", color, duration)
 	fade_tween.tween_callback(fade_ended.emit)
 
-func fade_in():
+func fade_in(duration=1.0):
 	var transparent_color = Color(fade.color.r, fade.color.g, fade.color.b, 0)
 	if(is_instance_valid(fade_tween)):
 		fade_tween.kill()
 	fade_tween = create_tween()
-	fade_tween.tween_property(fade, "color", transparent_color, 1)
+	fade_tween.tween_property(fade, "color", transparent_color, duration)
 	fade_tween.tween_callback(fade_ended.emit)
 	fade_tween.tween_callback(fade.hide)
 

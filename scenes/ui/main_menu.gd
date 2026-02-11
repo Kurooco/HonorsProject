@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var camera_2d: Camera2D = $SubViewportContainer/SubViewport/Camera2D
-var speed = 300
+@onready var camera_2d: Camera2D = $Background/SubViewport/Camera2D
+var speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,3 +23,10 @@ func _process(delta: float) -> void:
 
 func _on_secret_button_pressed() -> void:
 	$CheckPoint.claim(true, false)
+
+
+func _on_new_game_pressed() -> void:
+	$NicePiano.play()
+	Autoload.level_handler.fade_out(Color.BLACK, 4)
+	await Autoload.level_handler.fade_ended
+	Autoload.level_handler.set_level("res://scenes/levels/tutorial/tutorial.tscn", true)

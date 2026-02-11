@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6eegepdfdyff"]
+[gd_scene load_steps=9 format=3 uid="uid://b6eegepdfdyff"]
 
 [ext_resource type="Texture2D" uid="uid://81qd1ml1n51q" path="res://art/ui/bie_title1.png" id="1_sl1te"]
 [ext_resource type="Script" uid="uid://chrvq86px0v5u" path="res://scenes/ui/main_menu.gd" id="1_uhagc"]
@@ -7,11 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://biovpcqqspods" path="res://art/environment/sky/cloudy_sky_upside_down_ground.png" id="5_btxxm"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="6_uhagc"]
 [ext_resource type="AudioStream" uid="uid://clq3g3vpaxssv" path="res://sound/music/(Menu Screen) BIE.wav" id="7_btxxm"]
+[ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="8_wb0q5"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_uhagc")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Background" type="SubViewportContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,57 +21,57 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Background"]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Parallax2D4" type="Parallax2D" parent="SubViewportContainer/SubViewport"]
+[node name="Parallax2D4" type="Parallax2D" parent="Background/SubViewport"]
 z_index = -50
 scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(0, 64)
 repeat_size = Vector2(1152, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Parallax2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/SubViewport/Parallax2D4"]
 modulate = Color(0.172833, 0.172833, 0.172833, 1)
 position = Vector2(13, -352)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_uhagc")
 centered = false
 
-[node name="Parallax2D3" type="Parallax2D" parent="SubViewportContainer/SubViewport"]
+[node name="Parallax2D3" type="Parallax2D" parent="Background/SubViewport"]
 z_index = -50
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(0, 64)
 repeat_size = Vector2(1920, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Parallax2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/SubViewport/Parallax2D3"]
 modulate = Color(0.20871, 0.20871, 0.20871, 1)
 position = Vector2(-139, -559)
 texture = ExtResource("4_uhagc")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="SubViewportContainer/SubViewport"]
+[node name="Parallax2D2" type="Parallax2D" parent="Background/SubViewport"]
 z_index = -50
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/SubViewport/Parallax2D2"]
 modulate = Color(0.450649, 0.450648, 0.450648, 1)
 position = Vector2(-139, -538)
 texture = ExtResource("4_uhagc")
 centered = false
 
-[node name="Sky" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+[node name="Sky" type="CanvasLayer" parent="Background/SubViewport"]
 layer = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Sky"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/SubViewport/Sky"]
 position = Vector2(580.5, 319.5)
 scale = Vector2(1.04253, 1.03549)
 texture = ExtResource("5_btxxm")
 
-[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="Background/SubViewport"]
 position = Vector2(0, -400)
 
 [node name="Title" type="TextureRect" parent="."]
@@ -132,6 +133,10 @@ offset_bottom = 13.0
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("6_uhagc")]
 music = ExtResource("7_btxxm")
 
+[node name="NicePiano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wb0q5")
+
+[connection signal="pressed" from="ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CheckPoint/SecretButton" to="." method="_on_secret_button_pressed"]
 
 [editable path="CheckPoint"]

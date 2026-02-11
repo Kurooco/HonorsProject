@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bg46us5eba6y3"]
+[gd_scene load_steps=24 format=3 uid="uid://bg46us5eba6y3"]
 
 [ext_resource type="Script" uid="uid://bptd4ef7gq12c" path="res://scenes/levels/tutorial/tutorial.gd" id="1_1r3rq"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_rnyxf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/environment/ground/iron_block.png" id="12_tb2as"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="14_tofvi"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="15_bnul6"]
+[ext_resource type="AudioStream" uid="uid://c0pnx68hqa062" path="res://sound/music/The Gathering Tree.wav" id="16_8grxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e81p"]
 size = Vector2(215, 290)
@@ -54,7 +55,9 @@ script = ExtResource("2_7ac3l")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_rnyxf")]
+position = Vector2(0, 96)
 floor_max_angle = 1.22697
+waiting_for_start = false
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -248,10 +251,7 @@ position = Vector2(3023, -746)
 next_level = "res://scenes/levels/level_1.tscn"
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("15_bnul6")]
-path = "res://sound/music/(Menu Screen) BIE.wav"
-db = null
-mute = null
-pitch = null
+music = ExtResource("16_8grxy")
 
 [connection signal="activated" from="CameraArea" to="." method="_on_camera_area_activated"]
 [connection signal="activated" from="CameraArea2" to="." method="_on_camera_area_2_activated"]

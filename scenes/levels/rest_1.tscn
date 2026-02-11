@@ -296,6 +296,7 @@ position = Vector2(-304.797, 443.97)
 timeline = "test"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea"]
+position = Vector2(40, 0)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea"]
@@ -314,7 +315,7 @@ position = Vector2(-3.59454, 17.9954)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea3"]
-position = Vector2(4.40546, -6.00464)
+position = Vector2(-19.595, -6.00501)
 scale = Vector2(0.25, 0.267438)
 texture = ExtResource("15_6fi6k")
 region_enabled = true
@@ -323,14 +324,13 @@ region_rect = Rect2(1044.22, 76.8919, 407.218, 324.218)
 [node name="DialogueArea4" parent="Characters" instance=ExtResource("4_7ewig")]
 position = Vector2(424, -680)
 timeline = "big_bird"
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea4"]
 position = Vector2(5.36603, 2.41016)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea4"]
-position = Vector2(4.40546, -6.00464)
+position = Vector2(-35.5945, -6.00464)
 scale = Vector2(0.25, 0.267438)
 texture = ExtResource("15_6fi6k")
 region_enabled = true
@@ -339,10 +339,9 @@ region_rect = Rect2(596.031, 27.6108, 326.812, 350.155)
 [node name="DialogueArea5" parent="Characters" instance=ExtResource("4_7ewig")]
 position = Vector2(-880, -496)
 timeline = "punk_bird"
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea5"]
-position = Vector2(-5.63397, 23.4102)
+position = Vector2(42.366, 23.4102)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea5"]
@@ -357,6 +356,7 @@ position = Vector2(-1404.94, 201.267)
 timeline = "redeem_points"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea2"]
+position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_wqxap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/DialogueArea2"]

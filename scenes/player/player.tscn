@@ -262,6 +262,7 @@ sound = ExtResource("12_gx1jg")
 stream = ExtResource("13_gx1jg")
 
 [node name="Tears" type="CPUParticles2D" parent="."]
+z_index = 2
 position = Vector2(0, -24)
 emitting = false
 amount = 4
