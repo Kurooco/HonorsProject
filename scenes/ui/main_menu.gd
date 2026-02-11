@@ -30,6 +30,7 @@ func _on_secret_button_pressed() -> void:
 
 func _on_new_game_pressed() -> void:
 	$NicePiano.play()
+	MusicHandler.fade_out(4)
 	Autoload.level_handler.fade_out(Color.BLACK, 4)
 	await Autoload.level_handler.fade_ended
 	Autoload.level_handler.new_game()

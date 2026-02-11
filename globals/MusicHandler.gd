@@ -2,7 +2,7 @@ extends Node
 
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
-var play_music = false
+var play_music = true
 var single_polyphony_sounds : Dictionary[String, AudioStreamPlayer2D]
 
 func play(music:AudioStream, db=0.0, pitch=1.0):
@@ -32,3 +32,7 @@ func play_single_polyphony_sound(pos:Vector2, path:String):
 		get_tree().current_scene.add_child(single_polyphony_sounds[path])
 	single_polyphony_sounds[path].position = pos
 	single_polyphony_sounds[path].play()
+
+func fade_out(duration=1.0):
+	var t : Tween = create_tween()
+	t.tween_property(current_song_node, "volume_linear", 0, duration)
