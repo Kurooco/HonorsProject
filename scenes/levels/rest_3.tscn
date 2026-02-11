@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=28 format=4 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="21_nbj30"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="22_qk7ey"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="24_8a2ch"]
+[ext_resource type="AudioStream" uid="uid://clo2sdcml0uvr" path="res://sound/music/BlessedCounterweight.wav" id="24_vbvjq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghlb"]
 size = Vector2(126.667, 145)
@@ -363,6 +364,7 @@ tile_map_data = PackedByteArray("AADrAAgAAQAAAAEAAADrAAkAAQAAAAEAAADrAAoAAQAAAAE
 world_node = NodePath("..")
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("22_qk7ey")]
+music = ExtResource("24_vbvjq")
 pitch = 0.5
 
 [node name="SaveArea" parent="." instance=ExtResource("24_8a2ch")]

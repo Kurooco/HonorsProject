@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://chkul5njl0r85"]
+[gd_scene load_steps=22 format=4 uid="uid://chkul5njl0r85"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_44gv1"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_0ljxa"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="11_qi5uv"]
 [ext_resource type="PackedScene" uid="uid://ddlm7h37grkjp" path="res://scenes/level_objects/auxiliary/speed_change.tscn" id="12_qi5uv"]
 [ext_resource type="PackedScene" uid="uid://birqojqel5wh6" path="res://scenes/level_objects/assist/check_point.tscn" id="14_t4txi"]
+[ext_resource type="AudioStream" uid="uid://dvolvda6odiw4" path="res://sound/music/Balance is Everything.wav" id="17_1nwmf"]
 [ext_resource type="PackedScene" uid="uid://x2q5wh5wj5sl" path="res://scenes/level_objects/assist/super_acorn.tscn" id="17_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://car5sxy6gpfc" path="res://scenes/level_objects/hazards/enemy.tscn" id="18_fhpes"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="19_vmg1d"]
@@ -341,6 +342,7 @@ speed = 3.0
 movement_type = 1
 
 [node name="LevelMusicPlayer" parent="." index="58" instance=ExtResource("21_5f5xw")]
+music = ExtResource("17_1nwmf")
 
 [node name="Parallax2D5" type="Parallax2D" parent="." index="59"]
 z_index = -10

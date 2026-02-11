@@ -7,6 +7,7 @@ extends Node
 @onready var upgrade_menu = $UpgradeMenu
 @onready var game_saver = $GameSaver
 
+var pause_disabled = true
 var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
@@ -29,7 +30,13 @@ func _ready():
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 
 
-func set_level(path: String):
+func set_level(path: String, fade=false):
+	pause_disabled = false
+	
+	if(fade):
+		fade_out()
+		await fade_ended
+	
 	if(is_instance_valid(current_level)):
 		if(Autoload.level_handler.in_rest_level):
 			game_saver.save_level()
@@ -52,6 +59,9 @@ func set_level(path: String):
 	if(is_instance_valid(player)):
 		check_point = player.position
 	add_child(new_level)
+	
+	if(fade):
+		fade_in()
 
 
 func restart_level():

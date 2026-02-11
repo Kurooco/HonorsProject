@@ -5,6 +5,7 @@ var speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Autoload.level_handler.pause_disabled = true
 	var t : Tween = create_tween()
 	t.set_trans(Tween.TRANS_QUINT)
 	t.set_ease(Tween.EASE_OUT)

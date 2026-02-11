@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dtnhijbjq0o6r"]
+[gd_scene load_steps=24 format=4 uid="uid://dtnhijbjq0o6r"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_rhbrn"]
 [ext_resource type="TileSet" uid="uid://dqgrmt22rhxdq" path="res://resources/blocks.tres" id="2_5imyg"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://woic2bjxaqco" path="res://art/environment/sky/night.png" id="19_xt2o7"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="20_beuva"]
 [ext_resource type="PackedScene" uid="uid://xwguyds4iq0s" path="res://scenes/level_objects/hazards/fan.tscn" id="21_05se8"]
+[ext_resource type="AudioStream" uid="uid://btiwud6q2whfg" path="res://sound/music/Gentle Jumping.wav" id="21_r3huh"]
 [ext_resource type="PackedScene" uid="uid://b3ppacagvb75p" path="res://scenes/level_objects/assist/level_end.tscn" id="22_12cdj"]
 
 [node name="Level4" instance=ExtResource("1_rhbrn")]
@@ -551,7 +552,7 @@ texture = ExtResource("19_xt2o7")
 centered = false
 
 [node name="LevelMusicPlayer" parent="." index="25" instance=ExtResource("20_beuva")]
-path = "res://sound/music/Gentle Jumping.wav"
+music = ExtResource("21_r3huh")
 db = -5.0
 
 [node name="Node2D" type="Node2D" parent="." index="26"]

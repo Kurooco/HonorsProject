@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cknpb7qewaitc"]
+[gd_scene load_steps=30 format=4 uid="uid://cknpb7qewaitc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_n71rw"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_7ktey"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://chaceujneqia" path="res://art/items/food/acorn.png" id="15_hpyij"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="16_ckulk"]
 [ext_resource type="Texture2D" uid="uid://c3pnbxw3hb0ic" path="res://art/environment/background/trees_background.png" id="17_6fi6k"]
+[ext_resource type="AudioStream" uid="uid://c0pnx68hqa062" path="res://sound/music/The Gathering Tree.wav" id="17_djhki"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqxap"]
 scenes/1/scene = ExtResource("6_ttr3h")
@@ -366,6 +367,7 @@ region_enabled = true
 region_rect = Rect2(620.216, 445.155, 355.343, 342.374)
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("16_ckulk")]
+music = ExtResource("17_djhki")
 
 [node name="Parallax2D6" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0.1)

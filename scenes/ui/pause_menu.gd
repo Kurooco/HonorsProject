@@ -6,6 +6,8 @@ func _ready():
 	$Menu.hide()
 
 func _on_pause_button_pressed():
+	if(Autoload.level_handler.pause_disabled): return
+	
 	Autoload.level_handler.pause_game(true)
 	if(Autoload.level_handler.in_rest_level || Autoload.level_handler.last_rest_level_visited == null):
 		back_to_safe_zone.hide()
@@ -19,7 +21,7 @@ func _on_continue_pressed():
 		$Menu.hide()
 
 func _on_quit_pressed():
-	Autoload.level_handler.set_level("res://scenes/ui/main_menu.tscn")
+	Autoload.level_handler.set_level("res://scenes/ui/main_menu.tscn", true)
 	Autoload.level_handler.pause_game(false)
 	$Menu.hide()
 
