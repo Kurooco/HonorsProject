@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bkj34yi74b4m7"]
+[gd_scene load_steps=38 format=3 uid="uid://bkj34yi74b4m7"]
 
 [ext_resource type="Script" uid="uid://gsiyirsktikx" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_0owmy"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjknfqlnupu67" path="res://scenes/components/global_sound.tscn" id="11_fm80t"]
 [ext_resource type="AudioStream" uid="uid://b265a7xwmwph8" path="res://sound/sfx/game sounds/lighthit.wav" id="12_gx1jg"]
 [ext_resource type="AudioStream" uid="uid://bl7srlcrilcls" path="res://sound/sfx/pop.wav" id="13_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://b5s8gynyjdqvk" path="res://art/particles/tears.png" id="14_ugbui"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("2_0owmy")
@@ -170,6 +171,9 @@ size = Vector2(43, 42)
 offsets = PackedFloat32Array(0, 0.855769, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.856, 1, 1, 1, 0)
 
+[sub_resource type="Gradient" id="Gradient_fcs02"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 4
 script = ExtResource("1_dovo2")
@@ -256,6 +260,19 @@ sound = ExtResource("12_gx1jg")
 
 [node name="AcornSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gx1jg")
+
+[node name="Tears" type="CPUParticles2D" parent="."]
+position = Vector2(0, -24)
+emitting = false
+amount = 4
+texture = ExtResource("14_ugbui")
+lifetime = 0.5
+direction = Vector2(0, -1)
+initial_velocity_min = 150.0
+initial_velocity_max = 350.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_fcs02")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]

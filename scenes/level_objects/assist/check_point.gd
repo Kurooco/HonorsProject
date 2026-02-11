@@ -23,8 +23,8 @@ func _ready():
 func _on_activated():
 	claim(true)
 	
-func claim(effects:bool):
-	if(Autoload.level_handler.check_point != position):
+func claim(effects:bool=true, actual=true):
+	if(actual && Autoload.level_handler.check_point != position):
 		Autoload.level_handler.claim_checkpoint(position)
 		PlayerStats.level_points = PlayerStats.run_points
 	if(effects):

@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="HonorsProject"
-run/main_scene="uid://jip4wup8hkl7"
+run/main_scene="uid://b6eegepdfdyff"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://81qd1ml1n51q"
 config/icon="uid://du5l78yshangn"
 
 [autoload]
@@ -73,6 +74,10 @@ folder_colors={
 enemy=""
 level_camera=""
 saveable=""
+
+[gui]
+
+theme/custom_font="uid://kd4g4yciplry"
 
 [input]
 

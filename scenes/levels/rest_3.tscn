@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=27 format=4 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b3jfdg1elsowb" path="res://scenes/level_objects/interactive/leafy_plant.tscn" id="19_qk7ey"]
 [ext_resource type="PackedScene" uid="uid://dbiis07g5iykk" path="res://scenes/level_objects/assist/coin_map.tscn" id="21_nbj30"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="22_qk7ey"]
+[ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="24_8a2ch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghlb"]
 size = Vector2(126.667, 145)
@@ -68,7 +69,7 @@ polygon = PackedVector2Array(1920, 400, 1920, -900, 2140, -900, 2140, -800, 2020
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collision1/StaticBody2D3"]
 position = Vector2(-1000, -360)
-polygon = PackedVector2Array(2280, -900, 2520, -900, 2520, -24, 5856, -24, 5856, 104, 2520, 104, 2520, 400, 2420, 400, 2340, 400, 2340, 320, 2420, 320, 2420, -580, 2240, -580, 2240, -660, 2420, -660, 2420, -800, 2280, -800)
+polygon = PackedVector2Array(2280, -900, 2520, -900, 2520, -24, 3168, -24, 3304, -144, 3512, -144, 3632, -24, 5856, -24, 5856, 104, 2520, 104, 2520, 400, 2420, 400, 2340, 400, 2340, 320, 2420, 320, 2420, -580, 2240, -580, 2240, -660, 2420, -660, 2420, -800, 2280, -800)
 
 [node name="Fan" parent="." instance=ExtResource("5_2x00t")]
 position = Vector2(1200, 68)
@@ -362,8 +363,10 @@ tile_map_data = PackedByteArray("AADrAAgAAQAAAAEAAADrAAkAAQAAAAEAAADrAAoAAQAAAAE
 world_node = NodePath("..")
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("22_qk7ey")]
-path = "res://sound/music/BlessedCounterweight.wav"
 pitch = 0.5
+
+[node name="SaveArea" parent="." instance=ExtResource("24_8a2ch")]
+position = Vector2(1585.51, 119.984)
 
 [editable path="BackgroundDetails/LeafyPlant4"]
 [editable path="BackgroundDetails/LeafyPlant4/Flower4"]

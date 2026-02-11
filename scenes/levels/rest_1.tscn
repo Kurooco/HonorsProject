@@ -366,7 +366,6 @@ region_enabled = true
 region_rect = Rect2(620.216, 445.155, 355.343, 342.374)
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("16_ckulk")]
-path = "res://sound/music/The Gathering Tree.wav"
 
 [node name="Parallax2D6" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0.1)
