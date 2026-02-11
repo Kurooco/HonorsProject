@@ -2,7 +2,7 @@ extends Node
 
 var current_song_path = ""
 var current_song_node : AudioStreamPlayer = null
-var play_music = true
+var play_music = false
 var single_polyphony_sounds : Dictionary[String, AudioStreamPlayer2D]
 
 func play(music:AudioStream, db=0.0, pitch=1.0):

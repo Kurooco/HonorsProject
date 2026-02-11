@@ -73,7 +73,7 @@ func _physics_process(delta):
 		
 		#Avoid other enemies
 		for enemy in get_tree().get_nodes_in_group("enemy"):
-			if(enemy.on_screen && enemy != self):
+			if(enemy.on_screen && enemy != self && position.distance_squared_to(enemy.position) != 0):
 				var vel_change : Vector2 = (position - enemy.position)/(position.distance_squared_to(enemy.position)*.001)
 				var cut = 100
 				if vel_change.length() > cut:
