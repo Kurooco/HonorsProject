@@ -23,12 +23,12 @@ func _ready():
 	game_saver.load_game(0)
 	data_loaded.emit()
 	Autoload.level_handler = self
-	if(PlayerStats.saved_level_path != ""):
-		set_level(PlayerStats.saved_level_path, false, PlayerStats.saved_level_position)
-	else:
-		set_level(opening_scene.resource_path)
+	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 
+func new_game():
+	game_saver.clear_all()
+	set_level("res://scenes/levels/tutorial/tutorial.tscn")
 
 func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 	pause_disabled = false

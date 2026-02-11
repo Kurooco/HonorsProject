@@ -209,6 +209,7 @@ ind = 7
 position = Vector2(560, 500)
 scene = ExtResource("10_3yhub")
 velocity = Vector2(-50, -700)
+show_path = false
 
 [node name="FoodSpawner" parent="Shooters" instance=ExtResource("11_3yhub")]
 position = Vector2(-20, -120)
@@ -223,6 +224,7 @@ position = Vector2(2320, -300)
 scene = ExtResource("12_5eevr")
 velocity = Vector2(80, -600)
 delay = 0.2
+show_path = false
 
 [node name="Block" type="StaticBody2D" parent="." groups=["saveable"]]
 metadata/_edit_group_ = true

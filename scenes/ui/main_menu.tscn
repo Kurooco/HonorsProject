@@ -96,6 +96,12 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="Continue" type="Button" parent="ButtonContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Continue"
+
 [node name="NewGame" type="Button" parent="ButtonContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -106,7 +112,7 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Credits"
 
-[node name="Credits2" type="Button" parent="ButtonContainer"]
+[node name="Options" type="Button" parent="ButtonContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Options"
@@ -136,6 +142,7 @@ music = ExtResource("7_btxxm")
 [node name="NicePiano" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_wb0q5")
 
+[connection signal="pressed" from="ButtonContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CheckPoint/SecretButton" to="." method="_on_secret_button_pressed"]
 
