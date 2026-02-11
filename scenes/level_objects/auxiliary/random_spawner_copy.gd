@@ -66,7 +66,7 @@ func _process(delta):
 	var relative_position_ratio = ($PathFollow2D.position.x - get_viewport().get_camera_2d().position.x)/get_viewport_rect().size.x
 	arc_mover.velocity.y = randf_range(y_range.x, y_range.y)
 	arc_mover.velocity.x = randf_range(0 if relative_position_ratio < -.3 else x_range.x, 0 if relative_position_ratio > .3 else x_range.y)
-	get_tree().current_scene.add_child(new_food)
+	Autoload.level_handler.current_level.add_child(new_food)
 	
 	
 func get_arc_mover(node: Node):

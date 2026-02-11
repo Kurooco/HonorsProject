@@ -2,7 +2,7 @@ extends "res://scenes/levels/rest_1.gd"
 
 @onready var camera = $Camera2D
 @onready var player = $Player
-@onready var acorn_shooter = $Shooters/AcornShooter
+@onready var acorn_shooter = $Shooters/AcornShooterTutorial
 @onready var block = $Block
 
 # Called when the node enters the scene tree for the first time.

@@ -25,7 +25,7 @@ size = Vector2(215, 290)
 size = Vector2(1141.25, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yhub"]
-size = Vector2(122.5, 370)
+size = Vector2(886.248, 370)
 
 [sub_resource type="Curve2D" id="Curve2D_5eevr"]
 _data = {
@@ -56,7 +56,7 @@ script = ExtResource("2_7ac3l")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_rnyxf")]
-position = Vector2(0, 96)
+position = Vector2(1936.66, -644.309)
 floor_max_angle = 1.22697
 waiting_for_start = false
 
@@ -100,7 +100,7 @@ automatic = true
 show_prompt = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea3"]
-position = Vector2(1368.42, -193.519)
+position = Vector2(1750.29, -193.519)
 shape = SubResource("RectangleShape2D_3yhub")
 
 [node name="Box" parent="." instance=ExtResource("6_iig34")]
@@ -205,7 +205,7 @@ ind = 7
 
 [node name="Shooters" type="Node2D" parent="."]
 
-[node name="AcornShooter" parent="Shooters" instance=ExtResource("9_j726a")]
+[node name="AcornShooterTutorial" parent="Shooters" instance=ExtResource("9_j726a")]
 position = Vector2(560, 500)
 scene = ExtResource("10_3yhub")
 velocity = Vector2(-50, -700)

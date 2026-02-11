@@ -43,6 +43,7 @@ func shoot(vel):
 	Autoload.level_handler.current_level.add_child(new_scene)
 
 func create_curve():
+	if(!is_instance_valid(self)): return
 	$Line2D.clear_points()
 	var v = velocity
 	var pos = Vector2.ZERO

@@ -31,7 +31,7 @@ func capture():
 	
 	await get_tree().create_timer(1).timeout
 	fade_tween = create_tween()
-	fade_tween.tween_property(self, "modulate", Color.WHITE, 1)
+	fade_tween.tween_property(self, "modulate", Color.WHITE, .3)
 	await fade_tween.finished
 	disabled = false
 
