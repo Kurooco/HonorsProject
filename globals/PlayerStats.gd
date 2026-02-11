@@ -5,6 +5,7 @@ var acorns = 0
 var lives = 0
 var levels_unlocked = 50
 var saved_level_path : String = ""
+var saved_level_position : Vector2
 
 var total_points = 0
 var level_points = 0
