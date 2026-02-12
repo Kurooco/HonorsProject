@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmywb7sdrlhyc"]
+[gd_scene load_steps=23 format=3 uid="uid://cmywb7sdrlhyc"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_x10i0"]
 [ext_resource type="Texture2D" uid="uid://co4y35p7ffbx4" path="res://art/textures/small_bricks_but_cooler.png" id="2_5ppkx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://p3teoaa3ptvm" path="res://scenes/level_objects/interactive/kickable_item.tscn" id="9_03jph"]
 [ext_resource type="PackedScene" uid="uid://bapo6eptyb2m2" path="res://scenes/level_objects/interactive/breakable_table.tscn" id="9_yeoc4"]
 [ext_resource type="Texture2D" uid="uid://bh6gbldj52g3p" path="res://art/characters/bar_birds.png" id="10_62gy0"]
+[ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="10_o2d8c"]
 [ext_resource type="Texture2D" uid="uid://h3o6yr3i7wi1" path="res://art/environment/interactive/cup.png" id="10_yeoc4"]
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="12_q5ui7"]
 [ext_resource type="Texture2D" uid="uid://bbdtmn3gbn2fr" path="res://art/textures/wall.png" id="14_k5565"]
@@ -21,6 +22,9 @@ size = Vector2(69, 105.435)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03jph"]
 size = Vector2(40.538, 73.6807)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqlkm"]
+size = Vector2(20, 33.5852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ui7"]
 size = Vector2(5.96326, 20)
@@ -129,6 +133,22 @@ scale = Vector2(0.5037, 0.5037)
 texture = ExtResource("10_62gy0")
 region_enabled = true
 region_rect = Rect2(467.103, 21.7179, 208.513, 339.077)
+
+[node name="DialogueArea5" parent="DialogueAreas" instance=ExtResource("7_tofga")]
+position = Vector2(1063.51, 592.504)
+timeline = "redeem_points"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/DialogueArea5"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_uqlkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueAreas/DialogueArea5"]
+position = Vector2(-3.06009, -17.267)
+scale = Vector2(0.1906, 0.203894)
+texture = ExtResource("10_o2d8c")
+region_enabled = true
+region_rect = Rect2(620.216, 445.155, 355.343, 342.374)
 
 [node name="Table1" parent="." instance=ExtResource("9_yeoc4")]
 key_table = true
@@ -297,3 +317,6 @@ scale = Vector2(0.5037, 0.5037)
 texture = ExtResource("10_62gy0")
 region_enabled = true
 region_rect = Rect2(303.463, 380.154, 129.024, 176.751)
+
+[node name="SaveArea2" parent="." instance=ExtResource("12_q5ui7")]
+position = Vector2(-27.682, 598)

@@ -29,6 +29,7 @@ var jump_velocity_decline
 @onready var animation = $Animation
 
 func _ready():
+	print_debug(PlayerStats.total_points)
 	if(invincible):
 		$HurtBox.set_deferred("monitorable", false)
 	Autoload.player = self

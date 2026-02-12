@@ -21,11 +21,12 @@ func _on_continue_pressed():
 		$Menu.hide()
 
 func _on_quit_pressed():
-	Autoload.level_handler.set_level("res://scenes/ui/main_menu.tscn", true)
+	Autoload.level_handler.set_level("res://scenes/ui/menu_screens/main_menu.tscn", true)
 	$Menu.hide()
 
 
 func _on_back_to_safe_zone_pressed():
+	PlayerStats.revert_points()
 	Autoload.level_handler.fade_out()
 	await Autoload.level_handler.fade_ended
 	Autoload.level_handler.set_level(Autoload.level_handler.last_rest_level_visited.resource_path)

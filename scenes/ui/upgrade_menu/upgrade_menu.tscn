@@ -51,6 +51,7 @@ layout_mode = 2
 icon = ExtResource("3_djghr")
 description = "Lets you live longer."
 upgrade_var_name = "lives"
+cost_progrssion = Array[int]([1000, 2000, 3000, 4000])
 
 [node name="UpgradePanel2" parent="Panel/MarginContainer/VBoxContainer/UpgradeOptions" instance=ExtResource("1_hr181")]
 layout_mode = 2
@@ -58,6 +59,7 @@ title = "Jumps"
 icon = ExtResource("4_55nu6")
 description = "Allows you to have more midair time."
 upgrade_var_name = "jumps"
+cost_progrssion = Array[int]([900, 1800, 2500, 4000])
 
 [node name="UpgradePanel3" parent="Panel/MarginContainer/VBoxContainer/UpgradeOptions" instance=ExtResource("1_hr181")]
 layout_mode = 2
@@ -65,6 +67,7 @@ title = "Acorns"
 icon = ExtResource("5_qxo1u")
 description = "Allows you to hold more acorn ammo."
 upgrade_var_name = "acorns"
+cost_progrssion = Array[int]([500, 1000, 1500, 2000])
 
 [node name="XButton" type="Button" parent="Panel/MarginContainer"]
 custom_minimum_size = Vector2(30, 30)
