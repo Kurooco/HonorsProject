@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://lbl56p814udm"]
+
+[ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_v31pt"]
+[ext_resource type="Script" uid="uid://cvgqslhthyr27" path="res://volume_slider.gd" id="2_yviut"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="3_76k0n"]
+
+[sub_resource type="Theme" id="Theme_76k0n"]
+
+[node name="GeneralMenu" instance=ExtResource("1_v31pt")]
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.247059, 0.203922, 0.952941)
+
+[node name="LocationButton" parent="." index="2" node_paths=PackedStringArray("menu") instance=ExtResource("3_76k0n")]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 89.0
+offset_bottom = 62.0
+text = "Back"
+menu = NodePath("..")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="3"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -445.0
+offset_top = -508.0
+offset_right = 445.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_76k0n")
+max_value = 1.0
+step = 0.01
+value = 0.5
+script = ExtResource("2_yviut")
+bus_name = "Music"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "Sound"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_76k0n")
+max_value = 1.0
+step = 0.01
+value = 0.5
+script = ExtResource("2_yviut")
+bus_name = "Sound"

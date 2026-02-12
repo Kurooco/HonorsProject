@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfclxyqmgv5fy"]
+
+[ext_resource type="PackedScene" uid="uid://bos7hmfiyx51d" path="res://scenes/ui/general_menu/general_menu.tscn" id="1_5wuqj"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="2_lds1u"]
+
+[node name="GeneralMenu" instance=ExtResource("1_5wuqj")]
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.764706)
+
+[node name="Label" type="Label" parent="." index="2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_top = 68.0
+offset_right = 27.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Label2" type="Label" parent="." index="3"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -364.0
+offset_top = -472.0
+offset_right = 365.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "The art, sound, and programming that are present in this game are all done by me. A special thanks to Jamie Spacco for overseeing this project and suggesting new ideas and advice throughout its development. A special thanks also to those who agreed to test this game or participated in the study portion of this project. 
+
+Dialogic was used to implement the dialogue system in this game."
+autowrap_mode = 3
+
+[node name="LocationButton" parent="." index="4" node_paths=PackedStringArray("menu") instance=ExtResource("2_lds1u")]
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 74.0
+offset_bottom = 53.0
+text = "Back"
+menu = NodePath("..")

@@ -16,7 +16,7 @@ func _ready() -> void:
 	t.parallel().tween_property($Title, "position:y", 0, 3).from(-500)
 	t.parallel().tween_property(self, "speed", 50, 4)
 	t.parallel().tween_property($CheckPoint, "position:y", 476, 4).from(1000)
-	t.parallel().tween_property($ButtonContainer, "position:y", 448, 4).from(1000)
+	t.parallel().tween_property($ButtonContainer, "position:y", $ButtonContainer.position.y, 4).from(1000)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

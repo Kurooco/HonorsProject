@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6eegepdfdyff"]
+[gd_scene load_steps=12 format=3 uid="uid://b6eegepdfdyff"]
 
 [ext_resource type="Texture2D" uid="uid://81qd1ml1n51q" path="res://art/ui/bie_title1.png" id="1_sl1te"]
-[ext_resource type="Script" uid="uid://chrvq86px0v5u" path="res://scenes/ui/main_menu.gd" id="1_uhagc"]
+[ext_resource type="Script" uid="uid://chrvq86px0v5u" path="res://scenes/ui/menu_screens/main_menu.gd" id="1_uhagc"]
 [ext_resource type="PackedScene" uid="uid://birqojqel5wh6" path="res://scenes/level_objects/assist/check_point.tscn" id="2_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/background/thick_corn.png" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://biovpcqqspods" path="res://art/environment/sky/cloudy_sky_upside_down_ground.png" id="5_btxxm"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="5_q85j6"]
+[ext_resource type="PackedScene" uid="uid://dfclxyqmgv5fy" path="res://scenes/ui/menu_screens/credits_menu.tscn" id="6_son0w"]
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="6_uhagc"]
 [ext_resource type="AudioStream" uid="uid://clq3g3vpaxssv" path="res://sound/music/(Menu Screen) BIE.wav" id="7_btxxm"]
+[ext_resource type="PackedScene" uid="uid://lbl56p814udm" path="res://scenes/ui/menu_screens/options_menu.tscn" id="7_r3fav"]
 [ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="8_wb0q5"]
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -90,9 +93,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -250.0
-offset_top = -112.0
+offset_top = -264.0
 offset_right = 250.0
-offset_bottom = -72.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -107,15 +110,17 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "New Game"
 
-[node name="Credits" type="Button" parent="ButtonContainer"]
+[node name="LocationButton" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Credits"
+location = ExtResource("6_son0w")
 
-[node name="Options" type="Button" parent="ButtonContainer"]
+[node name="LocationButton2" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Options"
+location = ExtResource("7_r3fav")
 
 [node name="CheckPoint" parent="." instance=ExtResource("2_fe2o3")]
 position = Vector2(160, 476)

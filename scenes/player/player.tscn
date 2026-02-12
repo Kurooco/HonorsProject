@@ -239,6 +239,7 @@ color_ramp = SubResource("Gradient_qek5x")
 [node name="Flap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qek5x")
 volume_db = -5.0
+bus = &"Sound"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
@@ -260,6 +261,7 @@ sound = ExtResource("12_gx1jg")
 
 [node name="AcornSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gx1jg")
+bus = &"Sound"
 
 [node name="Tears" type="CPUParticles2D" parent="."]
 z_index = 2

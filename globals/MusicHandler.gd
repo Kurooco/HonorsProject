@@ -28,6 +28,7 @@ func stop():
 func play_single_polyphony_sound(pos:Vector2, path:String):
 	if(!single_polyphony_sounds.has(path)):
 		single_polyphony_sounds[path] = AudioStreamPlayer2D.new()
+		single_polyphony_sounds[path].bus = "Sound"
 		single_polyphony_sounds[path].stream = load(path)
 		get_tree().current_scene.add_child(single_polyphony_sounds[path])
 	single_polyphony_sounds[path].position = pos

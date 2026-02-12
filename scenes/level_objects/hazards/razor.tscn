@@ -32,3 +32,4 @@ stream = ExtResource("4_obk1l")
 volume_db = -15.0
 autoplay = true
 attenuation = 8.87654
+bus = &"Sound"

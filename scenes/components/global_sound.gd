@@ -4,6 +4,7 @@ extends Node2D
 
 func play():
 	var player = AudioStreamPlayer2D.new()
+	player.bus = "Sound"
 	player.global_position = global_position
 	player.stream = sound
 	player.finished.connect(player.queue_free)
