@@ -20,8 +20,6 @@ signal data_loaded
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_saver.clear_temp()
-	game_saver.load_game(0)
-	data_loaded.emit()
 	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
@@ -29,6 +27,11 @@ func _ready():
 func new_game():
 	game_saver.clear_all()
 	set_level("res://scenes/levels/tutorial/tutorial.tscn")
+
+func continue_game():
+	game_saver.load_game(0)
+	data_loaded.emit()
+	set_level(PlayerStats.saved_level_path, true, PlayerStats.saved_level_position)
 
 func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 	pause_disabled = false
@@ -57,9 +60,9 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 		in_rest_level = false
 	var player = get_node_in_group(current_level, "player")
 	if(is_instance_valid(player)):
+		check_point = player.position
 		if(player_position != Vector2.INF):
 			player.position = player_position
-		check_point = player.position
 	add_child(new_level)
 	
 	if(fade):
@@ -184,3 +187,6 @@ func set_pause_subtree(root: Node, pause: bool) -> void:
 func _on_dialogic_signal_handler_matched_key(key: Variant, value: Variant) -> void:
 	var p = load(value).instantiate()
 	get_tree().current_scene.add_child(p)
+
+func has_saved_game():
+	return $GameSaver.get_save_metadata(0) != null

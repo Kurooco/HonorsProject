@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.764706)
+color = Color(0.25098, 0.247059, 0.203922, 0.952941)
 
 [node name="Label" type="Label" parent="." index="2"]
 anchors_preset = 5
@@ -43,6 +43,7 @@ Dialogic was used to implement the dialogue system in this game."
 autowrap_mode = 3
 
 [node name="LocationButton" parent="." index="4" node_paths=PackedStringArray("menu") instance=ExtResource("2_lds1u")]
+custom_minimum_size = Vector2(50, 20)
 offset_left = 27.0
 offset_top = 23.0
 offset_right = 74.0
