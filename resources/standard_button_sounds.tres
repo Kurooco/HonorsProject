@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ButtonSoundCollection" load_steps=4 format=3 uid="uid://b7pckqnovptpv"]
+
+[ext_resource type="AudioStream" uid="uid://bp7wq1hiq72ug" path="res://sound/sfx/Kuh.wav" id="1_yhq3f"]
+[ext_resource type="AudioStream" uid="uid://ci43f0ox5qrqy" path="res://sound/sfx/Lighthit.wav" id="2_uqqtg"]
+[ext_resource type="Script" uid="uid://b7yykd870njvr" path="res://resources/button_sound_collection.gd" id="3_xh20o"]
+
+[resource]
+script = ExtResource("3_xh20o")
+hover = ExtResource("2_uqqtg")
+click = ExtResource("1_yhq3f")
+metadata/_custom_type_script = "uid://b7yykd870njvr"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://p2vvnaor344v"]
+
+[ext_resource type="Script" uid="uid://np1oof4mpbdq" path="res://button_sounds.gd" id="1_i32gm"]
+[ext_resource type="Resource" uid="uid://b7pckqnovptpv" path="res://resources/standard_button_sounds.tres" id="2_frspk"]
+
+[node name="ButtonSounds" type="AudioStreamPlayer"]
+bus = &"Sound"
+script = ExtResource("1_i32gm")
+collection = ExtResource("2_frspk")
