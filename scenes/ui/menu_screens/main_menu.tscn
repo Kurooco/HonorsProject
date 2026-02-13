@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6eegepdfdyff"]
+[gd_scene load_steps=14 format=3 uid="uid://b6eegepdfdyff"]
 
 [ext_resource type="Texture2D" uid="uid://81qd1ml1n51q" path="res://art/ui/bie_title1.png" id="1_sl1te"]
 [ext_resource type="Script" uid="uid://chrvq86px0v5u" path="res://scenes/ui/menu_screens/main_menu.gd" id="1_uhagc"]
 [ext_resource type="PackedScene" uid="uid://birqojqel5wh6" path="res://scenes/level_objects/assist/check_point.tscn" id="2_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/background/thick_corn.png" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://biovpcqqspods" path="res://art/environment/sky/cloudy_sky_upside_down_ground.png" id="5_btxxm"]
+[ext_resource type="Theme" uid="uid://cqxg5nbvj7ylp" path="res://art/styles/standard_button.tres" id="5_dubb2"]
 [ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="5_lrllm"]
 [ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="5_q85j6"]
 [ext_resource type="PackedScene" uid="uid://dfclxyqmgv5fy" path="res://scenes/ui/menu_screens/credits_menu.tscn" id="6_son0w"]
@@ -101,9 +102,9 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Continue" type="Button" parent="ButtonContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme = ExtResource("5_dubb2")
 text = "Continue"
 
 [node name="ButtonSounds" parent="ButtonContainer/Continue" instance=ExtResource("5_lrllm")]
@@ -111,6 +112,7 @@ text = "Continue"
 [node name="NewGame" type="Button" parent="ButtonContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme = ExtResource("5_dubb2")
 text = "New Game"
 
 [node name="ButtonSounds" parent="ButtonContainer/NewGame" instance=ExtResource("5_lrllm")]

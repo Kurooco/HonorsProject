@@ -7,8 +7,7 @@ var speed = 500
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Autoload.level_handler.pause_disabled = true
-	if(Autoload.level_handler.has_saved_game()):
-		continue_button.show()
+	continue_button.visible = Autoload.level_handler.has_saved_game()
 	var t : Tween = create_tween()
 	t.set_trans(Tween.TRANS_QUINT)
 	t.set_ease(Tween.EASE_OUT)

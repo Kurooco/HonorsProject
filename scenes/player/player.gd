@@ -182,6 +182,7 @@ func update_stats():
 	health_component.health = health_component.max_health
 	jump_velocity_decline = BASE_JUMP_VELOCITY_DECLINE + PlayerStats.jumps*-10
 	max_acorns = PlayerStats.acorns + BASE_MAX_ACORNS
+	print(max_acorns)
 
 func make_invincible():
 	health_component.invincible = true

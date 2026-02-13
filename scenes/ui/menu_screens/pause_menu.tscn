@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://8pqmpmujp6c7"]
+[gd_scene load_steps=10 format=3 uid="uid://8pqmpmujp6c7"]
 
 [ext_resource type="Script" uid="uid://btpqnkg3ktily" path="res://scenes/ui/menu_screens/pause_menu.gd" id="1_0lmf7"]
 [ext_resource type="Texture2D" uid="uid://brpelwwx2pe7c" path="res://art/ui/pause.png" id="1_6tw0m"]
+[ext_resource type="Theme" uid="uid://cqxg5nbvj7ylp" path="res://art/styles/standard_button.tres" id="3_fixr3"]
 [ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="3_j8ugc"]
 [ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="3_vd215"]
 [ext_resource type="PackedScene" uid="uid://lbl56p814udm" path="res://scenes/ui/menu_screens/options_menu.tscn" id="4_rjfod"]
@@ -62,6 +63,7 @@ vertical_alignment = 1
 [node name="Continue" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_fixr3")
 text = "Continue"
 
 [node name="ButtonSounds" parent="Menu/MarginContainer/VBoxContainer/Continue" instance=ExtResource("3_vd215")]
@@ -69,6 +71,7 @@ text = "Continue"
 [node name="BackToSafeZone" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_fixr3")
 text = "Go To Previous Safe Zone"
 
 [node name="ButtonSounds3" parent="Menu/MarginContainer/VBoxContainer/BackToSafeZone" instance=ExtResource("3_vd215")]
@@ -82,6 +85,7 @@ location = ExtResource("4_rjfod")
 [node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_fixr3")
 text = "Quit"
 
 [node name="ButtonSounds2" parent="Menu/MarginContainer/VBoxContainer/Quit" instance=ExtResource("3_vd215")]

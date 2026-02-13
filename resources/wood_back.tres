@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b5h1oqboq3jh8"]
+
+[ext_resource type="Texture2D" uid="uid://oy7ool3yv1eh" path="res://art/textures/wood.png" id="1_dl630"]
+
+[resource]
+texture = ExtResource("1_dl630")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.758192, 0.758192, 0.758192, 1)

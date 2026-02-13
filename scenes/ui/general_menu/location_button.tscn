@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh42ej8crnk6n"]
+[gd_scene load_steps=4 format=3 uid="uid://dh42ej8crnk6n"]
 
+[ext_resource type="Theme" uid="uid://cqxg5nbvj7ylp" path="res://art/styles/standard_button.tres" id="1_ocmhd"]
 [ext_resource type="Script" uid="uid://c212yt65h5aw0" path="res://scenes/ui/general_menu/location_button.gd" id="1_xci1a"]
 [ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="2_ypcdk"]
 
 [node name="LocationButton" type="Button"]
-offset_right = 46.0
-offset_bottom = 21.0
+offset_right = 125.0
+offset_bottom = 57.0
+theme = ExtResource("1_ocmhd")
 text = "Click"
 script = ExtResource("1_xci1a")
 

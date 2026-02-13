@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://biwrs0a15oqve"]
+[gd_scene load_steps=8 format=3 uid="uid://biwrs0a15oqve"]
 
 [ext_resource type="Script" uid="uid://bor76ldcihw1c" path="res://scenes/ui/upgrade_menu/upgrade_menu.gd" id="1_6q732"]
 [ext_resource type="PackedScene" uid="uid://bjckwaep170m5" path="res://scenes/ui/upgrade_menu/upgrade_panel.tscn" id="1_hr181"]
 [ext_resource type="Texture2D" uid="uid://cy3noxvp016ef" path="res://art/ui/upgrade_health.png" id="3_djghr"]
 [ext_resource type="Texture2D" uid="uid://bq66f2iniu2qs" path="res://art/ui/upgrade_jump.png" id="4_55nu6"]
 [ext_resource type="Texture2D" uid="uid://c5n86odkmws7o" path="res://art/ui/upgrade_acorn.png" id="5_qxo1u"]
+[ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="6_qxo1u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr181"]
 
@@ -70,11 +71,13 @@ upgrade_var_name = "acorns"
 cost_progrssion = Array[int]([500, 1000, 1500, 2000])
 
 [node name="XButton" type="Button" parent="Panel/MarginContainer"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "X"
+
+[node name="ButtonSounds" parent="Panel/MarginContainer/XButton" instance=ExtResource("6_qxo1u")]
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Panel/MarginContainer/VBoxContainer/UpgradeOptions" to="." method="_on_h_box_container_visibility_changed"]
