@@ -365,10 +365,10 @@ number = 30
 speed = 1.0
 
 [node name="LineFollower2" parent="." index="42" instance=ExtResource("16_ndlae")]
-points = PackedVector2Array(8832, 192, 8832, -192, 9280, -192, 9280, 192)
+points = PackedVector2Array(8680, 336, 8680, 248, 9448, 248, 9448, 336)
 closed = true
 scene = ExtResource("10_qsp8v")
-number = 30
+number = 10
 speed = 1.0
 
 [node name="LineFollower3" parent="." index="43" instance=ExtResource("16_ndlae")]

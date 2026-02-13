@@ -26,6 +26,7 @@ func _ready():
 
 func new_game():
 	game_saver.clear_all()
+	data_loaded.emit()
 	set_level("res://scenes/levels/tutorial/tutorial.tscn")
 
 func continue_game():
