@@ -36,6 +36,10 @@ func update_display():
 func _on_upgrade_pressed():
 	PlayerStats.add_points_permanent(-cost_progrssion[upgrades])
 	upgrades += 1
+	if(upgrades < upgrade_amount):
+		$UpgradeSound.play()
+	else:
+		$MaxUpgradeSound.play()
 	PlayerStats.set(upgrade_var_name, PlayerStats.get(upgrade_var_name)+1)
 	PlayerStats.update_player_stats()
 	PlayerStats.stat_updated.emit()

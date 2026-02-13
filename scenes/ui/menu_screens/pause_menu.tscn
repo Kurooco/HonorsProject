@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://8pqmpmujp6c7"]
+[gd_scene load_steps=8 format=3 uid="uid://8pqmpmujp6c7"]
 
 [ext_resource type="Script" uid="uid://btpqnkg3ktily" path="res://scenes/ui/menu_screens/pause_menu.gd" id="1_0lmf7"]
 [ext_resource type="Texture2D" uid="uid://brpelwwx2pe7c" path="res://art/ui/pause.png" id="1_6tw0m"]
+[ext_resource type="PackedScene" uid="uid://dh42ej8crnk6n" path="res://scenes/ui/general_menu/location_button.tscn" id="3_j8ugc"]
+[ext_resource type="PackedScene" uid="uid://lbl56p814udm" path="res://scenes/ui/menu_screens/options_menu.tscn" id="4_rjfod"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_0lmf7"]
 device = -1
@@ -11,13 +13,8 @@ unicode = 112
 [sub_resource type="Shortcut" id="Shortcut_f6eus"]
 events = [SubResource("InputEventKey_0lmf7")]
 
-[sub_resource type="InputEventKey" id="InputEventKey_f6eus"]
-device = -1
-keycode = 80
-unicode = 112
-
-[sub_resource type="Shortcut" id="Shortcut_8uki6"]
-events = [SubResource("InputEventKey_f6eus")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjfod"]
+bg_color = Color(0.251, 0.247, 0.204, 0.939)
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_0lmf7")
@@ -35,12 +32,12 @@ flat = true
 expand_icon = true
 
 [node name="Menu" type="PanelContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjfod")
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 2
@@ -64,13 +61,18 @@ vertical_alignment = 1
 [node name="Continue" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-shortcut = SubResource("Shortcut_8uki6")
 text = "Continue"
 
 [node name="BackToSafeZone" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Go To Previous Safe Zone"
+
+[node name="Options" parent="Menu/MarginContainer/VBoxContainer" instance=ExtResource("3_j8ugc")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+location = ExtResource("4_rjfod")
 
 [node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
