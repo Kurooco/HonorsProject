@@ -35,7 +35,8 @@ func _ready():
 	Autoload.player = self
 	update_stats()
 	Dialogic.signal_event.connect(handle_dialogic_signals)
-
+	Dialogic.timeline_started.connect(set_physics_process.bind(false))
+	Dialogic.timeline_ended.connect(set_physics_process.bind(true))
 
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("jump") && waiting_for_start):
@@ -67,7 +68,7 @@ func _physics_process(delta):
 	if(is_on_floor()):
 		jump_velocity = MAX_JUMP_VELOCITY 
 		consecutive_bounces = 0
-	if(Input.is_action_just_pressed("jump") && jump_velocity <= 0 && !disabled && Dialogic.current_timeline == null):
+	if(Input.is_action_just_pressed("jump") && jump_velocity <= 0 && !disabled):
 		velocity.y = jump_velocity
 		jump_velocity += jump_velocity_decline
 		consecutive_bounces = 0
@@ -76,7 +77,7 @@ func _physics_process(delta):
 
 	# Move left and right
 	var direction = Input.get_axis("left", "right")
-	if(!disabled && Dialogic.current_timeline == null):
+	if(!disabled):
 		if direction:
 			animation.flip_h = direction == -1
 			last_direction = direction
@@ -98,7 +99,7 @@ func _physics_process(delta):
 	else:
 		animation.self_modulate = Color.WHITE
 		
-	if(Input.is_action_just_pressed("shoot") && acorns > 0 && Dialogic.current_timeline == null):
+	if(Input.is_action_just_pressed("shoot") && acorns > 0):
 		shoot_acorn(last_direction)
 		
 	# Update acorn energy
@@ -108,9 +109,9 @@ func _physics_process(delta):
 	else:
 		acorn_energy = 0
 	
-	if(!disabled && Dialogic.current_timeline == null):
+	if(!disabled):
 		move_and_slide()
-		
+	
 	# Animation
 	if(is_on_floor()):
 		if(direction != 0):

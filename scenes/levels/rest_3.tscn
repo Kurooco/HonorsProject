@@ -244,7 +244,7 @@ region_rect = Rect2(620.216, 445.155, 355.343, 342.374)
 [node name="DialogueArea5" parent="Characters" instance=ExtResource("9_1qtdr")]
 position = Vector2(2460.97, 34.3903)
 script = SubResource("GDScript_pt43n")
-timeline = "purple"
+timeline = "cool_bird"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/DialogueArea5"]
