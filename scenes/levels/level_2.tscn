@@ -27,6 +27,9 @@ size = Vector2(633, 298)
 [node name="Player" parent="." index="0"]
 position = Vector2(-422, -24)
 
+[node name="AutoscrollCamera" parent="." index="1"]
+speed = 200
+
 [node name="Corn2" type="Parallax2D" parent="." index="2"]
 z_index = -2
 scroll_scale = Vector2(0.2, 1)

@@ -8,6 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="6_qxo1u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr181"]
+bg_color = Color(0.582431, 0.463765, 0.417985, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="UpgradeMenu" type="CanvasLayer"]
 script = ExtResource("1_6q732")

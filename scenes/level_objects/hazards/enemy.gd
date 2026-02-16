@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 25.0
-@export var ATTACK_SPEED = 15
+@export var SPEED = 30.0 #25
+@export var ATTACK_SPEED = 20.0 #15
 @export var MAX_JUMP_VELOCITY = -500.0
 @export var JUMP_VELOCITY_DECLINE = 80
 @export var BOUNCE_VELOCITY = -400
@@ -83,7 +83,8 @@ func _physics_process(delta):
 				velocity += vel_change
 		
 		if(velocity.y > 0):
-			$Sprite2D.play("fall")
+			if($Sprite2D.animation != "fall"):
+				$Sprite2D.play("fall")
 		elif($Sprite2D.animation != "flap"):
 			$Sprite2D.play("flap")
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://d03xqtws18ys8" path="res://scenes/levels/rest_3.tscn" id="2_a54fh"]
-[ext_resource type="PackedScene" uid="uid://b6eegepdfdyff" path="res://scenes/ui/menu_screens/main_menu.tscn" id="2_n6tp7"]
 [ext_resource type="PackedScene" uid="uid://cmywb7sdrlhyc" path="res://scenes/levels/rest_2.tscn" id="2_np1er"]
 [ext_resource type="PackedScene" uid="uid://chkul5njl0r85" path="res://scenes/levels/level_3.tscn" id="2_ssum3"]
+[ext_resource type="PackedScene" uid="uid://b6eegepdfdyff" path="res://scenes/ui/menu_screens/main_menu.tscn" id="2_tc4uq"]
 [ext_resource type="Script" uid="uid://jah44sasojar" path="res://scenes/ui/hud.gd" id="3_cp8yn"]
 [ext_resource type="PackedScene" uid="uid://cknpb7qewaitc" path="res://scenes/levels/rest_1.tscn" id="3_np1er"]
 [ext_resource type="PackedScene" uid="uid://biwrs0a15oqve" path="res://scenes/ui/upgrade_menu/upgrade_menu.tscn" id="5_bisso"]
@@ -32,7 +32,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("2_n6tp7")
+opening_scene = ExtResource("2_tc4uq")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp"), ExtResource("2_a54fh")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3"), ExtResource("2_a54fh"), ExtResource("10_tc4uq")])
 
@@ -44,6 +44,8 @@ offset_left = 6.0
 offset_top = 47.0
 offset_right = 211.0
 offset_bottom = 70.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
 text = "Points: 0"
 
 [node name="AcornProgress" type="TextureProgressBar" parent="HUD"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://xwguyds4iq0s"]
+[gd_scene load_steps=9 format=3 uid="uid://xwguyds4iq0s"]
 
 [ext_resource type="Script" uid="uid://nxr0iq68tjss" path="res://scenes/level_objects/hazards/fan.gd" id="1_8agpp"]
 [ext_resource type="Texture2D" uid="uid://dn56dit2nyvgf" path="res://art/items/fan_blades.png" id="2_yx01c"]
 [ext_resource type="Texture2D" uid="uid://r3rrx27x12hd" path="res://art/particles/wind2.png" id="3_yx01c"]
 [ext_resource type="Script" uid="uid://bl26dbylf0kiq" path="res://scenes/level_objects/hazards/fan_area.gd" id="4_acgya"]
-[ext_resource type="PackedScene" uid="uid://for7arqs1e07" path="res://scenes/components/weapon_area.tscn" id="5_yx01c"]
 [ext_resource type="Texture2D" uid="uid://c7ewtd6llsns" path="res://art/items/fan_case.png" id="6_epcwd"]
 [ext_resource type="AudioStream" uid="uid://ce4iwcibnlxj7" path="res://sound/sfx/Fan.wav" id="7_ne8jf"]
 
@@ -15,15 +14,12 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.497, 1, 1, 1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oi4t"]
 size = Vector2(100, 557)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epcwd"]
-size = Vector2(103, 20)
-
 [node name="Fan" type="Node2D"]
 script = ExtResource("1_8agpp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 1)
-scale = Vector2(-0.499545, 0.5)
+scale = Vector2(0.0665344, 0.5)
 texture = ExtResource("2_yx01c")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -49,14 +45,8 @@ script = ExtResource("4_acgya")
 position = Vector2(0, -287.5)
 shape = SubResource("RectangleShape2D_0oi4t")
 
-[node name="WeaponArea" parent="." instance=ExtResource("5_yx01c")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
-position = Vector2(1.5, 0)
-shape = SubResource("RectangleShape2D_epcwd")
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-2, -1)
+position = Vector2(-2, 0)
 rotation = -1.57079
 scale = Vector2(0.564243, 0.564243)
 texture = ExtResource("6_epcwd")

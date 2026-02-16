@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://car5sxy6gpfc"]
+[gd_scene load_steps=25 format=3 uid="uid://car5sxy6gpfc"]
 
 [ext_resource type="Script" uid="uid://deal2cwf0qygb" path="res://scenes/level_objects/hazards/enemy.gd" id="1_kuaqs"]
 [ext_resource type="Texture2D" uid="uid://do2adjdtq2p5i" path="res://art/characters/enemy.png" id="2_5sfx2"]
@@ -11,7 +11,23 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuaqs"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sfx2"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(395, 378, 395, 378)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_laihp"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(0, 378, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuyxl"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(790, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tevap"]
+atlas = ExtResource("2_5sfx2")
+region = Rect2(395, 0, 395, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv2w2"]
 atlas = ExtResource("2_5sfx2")
 region = Rect2(0, 0, 395, 378)
 
@@ -43,11 +59,23 @@ region = Rect2(395, 378, 395, 378)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5sfx2")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_laihp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuyxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tevap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv2w2")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,7 +128,7 @@ shape = SubResource("RectangleShape2D_kuaqs")
 position = Vector2(-0.724892, -8.49999)
 scale = Vector2(0.185185, 0.185185)
 sprite_frames = SubResource("SpriteFrames_wuyxl")
-animation = &"fall"
+animation = &"flap"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
