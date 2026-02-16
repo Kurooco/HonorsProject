@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6c176h6l0jjk"]
+[gd_scene load_steps=4 format=3 uid="uid://c6c176h6l0jjk"]
 
 [ext_resource type="Script" uid="uid://obkst2j2oklu" path="res://scenes/ui/save_menu/save_menu.gd" id="1_n51rq"]
+[ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="2_ktx6w"]
+[ext_resource type="AudioStream" uid="uid://di7cc4846yesl" path="res://sound/sfx/game sounds/upgather.wav" id="3_rbmyy"]
 
 [node name="SaveMenu" type="CanvasLayer"]
 script = ExtResource("1_n51rq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -108.0
+offset_top = -81.0
+offset_right = 1359.0
+offset_bottom = 783.0
+color = Color(1, 1, 1, 0)
 
 [node name="Panel" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -45,20 +54,27 @@ size_flags_horizontal = 3
 text = "Save
 "
 
+[node name="ButtonSounds" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/SaveGame" instance=ExtResource("2_ktx6w")]
+
 [node name="Cancel" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel
 "
 
+[node name="ButtonSounds" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" instance=ExtResource("2_ktx6w")]
+
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 381.0
 offset_top = 161.0
 offset_right = 550.0
 offset_bottom = 201.0
 text = "DEBUG: clear"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rbmyy")
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

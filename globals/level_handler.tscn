@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://jip4wup8hkl7"]
+[gd_scene load_steps=21 format=3 uid="uid://jip4wup8hkl7"]
 
 [ext_resource type="Script" uid="uid://d2mcprb77tpp2" path="res://globals/level_handler.gd" id="1_2e1au"]
 [ext_resource type="PackedScene" uid="uid://d03xqtws18ys8" path="res://scenes/levels/rest_3.tscn" id="2_a54fh"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dtnhijbjq0o6r" path="res://scenes/levels/level_4.tscn" id="10_tc4uq"]
 [ext_resource type="PackedScene" uid="uid://8pqmpmujp6c7" path="res://scenes/ui/menu_screens/pause_menu.tscn" id="13_vgd30"]
 [ext_resource type="PackedScene" uid="uid://benf067d2viqs" path="res://scenes/components/dialogic_signal_handler.tscn" id="15_yx0rp"]
+[ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="18_no36m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dl1"]
 bg_color = Color(0.6, 0.6, 0.6, 0.414)
@@ -129,5 +130,8 @@ text = "Level Cleared!"
 dictionary = {
 "popup": null
 }
+
+[node name="NicePiano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_no36m")
 
 [connection signal="matched_key" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched_key"]

@@ -25,9 +25,14 @@ func _ready():
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 
 func new_game():
+	$NicePiano.play()
+	MusicHandler.fade_out(4)
+	Autoload.level_handler.fade_out(Color.BLACK, 4)
+	await Autoload.level_handler.fade_ended
 	game_saver.clear_all()
 	data_loaded.emit()
 	set_level("res://scenes/levels/tutorial/tutorial.tscn")
+	Autoload.level_handler.fade_in(2)
 
 func continue_game():
 	game_saver.load_game(0)

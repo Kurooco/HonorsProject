@@ -20,6 +20,7 @@ func _on_save_game_pressed():
 	text.text = "Saved!"
 	save_game.hide()
 	cancel.text = "Continue"
+	$AudioStreamPlayer.play()
 	
 	
 func _on_button_pressed():

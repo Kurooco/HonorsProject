@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bjjdqtfdmqet3"]
+[gd_scene load_steps=21 format=4 uid="uid://bjjdqtfdmqet3"]
 
 [ext_resource type="PackedScene" uid="uid://myfs4dkdlwhq" path="res://scenes/levels/level_base.tscn" id="1_fiq81"]
 [ext_resource type="Texture2D" uid="uid://bkh5silbhsg3e" path="res://art/environment/background/thick_corn.png" id="2_v8d84"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bjk3xsu4cn6p7" path="res://scenes/level_objects/auxiliary/line_follower.tscn" id="16_ndlae"]
 [ext_resource type="AudioStream" uid="uid://m3m0mbfkv8o6" path="res://sound/music/King of the Hill.wav" id="17_gw1l3"]
 [ext_resource type="Texture2D" uid="uid://ckda11jo21tf" path="res://art/environment/sky/cloudy_sey.png" id="17_v8d84"]
+[ext_resource type="PackedScene" uid="uid://ddlm7h37grkjp" path="res://scenes/level_objects/auxiliary/speed_change.tscn" id="19_p4se4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
 size = Vector2(633, 298)
@@ -240,14 +241,15 @@ delay = 0.2
 show_path = false
 
 [node name="SingleShooter3" parent="Shooters" index="1" instance=ExtResource("6_8qukl")]
-position = Vector2(3051.99, 347.112)
+position = Vector2(2976, 352)
 scene = ExtResource("8_8qukl")
-velocity = Vector2(200, -500)
+velocity = Vector2(250, -700)
+delay = 0.75
 
 [node name="FoodShooter" parent="Shooters" index="2" instance=ExtResource("6_8qukl")]
-position = Vector2(2968.99, 347.112)
+position = Vector2(3048, 352)
 scene = ExtResource("10_qsp8v")
-velocity = Vector2(200, -600)
+velocity = Vector2(200, -500)
 delay = 0.5
 show_path = false
 
@@ -266,9 +268,9 @@ delay = 0.4
 show_path = false
 
 [node name="FoodShooter2" parent="Shooters" index="5" instance=ExtResource("6_8qukl")]
-position = Vector2(3371.99, 347.112)
+position = Vector2(3416, 352)
 scene = ExtResource("10_qsp8v")
-velocity = Vector2(200, -600)
+velocity = Vector2(200, -500)
 delay = 0.5
 show_path = false
 
@@ -308,9 +310,10 @@ delay = 0.7
 show_path = false
 
 [node name="SingleShooter4" parent="Shooters" index="11" instance=ExtResource("6_8qukl")]
-position = Vector2(3470, 345)
+position = Vector2(3344, 352)
 scene = ExtResource("8_8qukl")
-velocity = Vector2(200, -500)
+velocity = Vector2(250, -700)
+delay = 0.75
 
 [node name="SingleShooter5" parent="Shooters" index="12" instance=ExtResource("6_8qukl")]
 position = Vector2(4629, -403)
@@ -412,3 +415,7 @@ layer = -1
 position = Vector2(578, 325)
 scale = Vector2(1.01736, 1.01543)
 texture = ExtResource("17_v8d84")
+
+[node name="SpeedChange" parent="." index="49" instance=ExtResource("19_p4se4")]
+position = Vector2(15144.6, 3.45926)
+speed = 0

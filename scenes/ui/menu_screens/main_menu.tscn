@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="6_uhagc"]
 [ext_resource type="AudioStream" uid="uid://clq3g3vpaxssv" path="res://sound/music/(Menu Screen) BIE.wav" id="7_btxxm"]
 [ext_resource type="PackedScene" uid="uid://lbl56p814udm" path="res://scenes/ui/menu_screens/options_menu.tscn" id="7_r3fav"]
-[ext_resource type="AudioStream" uid="uid://cx75lgerfs20d" path="res://sound/sfx/game sounds/softpiano.wav" id="8_wb0q5"]
+[ext_resource type="PackedScene" uid="uid://jhaye03ujk57" path="res://scenes/ui/menu_screens/new_game_confirmation.tscn" id="8_7f5ur"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_uhagc")
@@ -95,9 +95,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -250.0
-offset_top = -264.0
+offset_top = -298.0
 offset_right = 250.0
-offset_bottom = -136.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -109,6 +109,11 @@ text = "Continue"
 
 [node name="ButtonSounds" parent="ButtonContainer/Continue" instance=ExtResource("5_lrllm")]
 
+[node name="NewGameWarning" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
+layout_mode = 2
+text = "New Game"
+location = ExtResource("8_7f5ur")
+
 [node name="NewGame" type="Button" parent="ButtonContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -117,13 +122,13 @@ text = "New Game"
 
 [node name="ButtonSounds" parent="ButtonContainer/NewGame" instance=ExtResource("5_lrllm")]
 
-[node name="LocationButton" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
+[node name="Credits" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Credits"
 location = ExtResource("6_son0w")
 
-[node name="LocationButton2" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
+[node name="Options" parent="ButtonContainer" instance=ExtResource("5_q85j6")]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Options"
@@ -150,9 +155,6 @@ offset_bottom = 13.0
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("6_uhagc")]
 music = ExtResource("7_btxxm")
-
-[node name="NicePiano" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_wb0q5")
 
 [connection signal="pressed" from="ButtonContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]

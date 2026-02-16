@@ -2,12 +2,18 @@ extends CanvasLayer
 
 @onready var continue_button: Button = $ButtonContainer/Continue
 @onready var camera_2d: Camera2D = $Background/SubViewport/Camera2D
+@onready var new_game_warning: Button = $ButtonContainer/NewGameWarning
+@onready var new_game: Button = $ButtonContainer/NewGame
 var speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var save_data = Autoload.level_handler.has_saved_game()
+	continue_button.visible = save_data
+	new_game.visible = !save_data
+	new_game_warning.visible = save_data
+	
 	Autoload.level_handler.pause_disabled = true
-	continue_button.visible = Autoload.level_handler.has_saved_game()
 	var t : Tween = create_tween()
 	t.set_trans(Tween.TRANS_QUINT)
 	t.set_ease(Tween.EASE_OUT)
@@ -28,12 +34,7 @@ func _on_secret_button_pressed() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	$NicePiano.play()
-	MusicHandler.fade_out(4)
-	Autoload.level_handler.fade_out(Color.BLACK, 4)
-	await Autoload.level_handler.fade_ended
 	Autoload.level_handler.new_game()
-	Autoload.level_handler.fade_in(2)
 
 
 func _on_continue_pressed() -> void:
