@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://d1cmicma3ggh4" path="res://sound/sfx/game sounds/smallcoin.wav" id="1_yhq3f"]
 [ext_resource type="AudioStream" uid="uid://ci43f0ox5qrqy" path="res://sound/sfx/Lighthit.wav" id="2_uqqtg"]
-[ext_resource type="Script" uid="uid://b7yykd870njvr" path="res://resources/button_sound_collection.gd" id="3_xh20o"]
+[ext_resource type="Script" path="res://resources/button_sound_collection.gd" id="3_xh20o"]
 
 [resource]
 script = ExtResource("3_xh20o")

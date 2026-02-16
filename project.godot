@@ -50,6 +50,8 @@ variables={
 "met_seller": false,
 "table_broken": false
 }
+layout/style_list=["res://dialogue/styles/New_File.tres"]
+layout/default_style="res://dialogue/styles/New_File.tres"
 
 [display]
 

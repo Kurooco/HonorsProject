@@ -1,64 +1,16 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cqxg5nbvj7ylp"]
 
-[ext_resource type="StyleBox" uid="uid://bxkl83d24rj3n" path="res://art/styles/standard_button2.tres" id="1_67lqf"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67lqf"]
-bg_color = Color(0.418726, 0.36615, 0.337784, 0.663)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.288518, 0.288518, 0.288518, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afp8f"]
-bg_color = Color(0.865182, 0.726406, 0.587996, 0.663)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.288518, 0.288518, 0.288518, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5er6"]
-bg_color = Color(0.85751, 0.467851, 0.390378, 0.663)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.288518, 0.288518, 0.288518, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1aqf"]
-bg_color = Color(0.348173, 0.172784, 0.069726, 0.89)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[ext_resource type="StyleBox" uid="uid://3idrth4qxr2h" path="res://art/styles/standard_button/disabled.tres" id="1_uyo5w"]
+[ext_resource type="StyleBox" uid="uid://dspq6xxq37x0s" path="res://art/styles/standard_button/focus.tres" id="2_lvgrd"]
+[ext_resource type="StyleBox" uid="uid://bmuw434ns6qqk" path="res://art/styles/standard_button/hover.tres" id="3_ompsi"]
+[ext_resource type="StyleBox" uid="uid://bxkl83d24rj3n" path="res://art/styles/standard_button/standard_button_box.tres" id="4_y0t71"]
+[ext_resource type="StyleBox" uid="uid://d263orxdrk00u" path="res://art/styles/standard_button/pressed.tres" id="5_whdib"]
 
 [resource]
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/constants/outline_size = 1
-Button/styles/disabled = SubResource("StyleBoxFlat_67lqf")
-Button/styles/focus = SubResource("StyleBoxFlat_afp8f")
-Button/styles/hover = SubResource("StyleBoxFlat_e5er6")
-Button/styles/normal = ExtResource("1_67lqf")
-Button/styles/pressed = SubResource("StyleBoxFlat_g1aqf")
+Button/constants/outline_size = 5
+Button/styles/disabled = ExtResource("1_uyo5w")
+Button/styles/focus = ExtResource("2_lvgrd")
+Button/styles/hover = ExtResource("3_ompsi")
+Button/styles/normal = ExtResource("4_y0t71")
+Button/styles/pressed = ExtResource("5_whdib")

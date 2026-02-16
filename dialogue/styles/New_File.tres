@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://c0phdgswyduyl"]
+
+[ext_resource type="Script" uid="uid://c6kf6w8p0n0y6" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_xjnky"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_ru6kh"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_j07ls"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_ops45"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_tlscp"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_r2del"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_lh7vw"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_7iy73"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_72w3y"]
+[ext_resource type="Script" uid="uid://bdkuitig7txpv" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_gac83"]
+
+[sub_resource type="Resource" id="Resource_3o83h"]
+script = ExtResource("1_xjnky")
+overrides = {
+"global_bg_color": "Color(0.101563, 0.0810318, 0.0741882, 0.941176)"
+}
+
+[sub_resource type="Resource" id="Resource_f64po"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("2_ru6kh")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_5qont"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("3_j07ls")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_ac13h"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("4_ops45")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_v24fn"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("5_tlscp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_l0jsx"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("6_r2del")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_5p7wu"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("7_lh7vw")
+overrides = {
+"boxes_stylebox_disabled": "\"res://art/styles/standard_button/disabled.tres\"",
+"boxes_stylebox_focused": "\"focus.tres\"",
+"boxes_stylebox_hovered": "\"res://art/styles/standard_button/hover.tres\"",
+"boxes_stylebox_normal": "\"res://art/styles/standard_button_box.tres\"",
+"boxes_stylebox_pressed": "\"res://art/styles/standard_button/pressed.tres\"",
+"sounds_focus": "\"res://sound/sfx/Lighthit.wav\"",
+"sounds_hover": "\"res://sound/sfx/Lighthit.wav\"",
+"sounds_pressed": "\"res://sound/sfx/game sounds/smallcoin.wav\""
+}
+
+[sub_resource type="Resource" id="Resource_lywd3"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("8_7iy73")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_wwmj5"]
+script = ExtResource("1_xjnky")
+scene = ExtResource("9_72w3y")
+overrides = {}
+
+[resource]
+script = ExtResource("10_gac83")
+name = "New_File"
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_3o83h"),
+"10": SubResource("Resource_f64po"),
+"11": SubResource("Resource_5qont"),
+"12": SubResource("Resource_ac13h"),
+"13": SubResource("Resource_v24fn"),
+"14": SubResource("Resource_l0jsx"),
+"15": SubResource("Resource_5p7wu"),
+"16": SubResource("Resource_lywd3"),
+"17": SubResource("Resource_wwmj5")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_xjnky")]([])
+metadata/_latest_layer = ""
