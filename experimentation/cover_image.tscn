@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4hjmwclvse"]
+
+[ext_resource type="PackedScene" uid="uid://b6eegepdfdyff" path="res://scenes/ui/menu_screens/main_menu.tscn" id="1_bi6pe"]
+[ext_resource type="Texture2D" uid="uid://6y8027ugmjcm" path="res://art/characters/player/move_other.png" id="2_g2w48"]
+[ext_resource type="Texture2D" uid="uid://0uv02x5kv7ic" path="res://art/items/food/apple2.png" id="3_sgq8p"]
+
+[node name="MainMenu" instance=ExtResource("1_bi6pe")]
+
+[node name="TextureRect6" type="Sprite2D" parent="." index="1"]
+position = Vector2(432, 102)
+rotation = 0.00288296
+scale = Vector2(1.47109, 1.47109)
+texture = ExtResource("3_sgq8p")
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[node name="Title" parent="." index="2"]
+offset_left = 264.0
+offset_top = 53.0
+offset_right = 977.0
+offset_bottom = 454.0
+
+[node name="ButtonContainer" parent="." index="3"]
+visible = false
+
+[node name="CheckPoint" parent="." index="4"]
+visible = false
+
+[node name="TextureRect" type="Sprite2D" parent="." index="6"]
+position = Vector2(376, 440)
+scale = Vector2(0.708889, 0.708889)
+texture = ExtResource("2_g2w48")
+region_enabled = true
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[node name="TextureRect2" type="Sprite2D" parent="." index="7"]
+position = Vector2(849, 374)
+rotation = 0.337687
+scale = Vector2(1.83778, 1.83778)
+texture = ExtResource("3_sgq8p")
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[node name="TextureRect3" type="Sprite2D" parent="." index="8"]
+position = Vector2(656, 421)
+rotation = -0.529007
+scale = Vector2(1.34663, 1.34663)
+texture = ExtResource("3_sgq8p")
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[node name="TextureRect5" type="Sprite2D" parent="." index="9"]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+position = Vector2(893, 535)
+rotation = -0.529007
+scale = Vector2(3.85118, 3.85118)
+texture = ExtResource("3_sgq8p")
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[node name="TextureRect4" type="Sprite2D" parent="." index="10"]
+modulate = Color(0.76662, 0.76662, 0.766619, 1)
+position = Vector2(193, 251)
+rotation = 0.517887
+scale = Vector2(2.15977, 2.15977)
+texture = ExtResource("3_sgq8p")
+region_rect = Rect2(564.688, 1693.25, 531.562, 450.562)
+
+[editable path="CheckPoint"]

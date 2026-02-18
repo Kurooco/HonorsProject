@@ -50,7 +50,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta #* (acorns/6 + 1)
 	var relative_position = position - camera.position
-	if(!Autoload.level_handler.in_rest_level && relative_position.y < -(get_viewport().size.y/zoom/2)):
+	if(!Autoload.level_handler.in_rest_level && relative_position.y < -(get_viewport_rect().size.y/zoom/2)):
 		velocity += get_gravity() * delta * 2
 	
 	# Out of bounds death

@@ -76,5 +76,6 @@ text = "DEBUG: clear"
 stream = ExtResource("3_rbmyy")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
