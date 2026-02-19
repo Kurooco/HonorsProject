@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6fwsw2txrdxs"]
+
+[ext_resource type="PackedScene" uid="uid://cc3818cywkv4i" path="res://experimentation/pipe_right.tscn" id="1_oseyn"]
+
+[node name="Area2D" instance=ExtResource("1_oseyn")]
+rotation = -1.5708

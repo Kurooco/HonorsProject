@@ -75,7 +75,7 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 		fade_in()
 
 
-func restart_level():
+func restart_level(override_position:Vector2 = Vector2.INF):
 	if(Autoload.level_handler.in_rest_level):
 		game_saver.save_level()
 	fade_out()
@@ -91,7 +91,12 @@ func restart_level():
 	
 	var player = get_node_in_group(current_level, "player")
 	var camera = get_node_in_group(current_level, "level_camera")
-	player.position = check_point
+	
+	if(override_position != Vector2.INF):
+		player.position = override_position
+	else:
+		player.position = check_point
+		
 	if(is_instance_valid(camera)):
 		camera.position.x = max(check_point.x, camera.position.x)
 	for i in get_nodes_in_group(current_level, "checkpoint"):

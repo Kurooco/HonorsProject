@@ -62,7 +62,7 @@ x_bounds = Vector2(0, 5)
 y_bounds = Vector2(-2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_2x00t")]
-position = Vector2(3296.19, 209.113)
+position = Vector2(5.52966, 91.7355)
 waiting_for_start = false
 invincible = true
 
@@ -309,8 +309,33 @@ scale = Vector2(1, 0.697531)
 texture = ExtResource("14_f5a8t")
 region_rect = Rect2(417, 124.292, 465, 442.5)
 
+[node name="Tree12" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(2880, -1089)
+scale = Vector2(1, 0.697531)
+texture = ExtResource("14_f5a8t")
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
+[node name="Tree13" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(3501, -1080)
+scale = Vector2(1, 0.54321)
+texture = ExtResource("14_f5a8t")
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
 [node name="Tree11" type="Sprite2D" parent="BackgroundDetails"]
 position = Vector2(2804, -636)
+texture = ExtResource("13_7mcp4")
+region_enabled = true
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
+[node name="Tree14" type="Sprite2D" parent="BackgroundDetails"]
+position = Vector2(3699, -1287)
+texture = ExtResource("13_7mcp4")
+region_enabled = true
+region_rect = Rect2(417, 124.292, 465, 442.5)
+
+[node name="Tree15" type="Sprite2D" parent="BackgroundDetails"]
+z_index = -1
+position = Vector2(3312, -1188)
 texture = ExtResource("13_7mcp4")
 region_enabled = true
 region_rect = Rect2(417, 124.292, 465, 442.5)

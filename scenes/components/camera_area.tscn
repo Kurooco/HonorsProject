@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://h3d3we2bu35y"]
+
+[ext_resource type="PackedScene" uid="uid://ccf81jq8qw3do" path="res://scenes/components/interaction_area.tscn" id="1_3vcgh"]
+[ext_resource type="Script" uid="uid://bmm4w2m53a17b" path="res://camera_area.gd" id="2_eiuqb"]
+
+[node name="CameraArea" instance=ExtResource("1_3vcgh")]
+script = ExtResource("2_eiuqb")
+focus_position = Vector2(0, 0)
+focus_zoom = Vector2(1, 1)
+type = 0
+automatic = true
+show_prompt = false
+
+[connection signal="activated" from="." to="." method="_on_activated"]

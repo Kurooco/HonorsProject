@@ -11,6 +11,7 @@ var screen_height : float
 var out_of_bounds = false
 
 var focused = false
+var focused_on_player = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,7 +22,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(!focused && is_instance_valid(player)):
+	if(!is_instance_valid(player)): return
+	
+	if(focused_on_player):
+		position = player.position
+	elif(!focused):
 		var x_screen = round(player.position.x/screen_width) 
 		var y_screen = round(player.position.y/screen_height)
 		if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen >= x_bounds.x && x_screen <= x_bounds.y):
@@ -45,10 +50,18 @@ func update_position():
 
 func focus(pos:Vector2, z=Vector2(2, 2)):
 	focused = true
+	focused_on_player = false
 	move_tween = create_tween()
 	move_tween.tween_property(self, "position", pos, 2).set_trans(Tween.TRANS_QUAD)
 	move_tween.parallel().tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
 
+func focus_on_player(z=Vector2(1, 1)):
+	focused = true
+	focused_on_player = true
+	move_tween = create_tween()
+	move_tween.tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
+
 func defocus():
 	focused = false
+	focused_on_player = false
 	update_position()
