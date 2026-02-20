@@ -4,3 +4,4 @@
 
 [node name="Area2D" instance=ExtResource("1_oseyn")]
 rotation = -1.5708
+strength = 4000

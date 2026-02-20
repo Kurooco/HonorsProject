@@ -42,6 +42,7 @@ directories/dtl_directory={
 "punk_bird": "res://dialogue/timelines/punk_bird.dtl",
 "purple": "res://dialogue/timelines/purple.dtl",
 "redeem_points": "res://dialogue/timelines/redeem_points.dtl",
+"stuck_in_pipe": "res://dialogue/timelines/stuck_in_pipe.dtl",
 "test": "res://dialogue/timelines/test.dtl"
 }
 variables={
