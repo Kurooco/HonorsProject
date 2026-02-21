@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://lpb20wxn3fq0"]
+[gd_scene load_steps=4 format=3 uid="uid://lpb20wxn3fq0"]
 
 [ext_resource type="Script" uid="uid://d35cdr681t7h4" path="res://experimentation/pipes_mini_game/enemy_variation_2.gd" id="1_i2fty"]
 [ext_resource type="Texture2D" uid="uid://c8cvfr6oddl0f" path="res://art/textures/white_block.png" id="2_bkcdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcdw"]
 
 [node name="EnemyVariation2" type="Area2D" groups=["maze_enemy"]]
 collision_layer = 2
@@ -15,6 +17,8 @@ texture = ExtResource("2_bkcdw")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
-autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bkcdw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

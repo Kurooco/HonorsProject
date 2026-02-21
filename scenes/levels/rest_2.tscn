@@ -159,7 +159,7 @@ polygon = PackedVector2Array(400, -72, 576, -72, 872, 88, 1664, 86, 1664, 342, 6
 polygon = PackedVector2Array(2024, 600, 2024, 984, 200, 984, -608, 984, -608, 536, -520, 536, -520, 792, -80, 792, -80, 624, 32, 624, 32, 416, 664, 416, 1024, 600, 1464, 600, 1720, 600)
 
 [node name="Player" parent="." instance=ExtResource("2_kw3gv")]
-position = Vector2(1816.91, 1956.1)
+position = Vector2(3467.1, 1990.62)
 waiting_for_start = false
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") groups=["level_camera"] instance=ExtResource("4_kw3gv")]
@@ -537,7 +537,6 @@ shape = SubResource("RectangleShape2D_c1ga2")
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("28_dq5tk")]
 music = ExtResource("29_tn5j8")
-mute = true
 
 [connection signal="exit" from="PipeMachine/SubViewportContainer/SubViewport/MiniGame" to="PipeMachine" method="_on_mini_game_exit"]
 [connection signal="restarted" from="PipeMachine/SubViewportContainer/SubViewport/MiniGame" to="PipeMachine" method="_on_mini_game_restarted"]

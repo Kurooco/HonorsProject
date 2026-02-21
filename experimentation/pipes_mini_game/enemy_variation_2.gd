@@ -16,6 +16,12 @@ func _ready() -> void:
 	#global_position = (global_position-map.global_position) - (global_position-map.global_position)%tile_size
 	#print_debug(current_cell)
 
+func start():
+	$Timer.start()
+
+func stop():
+	$Timer.stop()
+
 func is_wall(cell:Vector2i):
 	var enemies = get_tree().get_nodes_in_group("maze_enemy")
 	for e in enemies:
@@ -31,8 +37,6 @@ func _on_timer_timeout() -> void:
 		current_cell = next_move
 		update_position(current_cell)
 		#print_debug(current_cell)
-	else:
-		print_debug("Can't move!")
 
 func update_position(cell):
 	move_tween = create_tween()

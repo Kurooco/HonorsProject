@@ -1,7 +1,7 @@
 extends Node2D
 
 var started = false
-var enabled = true
+var enabled = false
 
 signal won
 signal exit
@@ -14,9 +14,9 @@ func _process(delta: float) -> void:
 		start()
 
 func start():
-	for i in get_children():
+	for i in $Maze.get_children():
 		if i is Area2D:
-			i.set_process(true)
+			i.start()
 	$Player.set_physics_process(true)
 
 func enable():
@@ -25,9 +25,9 @@ func enable():
 	enabled = true
 
 func _on_goal_body_entered(body: Node2D) -> void:
-	for i in get_children():
+	for i in $Maze.get_children():
 		if i is Area2D:
-			i.set_process(false)
+			i.stop()
 	$Player.set_physics_process(false)
 	won.emit()
 	exit.emit()
@@ -37,4 +37,5 @@ func restart():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print_debug("restarting!")
 	call_deferred("restart")
