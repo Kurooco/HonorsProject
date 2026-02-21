@@ -1,4 +1,51 @@
-I've been trying to get out of here for hours, but with no success.
-What is one to do? The only route I haven't tried yet is blocked!
-I wonder if there is something hidden around here that could remove it...
-Tell you what,[pause=.3] if you get us out of here, I'm buying.
+if {pipe_bird_saved} == true:
+	I forgot to thank you for getting me out of that bind earlier. I would have been stuck in there forever if it hadn't been for you.
+	Hey, I could get you a drink and we could talk for a bit if you want.[pause=.3] Sound good?
+	- Thanks, but I have to go.
+		No problem. Stop by again if you ever want to talk.
+	- I would like that!
+		Awesome, let me get us some seats.
+		[signal arg="fade"]
+		[wait time="2.0"]
+		[background arg="res://art/characters/player/talk_scene.png" fade="0.0"]
+		Well, here we are. Two survivors of this place's awful, convoluted plumbing system.
+		A toast to our continued welfare, yes?
+		- Cheers!
+		[wait time="2.0"]
+		So,[pause=.3] tell me,[pause=.3] what exactly brought you to this place? Why did you decide to go exploring the pipes?
+		- I was looking for treasure!
+		- I got destracted.
+		- I could ask you the same question.
+			Ha, me first, huh?[pause=.5] Okay, fine. I dropped my wallet down one of the sinks in the bathroom and thought I could go looking for it by myself.[pause=.5] Boy was I wrong!
+			There was a lot of money in that wallet, too. I wouldn't be surprised if the whole plumbing system was littered with coins.
+			It's alright, I guess. I'm pretty well off all things considered.
+			- How much money do you make?
+				Um, around 100K per year. Why?
+				- WooooOOOooOOOOoow!
+					...
+				- Just curious.
+					Oh, okay. That's nice.
+			- What do you do?
+				I'm a game designer. I make games.
+				Right now me and another guy are working on this one game about a little bird who is trying to find her father. It's a short game, but we're trying to make it as detailed as possible.
+				- Is it going well?
+					Um, it's going okay I guess.[pause=.5] The guy I'm working with is the programmer for the game, and he keeps getting destracted by little things that don't really matter.
+					Take last week, for example. He instisted that we absolutely had to have a entire underground maze level hidden under one of our building interiors. I tried to talk sense into him, but he just kept going on about pipes and arcade mini games...
+					We haven't even decided how the game is going to end![pause=.5] No wonder the guy is dirt poor!
+					- Wow, that sounds rough.
+						Tell me about it.
+				- How does the game end?
+					We haven't decided yet! The programmer that I'm working with keeps on getting destracted!
+					I'm honestly starting to doubt that we'll even be able to implement a proper ending. It's sad, I know, but we just can't agree on how the ending will go.
+					- You should sit down and hash this out. It is VERY important that games have a proper ending.
+						I know, but it's easier said than done...
+		[wait time="3.0"]
+		Well, I've kept you long enough. Thanks for staying and talking a bit, yeah? It was nice getting to know each other a bit.
+		[signal arg="fade"]
+		[wait time="2.0"]
+		[background fade="0.0"]
+else:
+	I've been trying to get out of here for hours, but with no success.
+	What is one to do? The only route I haven't tried yet is blocked!
+	I wonder if there is something hidden around here that could remove it...
+	Tell you what,[pause=.3] if you get us out of here, I'm buying.

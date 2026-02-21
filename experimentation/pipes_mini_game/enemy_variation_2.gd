@@ -9,6 +9,7 @@ var player : CharacterBody2D
 var current_cell : Vector2i
 var visited_cells = {}
 var move_tween : Tween
+var pursuit_radius = 16
 
 func _ready() -> void:
 	if(get_parent() is TileMapLayer):
@@ -49,10 +50,18 @@ func get_path_to_player():
 	visited_cells.clear()
 	visited_cells.set(current_cell, [])
 	cell_queue.append(current_cell)
+	
+	var min_dist = INF
+	var min_path = []
 	while(!cell_queue.is_empty()):
 		var cell = cell_queue.pop_front()
-		if(player.global_position.distance_to(get_cell_global_position(cell)) < 16):
+		var dist = player.global_position.distance_to(get_cell_global_position(cell))
+		if(dist < pursuit_radius):
+			visited_cells[cell].append(cell)
 			return visited_cells[cell]
+		elif(dist < min_dist):
+			min_dist = dist
+			min_path = visited_cells[cell]
 		
 		# Find adjacent
 		for x in range(-1, 2):
@@ -64,7 +73,7 @@ func get_path_to_player():
 						var new_path = visited_cells[cell].duplicate()
 						new_path.append(cell)
 						visited_cells.set(new, new_path)
-	return []
+	return min_path
 		
 func get_cell_global_position(cell:Vector2i):
 	return map.to_global(map.map_to_local(cell))

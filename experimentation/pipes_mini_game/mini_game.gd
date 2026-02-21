@@ -20,7 +20,6 @@ func start():
 	$Player.set_physics_process(true)
 
 func enable():
-	await tree_entered
 	await get_tree().create_timer(1.0).timeout
 	enabled = true
 
