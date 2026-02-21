@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HonorsProject"
-run/main_scene="uid://jip4wup8hkl7"
+run/main_scene="uid://dqxnkajie130b"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://hdnthn7bdrh8"
 config/icon="uid://du5l78yshangn"
