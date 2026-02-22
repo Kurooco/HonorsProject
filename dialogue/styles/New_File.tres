@@ -35,7 +35,10 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_v24fn"]
 script = ExtResource("1_xjnky")
 scene = ExtResource("5_tlscp")
-overrides = {}
+overrides = {
+"autoadvance_progressbar": "false",
+"next_indicator_texture": "\"res://art/textures/white_block.png\""
+}
 
 [sub_resource type="Resource" id="Resource_l0jsx"]
 script = ExtResource("1_xjnky")
@@ -83,4 +86,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_xjnky")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "13"
