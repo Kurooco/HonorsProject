@@ -8,7 +8,7 @@ if {pipe_bird_saved} == true:
 		[signal arg="fade"]
 		[wait time="2.0"]
 		[background arg="res://art/characters/player/talk_scene.png" fade="0.0"]
-		Well, here we are. Two survivors of this place's awful, convoluted plumbing system.
+		Well, here we are\: two survivors of this place's awful, convoluted plumbing system.
 		A toast to our continued welfare, yes?
 		- Cheers!
 		[wait time="2.0"]
@@ -40,7 +40,7 @@ if {pipe_bird_saved} == true:
 				Right now me and another guy are working on this one game about a little bird who is trying to find her father. It's a short game, but we're trying to make it as detailed as possible.
 				- Is it going well?
 					Um, it's going okay I guess.[pause=.5] The guy I'm working with is the programmer for the game, and he keeps getting destracted by little things that don't really matter.
-					Take last week, for example. He instisted that we absolutely had to have a entire underground maze level hidden under one of our building interiors. I tried to talk sense into him, but he just kept going on about pipes and arcade mini games...
+					Take last week, for example. He instisted that we absolutely had to have a entire underground maze level hidden under one of our building's interiors. I tried to talk sense into him, but he just kept going on about pipes and arcade mini games...
 					We haven't even decided how the game is going to end![pause=.5] No wonder the guy is dirt poor!
 					- Wow, that sounds rough.
 						Tell me about it.
