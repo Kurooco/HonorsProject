@@ -7,8 +7,7 @@ var saved_node_references = ["area"]
 var loaded = false
 
 func _ready():
-	if(is_in_group("saveable")):
-		save_children(self)
+	save_children(self, is_in_group("saveable"))
 	area.collision_mask = 5
 	area.collision_layer = 0
 	area.body_entered.connect(_on_area_2d_body_entered)
@@ -22,15 +21,18 @@ func _on_area_2d_body_entered(body):
 		shatter()
 
 func shatter():
+	$GlobalSound.play()
 	for i in range(coin_amount):
 		var coin = load("res://scenes/components/dropped_item.tscn").instantiate()
 		coin.scene = load("res://scenes/level_objects/assist/coin.tscn")
 		coin.global_position = global_position
-		coin.remove_from_group("saveable")
 		Autoload.level_handler.current_level.call_deferred("add_child", coin)
 	queue_free()
 
-func save_children(node):
+func save_children(node, save):
 	for child in node.get_children(true):
-		child.add_to_group("saveable")
-		save_children(child)
+		if(save):
+			child.add_to_group("saveable")
+		else:
+			child.remove_from_group("saveable")
+		save_children(child, save)

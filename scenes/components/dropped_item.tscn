@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhkkoma5ewl8e"]
+[gd_scene load_steps=5 format=3 uid="uid://dhkkoma5ewl8e"]
 
 [ext_resource type="Script" uid="uid://cedh7jq7mh2vo" path="res://scenes/components/dropped_item.gd" id="1_1k24h"]
 [ext_resource type="PackedScene" uid="uid://dy0npjdr7t23n" path="res://scenes/level_objects/assist/coin.tscn" id="2_bnv0t"]
+[ext_resource type="AudioStream" uid="uid://d1cmicma3ggh4" path="res://sound/sfx/game sounds/smallcoin.wav" id="3_d3gfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k24h"]
 size = Vector2(11.1042, 11.1042)
@@ -15,3 +16,9 @@ position = Vector2(-0.552076, -0.447922)
 shape = SubResource("RectangleShape2D_1k24h")
 
 [node name="Coin" parent="." instance=ExtResource("2_bnv0t")]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d3gfk")
+volume_db = 6.0
+pitch_scale = 1.5
+attenuation = 5.46416

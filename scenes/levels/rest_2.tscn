@@ -194,7 +194,7 @@ y_bounds = Vector2(-10, 10)
 position = Vector2(-336, 768)
 
 [node name="Box" parent="." groups=["saveable"] instance=ExtResource("6_4hy2x")]
-position = Vector2(1659, -86)
+position = Vector2(1659, 40)
 metadata/_edit_group_ = true
 
 [node name="DialogueAreas" type="Node2D" parent="."]

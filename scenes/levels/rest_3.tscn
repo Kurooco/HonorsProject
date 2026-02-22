@@ -100,7 +100,7 @@ position = Vector2(5040, 280)
 position = Vector2(5040, -140)
 
 [node name="Fan11" parent="." instance=ExtResource("5_2x00t")]
-position = Vector2(5040, -448)
+position = Vector2(5040, -419)
 rotation = -0.214676
 
 [node name="Fan12" parent="." instance=ExtResource("5_2x00t")]
