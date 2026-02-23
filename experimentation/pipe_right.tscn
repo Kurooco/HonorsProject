@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc3818cywkv4i"]
+[gd_scene load_steps=5 format=3 uid="uid://cc3818cywkv4i"]
 
 [ext_resource type="Script" uid="uid://dbxwgbf7qd2ru" path="res://experimentation/movement_area.gd" id="1_vf8lp"]
 [ext_resource type="Texture2D" uid="uid://d3avdqh6nf0dy" path="res://art/environment/interactive/pipe/pipe_right.png" id="2_asf03"]
+[ext_resource type="AudioStream" uid="uid://30iwe2keter8" path="res://sound/sfx/Flap.wav" id="3_asf03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx26w"]
 size = Vector2(108, 108)
@@ -17,3 +18,11 @@ shape = SubResource("RectangleShape2D_mx26w")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.751)
 texture = ExtResource("2_asf03")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_asf03")
+volume_db = 4.0
+pitch_scale = 0.3
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
