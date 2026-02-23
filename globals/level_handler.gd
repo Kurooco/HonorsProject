@@ -39,13 +39,7 @@ func continue_game():
 	data_loaded.emit()
 	set_level(PlayerStats.saved_level_path, true, PlayerStats.saved_level_position)
 
-func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
-	pause_disabled = false
-	
-	if(fade):
-		fade_out()
-		await fade_ended
-	
+func create_new_level(path:String):
 	if(is_instance_valid(current_level)):
 		if(Autoload.level_handler.in_rest_level):
 			game_saver.save_level()
@@ -58,12 +52,25 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 			PlayerStats.levels_unlocked = level_order.find(packed_level)+2
 	var new_level = packed_level.instantiate()
 	current_level = new_level
+	
 	game_saver.world_scene = new_level
 	if(packed_level in rest_levels):
 		game_saver.load_level()
 		in_rest_level = true
 	else:
 		in_rest_level = false
+	
+	return new_level
+
+func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
+	pause_disabled = false
+	
+	if(fade):
+		fade_out()
+		await fade_ended
+	
+	var new_level = create_new_level(path)
+	
 	var player = get_node_in_group(current_level, "player")
 	if(is_instance_valid(player)):
 		check_point = player.position
@@ -74,6 +81,31 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 	if(fade):
 		fade_in()
 
+func set_level_with_spawn_point(path: String, spawn_point_name:String):
+	pause_disabled = false
+	
+	if(fade):
+		fade_out()
+		await fade_ended
+	
+	create_new_level(path)
+	
+	# Find spawn point
+	var spawn_points = get_nodes_in_group(current_level, "spawn_point")
+	for s in spawn_points:
+		if(s.point_name == spawn_point_name):
+			var spawn_point_position = s.position
+			print_debug(spawn_point_position)
+			var player = get_node_in_group(current_level, "player")
+			if(is_instance_valid(player)):
+				check_point = player.position
+				player.position = spawn_point_position
+			break
+	
+	add_child(current_level)
+	
+	if(fade):
+		fade_in()
 
 func restart_level(override_position:Vector2 = Vector2.INF):
 	if(Autoload.level_handler.in_rest_level):

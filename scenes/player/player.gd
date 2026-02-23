@@ -1,3 +1,4 @@
+@icon("res://art/characters/player/player_single.png")
 extends CharacterBody2D
 class_name Player
 
@@ -28,8 +29,8 @@ var jump_velocity_decline
 @onready var health_component = $HealthComponent
 @onready var animation = $Animation
 
+
 func _ready():
-	print_debug(PlayerStats.total_points)
 	if(invincible):
 		$HurtBox.set_deferred("monitorable", false)
 	Autoload.player = self
@@ -183,7 +184,6 @@ func update_stats():
 	health_component.health = health_component.max_health
 	jump_velocity_decline = BASE_JUMP_VELOCITY_DECLINE + PlayerStats.jumps*-10
 	max_acorns = PlayerStats.acorns + BASE_MAX_ACORNS
-	print(max_acorns)
 
 func make_invincible():
 	health_component.invincible = true
