@@ -92,7 +92,7 @@ const SAVE_ADDON_PATH = "res://GameSaver/save_addon.gd"
 @export var screenshot_viewport : Node
 @export var save_screenshot : bool
 
-var slot_names = ["Slot 1"]
+var slot_names = ["Slot 1", "Autoload Defaults"]
 var meta_keys = ["scene_file_path", "$index", "$parent_index", "$autoload", "owner"]
 var child_delimiter = "$"
 var reference_key_name = "saved_node_references"

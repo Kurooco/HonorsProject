@@ -20,6 +20,7 @@ signal data_loaded
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_saver.clear_temp()
+	game_saver.save_game(1)
 	Autoload.level_handler = self
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
@@ -29,6 +30,7 @@ func new_game():
 	MusicHandler.fade_out(4)
 	Autoload.level_handler.fade_out(Color.BLACK, 4)
 	await Autoload.level_handler.fade_ended
+	game_saver.load_game(1)
 	game_saver.clear_all()
 	data_loaded.emit()
 	set_level("res://scenes/levels/tutorial/tutorial.tscn")
