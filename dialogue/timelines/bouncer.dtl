@@ -1,0 +1,7 @@
+Hey, you can't get in here without an invitation.
+if {membership_paid_for} == true:
+	Oh, wait, you have one?
+	My bad. Right this way, miss.
+	[signal arg="remove_secret_club_door"]
+else:
+	Scram.

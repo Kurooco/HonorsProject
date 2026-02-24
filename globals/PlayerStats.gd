@@ -9,7 +9,7 @@ var saved_level_position : Vector2
 
 var total_points = 0
 var level_points = 0
-var run_points = 0
+var run_points = 1500
 
 signal stat_updated
 

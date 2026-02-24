@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://d03xqtws18ys8"]
+[gd_scene load_steps=34 format=4 uid="uid://d03xqtws18ys8"]
 
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_fdvpl"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_02jrk"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="24_8a2ch"]
 [ext_resource type="AudioStream" uid="uid://clo2sdcml0uvr" path="res://sound/music/BlessedCounterweight.wav" id="24_vbvjq"]
 [ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="27_pwgka"]
+[ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="28_2ls2b"]
 [ext_resource type="PackedScene" uid="uid://behytwiaxnrf3" path="res://scenes/components/spawnpoint.tscn" id="28_lkvke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghlb"]
@@ -76,7 +77,7 @@ invincible = true
 [node name="StaticBody2D" type="StaticBody2D" parent="Collision1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision1/StaticBody2D"]
-polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5100.14, 300, 5096, -824, 1520, -824, 1520, -1256, 1904, -992, 5096, -992, 5096, -1720, 6020, -1720, 6020, -2640, 6540, -2640, 6540, 1400, 3360, 1400, 2480, 1400, -160, 1400, -160, 640, -420, 640, -420, 540, -160, 540)
+polygon = PackedVector2Array(-160, 160, 2800, 160, 3040, 300, 5096, 304, 5096, -496, 5528, -496, 5528, -592, 5096, -592, 5096, -824, 1520, -824, 1520, -1256, 1904, -992, 5096, -992, 5096, -1720, 6020, -1720, 6020, -2640, 6540, -2640, 6540, 1400, 3360, 1400, 2480, 1400, -160, 1400, -160, 640, -420, 640, -420, 540, -160, 540)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collision1"]
 
@@ -452,29 +453,38 @@ position = Vector2(1585.51, 119.984)
 
 [node name="DoorArea" parent="." instance=ExtResource("27_pwgka")]
 position = Vector2(5034.19, -1062.88)
-level_path = "res://scenes/levels/rest_3.tscn"
-spawn_point_name = "b"
+level_path = "res://scenes/levels/secret_club.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
 position = Vector2(50.811, 36.8807)
 shape = SubResource("RectangleShape2D_lkvke")
 
+[node name="Sprite2D" type="Sprite2D" parent="DoorArea"]
+position = Vector2(86.8105, 18.8799)
+scale = Vector2(0.161157, 0.161157)
+texture = ExtResource("28_2ls2b")
+
 [node name="DoorArea2" parent="." instance=ExtResource("27_pwgka")]
-position = Vector2(1692.46, -468.679)
-level_path = "res://scenes/levels/rest_3.tscn"
-spawn_point_name = "a"
+position = Vector2(5464, -568)
+level_path = "res://scenes/levels/secret_box_place.tscn"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2"]
 position = Vector2(50.811, 36.8807)
 shape = SubResource("RectangleShape2D_lkvke")
 
-[node name="Spawnpoint" parent="." instance=ExtResource("28_lkvke")]
-position = Vector2(1974.07, -566.414)
-point_name = "b"
+[node name="Sprite2D" type="Sprite2D" parent="DoorArea2"]
+position = Vector2(86.8105, 18.8799)
+scale = Vector2(0.161157, 0.161157)
+texture = ExtResource("28_2ls2b")
 
 [node name="Spawnpoint2" parent="." instance=ExtResource("28_lkvke")]
-position = Vector2(4343.76, -1194.69)
-point_name = "a"
+position = Vector2(5432, -544)
+point_name = "outside_box_place"
+
+[node name="Spawnpoint3" parent="." instance=ExtResource("28_lkvke")]
+position = Vector2(5004.87, -1066.92)
+point_name = "outside_club"
 
 [editable path="BackgroundDetails/LeafyPlant4"]
 [editable path="BackgroundDetails/LeafyPlant4/Flower4"]

@@ -8,11 +8,14 @@ func _ready():
 
 func _on_activated():
 	if(Dialogic.current_timeline == null && !in_conversation):
+		if(one_shot):
+			disabled = true
 		in_conversation = true
 		Dialogic.start(timeline)
 		var camera = get_tree().get_first_node_in_group("level_camera")
-		camera.focus(global_position)
-		Dialogic.timeline_ended.connect(camera.defocus)
+		if(is_instance_valid(camera)):
+			camera.focus(global_position)
+			Dialogic.timeline_ended.connect(camera.defocus)
 
 func _on_cooldown_timer_timeout():
 	in_conversation = false

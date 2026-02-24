@@ -1,0 +1,18 @@
+if {membership_paid_for} == true:
+	What are you looking at?
+else:
+	I've got a membership pass for the secret club that meets around here. Thought you might be interested.
+	I'm not just goint to give it over for free, though. It wasn't easy getting this thing.
+	I'm gonna need 500 Style Points. Deal?
+	- No way!
+		Suit yourself.
+	- Alright. (Pay 500 SP)
+		if {PlayerStats.run_points} >= 500:
+			set {membership_paid_for} = true
+			do PlayerStats.add_points_permanent(-500)
+			Excellent. Trust me, those were the best 1000 Style Point you ever spent.
+			[sound path="res://sound/sfx/game sounds/upgrade.wav" volume="0.0"]
+			Here you go. Don't lose it; I don't have extras.
+		else:
+			Nice try, but I'm all too familiar with your type. You can't pay for this thing in installments; I want the money NOW.
+			Come back when you actually have the points with you. Then we can talk.

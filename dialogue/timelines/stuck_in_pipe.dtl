@@ -31,7 +31,7 @@ if {pipe_bird_saved} == true:
 			Destracted, huh? What were you doing before all of this happened?
 			[wait time="2.0"]
 			Looking for your dad? Wow, that's rough. I bet you had one hell of a time making your way up here from the fields.
-			I've heard that pretty much all of the farmland around Bird City is razor-automated now. It's almost as bad as the city itself by this point.
+			I've heard that pretty much all of the farmland around Bird City is razor-automated now. It's almost as bad as the city itself by this point. Flying anywhere is becoming nearly impossible.
 			Anyway, I hope you find your dad soon. Considering that you made it this far, you should be able to manage Bird City okay.
 			Just be careful for the hawks around there, yeah? Small birds like you are a perfectly-sized meal for them.
 		- I could ask you the same question.
@@ -47,10 +47,9 @@ if {pipe_bird_saved} == true:
 					How much money do you make?
 					- Nothing, I live off the land.
 						That must be tough to do these days with all of the razors and junk like that flying around.
-						I'm telling you, the world has gone insane. There is no way a anyone can survive in this sort of environment for long. Migration was already difficult enough before this crap started happening!
-						I really wish things could just go back to being the way were.
-						It's ignorant of me, I know. Surely there were still challenges back in the good ol' days as well.
-						Still,[pause=.5] it had to have been better than this, or at least more survivable...
+						I admire your persistence, though. Maybe one day I'll live like you.
+						Some days, after a long day at work, the thought of leaving the city and flying south to the country side doesn't seem half bad, even if it would be potential fatal.
+						There's no way I'm actually doing that, but it is fun to daydream about it sometimes.
 					- Around the same amount.
 						Really? What do you do?
 						- I fly around and the money just sort of appears out of nowhere.

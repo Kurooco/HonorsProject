@@ -91,7 +91,7 @@ func _physics_process(delta):
 		activate_interactive_areas()
 	var areas_inside = false
 	for area in $DetectionArea.get_overlapping_areas():
-		if(area is InteractionArea && area.show_prompt && !area.activated_since_entering):
+		if(area is InteractionArea && area.show_prompt && !area.activated_since_entering && !area.disabled):
 			areas_inside = true
 	$Prompt.visible = areas_inside
 	
