@@ -68,7 +68,7 @@ x_bounds = Vector2(0, 5)
 y_bounds = Vector2(-2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_2x00t")]
-position = Vector2(4749.91, -1274.62)
+position = Vector2(87.34, -97.3857)
 waiting_for_start = false
 invincible = true
 
