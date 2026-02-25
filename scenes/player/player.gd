@@ -55,7 +55,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta * 2
 	
 	# Out of bounds death
-	if(!Autoload.level_handler.in_rest_level && (global_position.y > camera.global_position.y + get_viewport_rect().size.y/zoom/2.0
+	if(Autoload.level_handler.in_run_level && (global_position.y > camera.global_position.y + get_viewport_rect().size.y/zoom/2.0
 		|| position.x < camera.position.x - get_viewport_rect().size.x/zoom)):
 		$HealthComponent.kill()
 		set_physics_process(false)

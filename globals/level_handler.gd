@@ -2,6 +2,7 @@ extends Node
 
 @export var opening_scene : PackedScene
 @export var rest_levels : Array[PackedScene]
+@export var run_levels : Array[PackedScene]
 @export var level_order : Array[PackedScene]
 @onready var fade = $FadeCanvas/Fade
 @onready var upgrade_menu = $UpgradeMenu
@@ -12,6 +13,7 @@ var current_level : Node = null
 var fade_tween : Tween = null
 var check_point = Vector2.ZERO
 var in_rest_level = false
+var in_run_level = false
 var last_rest_level_visited : PackedScene = null
 
 signal fade_ended
@@ -25,6 +27,7 @@ func _ready():
 	set_level(opening_scene.resource_path)
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 
+
 func new_game():
 	$NicePiano.play()
 	MusicHandler.fade_out(4)
@@ -36,10 +39,12 @@ func new_game():
 	set_level("res://scenes/levels/tutorial/tutorial.tscn")
 	Autoload.level_handler.fade_in(2)
 
+
 func continue_game():
 	game_saver.load_game(0)
 	data_loaded.emit()
 	set_level(PlayerStats.saved_level_path, true, PlayerStats.saved_level_position)
+
 
 func create_new_level(path:String):
 	if(is_instance_valid(current_level)):
@@ -62,7 +67,10 @@ func create_new_level(path:String):
 	else:
 		in_rest_level = false
 	
+	in_run_level = packed_level in run_levels
+	
 	return new_level
+
 
 func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 	pause_disabled = false
@@ -71,17 +79,18 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 		fade_out()
 		await fade_ended
 	
-	var new_level = create_new_level(path)
+	create_new_level(path)
 	
 	var player = get_node_in_group(current_level, "player")
 	if(is_instance_valid(player)):
 		check_point = player.position
 		if(player_position != Vector2.INF):
 			player.position = player_position
-	add_child(new_level)
+	add_child(current_level)
 	
 	if(fade):
 		fade_in()
+
 
 func set_level_with_spawn_point(path: String, spawn_point_name:String):
 	pause_disabled = false
@@ -108,6 +117,7 @@ func set_level_with_spawn_point(path: String, spawn_point_name:String):
 	
 	if(fade):
 		fade_in()
+
 
 func restart_level(override_position:Vector2 = Vector2.INF):
 	if(Autoload.level_handler.in_rest_level):
@@ -141,6 +151,7 @@ func restart_level(override_position:Vector2 = Vector2.INF):
 	
 	fade_in()
 
+
 func fade_out(color=Color.BLACK, duration=1.0):
 	fade.show()
 	if(is_instance_valid(fade_tween)):
@@ -148,6 +159,7 @@ func fade_out(color=Color.BLACK, duration=1.0):
 	fade_tween = create_tween()
 	fade_tween.tween_property(fade, "color", color, duration)
 	fade_tween.tween_callback(fade_ended.emit)
+
 
 func fade_in(duration=1.0):
 	var transparent_color = Color(fade.color.r, fade.color.g, fade.color.b, 0)
@@ -157,6 +169,7 @@ func fade_in(duration=1.0):
 	fade_tween.tween_property(fade, "color", transparent_color, duration)
 	fade_tween.tween_callback(fade_ended.emit)
 	fade_tween.tween_callback(fade.hide)
+
 
 func get_node_in_group(node, group) -> Node:
 	var children : Array = node.get_children().duplicate()
@@ -168,6 +181,7 @@ func get_node_in_group(node, group) -> Node:
 			return group_child
 	return null
 
+
 func get_nodes_in_group(node, group) -> Array[Node]:
 	var children : Array = node.get_children().duplicate()
 	var group_children : Array[Node] = []
@@ -176,6 +190,7 @@ func get_nodes_in_group(node, group) -> Array[Node]:
 			group_children.append(child)
 		group_children.append_array(get_nodes_in_group(child, group))
 	return group_children
+
 
 func handle_dialogic_signals(name):
 	match name:
@@ -187,9 +202,11 @@ func handle_dialogic_signals(name):
 			await get_tree().create_timer(1).timeout
 			fade_in()
 
+
 func claim_checkpoint(p: Vector2):
 	check_point = p
-	
+
+
 func switch_level(level: String):
 	fade_out()
 	await fade_ended
@@ -197,18 +214,22 @@ func switch_level(level: String):
 	set_level(level)
 	fade_in()
 
+
 func end_level(level:String):
 	Autoload.player.make_invincible()
 	$LevelWinScreen.show()
 	await get_tree().create_timer(2).timeout
 	switch_level(level)
 
+
 func show_save_menu():
 	var menu = load("res://scenes/ui/save_menu/save_menu.tscn").instantiate()
 	add_child(menu)
 
+
 func pause_game(pause: bool):
 	set_pause_subtree(current_level, pause)
+
 
 # Credit needed: found this on a reddit form
 func set_pause_subtree(root: Node, pause: bool) -> void:
@@ -232,6 +253,7 @@ func set_pause_subtree(root: Node, pause: bool) -> void:
 func _on_dialogic_signal_handler_matched_key(key: Variant, value: Variant) -> void:
 	var p = load(value).instantiate()
 	get_tree().current_scene.add_child(p)
+
 
 func has_saved_game():
 	return $GameSaver.get_save_metadata(0) != null

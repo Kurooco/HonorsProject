@@ -35,6 +35,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 script = ExtResource("1_2e1au")
 opening_scene = ExtResource("2_no36m")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp"), ExtResource("2_a54fh")])
+run_levels = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("6_vgd30"), ExtResource("2_ssum3"), ExtResource("10_tc4uq")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3"), ExtResource("2_a54fh"), ExtResource("10_tc4uq")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
