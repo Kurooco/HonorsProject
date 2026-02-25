@@ -40,7 +40,6 @@ func _process(delta):
 	
 		#Out of bounds
 		if(y_screen > y_bounds.y && !out_of_bounds):
-			print_debug(y_screen)
 			Autoload.level_handler.restart_level()
 			out_of_bounds = true
 		
@@ -69,6 +68,5 @@ func defocus():
 	update_position()
 
 func revert_focus():
-	print_debug("hi folks")
 	focused = false
 	focused_on_player = false
