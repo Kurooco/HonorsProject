@@ -52,7 +52,7 @@ directories/dtl_directory={
 variables={
 "beer_given": false,
 "has_beer": false,
-"membership_paid_for": false,
+"membership_paid_for": true,
 "met_seller": false,
 "pipe_bird_saved": false,
 "table_broken": false

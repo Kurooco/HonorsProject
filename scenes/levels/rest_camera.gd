@@ -13,6 +13,8 @@ var out_of_bounds = false
 var focused = false
 var focused_on_player = false
 
+signal position_updated
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_position = position
@@ -38,6 +40,7 @@ func _process(delta):
 	
 		#Out of bounds
 		if(y_screen > y_bounds.y && !out_of_bounds):
+			print_debug(y_screen)
 			Autoload.level_handler.restart_level()
 			out_of_bounds = true
 		
@@ -47,6 +50,7 @@ func update_position():
 	move_tween = create_tween()
 	move_tween.tween_property(self, "position", current_position, .5).set_trans(Tween.TRANS_CIRC)
 	move_tween.parallel().tween_property(self, "zoom", Vector2(1,1), .5).set_trans(Tween.TRANS_CIRC)
+	move_tween.finished.connect(revert_focus)
 
 func focus(pos:Vector2, z=Vector2(2, 2)):
 	focused = true
@@ -62,6 +66,9 @@ func focus_on_player(z=Vector2(1, 1)):
 	move_tween.tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
 
 func defocus():
+	update_position()
+
+func revert_focus():
+	print_debug("hi folks")
 	focused = false
 	focused_on_player = false
-	update_position()
