@@ -16,7 +16,7 @@ scale = Vector2(0.6875, 0.6875)
 texture = ExtResource("2_bkcdw")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bkcdw")
