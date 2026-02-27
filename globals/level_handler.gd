@@ -146,6 +146,7 @@ func restart_level(override_position:Vector2 = Vector2.INF):
 	for i in get_nodes_in_group(current_level, "checkpoint"):
 		if(i.position == check_point):
 			i.claim(false)
+			player.waiting_for_start = true
 	PlayerStats.run_points = PlayerStats.level_points
 	add_child(new_level)
 	

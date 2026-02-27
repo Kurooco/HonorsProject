@@ -4,6 +4,7 @@ extends Camera2D
 @export var x_bounds : Vector2
 @export var y_bounds : Vector2
 var current_position : Vector2
+var standard_zoom : Vector2
 var origin_point : Vector2
 var move_tween : Tween
 var screen_width : float
@@ -21,6 +22,7 @@ func _ready():
 	origin_point = current_position
 	screen_width = get_viewport_rect().size.x/zoom.x
 	screen_height = get_viewport_rect().size.y/zoom.y	
+	standard_zoom = zoom
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,7 +50,7 @@ func update_position():
 		move_tween.kill()
 	move_tween = create_tween()
 	move_tween.tween_property(self, "position", current_position, .5).set_trans(Tween.TRANS_CIRC)
-	move_tween.parallel().tween_property(self, "zoom", Vector2(1,1), .5).set_trans(Tween.TRANS_CIRC)
+	move_tween.parallel().tween_property(self, "zoom", standard_zoom, .5).set_trans(Tween.TRANS_CIRC)
 	move_tween.finished.connect(revert_focus)
 
 func focus(pos:Vector2, z=Vector2(2, 2)):
