@@ -37,6 +37,7 @@ directories/dtl_directory={
 "chef": "res://dialogue/timelines/chef.dtl",
 "cool_bird": "res://dialogue/timelines/cool_bird.dtl",
 "date": "res://dialogue/timelines/date.dtl",
+"end": "res://dialogue/timelines/end.dtl",
 "fans": "res://dialogue/timelines/fans.dtl",
 "informer": "res://dialogue/timelines/informer.dtl",
 "little_bird": "res://dialogue/timelines/little_bird.dtl",
@@ -84,6 +85,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
+audio/type_sound_bus="Sound"
 
 [display]
 

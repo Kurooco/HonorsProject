@@ -37,6 +37,7 @@ func _ready():
 	update_stats()
 	Dialogic.signal_event.connect(handle_dialogic_signals)
 	Dialogic.timeline_started.connect(set_physics_process.bind(false))
+	Dialogic.timeline_started.connect($Animation.play.bind("stand"))
 	Dialogic.timeline_ended.connect(set_physics_process.bind(true))
 
 func _physics_process(delta):
