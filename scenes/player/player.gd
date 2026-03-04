@@ -121,7 +121,7 @@ func _physics_process(delta):
 		else:
 			animation.play("stand")
 	else:
-		if(velocity.y > 0):#&& !animation.is_playing()):
+		if(velocity.y > 50):#&& !animation.is_playing()):
 			animation.play("fall")
 	
 	$Tears.emitting = jump_velocity > -200

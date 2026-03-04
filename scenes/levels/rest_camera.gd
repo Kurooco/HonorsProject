@@ -31,20 +31,24 @@ func _process(delta):
 	if(focused_on_player):
 		position = player.position
 	elif(!focused):
-		var x_screen = round(player.position.x/screen_width) 
-		var y_screen = round(player.position.y/screen_height)
-		if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen >= x_bounds.x && x_screen <= x_bounds.y):
-			current_position.x = x_screen * screen_width
-			update_position()
-		if(abs(player.position.y - current_position.y) > screen_height/2 && y_screen >= y_bounds.x && y_screen <= y_bounds.y):
-			current_position.y = y_screen * screen_height
-			update_position()
+		set_camera_position()
 	
-		#Out of bounds
-		if(y_screen > y_bounds.y && !out_of_bounds):
-			Autoload.level_handler.restart_level()
-			out_of_bounds = true
-		
+
+func set_camera_position():
+	var x_screen = round(player.position.x/screen_width) 
+	var y_screen = round(player.position.y/screen_height)
+	if(abs(player.position.x - current_position.x) > screen_width/2 && x_screen >= x_bounds.x && x_screen <= x_bounds.y):
+		current_position.x = x_screen * screen_width
+		update_position()
+	if(abs(player.position.y - current_position.y) > screen_height/2 && y_screen >= y_bounds.x && y_screen <= y_bounds.y):
+		current_position.y = y_screen * screen_height
+		update_position()
+	
+	#Out of bounds
+	if(y_screen > y_bounds.y && !out_of_bounds):
+		Autoload.level_handler.restart_level()
+		out_of_bounds = true
+
 func update_position():
 	if(is_instance_valid(move_tween)):
 		move_tween.kill()
@@ -67,6 +71,7 @@ func focus_on_player(z=Vector2(1, 1)):
 	move_tween.tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
 
 func defocus():
+	set_camera_position()
 	update_position()
 
 func revert_focus():

@@ -33,7 +33,7 @@ bg_color = Color(0.587775, 0.838827, 3.85046e-07, 1)
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_2e1au")
-opening_scene = ExtResource("2_no36m")
+opening_scene = ExtResource("2_a54fh")
 rest_levels = Array[PackedScene]([ExtResource("3_np1er"), ExtResource("2_np1er"), ExtResource("5_ixpvp"), ExtResource("2_a54fh"), ExtResource("2_no36m")])
 run_levels = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("6_vgd30"), ExtResource("2_ssum3"), ExtResource("10_tc4uq")])
 level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er"), ExtResource("6_vgd30"), ExtResource("2_np1er"), ExtResource("2_ssum3"), ExtResource("2_a54fh"), ExtResource("10_tc4uq")])
@@ -41,27 +41,38 @@ level_order = Array[PackedScene]([ExtResource("5_jd30t"), ExtResource("3_np1er")
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_cp8yn")
 
-[node name="Points" type="Label" parent="HUD"]
-offset_left = 6.0
-offset_top = 47.0
-offset_right = 211.0
-offset_bottom = 70.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 10
-text = "Points: 0"
+[node name="Health" type="TextureProgressBar" parent="HUD"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 104.0
+scale = Vector2(1.3, 1.3)
+value = 50.0
+texture_under = ExtResource("7_ixpvp")
+texture_progress = ExtResource("7_ixpvp")
+tint_under = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="AcornProgress" type="TextureProgressBar" parent="HUD"]
 texture_repeat = 2
 offset_left = 4.0
-offset_top = 27.0
+offset_top = 43.0
 offset_right = 129.0
-offset_bottom = 77.0
-scale = Vector2(0.7, 0.7)
+offset_bottom = 93.0
+scale = Vector2(1.3, 1.3)
 value = 50.0
 texture_under = ExtResource("6_ixpvp")
 texture_progress = ExtResource("6_ixpvp")
 tint_under = Color(0.0846899, 0.0846899, 0.0846899, 1)
 tint_progress = Color(0.724643, 0.724643, 0.724643, 1)
+
+[node name="Points" type="Label" parent="HUD"]
+offset_left = 6.0
+offset_top = 87.0
+offset_right = 211.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+text = "Points: 0"
 
 [node name="AcornEnergy" type="ProgressBar" parent="HUD"]
 anchors_preset = 7
@@ -79,17 +90,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_j3dl1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ixpvp")
 value = 50.0
 show_percentage = false
-
-[node name="Health" type="TextureProgressBar" parent="HUD"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 104.0
-offset_bottom = 104.0
-scale = Vector2(0.7, 0.7)
-value = 50.0
-texture_under = ExtResource("7_ixpvp")
-texture_progress = ExtResource("7_ixpvp")
-tint_under = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="FadeCanvas" type="CanvasLayer" parent="."]
 layer = 10
