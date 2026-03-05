@@ -583,4 +583,4 @@ rotation = 2.39285
 
 [node name="LevelEnd" parent="." index="27" instance=ExtResource("22_12cdj")]
 position = Vector2(38296, 40)
-next_level = "res://scenes/levels/rest_3.tscn"
+next_level = "res://scenes/levels/ending.tscn"
