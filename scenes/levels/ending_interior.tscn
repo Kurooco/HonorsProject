@@ -1,16 +1,67 @@
-[gd_scene load_steps=3 format=4 uid="uid://dnnfmj4ikfg0"]
+[gd_scene load_steps=10 format=4 uid="uid://dnnfmj4ikfg0"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_jq4ls"]
+[ext_resource type="Texture2D" uid="uid://dri1fqgog3acn" path="res://art/environment/ground/sand.png" id="1_larl5"]
+[ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="2_6c7cy"]
 [ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="2_larl5"]
+[ext_resource type="Texture2D" uid="uid://bse11sv2htxbd" path="res://art/environment/background/new_hires.png" id="3_y6q66"]
+[ext_resource type="Script" uid="uid://pb0u4cra7uok" path="res://scenes/levels/rest_camera.gd" id="4_gyno4"]
+[ext_resource type="Texture2D" uid="uid://0vg5mfle32ql" path="res://art/environment/interactive/tempting_cheese.png" id="7_rwljo"]
+[ext_resource type="Texture2D" uid="uid://c63d2k0jup8a" path="res://art/environment/interactive/cage.png" id="8_abp4f"]
+[ext_resource type="Texture2D" uid="uid://3rd0dpn6srf1" path="res://art/textures/chains.png" id="9_herea"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.355314, 0.355314, 0.355314, 1)
+offset_left = -768.0
+offset_top = -1112.0
+offset_right = 1752.0
+offset_bottom = 440.0
+texture = ExtResource("1_larl5")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-400, 168)
+scale = Vector2(0.225714, 0.225714)
+texture = ExtResource("2_6c7cy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(104, 184)
+scale = Vector2(0.483095, 0.483095)
+texture = ExtResource("3_y6q66")
+
 [node name="Player" parent="." instance=ExtResource("1_jq4ls")]
-position = Vector2(130.679, 543.025)
+position = Vector2(-400, 192)
 waiting_for_start = false
 
 [node name="Boxes" parent="." instance=ExtResource("2_larl5")]
-tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAA=")
+position = Vector2(-600, -360)
+tile_map_data = PackedByteArray("AAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAgAAAAAAAAAJAAIAAgAAAAAAAAAJAAMAAgAAAAAAAAAJAAUAAgAAAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAD9/wUAAgAAAAAAAAD//wMAAgAAAAAAAAD+/wMAAgAAAAAAAAD9/wMAAgAAAAAAAAAKAAUAAgAAAAAAAAALAAUAAgAAAAAAAAAMAAUAAgAAAAAAAAANAAUAAgAAAAAAAAAOAAUAAgAAAAAAAAAPAAUAAgAAAAAAAAAQAAUAAgAAAAAAAAARAAUAAgAAAAAAAAASAAUAAgAAAAAAAAAKAAMAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAgAAAAAAAAAAAAQAAgAAAAAAAAATAAUAAgAAAAAAAAATAAQAAgAAAAAAAAATAAMAAgAAAAAAAAATAAIAAgAAAAAAAAATAAEAAgAAAAAAAAATAAAAAgAAAAAAAAASAAAAAgAAAAAAAAARAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAALAAAAAgAAAAAAAAAMAP//AgAAAAAAAAAMAP7/AgAAAAAAAAAMAP3/AgAAAAAAAAAMAPz/AgAAAAAAAAAMAPv/AgAAAAAAAAAMAPr/AgAAAAAAAAARAP//AgAAAAAAAAARAP7/AgAAAAAAAAARAP3/AgAAAAAAAAARAPz/AgAAAAAAAAARAPv/AgAAAAAAAAARAPr/AgAAAAAAAAA=")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(599.068, 358.67)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("4_gyno4")
+player = NodePath("../Player")
+x_bounds = Vector2(-1, 1)
+y_bounds = Vector2(-1, 1)
+
+[node name="Cheese" type="Sprite2D" parent="."]
+position = Vector2(1200, 216)
+rotation = 0.137881
+scale = Vector2(0.374881, 0.374881)
+texture = ExtResource("7_rwljo")
+
+[node name="Cage" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(1200, -72)
+scale = Vector2(0.374881, 0.374881)
+texture = ExtResource("8_abp4f")
+
+[node name="TextureRect2" type="TextureRect" parent="Cage"]
+offset_left = -128.04
+offset_top = -2198.03
+offset_right = 31.9597
+offset_bottom = -254.03
+texture = ExtResource("9_herea")
+expand_mode = 1
+stretch_mode = 1

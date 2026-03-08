@@ -21,8 +21,9 @@ func _ready():
 	current_position = position
 	origin_point = current_position
 	screen_width = get_viewport_rect().size.x/zoom.x
-	screen_height = get_viewport_rect().size.y/zoom.y	
+	screen_height = get_viewport_rect().size.y/zoom.y
 	standard_zoom = zoom
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
