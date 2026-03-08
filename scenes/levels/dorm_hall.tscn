@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdbmqlqpjax1k"]
+
+[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_phmid"]
+[ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_y5oi4"]
+[ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_3cluh"]
+[ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_n6ms7"]
+[ext_resource type="Texture2D" uid="uid://v5efoa0yt4nd" path="res://art/textures/dirty_boring_wallpaper.png" id="3_3cluh"]
+[ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="4_3cluh"]
+[ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="6_c5hnc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ivy8"]
+size = Vector2(48, 104)
+
+[node name="DormHall" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
+script = ExtResource("1_y5oi4")
+textured_collision_groups = {
+NodePath("Brick"): ExtResource("2_3cluh")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.716296, 0.716296, 0.716296, 1)
+offset_left = -400.0
+offset_top = -248.0
+offset_right = 15680.0
+offset_bottom = 4632.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_3cluh")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_phmid")]
+position = Vector2(-224, 128)
+waiting_for_start = false
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n6ms7")]
+zoom = Vector2(1.5, 1.5)
+player = NodePath("../Player")
+x_bounds = Vector2(-1, 1)
+
+[node name="Brick" type="Node2D" parent="."]
+modulate = Color(0.537011, 0.537011, 0.537011, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Brick"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brick/StaticBody2D"]
+polygon = PackedVector2Array(-352, 184, -352, -176, 1120, -176, 1120, 184, -352, 184, -352, 264, 1272, 264, 1272, -288, -448, -288, -448, 264, -352, 264)
+
+[node name="DoorArea" parent="." instance=ExtResource("6_c5hnc")]
+position = Vector2(-281.98, 136.755)
+level_path = "res://scenes/levels/ending_interior.tscn"
+spawn_point_name = "top"
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="DoorArea"]
+scale = Vector2(0.147143, 0.147143)
+texture = ExtResource("4_3cluh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0ivy8")
+
+[node name="DoorArea2" parent="." instance=ExtResource("6_c5hnc")]
+position = Vector2(46.0201, 136.755)
+level_path = "res://scenes/levels/ending_interior.tscn"
+spawn_point_name = "top"
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="DoorArea2"]
+scale = Vector2(0.147143, 0.147143)
+texture = ExtResource("4_3cluh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0ivy8")

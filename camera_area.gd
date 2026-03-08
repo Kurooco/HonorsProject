@@ -18,4 +18,4 @@ func _on_activated() -> void:
 		1:
 			get_tree().get_first_node_in_group("level_camera").focus(focus_position, focus_zoom)
 		2:
-			get_tree().get_first_node_in_group("level_camera").focus_on_player(focus_zoom)
+			get_tree().get_first_node_in_group("level_camera").focus_on_player(focus_zoom, 10)

@@ -65,13 +65,19 @@ func focus(pos:Vector2, z=Vector2(2, 2)):
 	move_tween.tween_property(self, "position", pos, 2).set_trans(Tween.TRANS_QUAD)
 	move_tween.parallel().tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
 
-func focus_on_player(z=Vector2(1, 1)):
+func focus_on_player(z=Vector2(1, 1), pos_smooth=0):
+	if(focused_on_player): return
+	if(pos_smooth > 0):
+		position_smoothing_enabled = true
+		position_smoothing_speed = pos_smooth
 	focused = true
 	focused_on_player = true
 	move_tween = create_tween()
 	move_tween.tween_property(self, "zoom", z, 2).set_trans(Tween.TRANS_QUAD)
 
 func defocus():
+	if(!focused): return
+	position_smoothing_enabled = false
 	set_camera_position()
 	update_position()
 

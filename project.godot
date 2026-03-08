@@ -34,6 +34,7 @@ directories/dtl_directory={
 "big_bird": "res://dialogue/timelines/big_bird.dtl",
 "bouncer": "res://dialogue/timelines/bouncer.dtl",
 "boyfriend": "res://dialogue/timelines/boyfriend.dtl",
+"caged": "res://dialogue/timelines/caged.dtl",
 "chef": "res://dialogue/timelines/chef.dtl",
 "cool_bird": "res://dialogue/timelines/cool_bird.dtl",
 "date": "res://dialogue/timelines/date.dtl",
@@ -65,7 +66,7 @@ variables={
 layout/style_list=["res://dialogue/styles/New_File.tres"]
 layout/default_style="res://dialogue/styles/New_File.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.02
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
