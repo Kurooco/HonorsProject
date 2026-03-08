@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var cage: Sprite2D = $Cage
+@onready var cage: AnimatableBody2D = $Cage
 @onready var camera: Camera2D = $Camera2D
 var loaded = false
 

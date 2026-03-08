@@ -1,8 +1,8 @@
-extends Sprite2D
+extends AnimatableBody2D
 
 #var class_of_object = "Sprite2D"
-@onready var bottom_collision: CollisionShape2D = $Bottom/BottomCollision
-@onready var door: StaticBody2D = $Door
+@onready var bottom_collision: CollisionShape2D = $BottomCollision
+@onready var door: CollisionShape2D = $Door
 var loaded = false
 
 signal finished_moving
