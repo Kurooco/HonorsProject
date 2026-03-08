@@ -26,7 +26,8 @@ MusicHandler="*res://globals/MusicHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
+"work_voice": "res://dialogue/work_voice.dch"
 }
 directories/dtl_directory={
 "acorn_dealer": "res://dialogue/timelines/acorn_dealer.dtl",

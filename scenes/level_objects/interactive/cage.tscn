@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6ie6l867qtap"]
+
+[ext_resource type="Texture2D" uid="uid://c63d2k0jup8a" path="res://art/environment/interactive/cage.png" id="1_u2afw"]
+[ext_resource type="Script" uid="uid://ijv4fps0tdyd" path="res://scenes/levels/cage.gd" id="2_6vchq"]
+[ext_resource type="Texture2D" uid="uid://3rd0dpn6srf1" path="res://art/textures/chains.png" id="3_1mta0"]
+[ext_resource type="Texture2D" uid="uid://qti1nxk2460r" path="res://art/environment/interactive/small_cage.png" id="4_216j7"]
+[ext_resource type="Script" uid="uid://cobq73dmok7hr" path="res://scenes/components/interaction_area.gd" id="5_kd2tc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mnd7"]
+size = Vector2(1119.69, 52.6803)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l84sb"]
+size = Vector2(52.6803, 533.503)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcjtp"]
+size = Vector2(180.721, 533.503)
+
+[node name="Cage" type="Sprite2D" groups=["saveable"]]
+editor_description = "This is the cage"
+z_index = 3
+scale = Vector2(0.374881, 0.374881)
+texture = ExtResource("1_u2afw")
+script = ExtResource("2_6vchq")
+metadata/_edit_group_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 0.000793457
+offset_top = -2198.03
+offset_right = 160.0
+offset_bottom = -254.03
+texture = ExtResource("3_1mta0")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-426.802, 256.081, -426.802, -234.741, 661.544, -234.741, 661.544, -277.421, -469.482, -277.421, -469.482, 256.081)
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+
+[node name="BottomCollision" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(101.701, 293.762)
+shape = SubResource("RectangleShape2D_6mnd7")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+z_index = -1
+z_as_relative = false
+position = Vector2(-171.959, 0)
+scale = Vector2(0.677834, 1)
+texture = ExtResource("4_216j7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.585063, 0.585062, 0.585062, 1)
+z_index = -1
+z_as_relative = false
+position = Vector2(212.163, 0)
+texture = ExtResource("1_u2afw")
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2(-0.000244141, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(682.884, -2.38419e-05)
+shape = SubResource("RectangleShape2D_l84sb")
+
+[node name="DoorSprite" type="Sprite2D" parent="Door"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(937.727, 0)
+scale = Vector2(0.677834, 1)
+texture = ExtResource("4_216j7")
+
+[node name="DoorCloser" type="Area2D" parent="."]
+script = ExtResource("5_kd2tc")
+automatic = true
+show_prompt = false
+one_shot = true
+disabled = true
+metadata/_custom_type_script = "uid://cobq73dmok7hr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCloser"]
+position = Vector2(80.3606, 10.6703)
+shape = SubResource("RectangleShape2D_vcjtp")
+
+[connection signal="activated" from="DoorCloser" to="." method="_on_door_closer_activated"]
