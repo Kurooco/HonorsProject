@@ -160,8 +160,12 @@ func load_level():
 	for item in saved_game.item_states:
 		if(item["scene_file_path"] != ""):
 			new_scene = load(item["scene_file_path"]).instantiate()
-		else:
+		elif("class_of_object" in item):
 			new_scene = ClassDB.instantiate(item["class_of_object"])
+			new_scene.set("script", item["script"])
+		else:
+			var type = item["script"].get_instance_base_type()
+			new_scene = ClassDB.instantiate(type)
 			new_scene.set("script", item["script"])
 		
 		var set_position = false
