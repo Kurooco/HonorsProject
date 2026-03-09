@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdbmqlqpjax1k"]
+[gd_scene load_steps=10 format=3 uid="uid://bdbmqlqpjax1k"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_phmid"]
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_y5oi4"]
 [ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_3cluh"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_n6ms7"]
 [ext_resource type="Texture2D" uid="uid://v5efoa0yt4nd" path="res://art/textures/dirty_boring_wallpaper.png" id="3_3cluh"]
+[ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="4_0ivy8"]
 [ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="4_3cluh"]
 [ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="6_c5hnc"]
 
@@ -26,6 +27,10 @@ offset_bottom = 4632.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_3cluh")
 stretch_mode = 1
+
+[node name="SaveArea" parent="." instance=ExtResource("4_0ivy8")]
+z_index = 0
+position = Vector2(-136.712, 150.126)
 
 [node name="Player" parent="." instance=ExtResource("1_phmid")]
 position = Vector2(-224, 128)

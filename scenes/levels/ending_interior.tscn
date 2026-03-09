@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dnnfmj4ikfg0"]
+[gd_scene load_steps=20 format=4 uid="uid://dnnfmj4ikfg0"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_jq4ls"]
 [ext_resource type="Texture2D" uid="uid://dri1fqgog3acn" path="res://art/environment/ground/sand.png" id="1_larl5"]
@@ -24,6 +24,9 @@ size = Vector2(187.306, 169.101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eg0y"]
 size = Vector2(1548.5, 294.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yby5"]
+size = Vector2(73, 61)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_yn3ce")
@@ -113,6 +116,14 @@ point_name = "top"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea"]
 position = Vector2(1654.25, -1200)
 shape = SubResource("RectangleShape2D_1eg0y")
+
+[node name="DoorArea" parent="." instance=ExtResource("5_1yby5")]
+position = Vector2(1569, 171)
+level_path = "res://scenes/ui/computer.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2(-1, 45)
+shape = SubResource("RectangleShape2D_1yby5")
 
 [connection signal="activated" from="Cheese/InteractionArea" to="." method="_on_interaction_area_activated"]
 [connection signal="matched" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched"]

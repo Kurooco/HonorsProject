@@ -60,7 +60,6 @@ shape = SubResource("RectangleShape2D_vcjtp")
 
 [node name="Door" type="CollisionShape2D" parent="."]
 position = Vector2(682.884, -2.38419e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_l84sb")
 
 [node name="DoorSprite" type="Sprite2D" parent="Door"]
@@ -71,12 +70,10 @@ texture = ExtResource("4_216j7")
 
 [node name="BottomCollision" type="CollisionShape2D" parent="."]
 position = Vector2(101.701, 293.762)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6mnd7")
 disabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-426.802, 256.081, -426.802, -234.741, 661.544, -234.741, 661.544, -277.421, -469.482, -277.421, -469.482, 256.081)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

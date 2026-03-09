@@ -6,6 +6,7 @@ var lives = 0
 var levels_unlocked = 0
 var saved_level_path : String = ""
 var saved_level_position : Vector2
+var nighttime = true
 
 var total_points = 0
 var level_points = 0

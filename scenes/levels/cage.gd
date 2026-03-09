@@ -33,6 +33,8 @@ func _on_door_closer_activated() -> void:
 		move_up(10)
 	else:
 		move_down(10)
+	await finished_moving
+	open_door(true)
 
 func move_down(time=1.0):
 	move(152, time)

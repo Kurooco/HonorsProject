@@ -8,6 +8,7 @@ var loaded = false
 func _ready() -> void:
 	if(loaded):
 		$Cheese.queue_free()
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_interaction_area_activated() -> void:
-	camera.focus_on_player(Vector2(2, 2), 10)
+	#camera.focus_on_player(Vector2(2, 2), 10)
 	cage.move_down(.2)
 	await get_tree().create_timer(2).timeout
 	Dialogic.start("caged")

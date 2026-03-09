@@ -3,6 +3,7 @@ extends Camera2D
 @export var player : Node
 @export var x_bounds : Vector2
 @export var y_bounds : Vector2
+@export var position_update_time = .5
 var current_position : Vector2
 var standard_zoom : Vector2
 var origin_point : Vector2
@@ -54,8 +55,8 @@ func update_position():
 	if(is_instance_valid(move_tween)):
 		move_tween.kill()
 	move_tween = create_tween()
-	move_tween.tween_property(self, "position", current_position, .5).set_trans(Tween.TRANS_CIRC)
-	move_tween.parallel().tween_property(self, "zoom", standard_zoom, .5).set_trans(Tween.TRANS_CIRC)
+	move_tween.tween_property(self, "position", current_position, position_update_time).set_trans(Tween.TRANS_CIRC)
+	move_tween.parallel().tween_property(self, "zoom", standard_zoom, position_update_time).set_trans(Tween.TRANS_CIRC)
 	move_tween.finished.connect(revert_focus)
 
 func focus(pos:Vector2, z=Vector2(2, 2)):
