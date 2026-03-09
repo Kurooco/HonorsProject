@@ -58,3 +58,21 @@ func _on_invest_pressed() -> void:
 func return_investment(amount, company_name):
 	money += amount
 	write_line("You got $"+str(amount)+" from you investment in "+company_name+"!")
+
+
+func _on_invest_2_pressed() -> void:
+	var first = ["Super", "Excellent", "Troubled", "Frank", "Tabular", "Double", "Supreme", "Nice", "Ligit"]
+	var second = ["Nova", "AI", "Tech", "Solutions", "Power", "Greed"]
+	var third = ["co", "inc"]
+	var company_name = first.pick_random()+second.pick_random()+" "+third.pick_random()
+	if(randi()% 2 == 0):
+		write_line("You invested in "+company_name+", and the company turned out to be a huge success!")
+		var timer = Timer.new()
+		timer.autostart = true
+		timer.one_shot = false
+		timer.wait_time = randi_range(5, 15)
+		var amount = randi_range(50, 250)
+		timer.timeout.connect(return_investment.bind(amount, company_name))
+		add_child(timer)
+	else:
+		write_line("You invested in "+company_name+", and the company failed immediately afterwards.")

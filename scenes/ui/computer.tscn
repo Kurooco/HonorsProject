@@ -80,6 +80,14 @@ text = "Invest"
 script = SubResource("GDScript_3xbw5")
 cost = 200
 
+[node name="Invest2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Risky Invest"
+script = SubResource("GDScript_3xbw5")
+cost = 1000
+
 [node name="MoneyCounter" type="Label" parent="."]
 layout_mode = 1
 offset_right = 252.0
@@ -105,3 +113,4 @@ editable = false
 [connection signal="pressed" from="VBoxContainer/Lotto" to="." method="_on_lotto_pressed"]
 [connection signal="pressed" from="VBoxContainer/Bonds" to="." method="_on_bonds_pressed"]
 [connection signal="pressed" from="VBoxContainer/Invest" to="." method="_on_invest_pressed"]
+[connection signal="pressed" from="VBoxContainer/Invest2" to="." method="_on_invest_2_pressed"]
