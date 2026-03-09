@@ -1,16 +1,28 @@
-[gd_scene load_steps=7 format=4 uid="uid://7vo1cciygwqo"]
+[gd_scene load_steps=5 format=3 uid="uid://7vo1cciygwqo"]
 
-[ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="1_3xbw5"]
-[ext_resource type="Shader" uid="uid://c8d3a42enni21" path="res://experimentation/pixelate.gdshader" id="1_6s28j"]
-[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_wibaa"]
-[ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="4_m4iso"]
+[ext_resource type="Theme" uid="uid://c1jcd8ilftnd7" path="res://art/styles/computer.tres" id="1_6s28j"]
+[ext_resource type="Script" uid="uid://lul2ils6ogaf" path="res://scenes/ui/computer.gd" id="1_wibaa"]
+[ext_resource type="FontFile" uid="uid://bv22jh7u7qo6w" path="res://art/fonts/vt323/VT323-Regular.ttf" id="3_3xbw5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xbw5"]
-size = Vector2(4533, 82)
+[sub_resource type="GDScript" id="GDScript_3xbw5"]
+resource_name = "cost_button"
+script/source = "extends Button
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6s28j"]
-shader = ExtResource("1_6s28j")
-shader_parameter/pix_size = 2
+@export var cost : int
+
+
+func _ready():
+	text = \"($\"+str(cost)+\") \"+text
+	pressed.connect(charge.bind(cost))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	disabled = $\"../..\".money < cost
+	
+
+func charge(amount):
+	$\"../..\".money -= amount
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,53 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Boxes" parent="." instance=ExtResource("1_3xbw5")]
-position = Vector2(-576, -328)
-tile_map_data = PackedByteArray("AAAVAAAAAAAAAAAAAgAXAAAAAAAAAAAAAgAYAAQAAAAAAAAAAgAaAAIAAAAAAAAAAgAbAAMAAAAAAAAAAgAdAAQAAAAAAAAAAgAbAAAAAAAAAAAAAgAYAAEAAAAAAAAAAgAUAAIAAAAAAAAAAgAVAAUAAAAAAAAAAgAdAAIAAAAAAAAAAgA=")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -336.0
-offset_top = -161.0
-offset_right = -66.0
-offset_bottom = -28.0
-theme_override_font_sizes/font_size = 100
-text = "Hello!"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 896.479
-offset_top = 23.1246
-offset_right = 1918.48
-offset_bottom = 292.125
-theme_override_font_sizes/font_size = 100
-text = "Welcome to your new home"
-
-[node name="Player" parent="." instance=ExtResource("1_wibaa")]
-position = Vector2(-398.594, -254.136)
-waiting_for_start = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-576, -328)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2205.5, 680)
-shape = SubResource("RectangleShape2D_3xbw5")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-z_index = 10
-material = SubResource("ShaderMaterial_6s28j")
-offset_right = 1200.0
-offset_bottom = 712.0
-
-[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_m4iso")]
-player = NodePath("../Player")
-x_bounds = Vector2(0, 30)
-position_update_time = 0.0
+script = ExtResource("1_wibaa")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
@@ -74,4 +40,68 @@ layer = -1
 z_index = -5
 offset_right = 1184.0
 offset_bottom = 704.0
-color = Color(0.392094, 0.307932, 0.778234, 1)
+color = Color(0.342254, 0.318909, 0.80641, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 88.0
+offset_right = 1080.0
+offset_bottom = 608.0
+theme_override_constants/separation = 20
+
+[node name="MakeMoney" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Make Money!"
+
+[node name="Lotto" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Enter Lotto"
+script = SubResource("GDScript_3xbw5")
+cost = 2
+
+[node name="Bonds" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Buy Bonds"
+script = SubResource("GDScript_3xbw5")
+cost = 20
+
+[node name="Invest" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Invest"
+script = SubResource("GDScript_3xbw5")
+cost = 200
+
+[node name="MoneyCounter" type="Label" parent="."]
+layout_mode = 1
+offset_right = 252.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("3_3xbw5")
+theme_override_font_sizes/font_size = 70
+text = "Money: $0"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = 680.0
+offset_bottom = 408.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3xbw5")
+theme_override_font_sizes/font_size = 20
+text = "Let's get to work!
+"
+editable = false
+
+[connection signal="pressed" from="VBoxContainer/MakeMoney" to="." method="_on_make_money_pressed"]
+[connection signal="pressed" from="VBoxContainer/Lotto" to="." method="_on_lotto_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bonds" to="." method="_on_bonds_pressed"]
+[connection signal="pressed" from="VBoxContainer/Invest" to="." method="_on_invest_pressed"]

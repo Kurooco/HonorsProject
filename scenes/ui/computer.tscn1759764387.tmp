@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://7vo1cciygwqo"]
+
+[ext_resource type="Theme" uid="uid://c1jcd8ilftnd7" path="res://art/styles/computer.tres" id="1_6s28j"]
+[ext_resource type="Script" uid="uid://lul2ils6ogaf" path="res://scenes/ui/computer.gd" id="1_wibaa"]
+[ext_resource type="FontFile" uid="uid://bv22jh7u7qo6w" path="res://art/fonts/vt323/VT323-Regular.ttf" id="3_3xbw5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wibaa")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+z_index = -5
+offset_right = 1184.0
+offset_bottom = 704.0
+color = Color(0.342254, 0.318909, 0.80641, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 88.0
+offset_right = 1080.0
+offset_bottom = 608.0
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Make Money!"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_6s28j")
+text = "Enter Lotto"
+
+[node name="MoneyCounter" type="Label" parent="."]
+layout_mode = 1
+offset_right = 252.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("3_3xbw5")
+theme_override_font_sizes/font_size = 70
+text = "Money: $0"
