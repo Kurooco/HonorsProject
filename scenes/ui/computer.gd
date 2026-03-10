@@ -3,14 +3,21 @@ extends Control
 var money = 0
 var displayed_money = 0.0
 var lines = 0
+var money_per_sec = 0
 
 func _ready() -> void:
 	pass
 
 
 func _process(delta: float) -> void:
-	displayed_money = money#lerp(displayed_money, float(money), 1 - pow(.05, delta))
-	$MoneyCounter.text = "Money: $"+str(int(displayed_money))
+	var ori_string = str(money)
+	var new_string = ""
+	for c in range(ori_string.length()-1, -1, -1):
+		new_string += ori_string[ori_string.length()-1-c]
+		if(c % 3 == 0 && c > 0):
+			new_string += ","
+	displayed_money = new_string#lerp(displayed_money, float(money), 1 - pow(.05, delta))
+	$MoneyCounter.text = "Money: $"+str(displayed_money)
 
 
 func _on_make_money_pressed() -> void:
@@ -49,13 +56,7 @@ func _on_invest_pressed() -> void:
 	var third = ["co", "inc"]
 	var company_name = first.pick_random()+second.pick_random()+" "+third.pick_random()
 	write_line("You invested in "+company_name+"!")
-	var timer = Timer.new()
-	timer.autostart = true
-	timer.one_shot = false
-	timer.wait_time = randi_range(5, 15)
-	var amount = randi_range(5, 10)
-	timer.timeout.connect(return_investment.bind(amount, company_name))
-	add_child(timer)
+	money_per_sec += randi_range(1, 3)
 	
 func return_investment(amount, company_name):
 	money += amount
@@ -63,18 +64,16 @@ func return_investment(amount, company_name):
 
 
 func _on_invest_2_pressed() -> void:
-	var first = ["Super", "Excellent", "Troubled", "Frank", "Tabular", "Double", "Supreme", "Nice", "Ligit"]
+	var first = ["Powerful", "Greedy", "Super", "Excellent", "Troubled", "Frank", "Tabular", "Double", "Supreme", "Nice", "Ligit"]
 	var second = ["Nova", "AI", "Tech", "Solutions", "Power", "Greed"]
 	var third = ["co", "inc"]
 	var company_name = first.pick_random()+second.pick_random()+" "+third.pick_random()
 	if(randi()% 2 == 0):
-		write_line("You invested in "+company_name+", and the company turned out to be a huge success!")
-		var timer = Timer.new()
-		timer.autostart = true
-		timer.one_shot = false
-		timer.wait_time = randi_range(5, 15)
-		var amount = randi_range(50, 250)
-		timer.timeout.connect(return_investment.bind(amount, company_name))
-		add_child(timer)
+		write_line("You invested in "+company_name+", and the company was a huge success!")
+		money_per_sec += randi_range(30, 80)
 	else:
 		write_line("You invested in "+company_name+", and the company failed immediately afterwards.")
+
+
+func _on_timer_timeout() -> void:
+	money += money_per_sec
