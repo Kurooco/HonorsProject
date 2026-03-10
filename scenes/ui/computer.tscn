@@ -86,7 +86,7 @@ focus_mode = 0
 theme = ExtResource("1_6s28j")
 text = "Risky Invest"
 script = SubResource("GDScript_3xbw5")
-cost = 1000
+cost = 1
 
 [node name="MoneyCounter" type="Label" parent="."]
 layout_mode = 1

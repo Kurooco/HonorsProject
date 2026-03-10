@@ -1,6 +1,7 @@
 extends Control
 
 var money = 0
+var displayed_money = 0.0
 var lines = 0
 
 func _ready() -> void:
@@ -8,7 +9,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	$MoneyCounter.text = "Money: $"+str(money)
+	displayed_money = money#lerp(displayed_money, float(money), 1 - pow(.05, delta))
+	$MoneyCounter.text = "Money: $"+str(int(displayed_money))
 
 
 func _on_make_money_pressed() -> void:
