@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_sm5sp"]
 [ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="3_sm5sp"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="4_ehc5a"]
-[ext_resource type="Texture2D" uid="uid://dstdne7cff5wk" path="res://art/environment/background/bed.png" id="7_ehc5a"]
+[ext_resource type="Texture2D" uid="uid://bjibd1tsbhnah" path="res://art/environment/background/bed2.png" id="7_ww8ox"]
 
 [sub_resource type="Gradient" id="Gradient_0ivy8"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -103,11 +103,11 @@ waiting_for_start = false
 z_index = -2
 position = Vector2(168, 48)
 scale = Vector2(0.36, 0.36)
-texture = ExtResource("7_ehc5a")
+texture = ExtResource("7_ww8ox")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(-168, 48)
 scale = Vector2(0.36, 0.36)
-texture = ExtResource("7_ehc5a")
+texture = ExtResource("7_ww8ox")
 flip_h = true

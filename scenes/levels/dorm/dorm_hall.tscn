@@ -107,3 +107,21 @@ texture = SubResource("GradientTexture1D_x66ua")
 [node name="Spawnpoint" parent="." instance=ExtResource("9_x66ua")]
 position = Vector2(-8, 40)
 point_name = "201"
+
+[node name="DoorArea3" parent="." instance=ExtResource("6_c5hnc")]
+z_index = -1
+position = Vector2(1030.02, 40.755)
+level_path = "res://scenes/levels/dorm/dorm_room2.tscn"
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="DoorArea3"]
+scale = Vector2(0.147143, 0.147143)
+texture = ExtResource("4_3cluh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea3"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0ivy8")
+
+[node name="Spawnpoint2" parent="." instance=ExtResource("9_x66ua")]
+position = Vector2(976, 40)
+point_name = "204"

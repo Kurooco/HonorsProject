@@ -54,7 +54,8 @@ directories/dtl_directory={
 "redeem_points": "res://dialogue/timelines/redeem_points.dtl",
 "secret_dialogue": "res://dialogue/timelines/secret_dialogue.dtl",
 "stuck_in_pipe": "res://dialogue/timelines/stuck_in_pipe.dtl",
-"test": "res://dialogue/timelines/test.dtl"
+"test": "res://dialogue/timelines/test.dtl",
+"vivian": "res://dialogue/timelines/vivian.dtl"
 }
 variables={
 "beer_given": false,

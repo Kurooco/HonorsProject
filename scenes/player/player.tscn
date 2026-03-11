@@ -214,6 +214,7 @@ shape = SubResource("RectangleShape2D_p47bc")
 debug_color = Color(0.719305, 0, 0.0153673, 0.42)
 
 [node name="Prompt" type="Sprite2D" parent="."]
+visible = false
 z_index = 5
 position = Vector2(-1.90735e-06, -56)
 scale = Vector2(0.58, 0.58)
