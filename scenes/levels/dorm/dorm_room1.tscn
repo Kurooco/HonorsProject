@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmgtl70xtv5qi"]
+
+[ext_resource type="PackedScene" uid="uid://br3g4kmw21nuo" path="res://scenes/levels/dorm/dorm_room_base.tscn" id="1_u540v"]
+[ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_jesry"]
+[ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="3_jf830"]
+[ext_resource type="Texture2D" uid="uid://dnfprnnpjp02q" path="res://art/characters/birds.png" id="4_pulcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7gjk"]
+size = Vector2(58, 74)
+
+[node name="Node2D" node_paths=PackedStringArray("textured_collision_groups") instance=ExtResource("1_u540v")]
+textured_collision_groups = {
+NodePath("."): ExtResource("2_jesry")
+}
+
+[node name="DialogueArea" parent="." index="7" instance=ExtResource("3_jf830")]
+timeline = "redeem_points"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea" index="1"]
+position = Vector2(83, 100)
+shape = SubResource("RectangleShape2D_x7gjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueArea" index="2"]
+z_index = 1
+position = Vector2(106.268, 109.625)
+scale = Vector2(0.155512, 0.155512)
+texture = ExtResource("4_pulcw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(604.875, 420.125, 384.75, 381.375)

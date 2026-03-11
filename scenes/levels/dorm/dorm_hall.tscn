@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdbmqlqpjax1k"]
+[gd_scene load_steps=13 format=3 uid="uid://bdbmqlqpjax1k"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_phmid"]
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_y5oi4"]
@@ -8,9 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://fcpunjvlwbxr" path="res://scenes/player/save_area.tscn" id="4_0ivy8"]
 [ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="4_3cluh"]
 [ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="6_c5hnc"]
+[ext_resource type="PackedScene" uid="uid://behytwiaxnrf3" path="res://scenes/components/spawnpoint.tscn" id="9_x66ua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ivy8"]
 size = Vector2(48, 104)
+
+[sub_resource type="Gradient" id="Gradient_0ivy8"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x66ua"]
+gradient = SubResource("Gradient_0ivy8")
+width = 100
 
 [node name="DormHall" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
 script = ExtResource("1_y5oi4")
@@ -20,6 +28,7 @@ NodePath("Brick"): ExtResource("2_3cluh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.716296, 0.716296, 0.716296, 1)
+z_index = -5
 offset_left = -400.0
 offset_top = -248.0
 offset_right = 15680.0
@@ -33,7 +42,7 @@ z_index = 0
 position = Vector2(-136.712, 150.126)
 
 [node name="Player" parent="." instance=ExtResource("1_phmid")]
-position = Vector2(-224, 128)
+position = Vector2(-216, 48)
 waiting_for_start = false
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_n6ms7")]
@@ -47,10 +56,11 @@ modulate = Color(0.537011, 0.537011, 0.537011, 1)
 [node name="StaticBody2D" type="StaticBody2D" parent="Brick"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brick/StaticBody2D"]
-polygon = PackedVector2Array(-352, 184, -352, -176, 1120, -176, 1120, 184, -352, 184, -352, 264, 1272, 264, 1272, -288, -448, -288, -448, 264, -352, 264)
+polygon = PackedVector2Array(-352, -80, 1120, -80, 1120, 88, -352, 88, -352, 264, 1272, 264, 1272, -288, -448, -288, -448, 264, -352, 264)
 
 [node name="DoorArea" parent="." instance=ExtResource("6_c5hnc")]
-position = Vector2(-281.98, 136.755)
+z_index = -1
+position = Vector2(-281.98, 40.755)
 level_path = "res://scenes/levels/ending_interior.tscn"
 spawn_point_name = "top"
 metadata/_edit_group_ = true
@@ -64,9 +74,9 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0ivy8")
 
 [node name="DoorArea2" parent="." instance=ExtResource("6_c5hnc")]
-position = Vector2(46.0201, 136.755)
-level_path = "res://scenes/levels/ending_interior.tscn"
-spawn_point_name = "top"
+z_index = -1
+position = Vector2(46.0201, 40.755)
+level_path = "res://scenes/levels/dorm/dorm_room1.tscn"
 metadata/_edit_group_ = true
 
 [node name="Door" type="Sprite2D" parent="DoorArea2"]
@@ -76,3 +86,24 @@ texture = ExtResource("4_3cluh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0ivy8")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 1184.0
+offset_top = -244.0
+offset_right = 1348.0
+offset_bottom = 1342.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_x66ua")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 1184.0
+offset_top = 100.0
+offset_right = 1348.0
+offset_bottom = 1686.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_x66ua")
+
+[node name="Spawnpoint" parent="." instance=ExtResource("9_x66ua")]
+position = Vector2(-8, 40)
+point_name = "201"
