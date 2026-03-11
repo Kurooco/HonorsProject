@@ -30,7 +30,7 @@ func _on_make_money_pressed() -> void:
 
 func _on_lotto_pressed() -> void:
 	if(randi() % 1000 == 0):
-		money += 10000
+		money += 1000000
 		write_line("HOLY COWBIRD YOU WON THE LOTTO!!!!!!")
 	else:
 		write_line("Stop wasting your money and get back to work.")
