@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://birlf7s2yb26r"]
+[gd_scene load_steps=9 format=4 uid="uid://birlf7s2yb26r"]
 
+[ext_resource type="Script" uid="uid://ct3hywcvp3kqm" path="res://scenes/levels/dorm/dream.gd" id="1_478u1"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_fn8qj"]
 [ext_resource type="Shader" uid="uid://dhfkiv8nvtwnc" path="res://dream.gdshader" id="2_3qtbf"]
 [ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="3_3qtbf"]
@@ -9,7 +10,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l0c8q"]
 shader = ExtResource("2_3qtbf")
 
-[node name="Dream1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0cdb"]
+size = Vector2(325.025, 421.316)
+
+[node name="Dream1" type="Node2D" node_paths=PackedStringArray("wake_up_area")]
+script = ExtResource("1_478u1")
+wake_up_area = NodePath("Area2D")
 
 [node name="Player" parent="." instance=ExtResource("1_fn8qj")]
 position = Vector2(286.949, 304.511)
@@ -47,3 +53,9 @@ texture = ExtResource("4_l0c8q")
 position = Vector2(239.396, 348.514)
 scale = Vector2(0.61849, 0.61849)
 texture = ExtResource("5_e0cdb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3360, 416)
+shape = SubResource("RectangleShape2D_e0cdb")

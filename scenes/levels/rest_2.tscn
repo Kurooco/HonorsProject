@@ -99,6 +99,7 @@ func _on_mini_game_won() -> void:
 		pipe_block.queue_free()
 		pipe_bird_free.disabled = false
 
+
 func _on_mini_game_exit() -> void:
 	var camera = get_tree().get_first_node_in_group(\"level_camera\")
 	camera.focus_on_player(Vector2(1, 1))
@@ -106,9 +107,11 @@ func _on_mini_game_exit() -> void:
 	replace_game()
 	back_button_layer.hide()
 
+
 func _on_mini_game_restarted() -> void:
 	var new_game = replace_game()
 	new_game.enable()
+
 
 func replace_game():
 	var new_game = load(mini_game.scene_file_path).instantiate()
@@ -151,7 +154,7 @@ animations = [{
 size = Vector2(227.662, 253.017)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s0pu"]
-size = Vector2(761.831, 374.508)
+size = Vector2(696, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ui7"]
 size = Vector2(5.96326, 20)
@@ -301,7 +304,7 @@ disabled = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueAreas/PipeBirdFree"]
-position = Vector2(163, -42.6038)
+position = Vector2(163, -2.60381)
 shape = SubResource("RectangleShape2D_dq5tk")
 
 [node name="LittleBird" type="RigidBody2D" parent="DialogueAreas"]
@@ -423,7 +426,7 @@ shape = SubResource("RectangleShape2D_c1ga2")
 position = Vector2(3372.87, 1396.23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/CameraArea3"]
-position = Vector2(78.2119, 552.521)
+position = Vector2(71.1299, 547.77)
 shape = SubResource("RectangleShape2D_4s0pu")
 
 [node name="CameraArea4" parent="CameraAreas" instance=ExtResource("23_6glpk")]

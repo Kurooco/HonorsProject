@@ -92,7 +92,7 @@ func set_level(path: String, fade=false, player_position:Vector2=Vector2.INF):
 		fade_in()
 
 
-func set_level_with_spawn_point(path: String, spawn_point_name:String):
+func set_level_with_spawn_point(path: String, spawn_point_name:String, fade=true):
 	pause_disabled = false
 	
 	if(fade):

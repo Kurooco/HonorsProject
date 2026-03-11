@@ -7,7 +7,7 @@ var money_per_sec = 0
 var time = 0.0
 
 func _ready() -> void:
-	pass
+	time = 0.0
 
 
 func _process(delta: float) -> void:

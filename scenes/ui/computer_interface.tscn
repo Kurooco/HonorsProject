@@ -1,0 +1,179 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckfxhsagrwbgk"]
+
+[ext_resource type="Script" uid="uid://lul2ils6ogaf" path="res://scenes/ui/computer.gd" id="1_2fps6"]
+[ext_resource type="Theme" uid="uid://c1jcd8ilftnd7" path="res://art/styles/computer.tres" id="2_cord8"]
+[ext_resource type="FontFile" uid="uid://bv22jh7u7qo6w" path="res://art/fonts/vt323/VT323-Regular.ttf" id="3_6lxve"]
+[ext_resource type="Shader" uid="uid://c8d3a42enni21" path="res://experimentation/pixelate.gdshader" id="4_ph60y"]
+
+[sub_resource type="GDScript" id="GDScript_3xbw5"]
+resource_name = "cost_button"
+script/source = "extends Button
+
+@export var cost : int
+@export var buy_name : String
+
+func _ready():
+	var ori_string = str(cost)
+	var new_string = \"\"
+	for c in range(ori_string.length()-1, -1, -1):
+		new_string += ori_string[ori_string.length()-1-c]
+		if(c % 3 == 0 && c > 0):
+			new_string += \",\"
+	text = \"($\"+new_string+\") \"+buy_name
+	pressed.connect(charge.bind(cost))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	disabled = $\"../..\".money < cost
+	
+
+func charge(amount):
+	$\"../..\".money -= amount
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46aje"]
+shader = ExtResource("4_ph60y")
+shader_parameter/pix_size = 2
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fps6")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+z_index = -5
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.342254, 0.318909, 0.80641, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 88.0
+offset_right = 1104.0
+offset_bottom = 608.0
+theme_override_constants/separation = 20
+
+[node name="MakeMoney" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Make Money!"
+
+[node name="Lotto" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Enter Lotto"
+script = SubResource("GDScript_3xbw5")
+cost = 2
+buy_name = "Enter Lotto"
+
+[node name="Bonds" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Buy Bonds"
+script = SubResource("GDScript_3xbw5")
+cost = 20
+
+[node name="Invest" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Invest"
+script = SubResource("GDScript_3xbw5")
+cost = 200
+
+[node name="Invest2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Risky Invest"
+script = SubResource("GDScript_3xbw5")
+cost = 1000
+
+[node name="Company" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Buy Company"
+script = SubResource("GDScript_3xbw5")
+cost = 80000
+
+[node name="City" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Buy City
+"
+script = SubResource("GDScript_3xbw5")
+cost = 700000
+
+[node name="Country" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_cord8")
+text = "Buy Country"
+script = SubResource("GDScript_3xbw5")
+cost = 5000000
+
+[node name="MoneyCounter" type="Label" parent="."]
+layout_mode = 1
+offset_right = 252.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("3_6lxve")
+theme_override_font_sizes/font_size = 70
+text = "Money: $0"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 720.0
+offset_bottom = 408.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6lxve")
+theme_override_font_sizes/font_size = 20
+text = "Let's get to work!
+"
+editable = false
+
+[node name="MoneyTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Clock" type="Label" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 573.0
+offset_right = 1127.0
+offset_bottom = 623.0
+theme_override_fonts/font = ExtResource("3_6lxve")
+theme_override_font_sizes/font_size = 50
+text = "9:00am"
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_46aje")
+layout_mode = 0
+offset_right = 1192.0
+offset_bottom = 712.0
+mouse_filter = 2
+
+[connection signal="pressed" from="VBoxContainer/MakeMoney" to="." method="_on_make_money_pressed"]
+[connection signal="pressed" from="VBoxContainer/Lotto" to="." method="_on_lotto_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bonds" to="." method="_on_bonds_pressed"]
+[connection signal="pressed" from="VBoxContainer/Invest" to="." method="_on_invest_pressed"]
+[connection signal="pressed" from="VBoxContainer/Invest2" to="." method="_on_invest_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Company" to="." method="_on_company_pressed"]
+[connection signal="pressed" from="VBoxContainer/City" to="." method="_on_city_pressed"]
+[connection signal="pressed" from="VBoxContainer/Country" to="." method="_on_country_pressed"]
+[connection signal="timeout" from="MoneyTimer" to="." method="_on_timer_timeout"]

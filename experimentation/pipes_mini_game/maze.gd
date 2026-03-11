@@ -12,5 +12,5 @@ func _ready() -> void:
 			new_enemy.global_position = Vector2(cell*tile_size) + Vector2(tile_size/2, tile_size/2)
 			new_enemy.current_cell = cell
 			new_enemy.player = player
-			add_child(new_enemy)
+			call_deferred("add_child", new_enemy)
 			set_cell(cell, 1, Vector2i.ZERO)

@@ -7,6 +7,7 @@ func _ready() -> void:
 	if(!PlayerStats.nighttime):
 		$Window.frame = 1
 		$Vivian.queue_free()
+		$BedArea.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

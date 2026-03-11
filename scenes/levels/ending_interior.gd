@@ -8,7 +8,7 @@ var loaded = false
 func _ready() -> void:
 	if(loaded):
 		$Cheese.queue_free()
-	$ComputerArea.disabled = PlayerStats.nighttime
+	$ComputerArea.disabled = false#PlayerStats.nighttime
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -59,7 +59,7 @@ texture = ExtResource("2_6c7cy")
 [node name="DoorArea" parent="Door2" instance=ExtResource("5_1yby5")]
 position = Vector2(59.4414, -47.0996)
 scale = Vector2(4.43039, 4.43039)
-level_path = "res://scenes/levels/dorm_hall.tscn"
+level_path = "res://scenes/levels/dorm/dorm_hall.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2/DoorArea"]
 position = Vector2(-11.3998, 13.1198)
