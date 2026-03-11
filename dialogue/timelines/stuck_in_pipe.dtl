@@ -30,9 +30,9 @@ if {pipe_bird_saved} == true:
 		- I got distracted.
 			Distracted, huh? What were you doing before all of this happened?
 			[wait time="2.0"]
-			Looking for your dad? Wow, that's rough. I bet you had one hell of a time making your way up here from the fields.
+			Striking out on your own? Wow, that's rough. I bet you had one hell of a time making your way up here from the fields.
 			I've heard that pretty much all of the farmland around Bird City is razor-automated now. It's almost as bad as the city itself by this point. Flying anywhere is becoming nearly impossible.
-			Anyway, I hope you find your dad soon. Considering that you made it this far, you should be able to manage Bird City okay.
+			Anyway, I hope you find what you are looking for. Considering that you made it this far, you should be able to manage Bird City okay.
 			Just be careful for the hawks around there, yeah? Small birds like you are a perfectly-sized meal for them.
 		- I could ask you the same question.
 			Ha, me first, huh?[pause=.5] Okay, fine. I dropped my wallet down one of the sinks in the bathroom and thought I could go looking for it by myself.[pause=.5] Boy was I wrong!
