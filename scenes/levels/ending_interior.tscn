@@ -117,13 +117,17 @@ point_name = "top"
 position = Vector2(1654.25, -1200)
 shape = SubResource("RectangleShape2D_1eg0y")
 
-[node name="DoorArea" parent="." instance=ExtResource("5_1yby5")]
+[node name="ComputerArea" parent="." instance=ExtResource("5_1yby5")]
 position = Vector2(1569, 171)
 level_path = "res://scenes/ui/computer.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerArea"]
 position = Vector2(-1, 45)
 shape = SubResource("RectangleShape2D_1yby5")
+
+[node name="Spawnpoint2" parent="." instance=ExtResource("16_tpx27")]
+position = Vector2(1531.92, 124.313)
+point_name = "computer"
 
 [connection signal="activated" from="Cheese/InteractionArea" to="." method="_on_interaction_area_activated"]
 [connection signal="matched" from="DialogicSignalHandler" to="." method="_on_dialogic_signal_handler_matched"]

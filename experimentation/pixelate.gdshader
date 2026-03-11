@@ -8,13 +8,17 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 ic = texture(screen_texture, SCREEN_UV)/vec4(2);
+	vec4 ic = texture(screen_texture, SCREEN_UV);
 	float screen_x = 1.0/SCREEN_PIXEL_SIZE.x;
 	float screen_y = 1.0/SCREEN_PIXEL_SIZE.y;
-	int pixel_size = pix_size*int(screen_x/400.0);
+	int pixel_size = pix_size*int(screen_x/200.0);
 	int x = int(SCREEN_UV.x*screen_x);
 	int y = int(SCREEN_UV.y*screen_y);
-	ic = texture(screen_texture, vec2(float(x-(x%pixel_size))/screen_x, float(y-(y%pixel_size))/screen_y));
+	//ic = texture(screen_texture, vec2(float(x-(x%pixel_size))/screen_x, float(y-(y%pixel_size))/screen_y));
+	if(y % 2 == 0)
+	{
+		ic.b -= 20.0;
+	}
 	COLOR.rgb = ic.rgb;//textureLod(screen_texture, SCREEN_UV, 0.0).rgb;
 }
 

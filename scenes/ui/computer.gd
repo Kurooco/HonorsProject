@@ -4,12 +4,15 @@ var money = 0
 var displayed_money = 0.0
 var lines = 0
 var money_per_sec = 0
+var time = 0.0
 
 func _ready() -> void:
 	pass
 
 
 func _process(delta: float) -> void:
+	time += delta*3
+	set_clock()
 	var ori_string = str(money)
 	var new_string = ""
 	for c in range(ori_string.length()-1, -1, -1):
@@ -74,6 +77,28 @@ func _on_invest_2_pressed() -> void:
 	else:
 		write_line("You invested in "+company_name+", and the company failed immediately afterwards.")
 
+func set_clock():
+	var start_time = 480
+	var current_time = start_time + int(time)
+	var hour = ((current_time/60)%12+1)
+	var min = ("0" if current_time%60 < 10 else "") + str(current_time%60)
+	$Clock.text = str(hour) +":"+ min + ("am" if current_time < 660 else "pm")
+	if(hour == 5):
+		set_process(false)
+		PlayerStats.nighttime = true
+		Autoload.level_handler.set_level_with_spawn_point("res://scenes/levels/ending_interior.tscn", "computer")
 
 func _on_timer_timeout() -> void:
 	money += money_per_sec
+
+
+func _on_country_pressed() -> void:
+	money_per_sec += randi_range(10000,50000)
+
+
+func _on_company_pressed() -> void:
+	money_per_sec += randi_range(250, 500)
+
+
+func _on_city_pressed() -> void:
+	money_per_sec += randi_range(3000, 8000)

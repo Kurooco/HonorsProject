@@ -5,6 +5,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xbw5"]
 bg_color = Color(0.470075, 0.470076, 0.470076, 1)
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.650128, 0.650128, 0.650128, 1)
 border_blend = true
 expand_margin_left = 5.0
 expand_margin_top = 5.0
