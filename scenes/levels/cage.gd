@@ -43,7 +43,7 @@ func move_up(time=1.0):
 	move(-1176, time)
 
 func move(dest, time=1.0):
-	var t : Tween = create_tween()
+	var t : Tween = get_tree().create_tween()
 	t.tween_property(self, "global_position:y", dest, time)
 	t.finished.connect(finish_moving)
 

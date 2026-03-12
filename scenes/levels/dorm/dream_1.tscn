@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://birlf7s2yb26r"]
+[gd_scene load_steps=10 format=4 uid="uid://birlf7s2yb26r"]
 
 [ext_resource type="Script" uid="uid://ct3hywcvp3kqm" path="res://scenes/levels/dorm/dream.gd" id="1_478u1"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_fn8qj"]
@@ -13,6 +13,12 @@ shader = ExtResource("2_3qtbf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0cdb"]
 size = Vector2(325.025, 421.316)
 
+[sub_resource type="Environment" id="Environment_478u1"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_bloom = 0.66
+
 [node name="Dream1" type="Node2D" node_paths=PackedStringArray("wake_up_area")]
 script = ExtResource("1_478u1")
 wake_up_area = NodePath("Area2D")
@@ -23,8 +29,9 @@ waiting_for_start = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
+limit_bottom = 600
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -59,3 +66,6 @@ texture = ExtResource("5_e0cdb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3360, 416)
 shape = SubResource("RectangleShape2D_e0cdb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_478u1")

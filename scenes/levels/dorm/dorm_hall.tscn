@@ -39,7 +39,7 @@ stretch_mode = 1
 
 [node name="SaveArea" parent="." instance=ExtResource("4_0ivy8")]
 z_index = 0
-position = Vector2(-136.712, 150.126)
+position = Vector2(-136.712, 54.126)
 
 [node name="Player" parent="." instance=ExtResource("1_phmid")]
 position = Vector2(-216, 48)

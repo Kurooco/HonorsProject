@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://hdnthn7bdrh8"
 config/icon="uid://du5l78yshangn"
 
+[audio]
+
+buses/default_bus_layout="res://sound/bus_layouts/default_bus_layout.tres"
+
 [autoload]
 
 Autoload="*res://globals/Autoload.gd"
@@ -182,4 +186,5 @@ dialogic_default_action={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

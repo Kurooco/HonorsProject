@@ -1,0 +1,28 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://btq3mxjfmxk7o"]
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
+resource_name = "Delay"
+feedback_active = true
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 1.0
+
+[resource]
+bus/0/volume_db = -1.51925
+bus/0/effect/0/effect = SubResource("AudioEffectDelay_j3pel")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectReverb_j3pel")
+bus/0/effect/1/enabled = true
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -4.77114
+bus/1/send = &"Master"
+bus/2/name = &"Sound"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"

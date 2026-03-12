@@ -113,7 +113,7 @@ func set_level_with_spawn_point(path: String, spawn_point_name:String, fade=true
 				player.position = spawn_point_position
 			break
 	
-	add_child(current_level)
+	call_deferred("add_child", current_level)
 	
 	if(fade):
 		fade_in()
