@@ -20,7 +20,7 @@ func wake_up(area):
 
 
 func _on_bird_timer_timeout() -> void:
-	var bx = randi_range(0, 1000)
+	var bx = randi_range(1000, 2500)
 	var bird = load("res://experimentation/flyer.tscn").instantiate()
 	bird.position = Vector2(bx, 800)
 	add_child(bird)

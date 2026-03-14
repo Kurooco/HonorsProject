@@ -3,6 +3,7 @@ extends AnimatableBody2D
 #var class_of_object = "Sprite2D"
 @onready var bottom_collision: CollisionShape2D = $BottomCollision
 @onready var door: CollisionShape2D = $Door
+var t : Tween
 var loaded = false
 
 signal finished_moving
@@ -43,10 +44,18 @@ func move_up(time=1.0):
 	move(-1176, time)
 
 func move(dest, time=1.0):
-	var t : Tween = get_tree().create_tween()
+	if(is_instance_valid(t)):
+		t.kill()
+	t = get_tree().create_tween()
+	t.set_pause_mode(Tween.TWEEN_PAUSE_STOP)
 	t.tween_property(self, "global_position:y", dest, time)
 	t.finished.connect(finish_moving)
 
 func finish_moving():
 	finished_moving.emit()
-	
+
+func pause(b):
+	if(b):
+		t.pause()
+	else:
+		t.play()

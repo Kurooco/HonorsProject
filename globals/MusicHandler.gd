@@ -6,6 +6,11 @@ var play_music = true
 var single_polyphony_sounds : Dictionary[String, AudioStreamPlayer2D]
 
 func play(music:AudioStream, db=0.0, pitch=1.0):
+	if(!is_instance_valid(music)):
+		if(is_instance_valid(current_song_node)):
+			current_song_node.queue_free()
+		current_song_path = ""
+		return
 	var path = music.resource_path
 	if(!play_music):
 		print_debug("WARNING: Music turned off!!!")

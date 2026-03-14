@@ -243,6 +243,7 @@ func set_pause_subtree(root: Node, pause: bool) -> void:
 	
 	for setter in process_setters:
 		root.propagate_call(setter, [!pause])
+	root.propagate_call("pause", [pause])
 	root.propagate_call("set", ["paused", pause])
 	
 	if(pause):

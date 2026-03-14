@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdbmqlqpjax1k"]
+[gd_scene load_steps=14 format=3 uid="uid://bdbmqlqpjax1k"]
 
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_phmid"]
 [ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_y5oi4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="4_3cluh"]
 [ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="6_c5hnc"]
 [ext_resource type="PackedScene" uid="uid://behytwiaxnrf3" path="res://scenes/components/spawnpoint.tscn" id="9_x66ua"]
+[ext_resource type="PackedScene" uid="uid://em24rq11ddm5" path="res://scenes/components/level_music_player.tscn" id="10_1j3f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ivy8"]
 size = Vector2(48, 104)
@@ -125,3 +126,5 @@ shape = SubResource("RectangleShape2D_0ivy8")
 [node name="Spawnpoint2" parent="." instance=ExtResource("9_x66ua")]
 position = Vector2(976, 40)
 point_name = "204"
+
+[node name="LevelMusicPlayer" parent="." instance=ExtResource("10_1j3f4")]
