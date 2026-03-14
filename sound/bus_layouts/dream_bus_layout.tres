@@ -6,7 +6,7 @@ feedback_active = true
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
-room_size = 1.0
+room_size = 0.44
 
 [resource]
 bus/0/volume_db = -1.51925
