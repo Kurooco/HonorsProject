@@ -55,6 +55,7 @@ func finish_moving():
 	finished_moving.emit()
 
 func pause(b):
+	if(!is_instance_valid(t)): return
 	if(b):
 		t.pause()
 	else:

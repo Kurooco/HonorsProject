@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bdbmqlqpjax1k"]
 
+[ext_resource type="Script" uid="uid://d3qir7nm6ri1f" path="res://scenes/levels/dorm/dorm_room_base.gd" id="1_id1g8"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="1_phmid"]
-[ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_y5oi4"]
 [ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_3cluh"]
 [ext_resource type="PackedScene" uid="uid://bmd3786m62dow" path="res://scenes/levels/rest_camera.tscn" id="2_n6ms7"]
 [ext_resource type="Texture2D" uid="uid://v5efoa0yt4nd" path="res://art/textures/dirty_boring_wallpaper.png" id="3_3cluh"]
@@ -21,8 +21,9 @@ colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 gradient = SubResource("Gradient_0ivy8")
 width = 100
 
-[node name="DormHall" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
-script = ExtResource("1_y5oi4")
+[node name="DormHall" type="Node2D" node_paths=PackedStringArray("deleted_nodes_during_night", "textured_collision_groups")]
+script = ExtResource("1_id1g8")
+deleted_nodes_during_night = [NodePath("ExitDoor/CollisionShape2D")]
 textured_collision_groups = {
 NodePath("Brick"): ExtResource("2_3cluh")
 }
@@ -59,18 +60,18 @@ modulate = Color(0.537011, 0.537011, 0.537011, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brick/StaticBody2D"]
 polygon = PackedVector2Array(-352, -80, 1120, -80, 1120, 88, -352, 88, -352, 264, 1272, 264, 1272, -288, -448, -288, -448, 264, -352, 264)
 
-[node name="DoorArea" parent="." instance=ExtResource("6_c5hnc")]
+[node name="ExitDoor" parent="." instance=ExtResource("6_c5hnc")]
 z_index = -1
 position = Vector2(-281.98, 40.755)
 level_path = "res://scenes/levels/ending_interior.tscn"
 spawn_point_name = "top"
 metadata/_edit_group_ = true
 
-[node name="Door" type="Sprite2D" parent="DoorArea"]
+[node name="Door" type="Sprite2D" parent="ExitDoor"]
 scale = Vector2(0.147143, 0.147143)
 texture = ExtResource("4_3cluh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0ivy8")
 

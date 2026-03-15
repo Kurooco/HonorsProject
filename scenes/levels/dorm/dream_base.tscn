@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=4 uid="uid://q0gkkoudf1x8"]
+
+[ext_resource type="Script" uid="uid://ct3hywcvp3kqm" path="res://scenes/levels/dorm/dream.gd" id="1_367cu"]
+[ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="2_hn0xo"]
+[ext_resource type="Shader" uid="uid://dhfkiv8nvtwnc" path="res://dream.gdshader" id="3_86kai"]
+[ext_resource type="Shader" uid="uid://cbj840dba2wvl" path="res://experimentation/dream_move.gdshader" id="4_mxcyi"]
+[ext_resource type="PackedScene" uid="uid://bmca3m4bur5dt" path="res://scenes/level_objects/hazards/box_map.tscn" id="5_hkotk"]
+[ext_resource type="Texture2D" uid="uid://dstdne7cff5wk" path="res://art/environment/background/bed.png" id="6_iw2y5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vmjb"]
+shader = ExtResource("3_86kai")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fonhf"]
+shader = ExtResource("4_mxcyi")
+shader_parameter/pix_size = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dypxu"]
+size = Vector2(325.025, 970.658)
+
+[sub_resource type="Environment" id="Environment_qulw3"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_bloom = 0.66
+
+[node name="DreamBase" type="Node2D" node_paths=PackedStringArray("wake_up_area")]
+script = ExtResource("1_367cu")
+wake_up_area = NodePath("Area2D")
+
+[node name="Player" parent="." instance=ExtResource("2_hn0xo")]
+modulate = Color(1.2, 1.2, 1.2, 1)
+position = Vector2(286.949, 304.511)
+waiting_for_start = false
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_bottom = 600
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.403)
+material = SubResource("ShaderMaterial_0vmjb")
+offset_right = 1224.0
+offset_bottom = 712.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_fonhf")
+offset_right = 1224.0
+offset_bottom = 712.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Boxes" parent="." instance=ExtResource("5_hkotk")]
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAUAAgAAAAAAAAALAAUAAgAAAAAAAAAMAAUAAgAAAAAAAAANAAUAAgAAAAAAAAAOAAUAAgAAAAAAAAAPAAUAAgAAAAAAAAAQAAUAAgAAAAAAAAAPAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAAAAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAARAAUAAgAAAAAAAAARAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAASAAUAAgAAAAAAAAATAAUAAgAAAAAAAAAUAAUAAgAAAAAAAAAVAAUAAgAAAAAAAAAVAAQAAgAAAAAAAAAUAAQAAgAAAAAAAAATAAQAAgAAAAAAAAASAAQAAgAAAAAAAAAWAAQAAgAAAAAAAAAWAAUAAgAAAAAAAAAXAAQAAgAAAAAAAAAXAAUAAgAAAAAAAAAYAAQAAgAAAAAAAAAYAAUAAgAAAAAAAAAZAAQAAgAAAAAAAAAZAAUAAgAAAAAAAAAaAAQAAgAAAAAAAAAaAAUAAgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAA=")
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -5
+
+[node name="Bed" type="Sprite2D" parent="Background"]
+position = Vector2(239.396, 348.514)
+scale = Vector2(0.61849, 0.61849)
+texture = ExtResource("6_iw2y5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3392, 141.329)
+shape = SubResource("RectangleShape2D_dypxu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qulw3")
