@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_0ivy8")
 
 [node name="DoorArea2" parent="." instance=ExtResource("6_c5hnc")]
 z_index = -1
-position = Vector2(46.0201, 40.755)
+position = Vector2(526.02, 40.755)
 level_path = "res://scenes/levels/dorm/dorm_room1.tscn"
 metadata/_edit_group_ = true
 
@@ -87,6 +87,16 @@ texture = ExtResource("4_3cluh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0ivy8")
+
+[node name="Label" type="Label" parent="DoorArea2"]
+offset_left = -15.5697
+offset_top = -70.4147
+offset_right = 137.43
+offset_bottom = 62.5853
+scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "201"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = 1184.0
@@ -106,8 +116,36 @@ rotation = 1.5708
 texture = SubResource("GradientTexture1D_x66ua")
 
 [node name="Spawnpoint" parent="." instance=ExtResource("9_x66ua")]
-position = Vector2(-8, 40)
+position = Vector2(472, 40)
 point_name = "201"
+
+[node name="DoorArea4" parent="." instance=ExtResource("6_c5hnc")]
+z_index = -1
+position = Vector2(774.02, 40.755)
+level_path = "res://scenes/levels/dorm/dorm_room3.tscn"
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="DoorArea4"]
+scale = Vector2(0.147143, 0.147143)
+texture = ExtResource("4_3cluh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea4"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0ivy8")
+
+[node name="Label2" type="Label" parent="DoorArea4"]
+offset_left = -15.5698
+offset_top = -70.4147
+offset_right = 151.43
+offset_bottom = 62.5853
+scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "202"
+
+[node name="Spawnpoint3" parent="." instance=ExtResource("9_x66ua")]
+position = Vector2(720, 40)
+point_name = "202"
 
 [node name="DoorArea3" parent="." instance=ExtResource("6_c5hnc")]
 z_index = -1
@@ -123,8 +161,18 @@ texture = ExtResource("4_3cluh")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0ivy8")
 
+[node name="Label3" type="Label" parent="DoorArea3"]
+offset_left = -15.5697
+offset_top = -70.4147
+offset_right = 150.43
+offset_bottom = 62.5853
+scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "203"
+
 [node name="Spawnpoint2" parent="." instance=ExtResource("9_x66ua")]
 position = Vector2(976, 40)
-point_name = "204"
+point_name = "203"
 
 [node name="LevelMusicPlayer" parent="." instance=ExtResource("10_1j3f4")]

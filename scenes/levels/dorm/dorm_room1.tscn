@@ -8,7 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7gjk"]
 size = Vector2(58, 74)
 
-[node name="Node2D" node_paths=PackedStringArray("textured_collision_groups") instance=ExtResource("1_u540v")]
+[node name="Node2D" node_paths=PackedStringArray("deleted_nodes_during_day", "textured_collision_groups") instance=ExtResource("1_u540v")]
+deleted_nodes_during_day = [NodePath("DialogueArea")]
 textured_collision_groups = {
 NodePath("."): ExtResource("2_jesry")
 }

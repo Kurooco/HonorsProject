@@ -45,6 +45,7 @@ directories/dtl_directory={
 "date": "res://dialogue/timelines/date.dtl",
 "end": "res://dialogue/timelines/end.dtl",
 "fans": "res://dialogue/timelines/fans.dtl",
+"happy_duck": "res://dialogue/timelines/happy_duck.dtl",
 "informer": "res://dialogue/timelines/informer.dtl",
 "little_bird": "res://dialogue/timelines/little_bird.dtl",
 "old_bird": "res://dialogue/timelines/old_bird.dtl",
@@ -59,7 +60,8 @@ directories/dtl_directory={
 "secret_dialogue": "res://dialogue/timelines/secret_dialogue.dtl",
 "stuck_in_pipe": "res://dialogue/timelines/stuck_in_pipe.dtl",
 "test": "res://dialogue/timelines/test.dtl",
-"vivian": "res://dialogue/timelines/vivian.dtl"
+"vivian": "res://dialogue/timelines/vivian.dtl",
+"wine": "res://dialogue/timelines/wine.dtl"
 }
 variables={
 "beer_given": false,

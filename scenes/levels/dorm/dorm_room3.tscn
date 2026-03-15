@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://7vkk5ks5f2q4"]
+
+[ext_resource type="PackedScene" uid="uid://br3g4kmw21nuo" path="res://scenes/levels/dorm/dorm_room_base.tscn" id="1_8igda"]
+[ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_tcejn"]
+[ext_resource type="PackedScene" uid="uid://bcv6a6nua01pm" path="res://scenes/components/dialogue_area.tscn" id="3_tcejn"]
+[ext_resource type="Texture2D" uid="uid://ijwdpv8qfiw5" path="res://art/characters/chill_bird.png" id="4_75p32"]
+[ext_resource type="Texture2D" uid="uid://cbkgpkrkq1p58" path="res://art/characters/happy_duck.png" id="5_c85qq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75p32"]
+size = Vector2(51, 44)
+
+[node name="Node2D" node_paths=PackedStringArray("deleted_nodes_during_day", "textured_collision_groups") instance=ExtResource("1_8igda")]
+deleted_nodes_during_day = [NodePath("DialogueArea"), NodePath("DialogueArea2")]
+textured_collision_groups = {
+NodePath("."): ExtResource("2_tcejn")
+}
+
+[node name="DoorArea2" parent="." index="3"]
+spawn_point_name = "202"
+
+[node name="DialogueArea" parent="." index="7" instance=ExtResource("3_tcejn")]
+position = Vector2(-233, 78)
+timeline = "wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea" index="1"]
+position = Vector2(15.5, 28)
+shape = SubResource("RectangleShape2D_75p32")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueArea" index="2"]
+z_index = -1
+position = Vector2(56.4, -20.384)
+scale = Vector2(0.385802, 0.385802)
+texture = ExtResource("4_75p32")
+
+[node name="DialogueArea2" parent="." index="8" instance=ExtResource("3_tcejn")]
+position = Vector2(199, 102)
+timeline = "happy_duck"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea2" index="1"]
+position = Vector2(-24.5, 4)
+shape = SubResource("RectangleShape2D_75p32")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueArea2" index="2"]
+z_index = 1
+position = Vector2(19.5396, -19.5235)
+scale = Vector2(0.173651, 0.173651)
+texture = ExtResource("5_c85qq")

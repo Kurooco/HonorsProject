@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://br3g4kmw21nuo"]
+[gd_scene load_steps=10 format=3 uid="uid://br3g4kmw21nuo"]
 
-[ext_resource type="Script" uid="uid://cxkxnxxoyp7pb" path="res://scenes/levels/rest_1.gd" id="1_1mr1x"]
 [ext_resource type="Texture2D" uid="uid://v5efoa0yt4nd" path="res://art/textures/dirty_boring_wallpaper.png" id="1_adbbe"]
+[ext_resource type="Script" uid="uid://d3qir7nm6ri1f" path="res://scenes/levels/dorm/dorm_room_base.gd" id="1_p6ekr"]
 [ext_resource type="PackedScene" uid="uid://dmk4g3shpv28q" path="res://scenes/components/door_area.tscn" id="2_1mr1x"]
-[ext_resource type="Texture2D" uid="uid://cjqkvt0dx3638" path="res://art/textures/grey_bricks_with_shadows.png" id="2_sm5sp"]
 [ext_resource type="Texture2D" uid="uid://cogrkv2qw217s" path="res://art/environment/interactive/door.png" id="3_sm5sp"]
 [ext_resource type="PackedScene" uid="uid://bkj34yi74b4m7" path="res://scenes/player/player.tscn" id="4_ehc5a"]
 [ext_resource type="Texture2D" uid="uid://bjibd1tsbhnah" path="res://art/environment/background/bed2.png" id="7_ww8ox"]
@@ -18,11 +17,8 @@ width = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw2bx"]
 size = Vector2(48, 104)
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("textured_collision_groups")]
-script = ExtResource("1_1mr1x")
-textured_collision_groups = {
-NodePath("."): ExtResource("2_sm5sp")
-}
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_p6ekr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)

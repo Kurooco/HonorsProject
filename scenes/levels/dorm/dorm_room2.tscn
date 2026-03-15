@@ -38,7 +38,7 @@ NodePath("."): ExtResource("2_d24fh")
 }
 
 [node name="DoorArea2" parent="." index="3"]
-spawn_point_name = "204"
+spawn_point_name = "203"
 
 [node name="Sprite2D" parent="." index="5"]
 texture = ExtResource("3_7lhi6")
