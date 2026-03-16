@@ -21,4 +21,4 @@ func create_plant(follower:PathFollow2D):
 	var sc = randf_range(size_variation.x, size_variation.y)
 	new_plant.scale = Vector2(sc, sc)
 	new_plant.z_index = z_index
-	Autoload.level_handler.add_child(new_plant)
+	Autoload.level_handler.current_level.call_deferred("add_child", new_plant)
