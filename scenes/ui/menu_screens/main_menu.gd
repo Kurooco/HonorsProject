@@ -8,6 +8,7 @@ var speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioServer.set_bus_layout(load("res://sound/bus_layouts/default_bus_layout.tres"))
 	var save_data = Autoload.level_handler.has_saved_game()
 	continue_button.visible = save_data
 	new_game.visible = !save_data

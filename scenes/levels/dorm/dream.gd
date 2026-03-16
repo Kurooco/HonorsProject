@@ -2,7 +2,7 @@ extends Node2D
 
 @export var wake_up_area : Area2D
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
-@onready var camera_2d: Camera2D = $Player/Camera2D
+@onready var camera_2d: Camera2D = $Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +10,8 @@ func _ready() -> void:
 	AudioServer.set_bus_layout(load("res://sound/bus_layouts/dream_bus_layout.tres"))
 
 func _process(delta: float) -> void:
-	color_rect.set_instance_shader_parameter("camera_pos", camera_2d.get_screen_center_position())
+	if(is_instance_valid(camera_2d)):
+		color_rect.set_instance_shader_parameter("camera_pos", camera_2d.get_screen_center_position())
 	
 
 func wake_up(area):
