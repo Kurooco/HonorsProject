@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsba8iya47eia"]
+
+[ext_resource type="Texture2D" uid="uid://jlmqj33ecpd2" path="res://art/environment/interactive/chain.png" id="1_d2s3a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2s3a"]
+
+[node name="Chain" type="RigidBody2D"]
+collision_layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.346875, 0.394084)
+texture = ExtResource("1_d2s3a")
+offset = Vector2(0, 96.9697)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_d2s3a")
+
+[node name="Joint" type="PinJoint2D" parent="."]
+position = Vector2(0, -16)

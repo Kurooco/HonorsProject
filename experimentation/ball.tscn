@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://j60tsbpj7k5q"]
+
+[ext_resource type="Script" uid="uid://dtkchpufjmqfc" path="res://experimentation/ball.gd" id="1_ysqw3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n82jk"]
+bounce = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysqw3"]
+bg_color = Color(1.73271e-06, 0.770842, 0.910891, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n82jk"]
+radius = 40.7922
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysqw3"]
+radius = 48.6621
+
+[node name="Ball" type="RigidBody2D"]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_n82jk")
+script = ExtResource("1_ysqw3")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(2, 2, 2, 1)
+offset_left = -46.0
+offset_top = -45.0
+offset_right = 42.0
+offset_bottom = 43.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ysqw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_n82jk")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ysqw3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
