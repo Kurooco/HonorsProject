@@ -40,6 +40,7 @@ scene_root = NodePath("..")
 health_component = NodePath("../HealthComponent")
 particles = NodePath("../CPUParticles2D")
 sound = ExtResource("5_mnkl0")
+sound_vol = -6.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(26.4378, 127)

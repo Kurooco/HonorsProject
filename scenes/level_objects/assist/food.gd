@@ -1,5 +1,4 @@
 extends Area2D
-class_name Food
 
 var consumed = false
 

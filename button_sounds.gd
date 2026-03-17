@@ -10,5 +10,6 @@ func _ready() -> void:
 		parent.mouse_entered.connect(play_sound.bind(collection.hover))
 
 func play_sound(sound:AudioStream):
-	stream = sound
-	play()
+	if(!get_parent().disabled):
+		stream = sound
+		play()

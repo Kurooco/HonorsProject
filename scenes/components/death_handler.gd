@@ -5,12 +5,14 @@ extends Node
 @export var particles : CPUParticles2D
 @export var point_worth : int
 @export var sound : AudioStream
+@export var sound_vol = 0.0
 
 signal died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health_component.killed.connect(die)
+	$GlobalSound.vol = sound_vol
 
 
 func die():

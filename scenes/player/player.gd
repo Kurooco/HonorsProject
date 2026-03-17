@@ -137,12 +137,13 @@ func _on_detection_area_area_entered(area):
 		return
 	if(area is Food):
 		if(!Input.is_action_pressed("dive")):
-			velocity.y = MAX_JUMP_VELOCITY
+			velocity.y = area.bounce
 		jump_velocity = MAX_JUMP_VELOCITY
 		if(!area.consumed):
 			area.jump_on()
 			consecutive_bounces += 1
-			$PointAwarder.award_points(9 + min(consecutive_bounces, 11))
+			if(area.points > 0):
+				$PointAwarder.award_points(area.points-1 + min(consecutive_bounces, 11))
 	elif(area is Acorn && acorns < max_acorns): # && Input.is_action_pressed("shoot") && 
 		area.collect()
 		acorns += 1

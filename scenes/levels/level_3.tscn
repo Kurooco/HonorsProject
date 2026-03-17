@@ -276,7 +276,8 @@ position = Vector2(3596, -101)
 speed = 300
 
 [node name="SpeedChange2" parent="." index="39" instance=ExtResource("12_qi5uv")]
-position = Vector2(8399, 46)
+position = Vector2(8361, 27)
+speed = 200
 
 [node name="SpeedChange3" parent="." index="40" instance=ExtResource("12_qi5uv")]
 position = Vector2(11881.3, -21.9702)
