@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckfxhsagrwbgk"]
+[gd_scene load_steps=9 format=3 uid="uid://ckfxhsagrwbgk"]
 
-[ext_resource type="Script" uid="uid://lul2ils6ogaf" path="res://scenes/ui/computer.gd" id="1_2fps6"]
+[ext_resource type="Script" path="res://scenes/ui/computer.gd" id="1_2fps6"]
 [ext_resource type="Theme" uid="uid://c1jcd8ilftnd7" path="res://art/styles/computer.tres" id="2_cord8"]
 [ext_resource type="FontFile" uid="uid://bv22jh7u7qo6w" path="res://art/fonts/vt323/VT323-Regular.ttf" id="3_6lxve"]
 [ext_resource type="PackedScene" uid="uid://p2vvnaor344v" path="res://scenes/components/button_sounds.tscn" id="3_cord8"]
+[ext_resource type="Resource" uid="uid://ett8m2fe85sm" path="res://resources/computer_button_sounds.tres" id="4_6lxve"]
 [ext_resource type="Shader" uid="uid://c8d3a42enni21" path="res://experimentation/pixelate.gdshader" id="4_ph60y"]
 
 [sub_resource type="GDScript" id="GDScript_3xbw5"]
@@ -22,6 +23,11 @@ func _ready():
 			new_string += \",\"
 	text = \"($\"+new_string+\") \"+buy_name
 	pressed.connect(charge.bind(cost))
+	
+	#Sounds
+	var button_sounds = load(\"res://scenes/components/button_sounds.tscn\").instantiate()
+	button_sounds.collection = load(\"res://resources/computer_button_sounds.tres\")
+	add_child(button_sounds)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -70,6 +76,7 @@ theme = ExtResource("2_cord8")
 text = "Make Money!"
 
 [node name="ButtonSounds" parent="VBoxContainer/MakeMoney" instance=ExtResource("3_cord8")]
+collection = ExtResource("4_6lxve")
 
 [node name="Lotto" type="Button" parent="VBoxContainer"]
 layout_mode = 2

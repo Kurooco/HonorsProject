@@ -1,13 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://b3yrdke08l4uw"]
+[gd_scene load_steps=9 format=4 uid="uid://b3yrdke08l4uw"]
 
 [ext_resource type="PackedScene" uid="uid://q0gkkoudf1x8" path="res://scenes/levels/dorm/dream_base.tscn" id="1_3q7jb"]
 [ext_resource type="PackedScene" uid="uid://dparr771cvhh4" path="res://scenes/level_objects/interactive/portal_area.tscn" id="2_17de7"]
 [ext_resource type="Texture2D" uid="uid://cg8cl5kwleqcq" path="res://art/environment/background/detailed_tree.png" id="2_bakjo"]
-[ext_resource type="PackedScene" uid="uid://bsba8iya47eia" path="res://experimentation/chain.tscn" id="2_jldnc"]
 [ext_resource type="PackedScene" uid="uid://dypxm38euvcdh" path="res://experimentation/foliage_path.tscn" id="4_bakjo"]
-[ext_resource type="PackedScene" uid="uid://j60tsbpj7k5q" path="res://experimentation/ball.tscn" id="5_45cxx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xirj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jgle"]
 size = Vector2(3849, 241)
@@ -32,73 +28,37 @@ point_count = 4
 
 [node name="DreamBase" instance=ExtResource("1_3q7jb")]
 
-[node name="ChainTest" type="Node2D" parent="." index="0"]
-position = Vector2(131.638, 162.004)
-rotation = -0.727802
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ChainTest" index="0"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainTest/StaticBody2D" index="0"]
-shape = SubResource("RectangleShape2D_7xirj")
-
-[node name="Chain" parent="ChainTest" index="1" instance=ExtResource("2_jldnc")]
-position = Vector2(0, 24)
-
-[node name="PinJoint2D" type="PinJoint2D" parent="ChainTest/Chain" index="2"]
-position = Vector2(0, -16)
-node_a = NodePath("../../StaticBody2D")
-node_b = NodePath("..")
-
-[node name="Chain2" parent="ChainTest" index="2" instance=ExtResource("2_jldnc")]
-position = Vector2(0, 48)
-
-[node name="PinJoint2D2" type="PinJoint2D" parent="ChainTest/Chain2" index="2"]
-position = Vector2(0, -16)
-node_a = NodePath("../../Chain")
-node_b = NodePath("..")
-
-[node name="ColorRect" parent="CanvasLayer" index="0"]
-visible = false
-
-[node name="ColorRect" parent="CanvasLayer2" index="0"]
-visible = false
-
-[node name="Boxes" parent="." index="4"]
+[node name="Boxes" parent="." index="3"]
 tile_map_data = PackedByteArray("AAAMAP7/AgAAAAAAAAAMAP//AgAAAAAAAAAMAAAAAgAAAAAAAAAMAAIAAgAAAAAAAAASAAIAAgAAAAAAAAATAP7/AgAAAAAAAAATAP//AgAAAAAAAAATAAIAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAUAAgAAAAAAAAALAAUAAgAAAAAAAAAMAAUAAgAAAAAAAAANAAUAAgAAAAAAAAAPAAUAAgAAAAAAAAAQAAUAAgAAAAAAAAAPAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAAAAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAARAAUAAgAAAAAAAAARAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAASAAUAAgAAAAAAAAATAAUAAgAAAAAAAAAUAAUAAgAAAAAAAAAVAAUAAgAAAAAAAAAVAAQAAgAAAAAAAAAUAAQAAgAAAAAAAAATAAQAAgAAAAAAAAASAAQAAgAAAAAAAAAWAAQAAgAAAAAAAAAWAAUAAgAAAAAAAAAXAAQAAgAAAAAAAAAXAAUAAgAAAAAAAAAYAAQAAgAAAAAAAAAYAAUAAgAAAAAAAAAZAAQAAgAAAAAAAAAZAAUAAgAAAAAAAAAaAAQAAgAAAAAAAAAaAAUAAgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAALAAIAAgAAAAAAAAANAAIAAgAAAAAAAAANAAMAAgAAAAAAAAAMAAMAAgAAAAAAAAALAAMAAgAAAAAAAAAKAAMAAgAAAAAAAAAJAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAATAAMAAgAAAAAAAAAUAAMAAgAAAAAAAAAUAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAJAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAALAAAAAgAAAAAAAAANAAAAAgAAAAAAAAANAP//AgAAAAAAAAANAP7/AgAAAAAAAAALAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAJAP7/AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAGAP//AgAAAAAAAAAFAP//AgAAAAAAAAAEAP//AgAAAAAAAAADAP//AgAAAAAAAAACAP//AgAAAAAAAAABAP//AgAAAAAAAAABAP7/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAACAP7/AgAAAAAAAAADAP7/AgAAAAAAAAAEAP7/AgAAAAAAAAAFAP7/AgAAAAAAAAAGAP7/AgAAAAAAAAALAP//AgAAAAAAAAAKAP//AgAAAAAAAAAJAP//AgAAAAAAAAAIAP//AgAAAAAAAAAQAAMAAgAAAAAAAAASAAMAAgAAAAAAAAARAAIAAgAAAAAAAAARAAMAAgAAAAAAAAAVAAMAAgAAAAAAAAAOAP7/AgAAAAAAAAAOAP//AgAAAAAAAAAPAP7/AgAAAAAAAAAPAP//AgAAAAAAAAAQAP7/AgAAAAAAAAAQAP//AgAAAAAAAAARAP7/AgAAAAAAAAARAP//AgAAAAAAAAASAP7/AgAAAAAAAAASAP//AgAAAAAAAAAUAP7/AgAAAAAAAAAUAP//AgAAAAAAAAAVAP7/AgAAAAAAAAAVAP//AgAAAAAAAAAWAP7/AgAAAAAAAAAWAP//AgAAAAAAAAAXAP7/AgAAAAAAAAAXAP//AgAAAAAAAAAYAP7/AgAAAAAAAAAYAP//AgAAAAAAAAAZAP7/AgAAAAAAAAAZAP//AgAAAAAAAAAaAP7/AgAAAAAAAAAaAP//AgAAAAAAAAA=")
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" index="1"]
-visible = false
 z_index = -1
 position = Vector2(136, 304)
 texture = ExtResource("2_bakjo")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Background" index="2"]
-visible = false
 z_index = -1
 position = Vector2(760, 192)
 texture = ExtResource("2_bakjo")
 flip_h = true
 
-[node name="PortalArea" parent="." index="9" instance=ExtResource("2_17de7")]
+[node name="PortalArea" parent="." index="8" instance=ExtResource("2_17de7")]
 new_position = Vector2(300, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea" index="0"]
 position = Vector2(1819.5, 807.5)
 shape = SubResource("RectangleShape2D_5jgle")
 
-[node name="FoliagePath" parent="." index="10" instance=ExtResource("4_bakjo")]
+[node name="FoliagePath" parent="." index="9" instance=ExtResource("4_bakjo")]
 z_index = 2
 curve = SubResource("Curve2D_bakjo")
 size_variation = Vector2(0.3, 0.6)
 
-[node name="FoliagePath2" parent="." index="11" instance=ExtResource("4_bakjo")]
+[node name="FoliagePath2" parent="." index="10" instance=ExtResource("4_bakjo")]
 curve = SubResource("Curve2D_5jgle")
 size_variation = Vector2(0.3, 0.6)
 
-[node name="FoliagePath3" parent="." index="12" instance=ExtResource("4_bakjo")]
+[node name="FoliagePath3" parent="." index="11" instance=ExtResource("4_bakjo")]
 position = Vector2(832, 0)
 curve = SubResource("Curve2D_45cxx")
 size_variation = Vector2(0.3, 0.6)
-
-[node name="RigidBody2D" parent="." index="13" instance=ExtResource("5_45cxx")]
-position = Vector2(515.512, 185.348)

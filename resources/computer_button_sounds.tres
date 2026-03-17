@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ButtonSoundCollection" load_steps=4 format=3 uid="uid://ett8m2fe85sm"]
+
+[ext_resource type="AudioStream" uid="uid://cspdtwmbw2you" path="res://sound/sfx/BittySelectLow.mp3" id="1_tqdwv"]
+[ext_resource type="AudioStream" uid="uid://bmst3i08ntlu0" path="res://sound/sfx/BittyButton_113247113.wav" id="2_qtrc5"]
+[ext_resource type="Script" path="res://resources/button_sound_collection.gd" id="3_8hx2e"]
+
+[resource]
+script = ExtResource("3_8hx2e")
+hover = ExtResource("2_qtrc5")
+click = ExtResource("1_tqdwv")
+metadata/_custom_type_script = "uid://b7yykd870njvr"
