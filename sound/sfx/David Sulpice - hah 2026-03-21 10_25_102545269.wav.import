@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://niafly8e3usu"
+path="res://.godot/imported/David Sulpice - hah 2026-03-21 10_25_102545269.wav-608f05e2d5d7ef52b1a4320588a03a60.sample"
+
+[deps]
+
+source_file="res://sound/sfx/David Sulpice - hah 2026-03-21 10_25_102545269.wav"
+dest_files=["res://.godot/imported/David Sulpice - hah 2026-03-21 10_25_102545269.wav-608f05e2d5d7ef52b1a4320588a03a60.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

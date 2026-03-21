@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bax8w3ayleg87"]
+[gd_scene load_steps=7 format=3 uid="uid://bax8w3ayleg87"]
 
 [ext_resource type="PackedScene" uid="uid://c66nlhbmejl47" path="res://scenes/level_objects/assist/food_base.tscn" id="1_2h4yo"]
 [ext_resource type="Script" uid="uid://bq5wb0dg7r2ba" path="res://scenes/level_objects/assist/bright_point.gd" id="2_38iqp"]
 [ext_resource type="Texture2D" uid="uid://bp473ban7w77s" path="res://art/items/food/points.png" id="3_38iqp"]
+[ext_resource type="AudioStream" uid="uid://niafly8e3usu" path="res://sound/sfx/David Sulpice - hah 2026-03-21 10_25_102545269.wav" id="3_fv15u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv15u"]
 
@@ -14,6 +15,10 @@ script = ExtResource("2_38iqp")
 points = 0
 bounce_amount = 0
 bounce = false
+
+[node name="Sound" parent="." index="0"]
+stream = ExtResource("3_fv15u")
+pitch_scale = 1.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_fv15u")
