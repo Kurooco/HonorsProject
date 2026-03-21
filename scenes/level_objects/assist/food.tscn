@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct0ogc4qicje4"]
+[gd_scene load_steps=4 format=3 uid="uid://ct0ogc4qicje4"]
 
 [ext_resource type="Script" uid="uid://bbddxerqk5tjo" path="res://scenes/level_objects/assist/food_base.gd" id="1_1otte"]
 [ext_resource type="Texture2D" uid="uid://0uv02x5kv7ic" path="res://art/items/food/apple2.png" id="2_1otte"]
-[ext_resource type="AudioStream" uid="uid://dnfmiy1pqbtu2" path="res://sound/sfx/game sounds/lowdrum.wav" id="3_11ufl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswwm"]
 size = Vector2(61, 63)
 
 [node name="Food" type="Area2D" groups=["food"]]
 script = ExtResource("1_1otte")
-sound = ExtResource("3_11ufl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)

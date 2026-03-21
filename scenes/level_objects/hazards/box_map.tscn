@@ -1,15 +1,17 @@
-[gd_scene load_steps=10 format=4 uid="uid://bmca3m4bur5dt"]
+[gd_scene load_steps=11 format=4 uid="uid://bmca3m4bur5dt"]
 
 [ext_resource type="PackedScene" uid="uid://6bl2et5qhduw" path="res://scenes/level_objects/hazards/box.tscn" id="1_u2is8"]
 [ext_resource type="PackedScene" uid="uid://bf0rwbbj1b2hd" path="res://scenes/level_objects/hazards/razor.tscn" id="2_27ba7"]
 [ext_resource type="PackedScene" uid="uid://cbscy75a26ch8" path="res://scenes/level_objects/hazards/pain_box.tscn" id="3_177yo"]
 [ext_resource type="Texture2D" uid="uid://kshrb0d17ek" path="res://art/environment/ground/iron_block.png" id="4_27ba7"]
+[ext_resource type="PackedScene" uid="uid://bax8w3ayleg87" path="res://scenes/level_objects/assist/bright_point.tscn" id="4_vrpoe"]
 [ext_resource type="Texture2D" uid="uid://dri1fqgog3acn" path="res://art/environment/ground/sand.png" id="5_177yo"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qsp8v"]
 scenes/1/scene = ExtResource("1_u2is8")
 scenes/2/scene = ExtResource("2_27ba7")
 scenes/3/scene = ExtResource("3_177yo")
+scenes/4/scene = ExtResource("4_vrpoe")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_177yo"]
 texture = ExtResource("4_27ba7")

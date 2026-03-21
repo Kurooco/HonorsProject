@@ -14,6 +14,7 @@ var acorns = 0
 var acorn_energy = 0
 var impact = Vector2.ZERO
 var disabled = false
+var refresh_tween : Tween
 
 # base stats
 const BASE_MAX_ACORNS = 3
@@ -59,7 +60,7 @@ func _physics_process(delta):
 	
 		# Out of bounds death
 		if(Autoload.level_handler.in_run_level && (global_position.y > camera.global_position.y + get_viewport_rect().size.y/zoom/2.0
-			|| position.x < camera.position.x - get_viewport_rect().size.x/zoom)):
+			|| position.x < camera.position.x - get_viewport_rect().size.x*.6/zoom)):
 			$HealthComponent.kill()
 			set_physics_process(false)
 	
@@ -127,17 +128,18 @@ func _physics_process(delta):
 			animation.play("fall")
 	
 	$Tears.emitting = jump_velocity > -200
-		
-	
-
 
 
 func _on_detection_area_area_entered(area):
 	if(waiting_for_start || disabled):
 		return
 	if(area is Food):
-		if(!Input.is_action_pressed("dive")):
-			velocity.y = area.bounce
+		if(is_instance_valid(refresh_tween)):
+			refresh_tween.kill()
+		refresh_tween = create_tween()
+		refresh_tween.tween_property($Animation, "modulate", Color.WHITE, .3).from(Color.AQUA)
+		if(!Input.is_action_pressed("dive") && area.bounce):
+			velocity.y = area.bounce_amount
 		jump_velocity = MAX_JUMP_VELOCITY
 		if(!area.consumed):
 			area.jump_on()

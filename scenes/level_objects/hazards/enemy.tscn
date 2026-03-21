@@ -119,6 +119,8 @@ size = Vector2(36, 35)
 scale = Vector2(2, 2)
 collision_layer = 0
 script = ExtResource("1_kuaqs")
+SPEED = 40.0
+ATTACK_SPEED = 30.0
 MAX_JUMP_VELOCITY = -700.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
